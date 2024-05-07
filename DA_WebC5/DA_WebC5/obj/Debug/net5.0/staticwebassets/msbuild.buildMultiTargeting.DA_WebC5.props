@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\DA_WebC5.props" />
+</Project>
