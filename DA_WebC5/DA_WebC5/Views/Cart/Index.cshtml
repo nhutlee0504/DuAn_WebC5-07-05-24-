@@ -1,0 +1,181 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="container">
+	<div class="border p-2 mb-3" style="background-color: lightgray;">
+		<i class="bi bi-receipt"></i> Nhập mã giảm giá để có thêm nhận thêm nhiều ưu đãi hơn
+	</div>
+
+	<div class="border mb-3 p-2">
+		<div class="row">
+			<div class="col-1">
+				<input type="checkbox" name="name" value="" />
+			</div>
+			<div class="col-md-5">
+				Sản phẩm
+			</div>
+			<div class="col-md-1">Đơn giá</div>
+			<div class="col-md-2 text-center">Số lượng</div>
+			<div class="col-md-2">Số tiền</div>
+			<div class="col-md-1 text-center">Thao tác</div>
+		</div>
+	</div>
+
+	<div class="border p-2 mb-1">
+		<div class="row d-flex justify-content-center align-items-center">
+			<div class="col-1">
+				<input type="checkbox" name="name" value="" />
+			</div>
+			<div class="col-md-5">
+				<div class="row d-flex justify-content-center align-items-center">
+					<div class="col-md-3">
+						<img src="/Image_Nhut/Detail1.jpg" alt="Alternate Text" class="w-100"/>
+					</div>
+					<div class="col-md-4">
+						Tên sản phẩm
+					</div>
+					<div class="col-md-5">
+						Loại sản phẩm
+					</div>
+				</div>
+			</div>
+			<div class="col-md-1">30000</div>
+			<div class="col-md-2 text-center">
+				<div class="input-group">
+					<button class="btn btn-outline-secondary" type="button" id="subtractBtn">-</button>
+					<input type="text" class="form-control text-center" value="3" id="quantityInput" readonly>
+					<button class="btn btn-outline-secondary" type="button" id="addBtn">+</button>
+				</div>
+			</div>
+			<div class="col-md-2">90000</div>
+			<div class="col-md-1"><a href="#" class="text-center">Xóa</a></div>
+		</div>
+	</div>
+	<div class="border p-2 mb-1">
+		<div class="row d-flex justify-content-center align-items-center">
+			<div class="col-1">
+				<input type="checkbox" name="name" value="" />
+			</div>
+			<div class="col-md-5">
+				<div class="row d-flex justify-content-center align-items-center">
+					<div class="col-md-3">
+						<img src="/Image_Nhut/Detail1.jpg" alt="Alternate Text" class="w-100" />
+					</div>
+					<div class="col-md-4">
+						Tên sản phẩm
+					</div>
+					<div class="col-md-5">
+						Loại sản phẩm
+					</div>
+				</div>
+			</div>
+			<div class="col-md-1">30000</div>
+			<div class="col-md-2 text-center">
+				<div class="input-group">
+					<button class="btn btn-outline-secondary" type="button" id="subtractBtn">-</button>
+					<input type="text" class="form-control text-center" value="3" id="quantityInput" readonly>
+					<button class="btn btn-outline-secondary" type="button" id="addBtn">+</button>
+				</div>
+			</div>
+			<div class="col-md-2">90000</div>
+			<div class="col-md-1"><a href="#" class="text-center">Xóa</a></div>
+		</div>
+	</div>
+
+
+	<div class="border p-2 mt-3 align-items-center">
+		<button class="btn btn-danger">Xóa tất cả sản phẩm</button>
+		<button class="btn btn-dark">Tiếp tục mua hàng</button>
+
+		<div class="d-flex float-right">
+			<div class="" style="margin:auto">Tổng thanh toán(0 sản phẩm)</div>
+			<div class="px-2" style="margin:auto"><strong class="text-danger">0đ</strong></div>
+			<button class="btn btn-success">Mua hàng</button>
+		</div>
+	</div>
+
+	<hr>
+	<h4>Có thể bạn sẽ thích</h4>
+	<div class="row">
+		<div class="col-sm-2 d-flex justify-content-center flex-column">
+			<div class="border border-secondary-subtle rounded">
+				<div class="d-flex justify-content-end m-2"><i class="bi bi-bag-fill"></i></div>
+				<div><img src="/Image_Nhut/Detail1.jpg" alt="Alternate Text" class="mw-100" /></div>
+			</div>
+			<div class="row container-fluid">
+				<p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+				<p class="font-weight-bold col-sm-4 mb-1">200000</p>
+				<p style="font-size: small;" class="col-sm-8">Loại áo</p>
+				<strike style="font-size: small;" class="col-sm-4">400000</strike>
+			</div>
+			<p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+		</div>
+		<div class="col-sm-2 d-flex justify-content-center flex-column">
+			<div class="border border-secondary-subtle rounded">
+				<div class="d-flex justify-content-end m-2"><i class="bi bi-bag-fill"></i></div>
+				<div><img src="/Image_Nhut/Detail1.jpg" alt="Alternate Text" class="mw-100" /></div>
+			</div>
+			<div class="row container-fluid">
+				<p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+				<p class="font-weight-bold col-sm-4 mb-1">200000</p>
+				<p style="font-size: small;" class="col-sm-8">Loại áo</p>
+				<strike style="font-size: small;" class="col-sm-4">400000</strike>
+			</div>
+			<p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+		</div>
+		<div class="col-sm-2 d-flex justify-content-center flex-column">
+			<div class="border border-secondary-subtle rounded">
+				<div class="d-flex justify-content-end m-2"><i class="bi bi-bag-fill"></i></div>
+				<div><img src="/Image_Nhut/Detail1.jpg" alt="Alternate Text" class="mw-100" /></div>
+			</div>
+			<div class="row container-fluid">
+				<p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+				<p class="font-weight-bold col-sm-4 mb-1">200000</p>
+				<p style="font-size: small;" class="col-sm-8">Loại áo</p>
+				<strike style="font-size: small;" class="col-sm-4">400000</strike>
+			</div>
+			<p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+		</div>
+		<div class="col-sm-2 d-flex justify-content-center flex-column">
+			<div class="border border-secondary-subtle rounded">
+				<div class="d-flex justify-content-end m-2"><i class="bi bi-bag-fill"></i></div>
+				<div><img src="/Image_Nhut/Detail1.jpg" alt="Alternate Text" class="mw-100" /></div>
+			</div>
+			<div class="row container-fluid">
+				<p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+				<p class="font-weight-bold col-sm-4 mb-1">200000</p>
+				<p style="font-size: small;" class="col-sm-8">Loại áo</p>
+				<strike style="font-size: small;" class="col-sm-4">400000</strike>
+			</div>
+			<p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+		</div>
+		<div class="col-sm-2 d-flex justify-content-center flex-column">
+			<div class="border border-secondary-subtle rounded">
+				<div class="d-flex justify-content-end m-2"><i class="bi bi-bag-fill"></i></div>
+				<div><img src="/Image_Nhut/Detail1.jpg" alt="Alternate Text" class="mw-100" /></div>
+			</div>
+			<div class="row container-fluid">
+				<p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+				<p class="font-weight-bold col-sm-4 mb-1">200000</p>
+				<p style="font-size: small;" class="col-sm-8">Loại áo</p>
+				<strike style="font-size: small;" class="col-sm-4">400000</strike>
+			</div>
+			<p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+		</div>
+		<div class="col-sm-2 d-flex justify-content-center flex-column">
+			<div class="border border-secondary-subtle rounded">
+				<div class="d-flex justify-content-end m-2"><i class="bi bi-bag-fill"></i></div>
+				<div><img src="/Image_Nhut/Detail1.jpg" alt="Alternate Text" class="mw-100" /></div>
+			</div>
+			<div class="row container-fluid">
+				<p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+				<p class="font-weight-bold col-sm-4 mb-1">200000</p>
+				<p style="font-size: small;" class="col-sm-8">Loại áo</p>
+				<strike style="font-size: small;" class="col-sm-4">400000</strike>
+			</div>
+			<p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+		</div>
+	</div>
+</div>
