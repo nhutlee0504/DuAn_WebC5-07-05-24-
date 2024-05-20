@@ -7,40 +7,103 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DA_WebC5</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="/IMG/logo.png" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+                    </ul>
+                    <div class="w-100 d-flex justify-content-center">
+                        <div class="position-relative w-50">
+                            <input class="form-control me-2 w-100 pl-5" style="border-radius: 25px; background-color:#F8F8F8" id="search" type="search" placeholder="Search in products..." aria-label="Search">
+
+                        </div>
+                    </div>
+
+                    <ul class="navbar-nav flex-grow-1 justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" href="/Register/Register">
+                                <img src="~/IMG/user-btn.png" alt="User" style="width: 24px; height: 24px;">
+                                <span class="hover-text">Đăng ký</span>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" href="/Home/Index">
+                                <img src="~/IMG/cart.png" alt="Cart" style="width: 24px; height: 24px;">
+                                <span class="hover-text">Giỏ hàng</span>
+                            </a>
                         </li>
                     </ul>
+
+
+
                 </div>
             </div>
         </nav>
+
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top">
         <div class="container">
-            &copy; 2024 - DA_WebC5 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <img src="/IMG/logo.png" class="mb-2" />
+                    <a href="link_to_facebook_page" class="d-flex align-items-center">
+                        <img src="/IMG/svg (1).png" alt="Facebook" style="width: 24px; height: 24px;">
+                        <span class="ms-2">Facebook</span>
+                    </a>
+                    <a href="link_to_youtube_page" class="d-flex align-items-center">
+                        <img src="~/IMG/svg (2).png" alt="Youtube" style="width: 24px; height: 24px;">
+                        <span class="ms-2">Youtube</span>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <h5 style="color: black;">Bắt đầu</h5>
+                    <a href="link_to_release_notes" style="display: block; color: black;">Ghi chú phát hành</a>
+                    <a href="link_to_upgrade_guide" style="display: block; color: black;">Hướng dẫn nâng cấp</a>
+                    <a href="link_to_browser_support" style="display: block; color: black;">Hỗ trợ trình duyệt</a>
+                    <a href="link_to_dark_mode" style="display: block; color: black;">Chế độ tối</a>
+
+                </div>
+
+                <div class="col-md-3">
+                    <h5 style="color: black;">Khám phá</h5>
+                    <a href="link_to_prototyping" style="display: block; color: black;">Tạo mẫu</a>
+                    <a href="link_to_design_systems" style="display: block; color: black;">Hệ thống thiết kế</a>
+                    <a href="link_to_pricing" style="display: block; color: black;">Bảng giá</a>
+                    <a href="link_to_security" style="display: block; color: black;">Bảo mật</a>
+                </div>
+                <div class="col-md-3">
+                    <h5 style="color: black;">Cộng đồng</h5>
+                    <a href="link_to_discussion_forums" style="display: block; color: black;">Diễn đàn thảo luận</a>
+                    <a href="link_to_code_of_conduct" style="display: block; color: black;">Quy tắc ứng xử</a>
+                    <a href="link_to_contributing" style="display: block; color: black;">Đóng góp</a>
+                    <a href="link_to_api_reference" style="display: block; color: black;">Tài liệu API</a>
+                </div>
+
+
+
+            </div>
+
         </div>
+
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
