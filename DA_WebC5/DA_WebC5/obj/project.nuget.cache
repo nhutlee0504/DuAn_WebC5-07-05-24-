@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "h/oUxo2TsFY3DwEgzaH62nIpiYwiT2cLlOaeGWvA1czx15yXfYVv4kY0HXchax8tY1JqW2YWI3cvU9T7opPzcg==",
+  "dgSpecHash": "/Udv3q1f67Z7iDCuAV4i8aB/B594AP3qBPXbQHPMZG0SU3xcpoU/bcDWRvW4KnhNivPXFSWvxvKz6Lm1opRivg==",
   "success": true,
   "projectFilePath": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ADMIN\\.nuget\\packages\\bootstrap\\5.3.3\\bootstrap.5.3.3.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
