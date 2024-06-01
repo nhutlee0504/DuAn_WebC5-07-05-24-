@@ -3,9 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - DA_WebC5</title>
+    <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="shortcut icon" href="~/IMG/logo.png" />
     <link rel="stylesheet" href="~/css/site.css" />
+   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 </head>
@@ -42,7 +44,10 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="About" asp-action="Index">About Us</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="About" asp-action="Index">
+                                <img src="~/IMG/aboutus.png" alt="Cart" style="width: 24px; height: 24px;">
+                                <span class="hover-text">Giới thiệu về chúng tôi</span>
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="ProductDetail" asp-action="Index">Detail</a>
@@ -58,12 +63,11 @@
 
     </header>
 
-    <div class="container">
+  
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
 
-    </div>
 
     <footer class="border-top">
         <div class="container">
