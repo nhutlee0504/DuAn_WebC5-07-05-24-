@@ -1,8 +1,487 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "NEXTON SHOP";
 }
+<!-- Bootstrap CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+<!-- MDB -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css" rel="stylesheet" />
+
+<!-- Icon -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Carousel -->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <!-- Image with no mask -->
+                    <div class="bg-image">
+                    <img src="https://theme.hstatic.net/1000341630/1001071096/14/slideshow_3.jpg?v=848" class="img-fluid w-100" alt="hinh1">
+                    <!-- Mask -->
+                    <div class="mask">
+                        <div class="bottom-0 d-flex align-items-center h-100 text-center justify-content-start">
+                            <div class="col-md-12 col-lg-5">
+                                <h3 class="text-secondary">Chỉ từ $49.99</h3>
+                                <h1 class="display-3 text-dark">NEXTON</h1>
+                                <div class="position-relative mx-auto">
+                                    <button type="submit"
+                                            class="btn btn btn-dark border-2 border-secondary position-absolute rounded-pill text-white h-auto w-45"
+                                            style="left: 37%;">
+                                        Explore now
+                                        <i class="bi bi-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="carousel-item">
+                    <!-- Image with no mask -->
+                    <div class="bg-image">
+                    <img src="https://theme.hstatic.net/1000341630/1001071096/14/slideshow_2.jpg?v=848" class="d-block w-100" alt="hinh2">
+                    <!-- Mask -->
+                    <div class="mask">
+                        <div class="bottom-0 d-flex align-items-center h-100 text-center justify-content-start">
+                            <div class="col-md-12 col-lg-5">
+                                <h3 class="text-secondary">Chỉ từ $49.99</h3>
+                                <h1 class="display-3 text-light">NEXTON</h1>
+                                <div class="position-relative mx-auto">
+                                    <button type="submit"
+                                            class="btn btn btn-dark border-2 border-secondary position-absolute rounded-pill text-white h-auto w-45"
+                                            style="left: 37%;">
+                                        Explore now
+                                        <i class="bi bi-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="carousel-item">
+                    <!-- Image with no mask -->
+                    <div class="bg-image">
+                    <img src="https://theme.hstatic.net/1000341630/1001071096/14/slideshow_4.jpg?v=848" class="d-block w-100" alt="hinh3">
+                    <!-- Mask -->
+                    <div class="mask">
+                        <div class="bottom-0 d-flex align-items-center h-100 text-center justify-content-start">
+                            <div class="col-md-12 col-lg-5">
+                                <h3 class="text-secondary">Chỉ từ $49.99</h3>
+                                <h1 class="display-3 text-dark">NEXTON</h1>
+                                <div class="position-relative mx-auto">
+                                    <button type="submit"
+                                            class="btn btn btn-dark border-2 border-secondary position-absolute rounded-pill text-white h-auto w-45"
+                                            style="left: 37%;">
+                                        Explore now
+                                        <i class="bi bi-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+    </div>
+
+    <!-- Cards -->
+    <div class="container-fluid py-3">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="features-item text-center rounded bg-light p-4">                            
+                        <div class="card">
+                            <img src="https://img.freepik.com/free-vector/smiley-delivery-man-with-lovely-style_23-2147677399.jpg?t=st=1716138183~exp=1716141783~hmac=ed6ecff25a7515818503f0460d36bf10831648c1c3ab8bf71179468b89ed68fe&w=740" class="card-img-top"
+                                 alt="Free shipping" />
+                            <div class="card-body">
+                                <h5 class="card-title">Free shipping</h5>
+                                <p class="card-text">On orders over $50.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="features-item text-center rounded bg-light p-4"> 
+                        <div class="card">
+                            <img src="https://img.freepik.com/free-vector/contactless-payment-with-two-smartphones_23-2147677483.jpg?t=st=1716137582~exp=1716141182~hmac=647e1b722ce247e54aa968cd96b3d78eb61b5608fef9177abf6f57ba24820e84&w=740" class="card-img-top"
+                                 alt="Secure payment" />
+                            <div class="card-body">
+                                <h5 class="card-title">Secure payment</h5>
+                                <p class="card-text">100% guaranteed payment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="features-item text-center rounded bg-light p-4">
+                        <div class="card">
+                            <img src="https://img.freepik.com/free-vector/indian-rupee-currency-exchange_23-2148009228.jpg?t=st=1716137670~exp=1716141270~hmac=c3cbe808d1f10448a078b03cc36caac97cfd041698e123c6d8f4bb9f1bb749ef&w=740" class="card-img-top"
+                                 alt="Refund within 30 days" />
+                            <div class="card-body">
+                                <h5 class="card-title">Refund within 30 days</h5>
+                                <p class="card-text">Return for any reason</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="features-item text-center rounded bg-light p-4">                  
+                        <div class="card">
+                            <img src="https://img.freepik.com/free-vector/call-center-agent-concept-flat-style_23-2147947654.jpg?t=st=1716138278~exp=1716141878~hmac=25f365cdc8d95ca01b0a0fd7891e9782365c4c94741f877c4fc982a490e4c03f&w=740" class="card-img-top"
+                                 alt="24/7 support" />
+                            <div class="card-body">
+                                <h5 class="card-title">24/7 support</h5>
+                                <p class="card-text">Quick support at all times</p>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="container">
+        <h1>
+            Bắt đầu khám phá.
+            <span class="text-secondary">Những điều tốt đẹp đang chờ đợi bạn</span>
+        </h1>
+        <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="p-3 mb-2 bg-info-subtle text-dark">
+                    <div class="card-body">
+                        <h5 class="card-title">Dành cho nam</h5>
+                        <p class="card-text">Chỉ từ $24</p>
+                        <a href="#" class="btn btn-primary float-end" data-mdb-ripple-init>
+                            Mua ngay
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="p-3 mb-2 bg-info-subtle text-dark">
+                    <div class="card-body">
+                        <h5 class="card-title">Dành cho nữ</h5>
+                        <p class="card-text">Chỉ từ $19</p>
+                        <a href="#" class="btn btn-primary float-end" data-mdb-ripple-init>
+                            Mua ngay
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="p-3 mb-2 bg-info-subtle text-dark">
+                    <div class="card-body">
+                        <h5 class="card-title">Phụ kiện</h5>
+                        <p class="card-text">Khám phá phụ kiện</p>
+                        <a href="#" class="btn btn-primary float-end" data-mdb-ripple-init>
+                            Mua ngay
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Product -->
+    <div class="container py-5">
+        <h1 class="tab-content">
+            Khuyến nghị. 
+            <span class="text-secondary">Sản phẩm phù hợp nhất dành cho bạn</span>
+        </h1>
+        <section style="background-color: #eee;">
+        <div class="container py-3">
+            <div class="row">
+                <div class="col-sm-4 d-flex justify-content-center flex-column">
+                    <div class="border border-secondary-subtle rounded">
+                        <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                        <div><img src="https://product.hstatic.net/1000341630/product/prematch-07_58796c34b2054d5cbed1f4f8061770ee_master.jpg" alt="Alternate Text" class="mw-100" /></div>
+                    </div>
+                    <div class="row container-fluid">
+                        <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                        <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                        <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                        <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                    </div>
+                    <p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center flex-column">
+                    <div class="border border-secondary-subtle rounded">
+                        <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                        <div><img src="https://product.hstatic.net/1000341630/product/prematch-07_58796c34b2054d5cbed1f4f8061770ee_master.jpg" alt="Alternate Text" class="mw-100" /></div>
+                    </div>
+                    <div class="row container-fluid">
+                        <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                        <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                        <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                        <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                    </div>
+                    <p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center flex-column">
+                    <div class="border border-secondary-subtle rounded">
+                        <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                        <div><img src="https://product.hstatic.net/1000341630/product/prematch-07_58796c34b2054d5cbed1f4f8061770ee_master.jpg" alt="Alternate Text" class="mw-100" /></div>
+                    </div>
+                    <div class="row container-fluid">
+                        <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                        <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                        <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                        <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                    </div>
+                    <p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center flex-column">
+                    <div class="border border-secondary-subtle rounded">
+                        <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                        <div><img src="https://product.hstatic.net/1000341630/product/prematch-07_58796c34b2054d5cbed1f4f8061770ee_master.jpg" alt="Alternate Text" class="mw-100" /></div>
+                    </div>
+                    <div class="row container-fluid">
+                        <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                        <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                        <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                        <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                    </div>
+                    <p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center flex-column">
+                    <div class="border border-secondary-subtle rounded">
+                        <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                        <div><img src="https://product.hstatic.net/1000341630/product/prematch-07_58796c34b2054d5cbed1f4f8061770ee_master.jpg" alt="Alternate Text" class="mw-100" /></div>
+                    </div>
+                    <div class="row container-fluid">
+                        <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                        <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                        <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                        <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                    </div>
+                    <p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center flex-column">
+                    <div class="border border-secondary-subtle rounded">
+                        <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                        <div><img src="https://product.hstatic.net/1000341630/product/prematch-07_58796c34b2054d5cbed1f4f8061770ee_master.jpg" alt="Alternate Text" class="mw-100" /></div>
+                    </div>
+                    <div class="row container-fluid">
+                        <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                        <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                        <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                        <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                    </div>
+                    <p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+                </div>
+            </div>
+        </div>
+        <div class="container py-3">
+            <div class="row">
+                <div class="col-sm-4 d-flex justify-content-center flex-column">
+                    <div class="border border-secondary-subtle rounded">
+                        <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                        <div><img src="https://product.hstatic.net/1000341630/product/prematch-07_58796c34b2054d5cbed1f4f8061770ee_master.jpg" alt="Alternate Text" class="mw-100" /></div>
+                    </div>
+                    <div class="row container-fluid">
+                        <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                        <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                        <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                        <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                    </div>
+                    <p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center flex-column">
+                    <div class="border border-secondary-subtle rounded">
+                        <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                        <div><img src="https://product.hstatic.net/1000341630/product/prematch-07_58796c34b2054d5cbed1f4f8061770ee_master.jpg" alt="Alternate Text" class="mw-100" /></div>
+                    </div>
+                    <div class="row container-fluid">
+                        <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                        <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                        <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                        <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                    </div>
+                    <p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center flex-column">
+                    <div class="border border-secondary-subtle rounded">
+                        <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                        <div><img src="https://product.hstatic.net/1000341630/product/prematch-07_58796c34b2054d5cbed1f4f8061770ee_master.jpg" alt="Alternate Text" class="mw-100" /></div>
+                    </div>
+                    <div class="row container-fluid">
+                        <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                        <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                        <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                        <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                    </div>
+                    <p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <!-- Product -->
+    <div class="container py-5">
+        <h1 class="tab-content">
+            Bán chạy nhất.
+            <span class="text-secondary">Bán chạy nhất trong tháng</span>
+        </h1>
+        <section style="background-color: #eee;">
+            <div class="container py-3">
+                <div class="row">
+                <div class="col-sm-4 d-flex justify-content-center flex-column">
+                    <div class="border border-secondary-subtle rounded">
+                        <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                        <div><img src="https://product.hstatic.net/1000341630/product/prematch-07_58796c34b2054d5cbed1f4f8061770ee_master.jpg" alt="Alternate Text" class="mw-100" /></div>
+                    </div>
+                    <div class="row container-fluid">
+                        <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                        <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                        <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                        <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                    </div>
+                    <p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center flex-column">
+                    <div class="border border-secondary-subtle rounded">
+                        <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                        <div><img src="https://product.hstatic.net/1000341630/product/prematch-07_58796c34b2054d5cbed1f4f8061770ee_master.jpg" alt="Alternate Text" class="mw-100" /></div>
+                    </div>
+                    <div class="row container-fluid">
+                        <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                        <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                        <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                        <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                    </div>
+                    <p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center flex-column">
+                    <div class="border border-secondary-subtle rounded">
+                        <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                        <div><img src="https://product.hstatic.net/1000341630/product/prematch-07_58796c34b2054d5cbed1f4f8061770ee_master.jpg" alt="Alternate Text" class="mw-100" /></div>
+                    </div>
+                    <div class="row container-fluid">
+                        <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                        <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                        <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                        <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                    </div>
+                    <p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="container py-3">
+                <div class="row">
+                <div class="col-sm-4 d-flex justify-content-center flex-column">
+                    <div class="border border-secondary-subtle rounded">
+                        <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                        <div><img src="https://product.hstatic.net/1000341630/product/prematch-07_58796c34b2054d5cbed1f4f8061770ee_master.jpg" alt="Alternate Text" class="mw-100" /></div>
+                    </div>
+                    <div class="row container-fluid">
+                        <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                        <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                        <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                        <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                    </div>
+                    <p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center flex-column">
+                    <div class="border border-secondary-subtle rounded">
+                        <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                        <div><img src="https://product.hstatic.net/1000341630/product/prematch-07_58796c34b2054d5cbed1f4f8061770ee_master.jpg" alt="Alternate Text" class="mw-100" /></div>
+                    </div>
+                    <div class="row container-fluid">
+                        <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                        <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                        <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                        <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                    </div>
+                    <p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+                </div>
+                <div class="col-sm-4 d-flex justify-content-center flex-column">
+                    <div class="border border-secondary-subtle rounded">
+                        <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                        <div><img src="https://product.hstatic.net/1000341630/product/prematch-07_58796c34b2054d5cbed1f4f8061770ee_master.jpg" alt="Alternate Text" class="mw-100" /></div>
+                    </div>
+                    <div class="row container-fluid">
+                        <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                        <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                        <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                        <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                    </div>
+                    <p><i class="bi bi-star-fill"></i> 4.9 (100)</p>
+                </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Banner -->
+    <div class="container py-3">
+        <div class="bg-image">
+            <img src="https://theme.hstatic.net/1000341630/1001071096/14/slideshow_1.jpg?v=848" class="img-fluid" alt="banner">
+            <!-- Mask -->
+            <div class="mask">
+                <div class="bottom-0 d-flex align-items-center h-100 text-center justify-content-start">
+                    <div class="col-md-12 col-lg-5">
+                        <h5 class="text-secondary text-sm">Sản phẩm chính hãng 100%</h5>
+                        <div class="display-6 text-light">
+                            Thời trang hoàn toàn mới <br />
+                            Vật phẩm sưu tập
+                        </div>
+                        <h5 class="text-secondary text-sm">Chỉ từ $59,99</h5>
+                        <div class="position-relative mx-auto">
+                            <button type="submit"
+                                    class="btn btn btn-dark border-2 border-secondary position-absolute rounded-pill text-white h-auto w-45"
+                                    style="left: 40%;">
+                                Mua ngay
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Bootstrap Bundle JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+          
+
+
+
+
+
+
