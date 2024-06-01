@@ -1,0 +1,148 @@
+﻿@{
+    ViewData["Title"] = "Sản phẩm";
+}
+<style>
+    .bg-text {
+        background-color: white;
+    }
+</style>
+
+<div class="row mt-3">
+    <div class="col-sm-3">
+        <h5>Loại</h5>
+        <div class="form-check mt-3">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                Môn bóng đá
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+            <label class="form-check-label" for="flexCheckDefault1">
+                Môn cầu lông
+            </label>
+        </div>
+        <hr class="mt-3 mb-3" />
+        <h5>Phạm vi giá</h5>
+        <div class="row container">
+            <div class="col-sm-6"><input type="number" placeholder="Thấp" class="w-100" /></div>
+            <div class="col-sm-6"><input type="number" placeholder="Cao" class="w-100" /></div>
+        </div>
+        <hr class="mt-3 mb-3" />
+        <h5>Thứ tự sắp xếp</h5>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+            <label class="form-check-label" for="exampleRadios1">
+                Phổ biến nhất
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+                Đánh giá cao nhất
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+            <label class="form-check-label" for="exampleRadios3">
+                Mới nhất
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
+            <label class="form-check-label" for="exampleRadios4">
+                Giá từ thấp - cao
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5" value="option5">
+            <label class="form-check-label" for="exampleRadios5">
+                Giá từ cao - thấp
+            </label>
+        </div>
+    </div>
+
+    <div class="col-sm-9">
+        <div class="row">
+            <div class="col-sm-4 d-flex justify-content-center flex-column">
+                <div class="border border-secondary-subtle rounded">
+                    <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                    <div><img src="Image_QMinh\aocaulong.png" alt="Alternate Text" class="mw-100" /></div>
+                </div>
+                <div class="row container-fluid">
+                    <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                    <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                    <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                    <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                </div>
+                <p><i class="bi bi-star-fill text-warning"></i> 4.9 (100)</p>
+            </div>
+
+            @* *@
+            <div class="col-sm-4 d-flex justify-content-center flex-column">
+                <div class="border border-secondary-subtle rounded">
+                    <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                    <div><img src="Image_QMinh\aocaulong.png" alt="Alternate Text" class="mw-100" /></div>
+                </div>
+                <div class="row container-fluid">
+                    <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                    <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                    <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                    <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                </div>
+                <p><i class="bi bi-star-fill text-warning"></i> 4.9 (100)</p>
+            </div> <div class="col-sm-4 d-flex justify-content-center flex-column">
+                <div class="border border-secondary-subtle rounded">
+                    <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                    <div><img src="Image_QMinh\aocaulong.png" alt="Alternate Text" class="mw-100" /></div>
+                </div>
+                <div class="row container-fluid">
+                    <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                    <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                    <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                    <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                </div>
+                <p><i class="bi bi-star-fill text-warning"></i> 4.9 (100)</p>
+            </div> <div class="col-sm-4 d-flex justify-content-center flex-column">
+                <div class="border border-secondary-subtle rounded">
+                    <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                    <div><img src="Image_QMinh\aocaulong.png" alt="Alternate Text" class="mw-100" /></div>
+                </div>
+                <div class="row container-fluid">
+                    <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                    <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                    <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                    <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                </div>
+                <p><i class="bi bi-star-fill text-warning"></i> 4.9 (100)</p>
+            </div> <div class="col-sm-4 d-flex justify-content-center flex-column">
+                <div class="border border-secondary-subtle rounded">
+                    <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                    <div><img src="Image_QMinh\aocaulong.png" alt="Alternate Text" class="mw-100" /></div>
+                </div>
+                <div class="row container-fluid">
+                    <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                    <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                    <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                    <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                </div>
+                <p><i class="bi bi-star-fill text-warning"></i> 4.9 (100)</p>
+            </div> <div class="col-sm-4 d-flex justify-content-center flex-column">
+                <div class="border border-secondary-subtle rounded">
+                    <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
+                    <div><img src="Image_QMinh\aocaulong.png" alt="Alternate Text" class="mw-100" /></div>
+                </div>
+                <div class="row container-fluid">
+                    <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                    <p class="font-weight-bold col-sm-4 mb-1">200.000</p>
+                    <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                    <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                </div>
+                <p><i class="bi bi-star-fill text-warning"></i> 4.9 (100)</p>
+            </div>
+            @* *@
+
+        </div>
+    </div>
+</div>
+

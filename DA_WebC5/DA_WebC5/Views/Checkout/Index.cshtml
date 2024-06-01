@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Thanh toán";
+}
+
+<h1>Thanh toán</h1>
+<div class="row">
+    <div class="col-sm-6 d-flex flex-column">
+        <input type="text" value="" placeholder="Họ tên" class="mt-3"/>
+        <input type="text" value="" placeholder="Số điện thoại" class="mt-3" />
+        <input type="text" value="" placeholder="Email" class="mt-3" />
+        <input type="text" value="" placeholder="Địa chỉ" class="mt-3" />
+        <div class="d-flex justify-content-end mt-3">
+            <a class="btn btn-secondary text-white px-3">Đặt hàng &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-arrow-right"></i></a>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="border border-dark container m-3">
+            <div class="d-flex justify-content-end"><b class="text-primary">(2)</b></div>
+            <h2>Sản phẩm</h2>
+            <div class="row">
+                <div class="col-sm-4">
+                    <img src="Image_QMinh/aocaulong.png" alt="Alternate Text" class="mw-100"/>
+                </div>
+                <div class="col-sm-8 flex-column">
+                    <p class="font-weight-bold">Áo cầu lông 1</p>
+                    <p>Xanh/M</p>
+                    <div class="row">
+                        <div class="col-sm-6 text-primary font-weight-bold">(1)</div>
+                        <div class="col-sm-6">200.000</div>
+                    </div>
+                </div>
+            </div>
+
+           @*  s *@
+            <div class="row">
+                <div class="col-sm-4">
+                    <img src="Image_QMinh/aocaulong.png" alt="Alternate Text" class="mw-100" />
+                </div>
+                <div class="col-sm-8 flex-column">
+                    <p class="font-weight-bold">Áo cầu lông 1</p>
+                    <p>Xanh/M</p>
+                    <div class="row">
+                        <div class="col-sm-6 text-primary font-weight-bold">(1)</div>
+                        <div class="col-sm-6">200.000</div>
+                    </div>
+                </div>
+            </div>
+            @*  s *@
+
+            <hr class="mt-3"/>
+            <div class="row">
+                <div class="col-sm-4 font-weight-bold">Tổng cộng</div>
+                <div class="col-sm-8 font-weight-bold d-flex justify-content-end">400.000</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 font-weight-bold">Phí vận chuyển</div>
+                <div class="col-sm-8 font-weight-bold d-flex justify-content-end">30.000</div>
+            </div>
+            <hr class="mt-3" />
+            <div class="row mb-3">
+                <h5 class="col-sm-4 font-weight-bold">Tổng tiền</h5>
+                <h5 class="col-sm-8 font-weight-bold d-flex justify-content-end">430.000</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
