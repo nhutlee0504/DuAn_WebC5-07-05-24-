@@ -64,7 +64,7 @@
               "RelativeDocumentMoniker": "DA_WebC5\\Migrations\\20240518095630_connectdb.cs",
               "ToolTip": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Migrations\\20240518095630_connectdb.cs",
               "RelativeToolTip": "DA_WebC5\\Migrations\\20240518095630_connectdb.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-18T09:56:30.885Z",
               "EditorCaption": ""
@@ -79,8 +79,7 @@
               "RelativeToolTip": "DA_WebC5\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-18T09:54:01.69Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-18T09:54:01.69Z"
             },
             {
               "$type": "Document",
@@ -92,8 +91,7 @@
               "RelativeToolTip": "DA_WebC5\\Data\\ApplicationDbContext.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAA/wBkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-18T09:53:49.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-18T09:53:49.295Z"
             },
             {
               "$type": "Document",
@@ -129,8 +127,7 @@
               "RelativeToolTip": "DA_WebC5\\Views\\Home\\Login.cshtml",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAACgAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-16T13:50:13.418Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-16T13:50:13.418Z"
             },
             {
               "$type": "Document",
