@@ -31,7 +31,7 @@ namespace DA_WebC5.Models
         [Required, Column(TypeName = "ntext")]
         public string Address { get; set; }
 
-        public ICollection<Cart> carts { get; set; }
+        public ICollection<CartItem> carts { get; set; }
         
         public ICollection<History> histories { get; set; }
 

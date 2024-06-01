@@ -21,7 +21,7 @@
                     <input data-intro="Điền đúng mật khẩu" data-step="3" type="password" class="form-control" id="confirmPassword" placeholder="Nhập lại mật khẩu" required>
                     <small id="confirmPasswordHelp" class="form-text text-muted">Xác nhận lại mật khẩu để đảm bảo chính xác.</small>
                 </div>
-                <button data-intro="Xác nhận" type="submit" class="btn btn-dark btn-block rounded-pill">Bước tiếp theo</button>
+                <a asp-action="NextRegister" asp-controller="Register" data-intro="Xác nhận" class="btn btn-dark btn-block rounded-pill">Bước tiếp theo</a>
             </form>
 
             <div class="row d-flex justify-content-center mt-3 ">

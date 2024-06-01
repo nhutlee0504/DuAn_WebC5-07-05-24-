@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DA_WebC5.Models
 {
-    public class Cart
+    public class CartItem
     {
         [Key]
         public int IDCart { get; set; }
