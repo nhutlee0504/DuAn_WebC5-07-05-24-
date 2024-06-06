@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DA_WebC5.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240601081343_v0")]
+    [Migration("20240603153754_v0")]
     partial class v0
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
