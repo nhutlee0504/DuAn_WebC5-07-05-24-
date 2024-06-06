@@ -10,16 +10,12 @@
                 <h3>Đăng ký tài khoản</h3>
             </div>
             <form asp-action="Register">
-                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+@*                 <div class="text-danger" asp-validation-summary="ModelOnly"></div> *@
                 <div class="mb-3">
                     <label for="username" class="form-label font-weight-bolder">Tên tài khoản</label>
                     <input asp-for="UserName" data-intro="Điền tên tài khoản vào đây" data-step="1" type="text" class="form-control" id="username" placeholder="Tên tài khoản" required>
                     <small id="usernameHelp" class="form-text text-muted">Ví dụ: JohnDoe123</small>
                     <span asp-validation-for="UserName" class="text-danger"></span>
-                    @if (ViewData["userExisted"] != null)
-                    {
-                        <span class="text-danger">@ViewData["userExisted"]</span>
-                    }
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label font-weight-bolder">Mật khẩu</label>

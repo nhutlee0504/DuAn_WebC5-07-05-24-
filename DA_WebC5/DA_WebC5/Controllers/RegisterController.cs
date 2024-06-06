@@ -26,7 +26,7 @@ namespace DA_WebC5.Controllers
             var accDb = _context.Accounts.FirstOrDefault(x => x.UserName == account.UserName);
             if (accDb != null)
             {
-                ViewData["userExisted"] = "Tên tài khoản đã tồn tại";
+                ModelState.AddModelError("UserName", "Tên tài khoản đã tồn tại");
                 return View(account);
             }
             else if (account.Password != passConfirm)
