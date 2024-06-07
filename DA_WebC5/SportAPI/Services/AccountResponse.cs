@@ -15,9 +15,17 @@ namespace SportAPI.Services
         }
         public Account AddAccount(Account account)
         {
-            context.Accounts.Add(account);
-            context.SaveChanges();
-            return account;
+            try
+            {
+                context.Accounts.Add(account);
+                context.SaveChanges();
+                return account;
+            }
+            catch (System.Exception)
+            {
+
+                return null;
+            }
         }
 
         public void DeleteAccount(string user)
