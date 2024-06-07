@@ -12,8 +12,7 @@ namespace DA_WebC5.Controllers
 		}
 		public IActionResult Index()
 		{
-			var db = _context.Sizes;
-			return View(db);
+			return View();
 		}
 	}
 }

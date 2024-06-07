@@ -15,7 +15,7 @@ namespace DA_WebC5.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _context;
-
+        private string url = "http://localhost:57700/api/Account/";
         public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
