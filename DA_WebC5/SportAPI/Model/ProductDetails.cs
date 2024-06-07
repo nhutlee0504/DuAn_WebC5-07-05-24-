@@ -25,7 +25,7 @@ namespace SportAPI.Model
 
         public Colors Colors { get; set; }
 
-        public ICollection<CartItem> Carts { get; set; }
+        public ICollection<Cart> Carts { get; set; }
 
         public ICollection<BillDetails> BillDetails { get; set; }
     }
