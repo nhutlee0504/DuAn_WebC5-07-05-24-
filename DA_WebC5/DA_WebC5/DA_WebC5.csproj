@@ -6,6 +6,9 @@
 
   <ItemGroup>
     <PackageReference Include="bootstrap" Version="5.3.3" />
+    <PackageReference Include="MailKit" Version="4.6.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="5.0.17" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
       <PrivateAssets>all</PrivateAssets>
@@ -17,6 +20,42 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\nguye\.nuget\packages\umbraco.sqlserverce\4.0.0.1\build\..\runtimes\win-x86\native\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\nguye\.nuget\packages\umbraco.sqlserverce\4.0.0.1\build\..\runtimes\win-x86\native\sqlcese40.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\nguye\.nuget\packages\umbraco.sqlserverce\4.0.0.1\build\..\runtimes\win-x86\native\sqlceqp40.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\nguye\.nuget\packages\umbraco.sqlserverce\4.0.0.1\build\..\runtimes\win-x86\native\sqlceme40.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\nguye\.nuget\packages\umbraco.sqlserverce\4.0.0.1\build\..\runtimes\win-x86\native\sqlceer40EN.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\nguye\.nuget\packages\umbraco.sqlserverce\4.0.0.1\build\..\runtimes\win-x86\native\sqlcecompact40.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\nguye\.nuget\packages\umbraco.sqlserverce\4.0.0.1\build\..\runtimes\win-x86\native\sqlceca40.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\nguye\.nuget\packages\umbraco.sqlserverce\4.0.0.1\build\..\runtimes\win-x86\native\Microsoft.VC90.CRT\msvcr90.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\nguye\.nuget\packages\umbraco.sqlserverce\4.0.0.1\build\..\runtimes\win-x86\native\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
   </ItemGroup>
 
 </Project>

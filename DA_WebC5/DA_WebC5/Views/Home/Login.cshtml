@@ -1,46 +1,52 @@
-﻿
-@{
-    ViewData["Title"] = "Login";
-}
-@* <div class="container">
-    <h2 class="text-center">Login</h2>
-    <div class="row justify-content-center">
-        <form asp-controller="Home" asp-action="Loginktr" method="post">
-            <label class="form-lable">Email</label>
-            <input type="text" name="username" value="" class="form-control" placeholder="example@example.com" />
-            <label class="form-label">Password</label>
-            <input type="password" name="password" value="" class="form-control" placeholder="" />
-            <br />
-            <button type="submit" class="btn btn-dark form-control">Continue</button>
-            <div class="divider">or</div>
-            <div>New user?<a class="text text-primary">Create an account</a></div>
-        </form>
-    </div>
-</div> *@
+﻿@model DA_WebC5.Models.Account
 <div class="container">
     <div class="row">
         <div class="col-md-6 mx-auto">
             <div class="form-container">
-                <h2 class="text-center mb-4">Login</h2>
-                <form>
+                <h2 class="text-center mb-4">Đăng nhập</h2>
+                @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                {
+                    <div class="text-danger mt-2 text-center ">
+                        @ViewBag.ErrorMessage
+                    </div>
+                }
+                <form asp-controller="Home" asp-action="Loginktr" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" style="border-radius: 10px" id="email" placeholder="example@example.com">
+                        <label for="UserName">Tên tài khoản</label>
+                        <input asp-for=UserName type="text" class="form-control" style="border-radius: 10px" id="UserName" placeholder="Nhập tên tài khoản">
+                        <span asp-validation-for="UserName" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" style="border-radius: 10px" id="password" placeholder="">
+                        <label for="password">Mật khẩu</label>
+                        <input asp-for=Password type="password" class="form-control" style="border-radius: 10px" id="password" placeholder="Nhập mật khẩu">
+                        <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
-                    <button type="submit" class="btn btn-dark btn-block " style="border-radius: 20px">Continue</button>
+                    <button type="submit" class="btn btn-dark btn-block " style="border-radius: 20px">Tiếp tục</button>
                     <div class="text-center mt-3">
                         <div class="position-relative">
-                            <span class="position-absolute bg-white px-3" style="left: 50%; top: -10px; transform: translateX(-50%);">OR</span>
+                            <span class="position-absolute bg-white px-3" style="left: 50%; top: -10px; transform: translateX(-50%);">Hoặc</span>
                         </div>
                         <hr class="w-100">
                     </div>
-                    <div class="text-center">New user? <a class="text text-primary">Create an account</a></div>
+                    @*                     <div class="text-center">
+                    <a href="~/signin-google" class="btn btn-light btn-block" style="border-radius: 20px">Đăng nhập bằng Google</a>
+                    </div>
+
+                    *@ 
+                    <div class="text-center mt-3">
+                        <a asp-action="ForgotPassword" asp-controller="Account" class="text-primary">Quên mật khẩu?</a>
+                    </div>
+                    <div class="text-center">Bạn mới biết đến NEXTON? <a class="text text-primary" asp-action="Register" asp-controller="Register">Đăng ký tài khoản</a></div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+@section Scripts {
+    @{
+
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}
