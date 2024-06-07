@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DA_WebC5.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240603153754_v0")]
+
     partial class v0
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -110,7 +110,7 @@ namespace DA_WebC5.Migrations
                     b.ToTable("BillDetails");
                 });
 
-            modelBuilder.Entity("DA_WebC5.Models.CartItem", b =>
+            modelBuilder.Entity("DA_WebC5.Models.Cart", b =>
                 {
                     b.Property<int>("IDCart")
                         .ValueGeneratedOnAdd()
@@ -133,7 +133,7 @@ namespace DA_WebC5.Migrations
 
                     b.HasIndex("UserName");
 
-                    b.ToTable("CartItems");
+                    b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("DA_WebC5.Models.Category", b =>
@@ -437,7 +437,7 @@ namespace DA_WebC5.Migrations
                     b.Navigation("ProductDetails");
                 });
 
-            modelBuilder.Entity("DA_WebC5.Models.CartItem", b =>
+            modelBuilder.Entity("DA_WebC5.Models.Cart", b =>
                 {
                     b.HasOne("DA_WebC5.Models.ProductDetails", "ProductDetails")
                         .WithMany("Carts")

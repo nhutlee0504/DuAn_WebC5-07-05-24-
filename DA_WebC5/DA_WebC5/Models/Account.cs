@@ -6,33 +6,34 @@ namespace DA_WebC5.Models
 {
     public class Account
     {
-        [Key, Column(TypeName = "varchar(20)")]
+        [Key, Column(TypeName = "varchar(20)"), Required(ErrorMessage = "Vui lòng nhập tên tài khoản")]
         public string UserName { get; set; }
 
-        [Required, Column(TypeName = "varchar(50)")]
+        [Required(ErrorMessage = "Vui lòng nhập mật khẩu"), Column(TypeName = "varchar(50)")]
+        [MinLength(8, ErrorMessage = "Mật khẩu phải chứa ít nhất 8 kí tự")]
         public string Password { get; set; }
 
-        [Required, EmailAddress, Column(TypeName = "varchar(150)")]
+        [Required(ErrorMessage = "Vui lòng nhập Email"), EmailAddress(ErrorMessage = "Email không đúng định dạng"), Column(TypeName = "varchar(150)")]
         public string Email { get; set; }
 
         [Required, Column(TypeName = "nvarchar(20)")]
         public string Role { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập họ và tên")]
         public string Name { get; set; }
 
-        [Required, Column(TypeName = "nvarchar(3)")]
+        [Required(ErrorMessage = "Vui lòng chọn giới tính"), Column(TypeName = "nvarchar(3)")]
         public string Gender { get; set; }
 
-
-        [Required, Column(TypeName = "varchar(12)")]
+        [Required(ErrorMessage = "Vui lòng nhập số điện thoại"), Column(TypeName = "varchar(12)"), MaxLength(10)]
+        [Phone(ErrorMessage = "Số điện thoại không đúng định dạng"), RegularExpression(@"^(0\d{9}|84\d{9})$", ErrorMessage = "Số điện thoại không đúng định dạng")]
         public string Phone { get; set; }
 
-        [Required, Column(TypeName = "ntext")]
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ"), Column(TypeName = "ntext")]
         public string Address { get; set; }
 
-        public ICollection<CartItem> carts { get; set; }
-        
+        public ICollection<Cart> carts { get; set; }
+
         public ICollection<History> histories { get; set; }
 
         public ICollection<Bill> bills { get; set; }

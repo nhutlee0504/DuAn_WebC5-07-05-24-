@@ -309,7 +309,7 @@ namespace DA_WebC5.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CartItems",
+                name: "Carts",
                 columns: table => new
                 {
                     IDCart = table.Column<int>(type: "int", nullable: false)
@@ -320,15 +320,15 @@ namespace DA_WebC5.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CartItems", x => x.IDCart);
+                    table.PrimaryKey("PK_Carts", x => x.IDCart);
                     table.ForeignKey(
-                        name: "FK_CartItems_Accounts_UserName",
+                        name: "FK_Carts_Accounts_UserName",
                         column: x => x.UserName,
                         principalTable: "Accounts",
                         principalColumn: "UserName",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CartItems_ProductDetails_IDPDetail",
+                        name: "FK_Carts_ProductDetails_IDPDetail",
                         column: x => x.IDPDetail,
                         principalTable: "ProductDetails",
                         principalColumn: "IDPDetail",
@@ -351,13 +351,13 @@ namespace DA_WebC5.Migrations
                 column: "UserName");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CartItems_IDPDetail",
-                table: "CartItems",
+                name: "IX_Carts_IDPDetail",
+                table: "Carts",
                 column: "IDPDetail");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CartItems_UserName",
-                table: "CartItems",
+                name: "IX_Carts_UserName",
+                table: "Carts",
                 column: "UserName");
 
             migrationBuilder.CreateIndex(
@@ -422,7 +422,7 @@ namespace DA_WebC5.Migrations
                 name: "BillDetails");
 
             migrationBuilder.DropTable(
-                name: "CartItems");
+                name: "Carts");
 
             migrationBuilder.DropTable(
                 name: "Evaluates");
