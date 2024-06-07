@@ -11,11 +11,6 @@
 
 </head>
 <body>
-    @*test session*@
-    @using Microsoft.AspNetCore.Http
-    @{
-        var username = Context.Session.GetString("username");
-    }
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -56,11 +51,6 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="ProductDetail" asp-action="Index">Detail</a>
                         </li>
-                        @*test*@
-                        <li class="nav-item">
-                            <a class="nav-link text-dark">@username</a>
-                        </li>
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Register" asp-action="Logout">Đăng xuất</a>
                     </ul>
 
                 </div>

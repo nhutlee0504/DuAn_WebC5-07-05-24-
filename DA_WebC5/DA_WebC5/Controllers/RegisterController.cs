@@ -59,8 +59,6 @@ namespace DA_WebC5.Controllers
             {
                 return RedirectToAction("Register");
             }
-            //ViewBag.username = username;
-            //ViewBag.password = password;
             var account = new Account()
             {
                 UserName = username,
@@ -82,12 +80,6 @@ namespace DA_WebC5.Controllers
             ViewBag.username = account.UserName;
             ViewBag.password = account.Password;
             return View(account);
-        }
-
-        public IActionResult Logout()
-        {
-            HttpContext.Session.Remove("username");
-            return RedirectToAction(nameof(Index), "Home");
         }
     }
 }
