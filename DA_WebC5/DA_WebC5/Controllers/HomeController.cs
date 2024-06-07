@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace DA_WebC5.Controllers
 {
@@ -15,16 +17,26 @@ namespace DA_WebC5.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _context;
-        private string url = "http://localhost:57700/api/Account/";
+        private string urlP = "http://localhost:57700/api/Product/";
         public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
             _context = context;
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<IActionResult> Index()
         {
-            return View();
+            List<Product> products = new List<Product>();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync(urlP))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    products = JsonConvert.DeserializeObject<List<Product>>(apiResponse);
+                }
+            }
+                return View(products);
         }
 
         public IActionResult Privacy()

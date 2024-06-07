@@ -1,4 +1,5 @@
-﻿using SportAPI.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SportAPI.Data;
 using SportAPI.Model;
 using System.Collections.Generic;
 using System.Linq;
