@@ -1,33 +1,69 @@
-﻿using SportAPI.Model;
+﻿using Microsoft.AspNetCore.Mvc;
+using SportAPI.Data;
+using SportAPI.Model;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SportAPI.Services
 {
     public class AccountResponse : IAccount
     {
+        private readonly ApplicationDbContext context;
+        public AccountResponse(ApplicationDbContext ct)
+        {
+            context = ct;
+        }
         public Account AddAccount(Account account)
         {
-            throw new System.NotImplementedException();
+            context.Accounts.Add(account);
+            context.SaveChanges();
+            return account;
         }
 
-        public Account DeleteAccount(string user)
+        public void DeleteAccount(string user)
         {
-            throw new System.NotImplementedException();
+            var us = context.Accounts.Find(user);
+            if (us != null)
+            {
+                context.Accounts.Remove(us);
+                context.SaveChanges();
+            }
         }
 
         public Account GetAccountById(string user)
         {
-            throw new System.NotImplementedException();
+            return context.Accounts.Find(user);
         }
 
-        public List<Account> GetAccounts()
+        public IEnumerable<Account> GetAccounts()
         {
-            throw new System.NotImplementedException();
+            return context.Accounts;
         }
 
         public Account UpdateAccount(string user, Account account)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                var us = context.Accounts.Find(user);
+                if (us != null)
+                {
+                    us.Password = account.Password;
+                    us.Email = account.Email;
+                    us.Role = account.Role;
+                    us.Name = account.Name;
+                    us.Gender = account.Gender;
+                    us.Phone = account.Phone;
+                    us.Address = account.Address;
+                    context.SaveChanges();
+                    return account;
+                }
+                return null;
+            }
+            catch (System.Exception)
+            {
+
+                return null;
+            }
         }
     }
 }

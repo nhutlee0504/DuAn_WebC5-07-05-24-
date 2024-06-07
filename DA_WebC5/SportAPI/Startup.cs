@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SportAPI.Data;
 using SportAPI.Model;
-using SportAPI.Service;
+using SportAPI.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,9 +36,10 @@ namespace SportAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SportAPI", Version = "v1" });
             });
             services.AddDbContext<ApplicationDbContext>(options =>
-options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            //services.AddControllersWithViews();
-            services.AddScoped<ISize, CtlSize>();
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IAccount, AccountResponse>();
+            services.AddScoped<IProduct, ProductResponse>();
+            services.AddScoped<IProductDetail, ProductDetailResponse>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
