@@ -1,9 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+﻿<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
 	
@@ -62,6 +57,9 @@
 		transform: translateY(-5px);
 	}
 </style>
+
+@model IEnumerable<DA_WebC5.Models.Cart>
+
 <div class="container">
 	<div class="border p-2 mb-3" style="background-color: lightgray;">
 		<i class="bi bi-receipt"></i> Nhập mã giảm giá để có thêm nhận thêm nhiều ưu đãi hơn
@@ -80,35 +78,39 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>
-						<input type="checkbox" name="name" value="" />
-					</td>
-					<td>
-						<div class="d-flex align-items-center">
+				@foreach(var item in Model)
+				{
+					<tr>
+						<td>
+							<input type="checkbox" name="name" value="" />
+						</td>
+						<td>
+							<div class="d-flex align-items-center">
+								<div class="col-12 p-0">
+									<img src="/Image_Product/@item.ProductDetails.Product.Image" style="width:150px; " alt="Alternate Text" class="img-fluid" />
+								</div>
+							</div>
+						</td>
+						<td>
 							<div class="col-12 p-0">
-								<img src="/Image_Nhut/Detail1.jpg" style="width:150px; " alt="Alternate Text" class="img-fluid" />
-							</div>							
-						</div>
-					</td>
-					<td>
-						<div class="col-12 p-0">
-							<div>Tên sản phẩm</div>
-							<div>Loại sản phẩm</div>
-						</div>
-					</td>
-					<td>30000</td>
-					<td class="text-center">
-						<div class="input-group">
-							<button class="btn btn-outline-secondary btn-sm" type="button" id="subtractBtn">-</button>
-							<input type="text" class="form-control text-center" value="3" id="quantityInput" readonly>
-							<button class="btn btn-outline-secondary btn-sm" type="button" id="addBtn">+</button>
-						</div>
-					</td>
-					<td>90.000 đồng</td>
-					<td><a href="#" class="text-center"><i class="fas fa-trash-alt"></i></a></td>
-				</tr>
-				<tr>
+								<div>Tên sản phẩm</div>
+								<div>Loại sản phẩm</div>
+							</div>
+						</td>
+						<td>30000</td>
+						<td class="text-center">
+							<div class="input-group">
+								<button class="btn btn-outline-secondary btn-sm" type="button" id="subtractBtn">-</button>
+								<input type="text" class="form-control text-center" value="3" id="quantityInput" readonly>
+								<button class="btn btn-outline-secondary btn-sm" type="button" id="addBtn">+</button>
+							</div>
+						</td>
+						<td>90.000 đồng</td>
+						<td><a href="#" class="text-center"><i class="fas fa-trash-alt"></i></a></td>
+					</tr>
+				}
+
+				@* <tr>
 					<td>
 						<input type="checkbox" name="name" value="" />
 					</td>
@@ -135,7 +137,7 @@
 					</td>
 					<td>90.000 đồng</td>
 					<td><a href="#" class="text-center"><i class="fas fa-trash-alt"></i></a></td>
-				</tr>
+				</tr> *@
 
 			</tbody>
 		</table>

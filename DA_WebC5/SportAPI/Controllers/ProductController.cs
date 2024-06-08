@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using SportAPI.Model;
 using SportAPI.Services;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace SportAPI.Controllers
 {
@@ -11,7 +14,12 @@ namespace SportAPI.Controllers
     public class ProductController : ControllerBase
     {
         private IProduct product;
-        public ProductController(IProduct prod) => product = prod;
+        private IImage image;
+        public ProductController(IProduct prod, IImage img)
+        {
+            product = prod;
+            image = img;
+        }
 
         [HttpGet]
         public IEnumerable<Product> GetProducts()
@@ -37,7 +45,7 @@ namespace SportAPI.Controllers
         [HttpGet("{id}")]
         public Product GetProduct(int id)
         {
-            return product.GetProductId(id);
+          return product.GetProductId(id);
         }
 
         [HttpPut("{id}")]

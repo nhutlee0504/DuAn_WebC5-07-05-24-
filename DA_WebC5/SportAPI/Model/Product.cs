@@ -36,7 +36,5 @@ namespace SportAPI.Model
         public ICollection<ImageDetails> ImageDetails { get; set; }
 
         public ICollection<ProductDetails> ProductDetails { get; set; }
-
- 
     }
 }

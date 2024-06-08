@@ -11,7 +11,7 @@ namespace SportAPI.Model
         [ForeignKey("Product")]
         public int IDProduct { get; set; }
 
-        [Column("varchar(150)")]
+        [Column(TypeName ="varchar(150)")]
         public string Image { get; set; }
 
         public Product Product { get; set; }

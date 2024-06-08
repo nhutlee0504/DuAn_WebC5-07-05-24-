@@ -8,6 +8,8 @@ namespace SportAPI.Services
     {
         public IEnumerable<ProductDetails> GetProductDetails();
 
+        public IEnumerable<ProductDetails> GetPddtByProdId(int productId);
+
         public ProductDetails GetProductDetails(int id);
 
         public ProductDetails Add(ProductDetails productDetails);
