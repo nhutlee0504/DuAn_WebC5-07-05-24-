@@ -11,6 +11,15 @@
 
 </head>
 <body>
+    @using Microsoft.AspNetCore.Http;
+    @inject IHttpContextAccessor HttpContextAccessor
+    @{
+        string username = "";
+        if (HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser") != null)
+        {
+            username = HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser");
+        }
+    }
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -48,14 +57,17 @@
                                 <span class="hover-text">Giới thiệu về chúng tôi</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark">
+                                @username
+                            </a>
+                        </li>
                     </ul>
 
                 </div>
             </div>
         </nav>
-
     </header>
-
 
     <main role="main" class="pb-3">
         @RenderBody()
@@ -99,9 +111,6 @@
                     <a href="link_to_contributing" style="display: block; color: black;">Đóng góp</a>
                     <a href="link_to_api_reference" style="display: block; color: black;">Tài liệu API</a>
                 </div>
-
-
-
             </div>
 
         </div>

@@ -1,7 +1,9 @@
 ﻿using DA_WebC5.Data;
 using DA_WebC5.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace DA_WebC5.Controllers
 {
@@ -19,19 +21,29 @@ namespace DA_WebC5.Controllers
 
 		public IActionResult AddCart(int IdPDetail)
 		{
-			if (IdPDetail == 0)
+			string username = HttpContext.Session.GetString("LoggedInUser");
+			if (string.IsNullOrEmpty(username))
+			{
+				return RedirectToAction("Login", "Home");
+			}
+			else if (IdPDetail == 0)
 			{
                 return NotFound();
             }
-			var cart = new Cart
+			var prod = _context.ProductDetails.FirstOrDefault(x => x.IDPDetail == IdPDetail);
+			if (prod != null)
 			{
-				IDPDetail = IdPDetail,
-				UserName = "minh123",
-				Quantity = 3
-			};
-			_context.Carts.Add(cart);
-			_context.SaveChanges();
-            return RedirectToAction(nameof(Index));
+                var cart = new Cart
+                {
+                    IDPDetail = prod.IDPDetail,
+                    UserName = username,
+                    Quantity = prod.Quantity
+                };
+                _context.Carts.Add(cart);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+			return View();
         }
 	}
 }
