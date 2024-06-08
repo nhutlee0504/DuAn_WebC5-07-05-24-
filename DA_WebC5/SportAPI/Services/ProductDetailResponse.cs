@@ -27,6 +27,11 @@ namespace SportAPI.Services
             }
         }
 
+        public IEnumerable<ProductDetails> GetPddtByProdId(int productId)
+        {
+            return context.ProductDetails.Where(x => x.IDProduct == productId);
+        }
+
         public IEnumerable<ProductDetails> GetProductDetails()
         {
             return context.ProductDetails;

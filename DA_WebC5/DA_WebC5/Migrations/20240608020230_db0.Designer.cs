@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DA_WebC5.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240607135956_db0")]
+    [Migration("20240608020230_db0")]
     partial class db0
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -228,8 +228,7 @@ namespace DA_WebC5.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("varchar(150)");
+                        .HasColumnType("varchar(150)");
 
                     b.HasKey("IDImage");
 

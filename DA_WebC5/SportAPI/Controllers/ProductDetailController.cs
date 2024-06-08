@@ -19,6 +19,13 @@ namespace SportAPI.Controllers
             return productDetail.GetProductDetails();
         }
 
+
+        [HttpGet("prodId")]
+        public IEnumerable<ProductDetails> GetPddtByProdId(int prodId)
+        {
+            return productDetail.GetPddtByProdId(prodId);
+        }
+
         [HttpGet("{id}")]
         public ProductDetails GetDetails(int id)
         {

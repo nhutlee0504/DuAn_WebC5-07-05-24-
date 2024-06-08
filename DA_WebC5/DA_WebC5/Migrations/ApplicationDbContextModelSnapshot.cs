@@ -226,8 +226,7 @@ namespace DA_WebC5.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("varchar(150)");
+                        .HasColumnType("varchar(150)");
 
                     b.HasKey("IDImage");
 

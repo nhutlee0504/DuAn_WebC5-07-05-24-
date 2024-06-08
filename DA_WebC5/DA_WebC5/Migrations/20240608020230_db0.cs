@@ -233,7 +233,7 @@ namespace DA_WebC5.Migrations
                     IDImage = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IDProduct = table.Column<int>(type: "int", nullable: false),
-                    varchar150 = table.Column<string>(name: "varchar(150)", type: "nvarchar(max)", nullable: true)
+                    Image = table.Column<string>(type: "varchar(150)", nullable: true)
                 },
                 constraints: table =>
                 {
