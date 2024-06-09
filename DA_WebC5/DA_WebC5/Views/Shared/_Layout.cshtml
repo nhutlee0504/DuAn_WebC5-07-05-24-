@@ -32,10 +32,14 @@
                     <ul class="navbar-nav flex-grow-1">
                     </ul>
                     <div class="w-100 d-flex justify-content-center">
-                        <div class="position-relative w-50">
+                       @*  <div class="position-relative w-50">
                             <input class="form-control me-2 w-100 pl-5" style="border-radius: 25px; background-color:#F8F8F8" id="search" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
 
-                        </div>
+                        </div> *@
+                        <form method="get" action="/Controller/Action">
+                            <input class="form-control me-2 w-100 pl-5" style="border-radius: 25px; background-color:#F8F8F8" type="search" id="search" name="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
+                            <button type="submit" style="display: none;"></button>
+                        </form>
                     </div>
 
                     <ul class="navbar-nav flex-grow-1 justify-content-end">

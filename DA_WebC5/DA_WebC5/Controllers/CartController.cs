@@ -23,7 +23,7 @@ namespace DA_WebC5.Controllers
             }
             ViewBag.Username = username;
             return View(_context.Carts.Where(x => x.UserName == username)
-                .Include(x => x.Account).Include(y => y.ProductDetails.Product.Category));
+                .Include(x => x.Account).Include(y => y.ProductDetails.Product.Category).Include(y => y.ProductDetails.Sizes).Include(y => y.ProductDetails.Colors));
         }
 
         public IActionResult AddCart(int IdPDetail, int quantity)
