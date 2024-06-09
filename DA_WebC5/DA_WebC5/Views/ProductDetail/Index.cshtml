@@ -26,11 +26,6 @@
     .radio-btn-size {
         display: none;
     }
-
-    .radio-btn-size:not(:checked) + label {
-        opacity: 0.5;
-        font-weight: normal;
-    }
         .radio-btn-size + label {
             display: inline-block;
             /* 	padding: 10px 20px; */
@@ -51,6 +46,11 @@
             /*   background-color: #0EA5E9; /* Màu nền khi chọn */
             color: black; /* Màu chữ khi chọn */
             border: 1px solid #0EA5E9;
+        }
+
+        .radio-btn-size:not(:checked) + label {
+            opacity: 0.5;
+            font-weight: normal;
         }
 
     .quantity-selector {
@@ -96,9 +96,9 @@
         padding: 10px 15px;
     }
 
-    .radio-color {
+   /*  .radio-color {
         display: none;
-    }
+    } */
 
     /* .color-box {
             width: 30px;
@@ -112,9 +112,9 @@
             border-color: black;
         } */
 
-    input[type="radio"]:not(:checked) + label.color-box {
+  /*   input[type="radio"]:not(:checked) + label.color-box {
         opacity: 0.5;
-    }
+    } */
 
 </style>
 @{
@@ -141,7 +141,7 @@
                             foreach (var img in Model.Images)
                             {
                                 <div>
-                                    <input type="radio" id="@img.IDImage" name="options" value="@img.Image" class="radio-btn-image">
+                                    <input type="radio" id="@img.IDImage" name="options" value="@img.IDImage" class="radio-btn-image">
                                     <label for="@img.IDImage"><img src="/Image_Product/@img.Image" alt="Option @img.IDImage" class="w-75"></label>
                                 </div>
                             }
@@ -181,8 +181,8 @@
                                 @foreach (var detail in Model.ProductDetails)
                                 {
                                     <div class="col-sm-2">
-                                        <input class="" type="radio" name="IdPDetail" id="@detail.IDPDetail" value="@detail.IDPDetail" checked='@(detail.IDPDetail == selectedIdPDetail ? "checked" : "")'>
-                                        <label class="font-weight-bold color-box" for="@detail.IDPDetail" style="background-color: @Model.Colors.FirstOrDefault(x => x.IDColor == detail.IDColor)?.Color">
+                                        <input class="radio-btn-size" type="radio" name="IdPDetail" id="@detail.IDPDetail" value="@detail.IDPDetail" checked='@(detail.IDPDetail == selectedIdPDetail ? "checked" : "")'>
+                                        <label class="font-weight-bold radio-btn-size" for="@detail.IDPDetail" style="background-color: @Model.Colors.FirstOrDefault(x => x.IDColor == detail.IDColor)?.Color">
                                             @Model.Sizes.FirstOrDefault(s => s.IDSize == detail.Size)?.SizeName
                                         </label>
                                     </div>
