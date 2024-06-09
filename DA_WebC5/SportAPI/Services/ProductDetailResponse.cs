@@ -1,4 +1,5 @@
-﻿using SportAPI.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SportAPI.Data;
 using SportAPI.Model;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,11 @@ namespace SportAPI.Services
                 context.ProductDetails.Remove(prod);
                 context.SaveChanges();
             }
+        }
+
+        public IEnumerable<ProductDetails> GetPddtByProdId(int productId)
+        {
+            return context.ProductDetails.Where(x => x.IDProduct == productId);
         }
 
         public IEnumerable<ProductDetails> GetProductDetails()

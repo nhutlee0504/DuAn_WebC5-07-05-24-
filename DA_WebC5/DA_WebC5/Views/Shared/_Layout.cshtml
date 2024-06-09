@@ -11,6 +11,15 @@
 
 </head>
 <body>
+    @using Microsoft.AspNetCore.Http;
+    @inject IHttpContextAccessor HttpContextAccessor
+    @{
+        string username = "";
+        if (HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser") != null)
+        {
+            username = HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser");
+        }
+    }
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -23,10 +32,14 @@
                     <ul class="navbar-nav flex-grow-1">
                     </ul>
                     <div class="w-100 d-flex justify-content-center">
-                        <div class="position-relative w-50">
+                       @*  <div class="position-relative w-50">
                             <input class="form-control me-2 w-100 pl-5" style="border-radius: 25px; background-color:#F8F8F8" id="search" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
 
-                        </div>
+                        </div> *@
+                        <form method="get" action="/Controller/Action">
+                            <input class="form-control me-2 w-100 pl-5" style="border-radius: 25px; background-color:#F8F8F8" type="search" id="search" name="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
+                            <button type="submit" style="display: none;"></button>
+                        </form>
                     </div>
 
                     <ul class="navbar-nav flex-grow-1 justify-content-end">
@@ -44,21 +57,21 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="About" asp-action="Index">
-                                <img src="~/IMG/aboutus.png" alt="Cart" style="width: 24px; height: 24px;">
+                                <img src="~/IMG/about.png" alt="Cart" style="width: 24px; height: 24px;">
                                 <span class="hover-text">Giới thiệu về chúng tôi</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ProductDetail" asp-action="Index">Detail</a>
+                            <a class="nav-link text-dark">
+                                @username
+                            </a>
                         </li>
                     </ul>
 
                 </div>
             </div>
         </nav>
-
     </header>
-
 
     <main role="main" class="pb-3">
         @RenderBody()
@@ -102,9 +115,6 @@
                     <a href="link_to_contributing" style="display: block; color: black;">Đóng góp</a>
                     <a href="link_to_api_reference" style="display: block; color: black;">Tài liệu API</a>
                 </div>
-
-
-
             </div>
 
         </div>

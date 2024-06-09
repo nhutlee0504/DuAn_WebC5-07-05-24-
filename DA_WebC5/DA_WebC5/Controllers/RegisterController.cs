@@ -74,7 +74,7 @@ namespace DA_WebC5.Controllers
             {
                 _context.Accounts.Add(account);
                 _context.SaveChanges();
-                HttpContext.Session.SetString("username", account.UserName);
+                HttpContext.Session.SetString("LoggedInUser", account.UserName);
                 return RedirectToAction(nameof(Index), "Home");
             }
             ViewBag.username = account.UserName;
