@@ -75,7 +75,7 @@
               "RelativeDocumentMoniker": "DA_WebC5\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "DA_WebC5\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAABgAAAAAAAAAAAAcwCUAAAAhAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAcwCoAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-09T08:35:09.997Z",
               "EditorCaption": ""
@@ -90,8 +90,7 @@
               "RelativeToolTip": "DA_WebC5\\Views\\Cart\\Index.cshtml",
               "ViewState": "AQIAAEsAAAAAAAAAAAAAAFwAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-09T08:24:19.514Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T08:24:19.514Z"
             },
             {
               "$type": "Document",
@@ -103,8 +102,7 @@
               "RelativeToolTip": "DA_WebC5\\Controllers\\CartController.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAQwBkAAACiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T08:24:15.587Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T08:24:15.587Z"
             },
             {
               "$type": "Document",
@@ -116,8 +114,7 @@
               "RelativeToolTip": "DA_WebC5\\Controllers\\RegisterController.cs",
               "ViewState": "AQIAAEEAAAAAAAAAAAAIwEwAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T08:21:17.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T08:21:17.828Z"
             },
             {
               "$type": "Document",
@@ -162,8 +159,7 @@
               "RelativeToolTip": "DA_WebC5\\Views\\Product\\Index.cshtml",
               "ViewState": "AQIAABcAAAAAAAAAAAAmwCUAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-09T07:43:52.877Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T07:43:52.877Z"
             },
             {
               "$type": "Document",
