@@ -18,7 +18,7 @@ namespace DA_WebC5.Controllers
         private string urlPddt = "http://localhost:57700/api/ProductDetail/prodId?prodId=";
         private string urlColor = "http://localhost:57700/api/Color/";
         private string urlSize = "http://localhost:57700/api/Size/";
-        private string urlSup = "http://localhost:57700/api/Supplier/";
+
         public async Task<IActionResult> Index(int id)
         {
             ProductDetailViewModel viewModel = new ProductDetailViewModel();
@@ -58,14 +58,6 @@ namespace DA_WebC5.Controllers
                 {
                     string apiResponse5 = await sizeResponse.Content.ReadAsStringAsync();
                     viewModel.Sizes = JsonConvert.DeserializeObject<List<Sizes>>(apiResponse5);
-                }
-
-
-                var suppResponse = await httpClient.GetAsync(urlSup);
-                if (suppResponse.IsSuccessStatusCode)
-                {
-                    string apiResponse6 = await suppResponse.Content.ReadAsStringAsync();
-                    List<Supplier> suppliers = JsonConvert.DeserializeObject<List<Supplier>>(apiResponse6);
                 }
             }
 

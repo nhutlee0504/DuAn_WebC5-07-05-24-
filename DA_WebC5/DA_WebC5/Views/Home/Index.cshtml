@@ -25,6 +25,22 @@
         justify-content: center;
     }
 
+    .col-sm-3 .border {
+        transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .col-sm-3 .container-fluid {
+        transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .col-sm-3:hover .border {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        transform: translateY(-5px);
+    }
+
+    .col-sm-3:hover .container-fluid {
+        transform: translateY(-5px);
+    }
 </style>
 <!-- Carousel -->
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
@@ -263,7 +279,7 @@
     </h1>
     <section style="background-color: #eee;">
         <div class="container py-3">
-            <div class="row">
+            <div class="row overflow-auto">
                 <div class="col-sm-4 d-flex justify-content-center flex-column">
                     <div class="border border-secondary-subtle rounded">
                         <div class="d-flex justify-content-end m-2"><i class="btn btn-outline-dark bi bi-bag-fill"></i></div>
