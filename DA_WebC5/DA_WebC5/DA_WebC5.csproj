@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Areas\Admin\Controllers\AccountsController.cs" />
+    <Content Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Content Include="Areas\Admin\Controllers\ProductsController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="bootstrap" Version="5.3.3" />
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
@@ -24,6 +30,11 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\IMG\panther1.jpg" />
+    <None Include="wwwroot\IMG\panther2.jpg" />
   </ItemGroup>
 
 </Project>
