@@ -1,0 +1,58 @@
+﻿@model DA_WebC5.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Thêm sản phẩm</h4>
+                <p class="card-description">Thêm sản phẩm mới</p>
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label for="exampleInputName1">Tên sản phẩm</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Tên sản phẩm">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail3">Giá</label>
+                        <input type="number" class="form-control" id="exampleInputEmail3" placeholder="Giá sản phẩm">
+                    </div>
+                    <div class="form-group">
+                        <label for="ProductType">Loại sản phẩm</label>
+                        <select class="form-select" asp-items="ViewBag.ProductTypes">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Hình ảnh</label>
+                        <input type="file" name="img[]" class="file-upload-default">
+                        <div class="input-group col-xs-12">
+                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                            <span class="input-group-append">
+                                <button class="file-upload-browse btn btn-gradient-primary py-3" type="button">Upload</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleSelectGender">Trạng thái</label>
+                        <select class="form-select" id="exampleSelectGender">
+                            <option>Bán</option>
+                            <option>Tạm khóa</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleTextarea1">Mô tả</label>
+                        <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-gradient-primary me-2">Thêm sản phẩm</button>
+                    <button class="btn btn-light">Hủy</button>
+                </form>
+            </div>
+        </div>
+   
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

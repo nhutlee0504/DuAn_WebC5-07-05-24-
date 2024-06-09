@@ -3,47 +3,43 @@
   "WorkspaceRootPath": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\views\\bills\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\views\\bills\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\da_webc5\\areas\\admin\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\controllers\\billscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\controllers\\billscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\views\\bills\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\views\\bills\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\da_webc5\\areas\\admin\\views\\shared\\_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\views\\shared\\_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\da_webc5\\areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\da_webc5\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\da_webc5\\areas\\admin\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\views\\products\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\da_webc5\\areas\\admin\\views\\products\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\views\\products\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\da_webc5\\areas\\admin\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\views\\accounts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\da_webc5\\areas\\admin\\views\\accounts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\views\\accounts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\views\\shared\\_navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\da_webc5\\areas\\admin\\views\\shared\\_navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\views\\shared\\_navbar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -57,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\da_webc5\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\da_webc5\\migrations\\20240609060236_adddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\migrations\\20240609060236_adddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\da_webc5\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -133,6 +125,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{50226729-7CEB-450E-BAA4-1B977EFE129E}|SportAPI\\SportAPI.csproj|D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\sportapi\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{50226729-7CEB-450E-BAA4-1B977EFE129E}|SportAPI\\SportAPI.csproj|solutionrelative:sportapi\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\da_webc5\\areas\\admin\\controllers\\billscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:da_webc5\\areas\\admin\\controllers\\billscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\da_webc5\\migrations\\20240609060236_adddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:da_webc5\\migrations\\20240609060236_adddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -142,11 +142,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 30,
               "Title": "Startup.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\Startup.cs",
               "RelativeDocumentMoniker": "SportAPI\\Startup.cs",
@@ -178,6 +178,10 @@
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "ProductsController.cs",
@@ -187,12 +191,11 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Controllers\\ProductsController.cs",
               "ViewState": "AQIAAAQAAAAAAAAAAAAAABYAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T05:58:44.474Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T05:58:44.474Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "AccountsController.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Controllers\\AccountsController.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Controllers\\AccountsController.cs",
@@ -213,12 +216,11 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Controllers\\HomeController.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T06:06:36.287Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T06:06:36.287Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 31,
               "Title": "BillsController.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Controllers\\BillsController.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Controllers\\BillsController.cs",
@@ -226,18 +228,17 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Controllers\\BillsController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T08:32:32.402Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T08:32:32.402Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Bills\\Index.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Views\\Bills\\Index.cshtml",
               "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Bills\\Index.cshtml",
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Bills\\Index.cshtml",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAcwBcAAAAVAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAcwDMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-09T08:34:37.822Z",
               "EditorCaption": ""
@@ -252,8 +253,7 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Home\\Index.cshtml",
               "ViewState": "AQIAAB4AAAAAAAAAAAAcwFIAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-09T06:31:18.508Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T06:31:18.508Z"
             },
             {
               "$type": "Document",
@@ -265,12 +265,11 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Shared\\_partial.cshtml",
               "ViewState": "AQIAABgAAAAAAAAAAAAAACUAAACDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-09T06:33:08.242Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T06:33:08.242Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Products\\Create.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Views\\Products\\Create.cshtml",
@@ -278,12 +277,11 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Products\\Create.cshtml",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAABzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-09T08:17:56.897Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T08:17:56.897Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Products\\Index.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Views\\Products\\Index.cshtml",
@@ -291,12 +289,11 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Products\\Index.cshtml",
               "ViewState": "AQIAABsAAAAAAAAAAAAcwEwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-09T06:00:15.865Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T06:00:15.865Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Accounts\\Index.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Views\\Accounts\\Index.cshtml",
@@ -304,12 +301,11 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Accounts\\Index.cshtml",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAAAQAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-09T08:00:23.848Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T08:00:23.848Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "_navbar.cshtml",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Shared\\_navbar.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Views\\Shared\\_navbar.cshtml",
@@ -317,12 +313,11 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Shared\\_navbar.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-09T08:04:27.922Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T08:04:27.922Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "_index.cshtml",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Shared\\_index.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Views\\Shared\\_index.cshtml",
@@ -334,7 +329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Data\\ApplicationDbContext.cs",
@@ -346,7 +341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\Product.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Models\\Product.cs",
@@ -358,7 +353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 32,
               "Title": "20240609060236_Adddata.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Migrations\\20240609060236_Adddata.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Migrations\\20240609060236_Adddata.cs",
@@ -370,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 13,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\appsettings.json",
               "RelativeDocumentMoniker": "DA_WebC5\\appsettings.json",
@@ -381,12 +376,8 @@
               "WhenOpened": "2024-06-09T06:01:49.047Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 14,
               "Title": "ProductDetails.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\Model\\ProductDetails.cs",
               "RelativeDocumentMoniker": "SportAPI\\Model\\ProductDetails.cs",
@@ -398,7 +389,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 18,
               "Title": "NextRegister.cshtml",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Register\\NextRegister.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Views\\Register\\NextRegister.cshtml",
@@ -410,7 +401,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 17,
               "Title": "Register.cshtml",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Register\\Register.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Views\\Register\\Register.cshtml",
@@ -422,7 +413,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 16,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "SportAPI\\Data\\ApplicationDbContext.cs",
@@ -434,7 +425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 15,
               "Title": "Account.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\Model\\Account.cs",
               "RelativeDocumentMoniker": "SportAPI\\Model\\Account.cs",
@@ -446,7 +437,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 19,
               "Title": "RegisterController.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\RegisterController.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\RegisterController.cs",
@@ -458,7 +449,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 20,
               "Title": "Account.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\Account.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Models\\Account.cs",
@@ -470,7 +461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 21,
               "Title": "ScaffoldingReadMe.txt",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\ScaffoldingReadMe.txt",
               "RelativeDocumentMoniker": "DA_WebC5\\ScaffoldingReadMe.txt",
@@ -482,7 +473,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 22,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\HomeController.cs",
@@ -494,7 +485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 24,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Cart\\Index.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Views\\Cart\\Index.cshtml",
@@ -506,7 +497,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 23,
               "Title": "CartController.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\CartController.cs",
@@ -518,7 +509,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 26,
               "Title": "Sizes.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\Model\\Sizes.cs",
               "RelativeDocumentMoniker": "SportAPI\\Model\\Sizes.cs",
@@ -530,7 +521,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 28,
               "Title": "ProductResponse.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\Services\\ProductResponse.cs",
               "RelativeDocumentMoniker": "SportAPI\\Services\\ProductResponse.cs",
@@ -542,7 +533,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 27,
               "Title": "ProductDetailController.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\Controllers\\ProductDetailController.cs",
               "RelativeDocumentMoniker": "SportAPI\\Controllers\\ProductDetailController.cs",
@@ -554,7 +545,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 25,
               "Title": "ProductDetailResponse.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\Services\\ProductDetailResponse.cs",
               "RelativeDocumentMoniker": "SportAPI\\Services\\ProductDetailResponse.cs",
@@ -566,7 +557,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 29,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "SportAPI\\Controllers\\ProductController.cs",
