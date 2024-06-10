@@ -98,7 +98,7 @@ namespace DA_WebC5.Controllers
                 if (user.Role == "Admin")
                 {
                     HttpContext.Session.SetString("LoggedInUser", user.UserName);
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction("Index", "Home", new { area = "Admin" });
                 }
                 else if (user.Role == "Member")
                 {

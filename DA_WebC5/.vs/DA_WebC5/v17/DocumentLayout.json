@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -26,7 +38,46 @@
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T12:14:08.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "DA_WebC5\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAowGQAAABTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T12:13:25.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "RegisterController.cs",
+              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\RegisterController.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\RegisterController.cs",
+              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\RegisterController.cs",
+              "RelativeToolTip": "DA_WebC5\\Controllers\\RegisterController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T12:13:23.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Views\\Shared\\_Layout.cshtml",
@@ -34,25 +85,24 @@
               "RelativeToolTip": "DA_WebC5\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAABUAAAAAAAAAAAAgwCAAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-09T11:58:18.831Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T11:58:18.831Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Product\\Index.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Views\\Product\\Index.cshtml",
               "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Product\\Index.cshtml",
               "RelativeToolTip": "DA_WebC5\\Views\\Product\\Index.cshtml",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAYwE4AAAANAAAA",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAYwFAAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-09T08:31:56.672Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\ProductController.cs",
@@ -60,8 +110,7 @@
               "RelativeToolTip": "DA_WebC5\\Controllers\\ProductController.cs",
               "ViewState": "AQIAACEAAAAAAAAAAAAgwDUAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T08:23:37.96Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T08:23:37.96Z"
             }
           ]
         }
