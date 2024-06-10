@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DA_WebC5.Models.Product>
+﻿@model IEnumerable<DA_WebC5.Models.NewViewModel.ProductViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -9,6 +9,8 @@
     <div class="col-md-3">
         <a asp-action="Create" asp-controller="Products" asp-area="Admin" type="button" class="btn btn-gradient-primary btn-rounded btn-fw">Thêm sản phẩm</a>
     </div>
+</div>
+<div class="row">
     <table class="table table-hover text-center">
         <thead>
             <tr>
@@ -19,7 +21,7 @@
                 <th>Mô tả</th>
                 <th>Nhà cung ứng</th>
                 <th>Trạng thái</th>
-                <th></th>
+                <th>Hành động</th>
             </tr>
         </thead>
         <tbody>
@@ -27,22 +29,22 @@
             {
                 <tr>
                     <td>
-                        <img src="~/@item.Image" />
+                        <img src="~/@item.Image" alt="@item.Name" style="max-width: 100px; max-height: 100px;" />
                     </td>
                     <td>
                         @item.Name
                     </td>
                     <td>
-                        @* @item.Category.Name *@
+                        @item.CategoryName
                     </td>
                     <td>
                         @item.Price.ToString("N0") đồng
                     </td>
                     <td>
-                        @item.Describe
+                        @item.Description
                     </td>
                     <td>
-                        @* @item.Supplier.Name *@
+                        @item.NameSuplier
                     </td>
                     <td>
                         @{
@@ -64,9 +66,9 @@
                         <div class="btn-group">
                             <button type="button" class="btn btn-outline-secondary dropdown-toggle btn-sm" data-bs-toggle="dropdown">Hành động</button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item">Sửa</a>
-                                <a class="dropdown-item">Xóa</a>
-                                <a class="dropdown-item">Chi tiết</a>
+                                <a asp-action="Edit" asp-route-id="@item.IDProduct" class="dropdown-item">Sửa</a>
+                                <a asp-action="Delete" asp-route-id="@item.IDProduct" class="dropdown-item">Xóa</a>
+                                <a asp-action="Details" asp-route-id="@item.IDProduct" class="dropdown-item">Chi tiết</a>
                             </div>
                         </div>
                     </td>
@@ -74,5 +76,4 @@
             }
         </tbody>
     </table>
-
 </div>

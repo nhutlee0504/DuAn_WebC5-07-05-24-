@@ -15,6 +15,7 @@
     @inject IHttpContextAccessor HttpContextAccessor
     @{
         string username = "";
+        var loggedInUser = HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser");
         if (HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser") != null)
         {
             username = HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser");
@@ -43,10 +44,35 @@
                     </div>
 
                     <ul class="navbar-nav flex-grow-1 justify-content-end">
+                        @if (!string.IsNullOrEmpty(HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser")))
+                        {
+                            <li class="nav-item" id="userProfile">
+                                <div class="dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="~/IMG/user-btn.png" alt="User" style="width: 24px; height: 24px;">
+                                        <span id="username">@HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser")</span>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                                        <li><a class="dropdown-item" href="/Home/TTKH">Thông tin cá nhân</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="/Home/Logout">Đăng xuất</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        }
+                        @if (string.IsNullOrEmpty(loggedInUser))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="/Home/Login">
+                                    <img src="~/IMG/user-btn.png" alt="User" style="width: 24px; height: 24px;">
+                                    <span class="hover-text">Đăng nhập</span>
+                                </a>
+                            </li>
+                        }
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="/Register/Register">
-                                <img src="~/IMG/user-btn.png" alt="User" style="width: 24px; height: 24px;">
-                                <span class="hover-text">Đăng ký</span>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">
+                                <i class="bi bi-person"></i>
+                                <span class="hover-text">Sản phẩm</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -61,11 +87,11 @@
                                 <span class="hover-text">Giới thiệu về chúng tôi</span>
                             </a>
                         </li>
-                        <li class="nav-item">
+                       @*  <li class="nav-item">
                             <a class="nav-link text-dark">
                                 @username
                             </a>
-                        </li>
+                        </li> *@
                     </ul>
 
                 </div>
@@ -83,43 +109,42 @@
             <div class="row justify-content-center">
                 <div class="col-md-3">
                     <img src="/IMG/logo.png" class="mb-2" />
-                    <a href="link_to_facebook_page" class="d-flex align-items-center">
+                    <a href="link_to_facebook_page" class="d-flex align-items-center text-decoration-none">
+
                         <img src="/IMG/svg (1).png" alt="Facebook" style="width: 24px; height: 24px;">
                         <span class="ms-2">Facebook</span>
                     </a>
-                    <a href="link_to_youtube_page" class="d-flex align-items-center">
+                    <a href="link_to_youtube_page" class="d-flex align-items-center text-decoration-none">
                         <img src="~/IMG/svg (2).png" alt="Youtube" style="width: 24px; height: 24px;">
                         <span class="ms-2">Youtube</span>
                     </a>
                 </div>
                 <div class="col-md-3">
                     <h5 style="color: black;">Bắt đầu</h5>
-                    <a href="link_to_release_notes" style="display: block; color: black;">Ghi chú phát hành</a>
-                    <a href="link_to_upgrade_guide" style="display: block; color: black;">Hướng dẫn nâng cấp</a>
-                    <a href="link_to_browser_support" style="display: block; color: black;">Hỗ trợ trình duyệt</a>
-                    <a href="link_to_dark_mode" style="display: block; color: black;">Chế độ tối</a>
-
+                    <a href="link_to_release_notes" style="display: block; color: black;" class="text-decoration-none">Ghi chú phát hành</a> 
+                    <a href="link_to_upgrade_guide" style="display: block; color: black;" class="text-decoration-none">Hướng dẫn nâng cấp</a> 
+                    <a href="link_to_browser_support" style="display: block; color: black;" class="text-decoration-none">Hỗ trợ trình duyệt</a>
+                    <a href="link_to_dark_mode" style="display: block; color: black;" class="text-decoration-none">Chế độ tối</a> 
                 </div>
 
                 <div class="col-md-3">
                     <h5 style="color: black;">Khám phá</h5>
-                    <a href="link_to_prototyping" style="display: block; color: black;">Tạo mẫu</a>
-                    <a href="link_to_design_systems" style="display: block; color: black;">Hệ thống thiết kế</a>
-                    <a href="link_to_pricing" style="display: block; color: black;">Bảng giá</a>
-                    <a href="link_to_security" style="display: block; color: black;">Bảo mật</a>
+                    <a href="link_to_prototyping" style="display: block; color: black;" class="text-decoration-none">Tạo mẫu</a> 
+                    <a href="link_to_design_systems" style="display: block; color: black;" class="text-decoration-none">Hệ thống thiết kế</a> 
+                    <a href="link_to_pricing" style="display: block; color: black;" class="text-decoration-none">Bảng giá</a> 
+                    <a href="link_to_security" style="display: block; color: black;" class="text-decoration-none">Bảo mật</a>
                 </div>
                 <div class="col-md-3">
                     <h5 style="color: black;">Cộng đồng</h5>
-                    <a href="link_to_discussion_forums" style="display: block; color: black;">Diễn đàn thảo luận</a>
-                    <a href="link_to_code_of_conduct" style="display: block; color: black;">Quy tắc ứng xử</a>
-                    <a href="link_to_contributing" style="display: block; color: black;">Đóng góp</a>
-                    <a href="link_to_api_reference" style="display: block; color: black;">Tài liệu API</a>
+                    <a href="link_to_discussion_forums" style="display: block; color: black;" class="text-decoration-none">Diễn đàn thảo luận</a>
+                    <a href="link_to_code_of_conduct" style="display: block; color: black;" class="text-decoration-none">Quy tắc ứng xử</a> 
+                    <a href="link_to_contributing" style="display: block; color: black;" class="text-decoration-none">Đóng góp</a> 
+                    <a href="link_to_api_reference" style="display: block; color: black;" class="text-decoration-none">Tài liệu API</a>
                 </div>
             </div>
-
         </div>
-
     </footer>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

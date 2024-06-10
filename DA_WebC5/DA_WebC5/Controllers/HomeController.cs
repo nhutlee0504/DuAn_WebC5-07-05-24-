@@ -15,6 +15,7 @@ using static DA_WebC5.Models.NewViewModel;
 using Microsoft.AspNetCore.Http;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.AspNetCore.Authentication;
 
 namespace DA_WebC5.Controllers
 {
@@ -58,7 +59,7 @@ namespace DA_WebC5.Controllers
                         {
                             IDProduct = product.IDProduct,
                             Name = product.Name,
-                            Price = product.Price,
+                            Price = (double)product.Price,
                             CategoryName = category.Name,
                             Image = product.Image
                         };
@@ -119,9 +120,11 @@ namespace DA_WebC5.Controllers
         }
         public IActionResult Logout()
         {
-            HttpContext.Session.Remove("username");
-            return RedirectToAction(nameof(Index), "Home");
+            HttpContext.Session.Clear();
+            HttpContext.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
+
         public IActionResult TTKH()
         {
             if (!string.IsNullOrEmpty(HttpContext.Session.GetString("LoggedInUser")))

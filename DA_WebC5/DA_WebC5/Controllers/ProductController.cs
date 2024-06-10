@@ -43,7 +43,7 @@ namespace DA_WebC5.Controllers
                         {
                             IDProduct = product.IDProduct,
                             Name = product.Name,
-                            Price = product.Price,
+                            Price = (double)product.Price,
                             CategoryName = category.Name,
                             Image = product.Image,
                             Categories = categories
