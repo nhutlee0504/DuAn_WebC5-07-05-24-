@@ -1,0 +1,149 @@
+﻿@model DA_WebC5.Models.BillViewModel
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+@{
+    ViewData["Title"] = "Thanh toán";
+    decimal totalPrice = 0;
+}
+
+<style>
+    .rounded-input {
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    .product-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+
+        .product-item img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-right: 15px;
+            border-radius: 8px;
+        }
+
+    .product-details {
+        flex-grow: 1;
+    }
+
+    .product-summary {
+        flex-shrink: 0;
+        text-align: right;
+    }
+    .card{
+        border:none
+    }
+
+
+    .card-header {
+        background-color:white;
+        font-weight: bold;
+    }
+
+    .form-section {
+        margin-bottom: 20px;
+    }
+
+    .form-section-header {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+</style>
+<ol class="breadcrumb bg-transparent">
+    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+    <li class="breadcrumb-item active">Giỏ hàng</li>
+    <li class="breadcrumb-item active" aria-current="page">Thanh toán</li>
+</ol>
+
+<div class="container mt-5">
+    <h3 class="mb-4">Thanh toán</h3>
+    <div class="row">
+        <div class="col-md-5 mb-3">
+            <div class="card">
+                <div class="card-header fw-bold">
+                    THÔNG TIN CỦA BẠN
+                </div>
+                <div class="card-body">
+                    <div class="form-section">
+                        <div class="form-section-header fw-bold">THÔNG TIN LIÊN HỆ</div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>Số điện thoại của bạn</label>
+                                <input class="rounded-input" type="text" placeholder="Số điện thoại của bạn" value="@Model.User.Phone" readonly />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label>Địa chỉ email</label>
+                                <input class="rounded-input" type="text" placeholder="Địa chỉ email" value="@Model.User.Email" readonly />
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>Họ</label>
+                                <input class="rounded-input" type="text" placeholder="Họ" value="@Model.User.Name.Split(' ').First()" readonly />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label>Tên</label>
+                                <input class="rounded-input" type="text" placeholder="Tên" value="@Model.User.Name.Split(' ').Last()" readonly />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <div class="form-section-header">ĐỊA CHỈ GIAO HÀNG</div>
+                        <div class="row">
+                           
+                            <div class="col-md-8 mb-3">
+                                <label>Dòng địa chỉ 1</label>
+                                <input class="rounded-input" type="text" placeholder="Dòng địa chỉ 1" value="@Model.User.Address" readonly />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-danger btn-rounded btn-block">Cập nhật thông tin</button>
+        </div>
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-header">SẢN PHẨM THANH TOÁN</div>
+                <div class="card-body">
+                    @foreach (var item in Model.CartItems)
+                    {
+                        var itemTotalPrice = item.Quantity * item.ProductDetails.Product.Price;
+                        totalPrice += itemTotalPrice;
+                        <div class="product-item">
+                            <img src="~/@item.ProductDetails.Product.Image" alt="@item.ProductDetails.Product.Name" />
+                            <div class="product-details">
+                                <div class="font-weight-bold">@item.ProductDetails.Product.Name</div>
+                                <span class="badge text-bg-dark" title="Giá: @item.ProductDetails.Product.Price.ToString("N0") đồng"> @item.ProductDetails.Product.Price.ToString("N0") đồng</span>
+                                <span class="badge text-bg-dark" title="Loại: @item.ProductDetails.Product.Category.Name"> @item.ProductDetails.Product.Category.Name</span>
+                                <span class="badge text-bg-dark" title="Số lượng: @item.Quantity"> @item.Quantity</span>
+                                <span class="badge text-bg-dark" title="Kích thước: @item.ProductDetails.Sizes.SizeName"> @item.ProductDetails.Sizes.SizeName</span>
+                                <span class="badge text-bg-dark" title="Màu sắc: @item.ProductDetails.Colors.Color"> @item.ProductDetails.Colors.Color</span>
+
+                            </div>
+
+                            <div class="product-summary">
+                                <div><strong>Tổng cộng:</strong> <span class="badge rounded-pill text-bg-danger">@itemTotalPrice.ToString("N0") đồng</span></div>
+                            </div>
+                        </div>
+                    }
+                    <div class="total-price">
+                        <div><strong>Tổng giá:</strong> @totalPrice.ToString("N0") đồng</div>
+                    </div>
+               
+                  
+                </div>
+                <button type="submit" class="btn btn-dark btn-rounded btn-block">Thanh toán</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,89 +1,79 @@
-﻿
-@{
-    ViewData["Title"] = "TTKH";
-}
+﻿<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<style>
+    .header-container {
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #f8f9fa;
+    }
 
-@* <div class="container mt-5">
-    <div class="row">
-        <div class="col-md-6 mx-auto">
-            <div class="card">
-                <div class="card-header">
-                    Hồ sơ của tôi<br />
-                    Quản lý thông tin hồ sơ để bảo mật tài khoản
+        .header-container h5 {
+            margin-bottom: 0;
+        }
+
+        .header-container p {
+            margin-bottom: 0;
+        }
+</style>
+}
+@{
+    string hiddenPhoneNumber = Model.Phone.Substring(0, Model.Phone.Length / 2) + new string('*', Model.Phone.Length / 2);
+    string hiddenEmail = Model.Email.Substring(0, Model.Email.IndexOf('@') / 2) + new string('*', Model.Email.Length - Model.Email.IndexOf('@'));
+}
+@if (Model != null)
+{
+    <div class="container mt-5" style="margin-bottom:200px">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="header-container text-center">
+                    <h5 class="mb-0">Hồ sơ của tôi</h5>
+                    <p class="mb-0">Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
                 </div>
-                <div class="card-body">
-                    <div class="form-group">
-                        <label for="username">Tên đăng nhập:</label>
-                        <span id="username"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Tên:</label>
-                        <span id="name"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <span id="email"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone:</label>
-                        <span id="phone"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Địa chỉ:</label>
-                        <span id="address"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> *@
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-6 mx-auto">
-            <div class="card">
-                <div class="card-header">
-                    Hồ sơ của tôi<br />
-                    Quản lý thông tin hồ sơ để bảo mật tài khoản
-                </div>
-                <div class="card-body">
-                    <div class="form-group row">
-                        <label for="username" class="col-sm-4 text-right">Tên đăng nhập:</label>
-                        <div class="col-sm-8">
-                            <span id="username">John Doe</span>
+                <div class="content-body mt-3">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary">Tên đăng nhập:</span>
+                                    <span class="badge bg-secondary">@Model.UserName</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary">Tên:</span>
+                                    <span class="badge bg-secondary">@Model.Name</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary">Số Điện Thoại:</span>
+                                    <span class="badge bg-secondary">@hiddenPhoneNumber</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary">Email:</span>
+                                    <span class="badge bg-secondary">@hiddenEmail</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary">Giới tính:</span>
+                                    <span class="badge bg-secondary">@Model.Gender</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-primary">Địa chỉ:</span>
+                                    <span class="badge bg-secondary">@Model.Address</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <img src="~/IMG/logo.png" class="rounded-circle" style="width: 100px; height: 100px;" />
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="name" class="col-sm-4 text-right">Tên:</label>
-                        <div class="col-sm-8">
-                            <span id="name">ABC</span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="phone" class="col-sm-4 text-right">Số Điện Thoại:</label>
-                        <div class="col-sm-8">
-                            <span id="phone">554675</span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="email" class="col-sm-4 text-right">Email:</label>
-                        <div class="col-sm-8">
-                            <span id="email">FGSFGVG@GMAIL.COM</span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="gender" class="col-sm-4 text-right">Giới tính:</label>
-                        <div class="col-sm-8">
-                            <span id="gender">Nam</span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="address" class="col-sm-4 text-right">Địa chỉ:</label>
-                        <div class="col-sm-8">
-                            <span id="address">CT</span>
+                    <div class="row mt-3">
+                        <div class="col-md-8">
+                            <a href="#" class="btn btn-primary d-block">Chỉnh sửa</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+}
+else
+{
+    <p>Không tìm thấy thông tin người dùng.</p>
+}

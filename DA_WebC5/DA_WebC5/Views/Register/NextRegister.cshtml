@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "NextRegister";
 }
+@model DA_WebC5.Models.Account
 <style>
     .registration-form {
         max-width: 400px;
@@ -25,68 +26,79 @@
         border: 1px solid #ccc;
         border-radius: 5px;
     }
-
-    button {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        background-color: #007bff;
-        color: #fff;
-        cursor: pointer;
-    }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
 </style>
-<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-    <ol class="breadcrumb">
+    <ol class="breadcrumb bg-transparent">
         <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
         <li class="breadcrumb-item active">Đăng ký tài khoản</li>
         <li class="breadcrumb-item active" aria-current="page">Xác nhận thông tin</li>
     </ol>
-</nav>
-<form method="post" class="registration-form mb-4">
+
+
+<form asp-action="NextRegister" class="registration-form mb-4" id="frm">
     <div class="text-center mb-5">
         <h3>Nhập thông tin cá nhân</h3>
     </div>
+    <input type="text" asp-for="UserName" hidden/>
+    <input type="text" asp-for="Password" hidden/>
+    <input type="text" asp-for="Role" value="Member" hidden />
     <div class="form-group">
         <label class="font-weight-bolder" for="hoTen">Họ và tên</label>
-        <input type="text" id="hoTen" name="hoTen" placeholder="Họ và tên" class="form-control" required>
+        <input asp-for="Name" type="text" id="hoTen" placeholder="Họ và tên" class="form-control" required>
         <small class="form-text text-muted">Ví dụ: Nguyễn Văn A</small>
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label class="font-weight-bolder" for="soDienThoai">Số điện thoại</label>
-        <input type="tel" id="soDienThoai" placeholder="Số điện thoại" name="soDienThoai" class="form-control" required>
+        <input asp-for="Phone" type="tel" id="soDienThoai" placeholder="Số điện thoại" class="form-control" required>
         <small class="form-text text-muted">Ví dụ: 0987654321</small>
+        <span asp-validation-for="Phone" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label class="font-weight-bolder" for="diaChi">Địa chỉ</label>
-        <input type="text" id="diaChi" placeholder="Địa chỉ" name="diaChi" class="form-control" required>
+        <label class="font-weight-bolder">Địa chỉ</label>
+        <input asp-for="Address" type="text" id="address" placeholder="Địa chỉ" class="form-control" required>
         <small class="form-text text-muted">Ví dụ: Số 123, đường ABC, quận XYZ</small>
+        <span asp-validation-for="Address" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label class="font-weight-bolder" for="gioiTinh">Giới tính</label>
-        <select id="gioiTinh" name="gioiTinh" class="form-control" required>
-            <option value="nam">Nam</option>
-            <option value="nu">Nữ</option>
-            <option value="khac">Khác</option>
+        <select asp-for="Gender" id="gioiTinh" class="form-control" required>
+            <option value="" selected hidden>Giới tính</option>
+            <option value="Nam">Nam</option>
+            <option value="Nữ">Nữ</option>
+            <option value="Khác">Khác</option>
         </select>
         <small class="form-text text-muted">Vui lòng chọn giới tính của bạn.</small>
+        <span asp-validation-for="Gender" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label class="font-weight-bolder" for="email">Email</label>
-        <input type="email" id="email" placeholder="Email" name="email" class="form-control" required>
+        <input asp-for="Email" type="email" id="email" placeholder="Email" class="form-control" required>
         <small class="form-text text-muted">Ví dụ: example@example.com</small>
+        <span asp-validation-for="Email" class="text-danger"></span>
     </div>
-    <div class="form-check mb-3 ">
-        <input type="checkbox" class="form-check-input" id="agreePolicy" required>
-        <label class="form-check-label" for="agreePolicy">Tôi đồng ý với <a href="#">Chính sách và điều khoản</a></label>
+    <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" id="checkbox" required>
+        <label class="form-check-label" for="checkbox">Tôi đồng ý với <a href="#">Chính sách và điều khoản</a></label>
+        <span id="errormessage" class="text-danger"></span>
     </div>
-    <button data-intro="Xác nhận" type="submit" class="btn btn-dark btn-block rounded-pill">Đăng ký tài khoản</button>
+    <input type="submit" class="btn btn-dark btn-block rounded-pill" value="Đăng ký tài khoản">
 </form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+<script>
+    document.getElementById("frm").addEventListener("submit", function (event) {
+        var checkbox = document.getElementById("checkbox");
+        if (!checkbox.checked) {
+            document.getElementById("errormessage").innerText = "Bạn cần đồng ý với chính sách và điều khoản";
+            event.preventDefault();
+        }
+    });
+</script>

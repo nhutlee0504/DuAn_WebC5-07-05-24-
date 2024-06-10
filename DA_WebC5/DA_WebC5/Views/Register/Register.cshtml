@@ -1,37 +1,78 @@
 ﻿<link href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/7.2.0/introjs.min.css" rel="stylesheet">
+@{
+    ViewData["Title"] = "Register";
+}
+@model DA_WebC5.Models.Account
+<ol class="breadcrumb bg-transparent">
+    <li class="breadcrumb-item"><a href="/Home/Index">Trang chủ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Đăng ký tài khoản</li>
+</ol>
+
 <div class="container">
     <div class="row justify-content-center" style="margin-top:50px">
         <div class="col-md-4">
             <div class="text-center mb-5">
                 <h3>Đăng ký tài khoản</h3>
             </div>
-            <form>
+            <form asp-action="Register">
+@*                 <div class="text-danger" asp-validation-summary="ModelOnly"></div> *@
                 <div class="mb-3">
                     <label for="username" class="form-label font-weight-bolder">Tên tài khoản</label>
-                    <input data-intro="Điền tên tài khoản vào đây" data-step="1" type="text" class="form-control" id="username" placeholder="Tên tài khoản" required>
+                    <input asp-for="UserName" data-intro="Điền tên tài khoản vào đây" data-step="1" type="text" class="form-control" id="username" placeholder="Tên tài khoản" required>
                     <small id="usernameHelp" class="form-text text-muted">Ví dụ: JohnDoe123</small>
+                    <span asp-validation-for="UserName" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label font-weight-bolder">Mật khẩu</label>
-                    <input data-intro="Điền mật khẩu" data-step="2" type="password" class="form-control" id="password" placeholder="Mật khẩu" required>
-                    <small id="passwordHelp" class="form-text text-muted">Mật khẩu ít nhất 8 ký tự, bao gồm ít nhất một chữ cái và một chữ số.</small>
+                    <input asp-for="Password" data-intro="Điền mật khẩu" data-step="2" type="password" class="form-control" id="password" placeholder="Mật khẩu" required>
+                    <small id="passwordHelp" class="form-text text-muted">Mật khẩu ít nhất 8 ký tự</small>
+                    <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
                 <div class="mb-3">
                     <label for="confirmPassword" class="form-label font-weight-bolder">Nhập lại mật khẩu</label>
-                    <input data-intro="Điền đúng mật khẩu" data-step="3" type="password" class="form-control" id="confirmPassword" placeholder="Nhập lại mật khẩu" required>
-                    <small id="confirmPasswordHelp" class="form-text text-muted">Xác nhận lại mật khẩu để đảm bảo chính xác.</small>
+                    <input asp-action="Register" name="passConfirm" data-intro="Điền đúng mật khẩu" data-step="3" type="password" class="form-control" id="confirmPassword" placeholder="Nhập lại mật khẩu" required>
+                    <small id="confirmPasswordHelp" class="form-text text-muted">Xác nhận lại mật khẩu để đảm bảo chính xác</small>
+                    @if (ViewData["Error"] != null)
+                    {
+                        <span class="text-danger">@ViewData["Error"]</span>
+                    }
                 </div>
-                <a asp-action="NextRegister" asp-controller="Register" data-intro="Xác nhận" class="btn btn-dark btn-block rounded-pill">Bước tiếp theo</a>
+                <input type="submit" value="Bước tiếp theo" class="btn btn-dark btn-block rounded-pill" />
             </form>
 
             <div class="row d-flex justify-content-center mt-3 ">
-                <a>Hoặc</a> 
+                <a>Hoặc</a>
             </div>
             <div class="row d-flex justify-content-center mt-3 mb-3">
-                <a>Bạn đã có tài khoản? </a> <a href=""> Đăng nhập</a>
+                <a>Bạn đã có tài khoản?</a><a href="/Home/Login">&ensp;Đăng nhập</a>
             </div>
         </div>
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/7.2.0/intro.min.js"></script>
-@* <script>introJs().start()</script> *@
+@* <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var passwordInput = document.getElementById('password');
+        var savedPassword = localStorage.getItem('savedPassword');
+        var confirmPassInput = document.getElementById('confirmPassword');
+        var savedConfirmPass = localStorage.getItem('savedConfirmPass');
+
+        if (savedPassword && savedConfirmPass) {
+            passwordInput.value = savedPassword;
+            confirmPassInput.value = savedConfirmPass;
+        }
+
+        // Lưu mật khẩu
+        passwordInput.addEventListener('blur', function () {
+            localStorage.setItem('savedPassword', passwordInput.value);
+        });
+        confirmPassInput.addEventListener('blur', function () {
+            localStorage.setItem('savedConfirmPass', confirmPassInput.value);
+        });
+    });
+</script> *@
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

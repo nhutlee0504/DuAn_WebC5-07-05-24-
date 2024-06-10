@@ -36,7 +36,8 @@ namespace DA_WebC5.Models
         public ICollection<ImageDetails> ImageDetails { get; set; }
 
         public ICollection<ProductDetails> ProductDetails { get; set; }
-
  
     }
+
+  
 }

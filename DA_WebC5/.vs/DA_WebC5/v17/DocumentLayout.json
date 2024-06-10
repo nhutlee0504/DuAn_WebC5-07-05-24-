@@ -3,76 +3,92 @@
   "WorkspaceRootPath": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{50226729-7CEB-450E-BAA4-1B977EFE129E}|SportAPI\\SportAPI.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\sportapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{50226729-7CEB-450E-BAA4-1B977EFE129E}|SportAPI\\SportAPI.csproj|solutionrelative:sportapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\productdetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\productdetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\wwwroot\\img\\logo.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\wwwroot\\img\\logo.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\register\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\register\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\register\\nextregister.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\register\\nextregister.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\models\\newviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\models\\newviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\migrations\\20240601081343_v0.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\migrations\\20240601081343_v0.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\da_webc5.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\da_webc5.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/./SPWManager/True/SqlTable/dbo.Accounts.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\productdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\productdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/./SPWManager/True/SqlTable/dbo.Histories.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/./SPWManager/True/SqlTable/dbo.Products.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/./SPWManager/True/SqlTable/dbo.Categories.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|c:\\users\\hung\\documents\\fpt polytechnic\\lap_trinh_c sharp 5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,7 +98,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -102,223 +118,278 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\ProductDetail\\Index.cshtml",
-              "RelativeDocumentMoniker": "DA_WebC5\\Views\\ProductDetail\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\ProductDetail\\Index.cshtml",
-              "RelativeToolTip": "DA_WebC5\\Views\\ProductDetail\\Index.cshtml",
-              "ViewState": "AQIAAKIAAAAAAAAAAAAAAHoAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-01T08:50:26.503Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "logo.png",
-              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\wwwroot\\IMG\\logo.png",
-              "RelativeDocumentMoniker": "DA_WebC5\\wwwroot\\IMG\\logo.png",
-              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\wwwroot\\IMG\\logo.png",
-              "RelativeToolTip": "DA_WebC5\\wwwroot\\IMG\\logo.png",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2024-06-01T08:46:43.908Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "DA_WebC5\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAE0BAAAAAAAAAAAqwIwBAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-01T08:46:05.682Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Cart\\Index.cshtml",
-              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Cart\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Cart\\Index.cshtml",
-              "RelativeToolTip": "DA_WebC5\\Views\\Cart\\Index.cshtml",
-              "ViewState": "AQIAADkAAAAAAAAAAAAAAEMAAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-01T08:32:32.506Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "NextRegister.cshtml",
-              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Register\\NextRegister.cshtml",
-              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Register\\NextRegister.cshtml",
-              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Register\\NextRegister.cshtml",
-              "RelativeToolTip": "DA_WebC5\\Views\\Register\\NextRegister.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-01T08:27:35.781Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\About\\Index.cshtml",
-              "RelativeDocumentMoniker": "DA_WebC5\\Views\\About\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\About\\Index.cshtml",
-              "RelativeToolTip": "DA_WebC5\\Views\\About\\Index.cshtml",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAACIAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-01T08:23:46.663Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "Startup.cs",
               "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Startup.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Startup.cs",
               "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Startup.cs",
               "RelativeToolTip": "DA_WebC5\\Startup.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAxwBoAAAAvAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAA1wBwAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T07:45:40.166Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Register\\Register.cshtml",
-              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Register\\Register.cshtml",
-              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Register\\Register.cshtml",
-              "RelativeToolTip": "DA_WebC5\\Views\\Register\\Register.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABcAAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-01T08:27:36.804Z"
+              "WhenOpened": "2024-06-10T13:26:20.763Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "DA_WebC5\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAADMAAAAAAAAAAAAcwEUAAAAAAAAA",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "SportAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\appsettings.json",
+              "RelativeToolTip": "SportAPI\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-10T13:25:06.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\ProductDetail\\Index.cshtml",
+              "RelativeDocumentMoniker": "DA_WebC5\\Views\\ProductDetail\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\ProductDetail\\Index.cshtml",
+              "RelativeToolTip": "DA_WebC5\\Views\\ProductDetail\\Index.cshtml",
+              "ViewState": "AQIAAIgAAAAAAAAAAAAAAJcAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-07T07:59:58.132Z"
+              "WhenOpened": "2024-06-10T11:26:04.825Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "RegisterController.cs",
-              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\RegisterController.cs",
-              "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\RegisterController.cs",
-              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\RegisterController.cs",
-              "RelativeToolTip": "DA_WebC5\\Controllers\\RegisterController.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAgwAoAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T08:28:31.581Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "DA_WebC5\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "DA_WebC5\\wwwroot\\css\\site.css",
-              "ViewState": "AQIAAGYAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-06-01T08:23:31.728Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "20240601081343_v0.cs",
-              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Migrations\\20240601081343_v0.cs",
-              "RelativeDocumentMoniker": "DA_WebC5\\Migrations\\20240601081343_v0.cs",
-              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Migrations\\20240601081343_v0.cs",
-              "RelativeToolTip": "DA_WebC5\\Migrations\\20240601081343_v0.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T08:13:44.807Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Account.cs",
-              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\Account.cs",
-              "RelativeDocumentMoniker": "DA_WebC5\\Models\\Account.cs",
-              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\Account.cs",
-              "RelativeToolTip": "DA_WebC5\\Models\\Account.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T08:09:26.831Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "DA_WebC5\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T07:58:35.488Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "DA_WebC5\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "DA_WebC5\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T07:47:50.91Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "DA_WebC5.csproj",
-              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj",
-              "RelativeDocumentMoniker": "DA_WebC5\\DA_WebC5.csproj",
-              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj",
-              "RelativeToolTip": "DA_WebC5\\DA_WebC5.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-05-07T07:47:26.507Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Program.cs",
-              "RelativeDocumentMoniker": "DA_WebC5\\Program.cs",
-              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Program.cs",
-              "RelativeToolTip": "DA_WebC5\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T07:46:12.349Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\appsettings.json",
               "RelativeDocumentMoniker": "DA_WebC5\\appsettings.json",
               "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\appsettings.json",
               "RelativeToolTip": "DA_WebC5\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-07T07:46:03.716Z"
+              "WhenOpened": "2024-06-10T07:18:16.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAA5wA0AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T07:17:58.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\Product.cs",
+              "RelativeToolTip": "DA_WebC5\\Models\\Product.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T10:04:45.706Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "DA_WebC5\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAPYAAAAAAAAAAAAAAP8AAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-09T10:03:27.801Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Controllers\\ProductsController.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAYwDoAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T13:28:37.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "DA_WebC5\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAowDsAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T09:43:59.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CheckoutController.cs",
+              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\CheckoutController.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\CheckoutController.cs",
+              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\CheckoutController.cs",
+              "RelativeToolTip": "DA_WebC5\\Controllers\\CheckoutController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T09:43:58.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AboutController.cs",
+              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\AboutController.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\AboutController.cs",
+              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\AboutController.cs",
+              "RelativeToolTip": "DA_WebC5\\Controllers\\AboutController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T09:43:51.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "DA_WebC5\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAABMAAAAAAAAAAAAkwCAAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-09T08:35:09.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Cart\\Index.cshtml",
+              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Cart\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Cart\\Index.cshtml",
+              "RelativeToolTip": "DA_WebC5\\Views\\Cart\\Index.cshtml",
+              "ViewState": "AQIAAEgAAAAAAAAAAIBJwFwAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-09T08:24:19.514Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\CartController.cs",
+              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\CartController.cs",
+              "RelativeToolTip": "DA_WebC5\\Controllers\\CartController.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAIwC8AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T08:24:15.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RegisterController.cs",
+              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\RegisterController.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\RegisterController.cs",
+              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\RegisterController.cs",
+              "RelativeToolTip": "DA_WebC5\\Controllers\\RegisterController.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAwwEwAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T08:21:17.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ProductDetailController.cs",
+              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\ProductDetailController.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\ProductDetailController.cs",
+              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\ProductDetailController.cs",
+              "RelativeToolTip": "DA_WebC5\\Controllers\\ProductDetailController.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T08:03:03.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NewViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\NewViewModel.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Models\\NewViewModel.cs",
+              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\NewViewModel.cs",
+              "RelativeToolTip": "DA_WebC5\\Models\\NewViewModel.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAgwBAAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T07:55:32.902Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Product\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "DA_WebC5\\Views\\Product\\Index.cshtml",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAEkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-09T07:43:52.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\Hung\\Documents\\FPT Polytechnic\\LAP_TRINH_C Sharp 5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "DA_WebC5\\Controllers\\ProductController.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAYwEUAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T07:43:49.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "dbo.Accounts [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/./SPWManager/True/SqlTable/dbo.Accounts.sql",
+              "ToolTip": "dbo.Accounts [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-06-10T13:13:28.697Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "dbo.Histories [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/./SPWManager/True/SqlTable/dbo.Histories.sql",
+              "ToolTip": "dbo.Histories [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-06-09T11:52:13.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "dbo.Products [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/./SPWManager/True/SqlTable/dbo.Products.sql",
+              "ToolTip": "dbo.Products [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-06-09T10:48:48.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "dbo.Categories [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/./SPWManager/True/SqlTable/dbo.Categories.sql",
+              "ToolTip": "dbo.Categories [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-06-09T07:55:05.055Z"
             }
           ]
         },

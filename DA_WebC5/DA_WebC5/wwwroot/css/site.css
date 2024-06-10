@@ -92,6 +92,15 @@ body {
         opacity: 1;
     }
 }
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100px);
+    }
+}
 /* Initially hide the elements */
 .slide-in-left, .slide-in-right {
     opacity: 0;

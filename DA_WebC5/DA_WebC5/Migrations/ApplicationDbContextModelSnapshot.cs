@@ -46,7 +46,8 @@ namespace DA_WebC5.Migrations
 
                     b.Property<string>("Phone")
                         .IsRequired()
-                        .HasColumnType("varchar(12)");
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar(10)");
 
                     b.Property<string>("Role")
                         .IsRequired()
@@ -108,7 +109,7 @@ namespace DA_WebC5.Migrations
                     b.ToTable("BillDetails");
                 });
 
-            modelBuilder.Entity("DA_WebC5.Models.CartItem", b =>
+            modelBuilder.Entity("DA_WebC5.Models.Cart", b =>
                 {
                     b.Property<int>("IDCart")
                         .ValueGeneratedOnAdd()
@@ -131,7 +132,7 @@ namespace DA_WebC5.Migrations
 
                     b.HasIndex("UserName");
 
-                    b.ToTable("CartItems");
+                    b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("DA_WebC5.Models.Category", b =>
@@ -225,8 +226,7 @@ namespace DA_WebC5.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("varchar(150)");
+                        .HasColumnType("varchar(150)");
 
                     b.HasKey("IDImage");
 
@@ -435,7 +435,7 @@ namespace DA_WebC5.Migrations
                     b.Navigation("ProductDetails");
                 });
 
-            modelBuilder.Entity("DA_WebC5.Models.CartItem", b =>
+            modelBuilder.Entity("DA_WebC5.Models.Cart", b =>
                 {
                     b.HasOne("DA_WebC5.Models.ProductDetails", "ProductDetails")
                         .WithMany("Carts")

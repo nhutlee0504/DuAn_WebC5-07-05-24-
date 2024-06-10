@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DA_WebC5.Models.Bill>
+
+@{
+    ViewData["Title"] = "Danh sách hóa đơn";
+}
+
+<h1>Danh sách hóa đơn</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IDBill).Replace("IDBill", "Mã Hóa Đơn")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalAmount).Replace("TotalAmount", "Tổng Tiền")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDate).Replace("OrderDate", "Ngày Đặt Hàng")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account).Replace("Account", "Tài Khoản")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDBill)
+                </td>
+                <td>
+                   @item.TotalAmount.ToString("N0") đồng
+                </td>
+                <td>
+                    @item.OrderDate.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Account.UserName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IDBill">Sửa</a> |
+                    <a asp-action="Details" asp-route-id="@item.IDBill">Chi tiết</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IDBill">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,10 @@
+﻿using SportAPI.Model;
+using System.Collections.Generic;
+
+namespace SportAPI.Services
+{
+    public interface IImage
+    {
+        public IEnumerable<ImageDetails> GetImages(int productId);
+    }
+}
