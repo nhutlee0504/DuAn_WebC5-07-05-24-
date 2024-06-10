@@ -98,11 +98,25 @@ namespace DA_WebC5.Controllers
                 if (user.Role == "Admin")
                 {
                     HttpContext.Session.SetString("LoggedInUser", user.UserName);
+                    var hs = new History()
+                    {
+                        UserName = username,
+                        Describe = "Chào mừng " + username + " đã đăng nhập vào " + DateTime.Now,
+                    };
+                    _context.Histories.Add(hs);
+                    _context.SaveChanges();
                     return RedirectToAction(nameof(Index));
                 }
                 else if (user.Role == "Member")
                 {
                     HttpContext.Session.SetString("LoggedInUser", user.UserName);
+                    var hs = new History()
+                    {
+                        UserName = username,
+                        Describe = "Chào mừng " + username + " đã đăng nhập vào " + DateTime.Now,
+                    };
+                    _context.Histories.Add(hs);
+                    _context.SaveChanges();
                     return RedirectToAction(nameof(Index));
                 }
                 else

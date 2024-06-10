@@ -3,6 +3,7 @@ using DA_WebC5.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 
 namespace DA_WebC5.Controllers
@@ -47,6 +48,14 @@ namespace DA_WebC5.Controllers
                     Quantity = quantity
                 };
                 _context.Carts.Add(cart);
+                _context.SaveChanges();
+                var pd = _context.Products.Where(x => x.IDProduct == prod.IDProduct).Select(x => x.Name);
+                var hs = new History()
+                {
+                    UserName = username,
+                    Describe = "Đã thêm sản phẩm " + pd.ToString() + " vào giỏ hàng vào " + DateTime.Now,
+                };
+                _context.Histories.Add(hs);
                 _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }

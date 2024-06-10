@@ -53,7 +53,6 @@ namespace DA_WebC5.Controllers
                 }
                 return View(productsViewModel);
             }
-
         }
     }
 }
