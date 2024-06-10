@@ -4,8 +4,9 @@
     "\\DA_WebC5",
     "\\DA_WebC5\\DA_WebC5",
     "\\DA_WebC5\\DA_WebC5\\Views",
+    "\\DA_WebC5\\DA_WebC5\\Views\\Home",
     "\\DA_WebC5\\DA_WebC5\\Views\\Shared"
   ],
-  "SelectedNode": "\\DA_WebC5\\DA_WebC5\\Views\\Shared\\_Layout.cshtml",
+  "SelectedNode": "\\DA_WebC5\\DA_WebC5\\Views\\Home\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
