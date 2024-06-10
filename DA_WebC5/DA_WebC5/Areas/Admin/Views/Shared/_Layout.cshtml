@@ -25,14 +25,27 @@
     <!-- End layout styles -->
     <link rel="shortcut icon" href="~/assets/images/favicon.png" />
 </head>
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    string username = HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser");
+}
 <body>
-         @Html.Partial("_navbar")
-        @Html.Partial("_partial")
-         @Html.Partial("_index")
+    @if (string.IsNullOrEmpty(username))
+    {
         <main role="main">
             @RenderBody()
         </main>
-
+    }
+    else
+    {
+        @Html.Partial("_navbar")
+        @Html.Partial("_partial")
+        @Html.Partial("_index")
+        <main role="main">
+            @RenderBody()
+        </main>
+    }
     <!-- plugins:js -->
     <script src="~/assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->

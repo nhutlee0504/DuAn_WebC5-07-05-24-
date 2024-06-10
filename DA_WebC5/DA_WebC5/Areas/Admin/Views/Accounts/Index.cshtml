@@ -1,0 +1,75 @@
+﻿@model IEnumerable<DA_WebC5.Models.Account>
+
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+<div class="col-lg-6 grid-margin stretch-card text-center">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Danh sách tài khoản</h4>
+            <p class="card-description">
+            </p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Tên tài khoản</th>
+                        <th>Mật khẩu</th>
+                        <th>Email</th>
+                        <th>Vai trò</th>
+                        <th>Tên</th>
+                        <th>Giới tính</th>
+                        <th>Số điện thoại</th>
+                        <th>Địa chỉ</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UserName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Password)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @{
+                                    if(item.Role.Equals("Người dùng"))
+                                    {
+                                        <label>Người dùng <i class="fa fa-user-o"></i></label>
+                                    }
+                                    else
+                                    {
+                                        <label>Quản trị <i class="fa fa-bookmark"></i></label>
+                                    }
+                                }
+                              
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Gender)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Address)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.UserName">Sửa</a> |
+                                <a asp-action="Details" asp-route-id="@item.UserName">Chi tiết</a> |
+                                <a asp-action="Delete" asp-route-id="@item.UserName">Xóa</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

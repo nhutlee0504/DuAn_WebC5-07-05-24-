@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DA_WebC5.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240608020230_db0")]
-    partial class db0
+    [Migration("20240609093647_updatetable")]
+    partial class updatetable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
