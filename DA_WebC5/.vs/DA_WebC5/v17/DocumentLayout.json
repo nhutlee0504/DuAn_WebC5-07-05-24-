@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\mon_dang_hoc\\c_schapes_5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\mon_dang_hoc\\c_schapes_5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\mon_dang_hoc\\c_schapes_5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\mon_dang_hoc\\c_schapes_5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,16 +15,20 @@
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\mon_dang_hoc\\c_schapes_5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\mon_dang_hoc\\c_schapes_5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\mon_dang_hoc\\c_schapes_5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\mon_dang_hoc\\c_schapes_5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\productdetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\productdetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\mon_dang_hoc\\c_schapes_5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\mon_dang_hoc\\c_schapes_5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\models\\newviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -83,7 +83,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 22,
           "Children": [
             {
               "$type": "Bookmark",
@@ -107,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\ProductDetail\\Index.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Views\\ProductDetail\\Index.cshtml",
@@ -115,8 +115,7 @@
               "RelativeToolTip": "DA_WebC5\\Views\\ProductDetail\\Index.cshtml",
               "ViewState": "AQIAAMoAAAAAAAAAAAAAANwAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-10T11:26:04.825Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-10T11:26:04.825Z"
             },
             {
               "$type": "Document",
@@ -186,13 +185,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\HomeController.cs",
               "ToolTip": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\HomeController.cs",
               "RelativeToolTip": "DA_WebC5\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAF4AAAAAAAAAAAAcwG4AAAARAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAowGYAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-09T09:43:59.742Z",
               "EditorCaption": ""
@@ -223,7 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Views\\Shared\\_Layout.cshtml",
@@ -248,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CartController.cs",
               "DocumentMoniker": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\CartController.cs",
@@ -256,12 +255,11 @@
               "RelativeToolTip": "DA_WebC5\\Controllers\\CartController.cs",
               "ViewState": "AQIAACgAAAAAAAAAAAAIwC8AAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T08:24:15.587Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T08:24:15.587Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "RegisterController.cs",
               "DocumentMoniker": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\RegisterController.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\RegisterController.cs",
@@ -269,8 +267,7 @@
               "RelativeToolTip": "DA_WebC5\\Controllers\\RegisterController.cs",
               "ViewState": "AQIAACkAAAAAAAAAAAAwwEwAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T08:21:17.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-09T08:21:17.828Z"
             },
             {
               "$type": "Document",
@@ -307,26 +304,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Product\\Index.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Views\\Product\\Index.cshtml",
               "ToolTip": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Product\\Index.cshtml",
               "RelativeToolTip": "DA_WebC5\\Views\\Product\\Index.cshtml",
-              "ViewState": "AQIAADYAAAAAAAAAAAAAADEAAAAgAAAA",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAEkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-09T07:43:52.877Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\ProductController.cs",
               "ToolTip": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\ProductController.cs",
               "RelativeToolTip": "DA_WebC5\\Controllers\\ProductController.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAowDcAAAAJAAAA",
+              "ViewState": "AQIAACkAAAAAAAAAAAAwwEwAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-09T07:43:49.638Z",
               "EditorCaption": ""
