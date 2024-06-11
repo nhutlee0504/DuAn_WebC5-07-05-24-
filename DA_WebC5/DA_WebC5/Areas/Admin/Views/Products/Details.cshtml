@@ -1,0 +1,96 @@
+﻿@model DA_WebC5.Models.NewViewModel.ProductDetailViewModel
+
+<h1>@Model.Product.Name</h1>
+<p>Category: @(Model.Product.Category != null ? Model.Product.Category.Name : "N/A")</p>
+<p>Price: @Model.Product.Price</p>
+<p>Description: @Model.Product.Describe</p>
+<p>Supplier: @(Model.Product.Supplier != null ? Model.Product.Supplier.Name : "N/A")</p>
+<p>Status: @Model.Product.Status</p>
+
+<h2>Images</h2>
+@if (Model.Images != null && Model.Images.Any())
+{
+    <div class="image-gallery">
+        @foreach (var image in Model.Images)
+        {
+            <img src="~/@image.Image" alt="Product Image" />
+        }
+    </div>
+}
+else
+{
+    <p>No images available</p>
+}
+
+<h2>Product Details</h2>
+@if (Model.ProductDetails == null && Model.ProductDetails.Any())
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Size</th>
+                <th>Color</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var detail in Model.ProductDetails)
+            {
+                <tr>
+                    <td>@(detail.Sizes?.SizeName ?? "null")</td>
+                    <td>@(detail.Colors?.Color ?? "null")</td>
+                    <td>@detail.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No product details available</p>
+}
+
+<h2>Colors</h2>
+@if (Model.Colors != null && Model.Colors.Any())
+{
+    <ul>
+        @foreach (var color in Model.Colors)
+        {
+            <li>@color.Color</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No colors available</p>
+}
+
+<h2>Sizes</h2>
+@if (Model.Sizes != null && Model.Sizes.Any())
+{
+    <ul>
+        @foreach (var size in Model.Sizes)
+        {
+            <li>@size.SizeName</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No sizes available</p>
+}
+
+<h2>Suppliers</h2>
+@if (Model.Suppliers != null && Model.Suppliers.Any())
+{
+    <ul>
+        @foreach (var supplier in Model.Suppliers)
+        {
+            <li>@supplier.Name</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No suppliers available</p>
+}

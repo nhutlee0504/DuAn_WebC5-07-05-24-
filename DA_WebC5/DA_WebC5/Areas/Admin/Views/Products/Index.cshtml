@@ -68,7 +68,7 @@
                             <div class="dropdown-menu">
                                 <a asp-action="Edit" asp-route-id="@item.IDProduct" class="dropdown-item">Sửa</a>
                                 <a asp-action="Delete" asp-route-id="@item.IDProduct" class="dropdown-item">Xóa</a>
-                                <a asp-action="Details" asp-route-id="@item.IDProduct" class="dropdown-item">Chi tiết</a>
+                                <a asp-controller="Products" asp-area="Admin" asp-action="Details" asp-route-id="@item.IDProduct" class="dropdown-item">Chi tiết</a>
                             </div>
                         </div>
                     </td>

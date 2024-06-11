@@ -19,6 +19,11 @@ namespace DA_WebC5.Models
 
         public class ProductDetailViewModel
         {
+            public int IDSize { get; set; }
+            public int IDColor { get; set; }
+            public string SizeName { get; set; }
+            public string Color { get; set; }
+            public int Quantity { get; set; }
             public Product Product { get; set; }
             public List<ImageDetails> Images { get; set; }
             public List<ProductDetails> ProductDetails { get; set; }

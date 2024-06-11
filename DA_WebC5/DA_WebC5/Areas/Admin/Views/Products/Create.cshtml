@@ -1,58 +1,70 @@
 ﻿@model DA_WebC5.Models.Product
 
-@{
-    ViewData["Title"] = "Create";
-}
 <div class="row">
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Thêm sản phẩm</h4>
                 <p class="card-description">Thêm sản phẩm mới</p>
-                <form class="forms-sample">
+                <form asp-action="Create" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="exampleInputName1">Tên sản phẩm</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Tên sản phẩm">
+                        <label for="Name">Tên sản phẩm</label>
+                        <input type="text" class="form-control" id="Name" name="Name" placeholder="Tên sản phẩm">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail3">Giá</label>
-                        <input type="number" class="form-control" id="exampleInputEmail3" placeholder="Giá sản phẩm">
+                        <label for="Price">Giá</label>
+                        <input type="number" class="form-control" id="Price" name="Price" placeholder="Giá sản phẩm">
                     </div>
                     <div class="form-group">
-                        <label for="ProductType">Loại sản phẩm</label>
-                        <select class="form-select" asp-items="ViewBag.ProductTypes">
+                        <label for="Category">Loại sản phẩm</label>
+                        <select class="form-select" id="Category" name="IDCategory">
+                            <option value="">Chọn loại sản phẩm</option>
+                            @foreach (var category in ViewBag.Categories)
+                            {
+                                <option value="@category.Value">@category.Text</option>
+                            }
                         </select>
                     </div>
+
                     <div class="form-group">
-                        <label>Hình ảnh</label>
-                        <input type="file" name="img[]" class="file-upload-default">
-                        <div class="input-group col-xs-12">
-                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                            <span class="input-group-append">
-                                <button class="file-upload-browse btn btn-gradient-primary py-3" type="button">Upload</button>
-                            </span>
-                        </div>
+                        <label for="Supplier">Nhà cung cấp</label>
+                        <select class="form-select" id="Supplier" name="IDSupplier">
+                            <option value="">Chọn nhà cung cấp</option>
+                            @foreach (var supplier in ViewBag.Suppliers)
+                            {
+                                <option value="@supplier.Value">@supplier.Text</option>
+                            }
+                        </select>
+                    </div>                 
+
+                    <div class="form-group">
+                        <label for="Image">Hình ảnh</label>
+                        <input type="file" class="form-control-file" id="Image" name="Image">
                     </div>
+
                     <div class="form-group">
-                        <label for="exampleSelectGender">Trạng thái</label>
-                        <select class="form-select" id="exampleSelectGender">
-                            <option>Bán</option>
-                            <option>Tạm khóa</option>
+                        <label for="Status">Trạng thái</label>
+                        <select class="form-select" id="Status" name="Status">
+                            <option value="Bán">Bán</option>
+                            <option value="Tạm khóa">Tạm khóa</option>
                         </select>
                     </div>
+
                     <div class="form-group">
-                        <label for="exampleTextarea1">Mô tả</label>
-                        <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                        <label for="Describe">Mô tả</label>
+                        <textarea class="form-control" id="Describe" name="Describe" rows="4"></textarea>
                     </div>
+
                     <button type="submit" class="btn btn-gradient-primary me-2">Thêm sản phẩm</button>
-                    <button class="btn btn-light">Hủy</button>
+                    <button type="button" class="btn btn-light">Hủy</button>
                 </form>
             </div>
         </div>
-   
     </div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
