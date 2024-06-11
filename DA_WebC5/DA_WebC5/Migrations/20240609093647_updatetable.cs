@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DA_WebC5.Migrations
 {
-    public partial class db0 : Migration
+    public partial class updatetable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

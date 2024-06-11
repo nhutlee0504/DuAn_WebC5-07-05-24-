@@ -10,8 +10,11 @@ namespace DA_WebC5.Models
             public string Name { get; set; }
             public string CategoryName { get; set; }
             public string Image { get; set; }
-            public decimal Price { get; set; }
-            public List<Category> Categories { get; set; }
+            public decimal  Price { get; set; }
+            public string Description { get; set; }
+            public string NameSuplier { get; set; }
+            public string Status { get; set; }
+            public IEnumerable<Category> Categories { get; set; }
         }
 
         public class ProductDetailViewModel
@@ -22,6 +25,8 @@ namespace DA_WebC5.Models
             public List<Colors> Colors { get; set; }
             public List<Sizes> Sizes { get; set; }
             public List<Supplier> Suppliers { get; set; }
+            public List<Evaluate> Evaluates { get; set; }
+            public List<BillDetails> BillDetails { get; set; }
         }
     }
 }

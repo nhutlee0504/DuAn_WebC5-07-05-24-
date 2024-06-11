@@ -15,6 +15,7 @@ using static DA_WebC5.Models.NewViewModel;
 using Microsoft.AspNetCore.Http;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.AspNetCore.Authentication;
 
 namespace DA_WebC5.Controllers
 {
@@ -48,7 +49,7 @@ namespace DA_WebC5.Controllers
                     string apiResponse1 = await response1.Content.ReadAsStringAsync();
                     categories = JsonConvert.DeserializeObject<List<Category>>(apiResponse1);
                 }
-               
+
                 foreach (var product in products)
                 {
                     var category = categories.FirstOrDefault(x => x.IDCategory == product.IDCategory);
@@ -133,9 +134,11 @@ namespace DA_WebC5.Controllers
         }
         public IActionResult Logout()
         {
-            HttpContext.Session.Remove("username");
-            return RedirectToAction(nameof(Index), "Home");
+            HttpContext.Session.Clear();
+            HttpContext.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
+
         public IActionResult TTKH()
         {
             if (!string.IsNullOrEmpty(HttpContext.Session.GetString("LoggedInUser")))
