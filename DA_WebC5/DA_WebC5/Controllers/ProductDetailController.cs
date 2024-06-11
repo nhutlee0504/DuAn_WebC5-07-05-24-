@@ -1,6 +1,8 @@
 ﻿using DA_WebC5.Data;
 using DA_WebC5.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +21,11 @@ namespace DA_WebC5.Controllers
         private string urlColor = "http://localhost:57700/api/Color/";
         private string urlSize = "http://localhost:57700/api/Size/";
         private string urlEvaluate = "http://localhost:57700/api/Evaluate/";
+        private readonly ApplicationDbContext _context;
+        public ProductDetailController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
         public async Task<IActionResult> Index(int id)
         {
@@ -70,6 +77,21 @@ namespace DA_WebC5.Controllers
             }
 
             return View(viewModel);
+        }
+        public IActionResult AddEvaluate(string dsc, int id)
+        {
+            var db = Index(id);
+            string username = HttpContext.Session.GetString("LoggedInUser");
+            var add = new Evaluate
+            {
+                UserName = username,
+                IDProduct = id,
+                Point = 5,
+                Describe = dsc,
+            };
+            _context.Evaluates.Add(add);
+            _context.SaveChanges();
+            return RedirectToAction("Index", new { id = id });
         }
     }
 }

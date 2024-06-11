@@ -225,24 +225,25 @@
             </div>
             <div class="">
                 <hr></hr>
-                <form action="/" method="post">
-                    <textarea rows="5" class="w-100">
+                <form asp-controller="ProductDetail" asp-action="AddEvaluate">
+                    <input type="hidden" name="id" value="@Model.Product.IDProduct" />
+                    <textarea name="dsc" rows="5" class="w-100">
 
                     </textarea>
                     <button class="btn btn-secondary">Gửi đánh giá</button>
                 </form>
 
-                <div class="card">
-                    <div class="card-body">
+                <div class="card mt-3" style="border 1px solid: black">
+                        
                         @foreach (var evaluate in Model.Evaluates.Where(x=> x.IDProduct == Model.Product.IDProduct))
                         {
+                        <div class="card-body border-1">
                             <div class="evaluate-item">
-                                <div class="user">@evaluate.UserName</div>
-                                <div class="point">Điểm: @evaluate.Point</div>
+                                <div class="user">@evaluate.UserName - Đánh giá: @evaluate.Point </div>
                                 <div class="describe">Mô tả: @evaluate.Describe</div>
                             </div>
+                        </div>
                         }
-                    </div>
                 </div>
             </div>
         </div>
