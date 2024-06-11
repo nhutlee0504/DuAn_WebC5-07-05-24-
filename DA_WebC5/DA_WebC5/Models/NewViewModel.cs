@@ -25,6 +25,8 @@ namespace DA_WebC5.Models
             public List<Colors> Colors { get; set; }
             public List<Sizes> Sizes { get; set; }
             public List<Supplier> Suppliers { get; set; }
+            public List<Evaluate> Evaluates { get; set; }
+            public List<BillDetails> BillDetails { get; set; }
         }
     }
 }

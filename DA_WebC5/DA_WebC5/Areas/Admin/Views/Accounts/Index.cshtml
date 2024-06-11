@@ -37,17 +37,26 @@
                                 @Html.DisplayFor(modelItem => item.Email)
                             </td>
                             <td>
-                                @{
-                                    if(item.Role.Equals("Người dùng"))
+@* 
+                                @if (Html.DisplayFor(modelItem => item.Role).Equals("Member"))
                                     {
                                         <label>Người dùng <i class="fa fa-user-o"></i></label>
                                     }
                                     else
                                     {
                                         <label>Quản trị <i class="fa fa-bookmark"></i></label>
-                                    }
+                                    } *@
+                                @if (item.Role == "Member")
+                                {
+                                    <label>@item.Role <i class="fa fa-user-o"></i></label>
                                 }
-                              
+                                else
+                                {
+                                    <label>@item.Role <i class="fa fa-bookmark"></i></label>
+                                }
+
+
+
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Name)

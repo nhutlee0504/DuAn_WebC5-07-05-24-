@@ -18,6 +18,7 @@ namespace DA_WebC5.Controllers
         private string urlPddt = "http://localhost:57700/api/ProductDetail/prodId?prodId=";
         private string urlColor = "http://localhost:57700/api/Color/";
         private string urlSize = "http://localhost:57700/api/Size/";
+        private string urlEvaluate = "http://localhost:57700/api/Evaluate/";
 
         public async Task<IActionResult> Index(int id)
         {
@@ -58,6 +59,13 @@ namespace DA_WebC5.Controllers
                 {
                     string apiResponse5 = await sizeResponse.Content.ReadAsStringAsync();
                     viewModel.Sizes = JsonConvert.DeserializeObject<List<Sizes>>(apiResponse5);
+                }
+
+                var evaResponse = await httpClient.GetAsync(urlEvaluate);
+                if (evaResponse.IsSuccessStatusCode)
+                {
+                    string apiResponse6 = await evaResponse.Content.ReadAsStringAsync();
+                    viewModel.Evaluates = JsonConvert.DeserializeObject<List<Evaluate>>(apiResponse6);
                 }
             }
 

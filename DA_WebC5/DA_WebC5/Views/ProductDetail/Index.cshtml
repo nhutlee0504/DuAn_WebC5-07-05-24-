@@ -145,7 +145,7 @@
                 <div class="d-flex">
                     <div class="col-md-9">
                         <div class="justify-content-center" style="margin-right: 15px;">
-                            <img id="main-image" src="/Image_Product/@Model.Images" alt="Alternate Text" class="w-100" style="border-radius: 25px;">
+                            <img id="main-image" src="/Image_Product/@Model.Product.Image" alt="Alternate Text" class="w-100" style="border-radius: 25px;">
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -220,6 +220,28 @@
                             </div>
                         </form>
                       
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <hr></hr>
+                <form action="/" method="post">
+                    <textarea rows="5" class="w-100">
+
+                    </textarea>
+                    <button class="btn btn-secondary">Gửi đánh giá</button>
+                </form>
+
+                <div class="card">
+                    <div class="card-body">
+                        @foreach (var evaluate in Model.Evaluates.Where(x=> x.IDProduct == Model.Product.IDProduct))
+                        {
+                            <div class="evaluate-item">
+                                <div class="user">@evaluate.UserName</div>
+                                <div class="point">Điểm: @evaluate.Point</div>
+                                <div class="describe">Mô tả: @evaluate.Describe</div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>

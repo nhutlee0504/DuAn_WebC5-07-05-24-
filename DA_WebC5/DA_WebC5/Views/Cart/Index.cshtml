@@ -101,7 +101,10 @@
                 {
                     <tr>
                         <td>
-                            <input type="checkbox" name="name" value="" />
+                            <form asp-controller="Bills" asp-action="Index">
+                                <input type="checkbox" name="selectedProducts" value="@item.IDPDetail">
+
+                            </form>
                         </td>
                         <td>
                             <div class="d-flex align-items-center">
@@ -143,7 +146,14 @@
 
         <div class="ml-md-auto mr-md-0 mb-2 mb-md-0">Tổng thanh toán(@Model.Where(x => x.UserName == ViewBag.Username).Count() sản phẩm)</div>
         <div class="px-2 mb-2 mb-md-0"><strong class="text-danger"></strong></div>
-        <a class="btn btn-success" asp-action="Index" asp-controller="Bills" >Mua hàng</a>
+        <form asp-controller="Bills" asp-action="Index">
+            @foreach(var item in Model)
+            {
+                <input type="checkbox" name="selectedProducts" value="@item.IDPDetail">
+
+            }
+            <button type="submit" class="btn btn-success">Mua hàng</button>
+        </form>
     </div>
 
     <hr>

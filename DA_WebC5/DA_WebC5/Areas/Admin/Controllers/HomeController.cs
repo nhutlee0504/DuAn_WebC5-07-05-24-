@@ -71,8 +71,8 @@ namespace DA_WebC5.Areas.Admin.Controllers
 
                 else
                 {
-                    ViewBag.ErrorMessage = "Tài khoản đã bị vô hiệu hóa";
-                    return RedirectToAction("Loginktr", "Home", new { area = "Admin" });
+                    ViewBag.ErrorMessage = "Tài khoản không có quyền truy cập";
+                    return View("Loginktr");
                 }
             }
             else
