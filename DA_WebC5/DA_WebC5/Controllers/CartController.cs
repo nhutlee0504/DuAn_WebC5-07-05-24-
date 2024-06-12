@@ -41,6 +41,11 @@ namespace DA_WebC5.Controllers
             var prod = _context.ProductDetails.FirstOrDefault(x => x.IDPDetail == IdPDetail);
             if (prod != null)
             {
+                if (prod.Quantity < quantity)
+                {
+                    var IdProd = _context.ProductDetails.Where(x => x.IDPDetail == IdPDetail).Select(x => x.IDProduct).FirstOrDefault();
+                    return RedirectToAction("Index", "ProductDetail", new { id = IdProd });
+                }
                 var cart = new Cart
                 {
                     IDPDetail = prod.IDPDetail,
@@ -48,7 +53,7 @@ namespace DA_WebC5.Controllers
                     Quantity = quantity
                 };
                 _context.Carts.Add(cart);
-                _context.SaveChanges();
+
                 var pd = _context.Products.Where(x => x.IDProduct == prod.IDProduct).Select(x => x.Name);
                 var hs = new History()
                 {
@@ -65,10 +70,10 @@ namespace DA_WebC5.Controllers
         public IActionResult AddOne(int id)
         {
             var prod = _context.Carts.FirstOrDefault(x => x.IDCart == id);
-            if (prod != null) 
+            if (prod != null)
             {
                 prod.Quantity++;
-                _context.SaveChanges(); 
+                _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             return NotFound();
@@ -89,7 +94,7 @@ namespace DA_WebC5.Controllers
                 {
                     return RedirectToAction(nameof(Index));
                 }
-              
+
             }
             return NotFound();
         }

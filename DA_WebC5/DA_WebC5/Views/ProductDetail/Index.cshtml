@@ -26,6 +26,7 @@
     .radio-btn-size {
         display: none;
     }
+
         .radio-btn-size + label {
             display: inline-block;
             /* 	padding: 10px 20px; */
@@ -93,25 +94,25 @@
         padding: 10px 15px;
     }
 
- /*    .radio-color {
-        display: none;
-    } */
+    /*    .radio-color {
+                        display: none;
+                    } */
 
     /* .color-box {
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                display: inline-block;
-                margin-right: 5px;
-            } */
+                                width: 30px;
+                                height: 30px;
+                                border-radius: 50%;
+                                display: inline-block;
+                                margin-right: 5px;
+                            } */
 
     /*   input[type="radio"]:checked + label.color-box {
-                border-color: black;
-            } */
+                                border-color: black;
+                            } */
 
-/*     input[type="radio"]:not(:checked) + label.color-box {
-        opacity: 0.5;
-    } */
+    /*     input[type="radio"]:not(:checked) + label.color-box {
+                        opacity: 0.5;
+                    } */
 
     .col-sm-3 .border {
         transition: box-shadow 0.3s, transform 0.3s;
@@ -179,8 +180,7 @@
                             <div class="text-center">
                                 <div class="">
                                     <div class="font-weight-bold" style="font-size:x-large">@Model.Product.Price.ToString("N0") VNĐ</div>
-@*                                     <del class="text-muted" style="font-size:large"></del>
- *@                                </div>
+                                </div>
                             </div>
                         </div>
 
@@ -219,50 +219,38 @@
                                 </div>
                             </div>
                         </form>
-                      
+
                     </div>
                 </div>
             </div>
             <div class="">
                 <hr></hr>
-                <form action="/" method="post">
-                    <textarea rows="5" class="w-100">
+                @if (ViewBag.Condition)
+                {
+                    <form asp-controller="ProductDetail" asp-action="AddEvaluate" method="post">
+                        <input type="hidden" name="id" value="@Model.Product.IDProduct" />
+                        <textarea name="dsc" rows="5" class="w-100"></textarea>
+                        <button class="btn btn-secondary">Gửi đánh giá</button>
+                    </form>
+                }
 
-                    </textarea>
-                    <button class="btn btn-secondary">Gửi đánh giá</button>
-                </form>
+                <div class="card mt-3" style="border 1px solid: black">
 
-                <div class="card">
-                    <div class="card-body">
-                        @foreach (var evaluate in Model.Evaluates.Where(x=> x.IDProduct == Model.Product.IDProduct))
-                        {
+                    @foreach (var evaluate in Model.Evaluates.Where(x => x.IDProduct == Model.Product.IDProduct))
+                    {
+                        <div class="card-body border-1">
                             <div class="evaluate-item">
-                                <div class="user">@evaluate.UserName</div>
-                                <div class="point">Điểm: @evaluate.Point</div>
+                                <div class="user">@evaluate.UserName - Đánh giá: @evaluate.Point </div>
                                 <div class="describe">Mô tả: @evaluate.Describe</div>
                             </div>
-                        }
-                    </div>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
     </div>
     <h3>Gợi ý sản phẩm</h3>
-        <div class="row overflow-auto">
-            <div class="col-sm-3 d-flex justify-content-center flex-column">
-                <div class="border border-secondary-subtle rounded">
-                    <div><img src="/Image_Nhut/Detail1.jpg" alt="Alternate Text" class="mw-100" /></div>
-                </div>
-                <div class="row container-fluid justify-content-center text-center">
-                    <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
-                    <p class="font-weight-bold col-sm-4 mb-1 text-danger">200.000</p>
-                    <p style="font-size: small;" class="col-sm-8">Loại áo</p>
-                    <strike style="font-size: small;" class="col-sm-4">400.000</strike>
-                </div>
-                <p class="text-center container-fluid">
-                    <i class="bi bi-star-fill text-warning"></i> 4.9 (100)
-                </p>
-            </div>
+    <div class="row overflow-auto">
         <div class="col-sm-3 d-flex justify-content-center flex-column">
             <div class="border border-secondary-subtle rounded">
                 <div><img src="/Image_Nhut/Detail1.jpg" alt="Alternate Text" class="mw-100" /></div>
@@ -305,7 +293,21 @@
                 <i class="bi bi-star-fill text-warning"></i> 4.9 (100)
             </p>
         </div>
+        <div class="col-sm-3 d-flex justify-content-center flex-column">
+            <div class="border border-secondary-subtle rounded">
+                <div><img src="/Image_Nhut/Detail1.jpg" alt="Alternate Text" class="mw-100" /></div>
+            </div>
+            <div class="row container-fluid justify-content-center text-center">
+                <p class="font-weight-bold col-sm-8 mb-1">Áo cầu lông 1</p>
+                <p class="font-weight-bold col-sm-4 mb-1 text-danger">200.000</p>
+                <p style="font-size: small;" class="col-sm-8">Loại áo</p>
+                <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+            </div>
+            <p class="text-center container-fluid">
+                <i class="bi bi-star-fill text-warning"></i> 4.9 (100)
+            </p>
         </div>
+    </div>
 </div>
 
 <script>

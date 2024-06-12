@@ -27,6 +27,7 @@ namespace DA_WebC5.Models
             public List<Supplier> Suppliers { get; set; }
             public List<Evaluate> Evaluates { get; set; }
             public List<BillDetails> BillDetails { get; set; }
+            public List<Bill> Bills { get; set; }
         }
     }
 }

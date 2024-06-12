@@ -113,10 +113,12 @@
         </div>
         <div class="col-md-7">
             <div class="card">
+                <form asp-controller="Bills" asp-action="Pay">
                 <div class="card-header">SẢN PHẨM THANH TOÁN</div>
                 <div class="card-body">
                     @foreach (var item in Model.CartItems)
                     {
+                        <input type="hidden" name="selectedProducts" value="@item.IDPDetail">
                         var itemTotalPrice = item.Quantity * item.ProductDetails.Product.Price;
                         totalPrice += itemTotalPrice;
                         <div class="product-item">
@@ -128,7 +130,6 @@
                                 <span class="badge text-bg-dark" title="Số lượng: @item.Quantity"> @item.Quantity</span>
                                 <span class="badge text-bg-dark" title="Kích thước: @item.ProductDetails.Sizes.SizeName"> @item.ProductDetails.Sizes.SizeName</span>
                                 <span class="badge text-bg-dark" title="Màu sắc: @item.ProductDetails.Colors.Color"> @item.ProductDetails.Colors.Color</span>
-
                             </div>
 
                             <div class="product-summary">
@@ -138,11 +139,13 @@
                     }
                     <div class="total-price">
                         <div><strong>Tổng giá:</strong> @totalPrice.ToString("N0") đồng</div>
+                        <input type="hidden" name="totalPrice" value="@totalPrice" />
                     </div>
                
                   
                 </div>
                 <button type="submit" class="btn btn-dark btn-rounded btn-block">Thanh toán</button>
+                </form>
             </div>
         </div>
     </div>

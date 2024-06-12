@@ -3,6 +3,7 @@ using DA_WebC5.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -60,10 +61,75 @@ namespace DA_WebC5.Controllers
             return View(viewModel);
         }
 
+        [Route("Bills/Pay")]
+        public IActionResult Pay(List<int> selectedProducts)
+        {
+           
+            string username = HttpContext.Session.GetString("LoggedInUser");
+            decimal totalPrice = decimal.Parse(HttpContext.Request.Form["totalPrice"]);
+            var selectedCartItems = _context.Carts
+        .Where(x => x.UserName == username && selectedProducts.Contains(x.IDPDetail))
+        .Include(x => x.ProductDetails.Product)
+        .Include(x => x.ProductDetails.Product.Category)
+        .Include(x => x.ProductDetails.Sizes)
+        .Include(x => x.ProductDetails.Colors)
+        .ToList();
 
-        //public IActionResult Create(List<int> selectedProducts)
-        //{
+            // Sử dụng biến 'username' ở đây để thực hiện các hành động khác
+            // ...
 
-        //}
+            var addbill = new Bill
+            {
+                UserName = username,
+                OrderDate = DateTime.Now,
+                TotalAmount = totalPrice,
+            };
+            _context.Bills.Add(addbill);
+            _context.SaveChanges();
+
+            int billId = addbill.IDBill;
+            foreach (var cartItem in selectedCartItems)
+            {
+                var billDetail = new BillDetails
+                {
+                    IDBill = billId,
+                    IDPDetail = cartItem.IDPDetail,
+                    Quantity = cartItem.Quantity,
+                    Price = cartItem.ProductDetails.Product.Price * cartItem.Quantity
+                };
+                _context.BillDetails.Add(billDetail);
+
+                var pd = _context.ProductDetails.FirstOrDefault(p => p.IDPDetail == cartItem.IDPDetail);
+                if (pd != null)
+                {
+                    // Cập nhật số lượng sản phẩm trong ProductDetail
+                    pd.Quantity -= cartItem.Quantity;
+
+                    // Đảm bảo số lượng không âm
+                    if (pd.Quantity < 0)
+                    {
+                        pd.Quantity = 0;
+                    }
+
+                    // Lưu thay đổi vào cơ sở dữ liệu
+                    _context.ProductDetails.Update(pd);
+                }
+
+                _context.Carts.Remove(cartItem);
+            }
+            var hs = new History
+            {
+                UserName = username,
+                Describe = "Đơn hàng của " + username + " đã được tạo"
+            };
+            _context.Histories.Add(hs);
+            
+            _context.SaveChanges();
+
+           
+
+
+            return RedirectToAction("Index");
+        }
     }
 }
