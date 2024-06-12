@@ -2,7 +2,6 @@
 using DA_WebC5.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using DA_WebC5.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
