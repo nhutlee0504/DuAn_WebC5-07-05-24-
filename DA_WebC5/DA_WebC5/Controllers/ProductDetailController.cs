@@ -21,6 +21,8 @@ namespace DA_WebC5.Controllers
         private string urlColor = "http://localhost:57700/api/Color/";
         private string urlSize = "http://localhost:57700/api/Size/";
         private string urlEvaluate = "http://localhost:57700/api/Evaluate/";
+        private string urlCategory = "http://localhost:57700/api/Category";
+        private string urlSupplier = "http://localhost:57700/api/Supplier";
         private readonly ApplicationDbContext _context;
         public ProductDetailController(ApplicationDbContext context)
         {
@@ -74,8 +76,28 @@ namespace DA_WebC5.Controllers
                     string apiResponse6 = await evaResponse.Content.ReadAsStringAsync();
                     viewModel.Evaluates = JsonConvert.DeserializeObject<List<Evaluate>>(apiResponse6);
                 }
-            }
+                var cateResponse = await httpClient.GetAsync(urlCategory + viewModel.Product.Category);
+                if (cateResponse.IsSuccessStatusCode)
+                {
+                    string apiResponse7 = await cateResponse.Content.ReadAsStringAsync();
+                    var cate = JsonConvert.DeserializeObject<List<Category>>(apiResponse7);
+                    viewModel.Product.Category = cate.FirstOrDefault(x => x.IDCategory == viewModel.Product.IDCategory);
+                }
+                var supResponse = await httpClient.GetAsync(urlSupplier + viewModel.Product.Supplier);
+                if (supResponse.IsSuccessStatusCode)
+                {
+                    string apiResponse8 = await supResponse.Content.ReadAsStringAsync();
+                    var supl = JsonConvert.DeserializeObject<List<Supplier>>(apiResponse8);
+                    viewModel.Product.Supplier = supl.FirstOrDefault(x => x.IDSupplier == viewModel.Product.IDSupplier);
+                }
 
+            }
+            string username = HttpContext.Session.GetString("LoggedInUser");
+            var userBills = _context.Bills.Where(x => x.UserName == username).Select(x => x.IDBill).ToList();
+            bool Reviewed = _context.BillDetails
+                .Any(bd => userBills.Contains(bd.IDBill) && bd.ProductDetails.IDProduct == id);
+            bool hasEvaluated = _context.Evaluates.Any(e => e.IDProduct == id && e.UserName == username);
+            ViewBag.Condition = Reviewed && !hasEvaluated;
             return View(viewModel);
         }
         public IActionResult AddEvaluate(string dsc, int id)

@@ -164,6 +164,7 @@
             </div>
             <hr>
             <h3>THÔNG TIN SẢN PHẨM</h3>
+            <h4>@Model.Product.Category.Name - @Model.Product.Supplier.Name</h4>
             <p>@Model.Product.Describe</p>
         </div>
         <div class="col-md-5">
@@ -225,13 +226,14 @@
             </div>
             <div class="">
                 <hr></hr>
-                <form asp-controller="ProductDetail" asp-action="AddEvaluate">
-                    <input type="hidden" name="id" value="@Model.Product.IDProduct" />
-                    <textarea name="dsc" rows="5" class="w-100">
-
-                    </textarea>
-                    <button class="btn btn-secondary">Gửi đánh giá</button>
-                </form>
+                @if (ViewBag.Condition)
+                {
+                    <form asp-controller="ProductDetail" asp-action="AddEvaluate" method="post">
+                        <input type="hidden" name="id" value="@Model.Product.IDProduct" />
+                        <textarea name="dsc" rows="5" class="w-100"></textarea>
+                        <button class="btn btn-secondary">Gửi đánh giá</button>
+                    </form>
+                }
 
                 <div class="card mt-3" style="border 1px solid: black">
                         

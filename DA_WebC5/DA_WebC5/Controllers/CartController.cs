@@ -41,23 +41,36 @@ namespace DA_WebC5.Controllers
             var prod = _context.ProductDetails.FirstOrDefault(x => x.IDPDetail == IdPDetail);
             if (prod != null)
             {
+                if (prod.Quantity < quantity)
+                {
+                    var IdProd = _context.ProductDetails.Where(x => x.IDPDetail == IdPDetail).Select(x => x.IDProduct).FirstOrDefault();
+                    return RedirectToAction("Index", "ProductDetail", new { id = IdProd });
+                }
                 var cart = new Cart
                 {
                     IDPDetail = prod.IDPDetail,
                     UserName = username,
                     Quantity = quantity
                 };
-                _context.Carts.Add(cart);
-                _context.SaveChanges();
-                var pd = _context.Products.Where(x => x.IDProduct == prod.IDProduct).Select(x => x.Name);
-                var hs = new History()
+                if(quantity > prod.Quantity)
                 {
-                    UserName = username,
-                    Describe = "Đã thêm sản phẩm " + pd.ToString() + " vào giỏ hàng vào " + DateTime.Now,
-                };
-                _context.Histories.Add(hs);
-                _context.SaveChanges();
-                return RedirectToAction(nameof(Index));
+                    TempData["error"] = "Số lượng sản phẩm không đủ";
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    _context.Carts.Add(cart);
+                    _context.SaveChanges();
+                    var pd = _context.Products.Where(x => x.IDProduct == prod.IDProduct).Select(x => x.Name);
+                    var hs = new History()
+                    {
+                        UserName = username,
+                        Describe = "Đã thêm sản phẩm " + pd.ToString() + " vào giỏ hàng vào " + DateTime.Now,
+                    };
+                    _context.Histories.Add(hs);
+                    _context.SaveChanges();
+                    return RedirectToAction(nameof(Index));
+                }
             }
             return View();
         }

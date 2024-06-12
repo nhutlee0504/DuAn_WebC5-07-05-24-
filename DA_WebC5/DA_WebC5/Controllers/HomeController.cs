@@ -25,6 +25,7 @@ namespace DA_WebC5.Controllers
         private readonly ApplicationDbContext _context;
         private string urlP = "http://localhost:57700/api/Product/";
         private string urlCate = "http://localhost:57700/api/Category/";
+        private string urlPdetail = "http://localhost:57700/api/ProductDetail";
         public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
@@ -37,12 +38,21 @@ namespace DA_WebC5.Controllers
             List<Product> products = new List<Product>();
             List<Category> categories = new List<Category>();
             List<ProductViewModel> productsViewModel = new List<ProductViewModel>();
+            List<ProductDetails> productsDetails = new List<ProductDetails>();
             using (var httpClient = new HttpClient())
             {
+                using (var response2 = await httpClient.GetAsync(urlPdetail))
+                {
+                    string apiResponse2 = await response2.Content.ReadAsStringAsync();
+                    productsDetails = JsonConvert.DeserializeObject<List<ProductDetails>>(apiResponse2);
+                }
                 using (var response = await httpClient.GetAsync(urlP))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     products = JsonConvert.DeserializeObject<List<Product>>(apiResponse);
+
+                    products = products.Where(p => productsDetails.Any(pd => pd.IDProduct == p.IDProduct)).ToList();
+                    //var p = products.Select(p => p.IDProduct).Distinct().ToDictionary(id => id, id => _context.ProductDetails.Count(pd => pd.IDProduct == id && pd.IDProduct > 0));
                 }
                 using (var response1 = await httpClient.GetAsync(urlCate))
                 {
@@ -50,22 +60,22 @@ namespace DA_WebC5.Controllers
                     categories = JsonConvert.DeserializeObject<List<Category>>(apiResponse1);
                 }
 
-                foreach (var product in products)
-                {
-                    var category = categories.FirstOrDefault(x => x.IDCategory == product.IDCategory);
-                    if (category != null)
+                    foreach (var product in products)
                     {
-                        var prod = new ProductViewModel
+                        var category = categories.FirstOrDefault(x => x.IDCategory == product.IDCategory);
+                        if (category != null)
                         {
-                            IDProduct = product.IDProduct,
-                            Name = product.Name,
-                            Price = product.Price,
-                            CategoryName = category.Name,
-                            Image = product.Image
-                        };
-                        productsViewModel.Add(prod);
+                            var prod = new ProductViewModel
+                            {
+                                IDProduct = product.IDProduct,
+                                Name = product.Name,
+                                Price = product.Price,
+                                CategoryName = category.Name,
+                                Image = product.Image
+                            };
+                            productsViewModel.Add(prod);
+                        }
                     }
-                }
                 return View(productsViewModel);
             }
         }
