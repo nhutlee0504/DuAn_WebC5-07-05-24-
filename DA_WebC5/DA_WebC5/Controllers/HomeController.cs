@@ -13,7 +13,10 @@ using Microsoft.AspNetCore.Http;
 using System.Security.Cryptography;
 using System.Security.Principal;
 using System.Text;
-
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 namespace DA_WebC5.Controllers
 {
     public class HomeController : Microsoft.AspNetCore.Mvc.Controller
@@ -21,6 +24,7 @@ namespace DA_WebC5.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _context;
         private string url = "http://localhost:57700/api/Account/";
+
         public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
@@ -61,12 +65,12 @@ namespace DA_WebC5.Controllers
                 if (user.Role == "Admin")
                 {
                     HttpContext.Session.SetString("LoggedInUser", user.UserName);
-                    return View("Index");
+                    return RedirectToAction(nameof(Index));
                 }
                 else if (user.Role == "Member")
                 {
                     HttpContext.Session.SetString("LoggedInUser", user.UserName);
-                    return View("Index");
+                    return RedirectToAction(nameof(Index));
                 }
                 else
                 {
