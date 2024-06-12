@@ -17,6 +17,7 @@
 
             [ForeignKey("Colors")]
             public int IDColor { get; set; }
+            [Required(ErrorMessage = "Vui lòng nhập số lượng")]
 
             public int Quantity { get; set; }
 

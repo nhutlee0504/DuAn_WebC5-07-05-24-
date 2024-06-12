@@ -18,7 +18,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/Admin/Index">
                     <span class="menu-title">Trang chính</span>
                     <i class="mdi mdi-home menu-icon"></i>
                 </a>
@@ -47,7 +47,10 @@
                             <a class="nav-link" href="pages/ui-features/typography.html">Quản lý kích cỡ </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/ui-features/typography.html">Quản lý màu</a>
+                            <a class="nav-link" asp-action="index" asp-controller="Color" asp-area="Admin">Quản lý màu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="index" asp-controller="Suplier" asp-area="Admin">Nhà cung ứng</a>
                         </li>
                     </ul>
                 </div>

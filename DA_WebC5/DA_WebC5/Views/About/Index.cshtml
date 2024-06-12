@@ -5,14 +5,44 @@
     <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
     <li class="breadcrumb-item active" aria-current="page">Giới thiệu</li>
 </ol>
+<style>
+    .contact-form {
+        background-color: #f6f8fb;
+        padding: 20px;
+        border-radius: 10px;
+    }
 
-<div class="container">
+    .input-field {
+        border-radius: 10px;
+        background-color: #f6f8fb;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+
+        .input-field:focus {
+            outline: none;
+        }
+
+    textarea {
+        height: 100px;
+    }
+
+    .submit-btn {
+        border-radius: 20px;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+        .submit-btn:hover {
+            background-color: #333;
+            color: #fff;
+        }</style>
+<div class="container intro-section">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 intro-content">
             <h3 class="font-weight-bold">Về chúng tôi</h3>
             <p>
-                Chúng tôi không chỉ giúp bạn thiết kế các sản phẩm đặc biệt mà còn giúp bạn dễ dàng thực hiện
-                để chia sẻ thiết kế của bạn với nhiều người cùng chí hướng hơn.
+                Chúng tôi không chỉ giúp bạn thiết kế các sản phẩm đặc biệt mà còn giúp bạn dễ dàng thực hiện để chia sẻ thiết kế của bạn với nhiều người cùng chí hướng hơn.
             </p>
         </div>
     </div>
@@ -51,20 +81,20 @@
     <div class="row mb-4">
         <div class="col-md-6">
             <h4 class="font-weight-bolder">Địa chỉ</h4>
-            <p class="mb-2">Photo booth tattooed prism, portland taiyaki hoodie neutra typewriter</p>
+            <p class="mb-2">Tòa nhà Cao đẳng FPT Polytechnic Cần Thơ, đường số 22, Thường Thạnh, Cái Răng, Cần Thơ.</p>
             <h4 class="font-weight-bolder">Email</h4>
             <p class="mb-2">fpt@fpt.edu.vn</p>
             <h4 class="font-weight-bold">Số điện thoại</h4>
-            <p class="mb-2">09 - XXX - XXX</p>
+            <p class="mb-2">0933.345.332 </p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 contact-form">
             <h4 class="font-weight-bold">Họ và tên</h4>
-            <input type="text" class="w-100" style="border-radius:10px; border:none; background-color:#F6F8FB" placeholder="Nhập họ và tên: (Ví dụ: Nguyễn Văn A)">
+            <input type="text" class="w-100 input-field" placeholder="Nhập họ và tên: (Ví dụ: Nguyễn Văn A)">
             <h4 class="font-weight-bold">Email</h4>
-            <input type="text" class="w-100" style="border-radius:10px; border:none; background-color:#F6F8FB" placeholder="Nhập email: (Ví dụ: nguyenvana@expample.com)">
+            <input type="text" class="w-100 input-field" placeholder="Nhập email: (Ví dụ: nguyenvana@example.com)">
             <h4 class="font-weight-bold">Nội dung</h4>
-            <input type="text" class="w-100" style="border-radius:10px; border:none; background-color:#F6F8FB" placeholder="Nội dung" />
-            <button class="btn btn-dark w-25 mt-4 " style="border-radius:20px">Gửi</button>
+            <textarea class="w-100 input-field" placeholder="Nội dung"></textarea>
+            <button class="btn btn-dark w-50 mt-4 submit-btn">Gửi</button>
         </div>
     </div>
 </div>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DA_WebC5.Models.Colors>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" asp-area="Admin" asp-controller="Color">Create New</a>
+</p>
+<table class="table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Color)
+                </td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a asp-action="Update" asp-area="Admin" asp-controller="Color" asp-route-id="@item.IDColor" class="btn btn-sm btn-primary">
+                            <i class="fa fa-exchange"></i>
+                            <span class="hover-text">Cập nhật</span>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

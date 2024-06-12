@@ -8,7 +8,7 @@ namespace DA_WebC5.Models
         [Key]
         public int IDColor { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập màu sản phẩm")]
         public string Color { get; set; }
 
         public ICollection<ProductDetails> ProductDetails { get; set; }

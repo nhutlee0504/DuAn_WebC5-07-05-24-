@@ -18,7 +18,7 @@
 
     .input-group {
         padding: 0.25rem 0.5rem;
-        width: 100px;
+        width: 150px;
         display: flex;
         justify-content: center; /* Căn giữa theo chiều ngang */
         align-items: center; /* Căn giữa theo chiều dọc */
@@ -77,6 +77,12 @@
     <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
 </ol>
 
+@if (TempData["error"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["error"]
+    </div>
+}
 <div class="container">
     <div  style="position: relative; overflow: hidden; height:25px;">
         <i class="bi bi-receipt" style="position: absolute; top: 50%; transform: translateY(-50%);"></i>
@@ -123,7 +129,7 @@
                                 <form asp-controller="Cart" asp-action="SubtractOne" asp-route-id="@item.IDCart">
                                     <button class="btn btn-outline-secondary btn-sm" type="submit" id="subtractBtn">-</button>
                                 </form>
-                                <input type="text" class="form-control text-center" value="@item.Quantity" id="quantityInput" readonly>
+                                <input type="text" class="form-control text-center" name="quantity" value="@item.Quantity" id="quantityInput" readonly>
                                 <form asp-controller="Cart" asp-action="AddOne" asp-route-id="@item.IDCart">
                                     <button class="btn btn-outline-secondary btn-sm" type="submit" id="addBtn">+</button>
                                 </form>

@@ -34,9 +34,9 @@ namespace DA_WebC5.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            else if (IdPDetail == 0)
+            else if (IdPDetail == 0 || quantity <= 0)
             {
-                return NotFound();
+                return BadRequest("Invalid product detail ID or quantity.");
             }
             var prod = _context.ProductDetails.FirstOrDefault(x => x.IDPDetail == IdPDetail);
             if (prod != null)
@@ -47,19 +47,28 @@ namespace DA_WebC5.Controllers
                     UserName = username,
                     Quantity = quantity
                 };
-                _context.Carts.Add(cart);
-                _context.SaveChanges();
-                var pd = _context.Products.Where(x => x.IDProduct == prod.IDProduct).Select(x => x.Name);
-                var hs = new History()
+                if (quantity > prod.Quantity)
                 {
-                    UserName = username,
-                    Describe = "Đã thêm sản phẩm " + pd.ToString() + " vào giỏ hàng vào " + DateTime.Now,
-                };
-                _context.Histories.Add(hs);
-                _context.SaveChanges();
-                return RedirectToAction(nameof(Index));
+                    TempData["error"] = "Số lượng sản phẩm không đủ";
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    _context.Carts.Add(cart);
+                    _context.SaveChanges();
+                    var pd = _context.Products.Where(x => x.IDProduct == prod.IDProduct).Select(x => x.Name).FirstOrDefault();
+                    var hs = new History()
+                    {
+                        UserName = username,
+                        Describe = "Đã thêm sản phẩm " + pd + " vào giỏ hàng vào " + DateTime.Now,
+                    };
+                    _context.Histories.Add(hs);
+                    _context.SaveChanges();
+                    return RedirectToAction(nameof(Index));
+                }
+               
             }
-            return View();
+            return NotFound();
         }
 
         public IActionResult AddOne(int id)

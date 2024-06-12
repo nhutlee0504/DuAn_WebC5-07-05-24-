@@ -60,6 +60,7 @@ namespace DA_WebC5.Controllers
                             IDProduct = product.IDProduct,
                             Name = product.Name,
                             Price = product.Price,
+                            Status = product.Status,
                             CategoryName = category.Name,
                             Image = product.Image
                         };

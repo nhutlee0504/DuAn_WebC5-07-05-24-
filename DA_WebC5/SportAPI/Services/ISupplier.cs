@@ -6,5 +6,6 @@ namespace SportAPI.Services
     public interface ISupplier
     {
         public IEnumerable<Supplier> GetSuppliers();
+        public Supplier Addsuplire (Supplier supplier);
     }
 }
