@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Authentication.Cookies;
 namespace DA_WebC5
 {
     public class Startup
@@ -53,8 +53,6 @@ namespace DA_WebC5
             app.UseRouting();
 
             app.UseSession();
-
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

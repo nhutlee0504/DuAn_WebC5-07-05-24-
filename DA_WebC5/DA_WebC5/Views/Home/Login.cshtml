@@ -1,9 +1,4 @@
 ﻿@model DA_WebC5.Models.Account
-<ol class="breadcrumb bg-transparent">
-    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Đăng nhập</li>
-</ol>
-
 <div class="container">
     <div class="row">
         <div class="col-md-6 mx-auto">
@@ -15,11 +10,6 @@
                         @ViewBag.ErrorMessage
                     </div>
                 }
-
-                    <div class="text-danger mt-2 text-center ">
-                        @ViewBag.error
-                    </div>
-
                 <form asp-controller="Home" asp-action="Loginktr" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
@@ -29,7 +19,10 @@
                     </div>
                     <div class="form-group">
                         <label for="password">Mật khẩu</label>
-                        <input asp-for=Password type="password" class="form-control" style="border-radius: 10px" id="password" placeholder="Nhập mật khẩu">
+                        <div class="input-group">
+                            <input asp-for="Password" type="password" class="form-control" style="border-radius: 10px 0 0 10px" id="password" placeholder="Nhập mật khẩu">
+                            <span class="input-group-text bg-white" style="border-radius: 0 10px 10px 0; cursor: pointer;" id="togglePassword">👁️</span>
+                        </div>
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
                     <button type="submit" class="btn btn-dark btn-block " style="border-radius: 20px">Tiếp tục</button>
@@ -44,9 +37,10 @@
                     </div>
 
                     *@
-                    @*                     <div class="text-center mt-3">
-                    <a asp-action="ForgotPassword" asp-controller="Account" class="text-primary">Quên mật khẩu?</a>
-                    </div> *@
+@*                     <div class="text-center mt-3">
+                        <a asp-controller="Home" asp-action="ForgotPassword" class="text-primary">Quên mật khẩu?</a>
+                    </div>
+ *@
                     <div class="text-center">Bạn mới biết đến NEXTON? <a class="text text-primary" asp-action="Register" asp-controller="Register">Đăng ký tài khoản</a></div>
                 </form>
             </div>
@@ -58,5 +52,17 @@
 
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const togglePassword = document.getElementById('togglePassword');
+            const password = document.getElementById('password');
 
+            togglePassword.addEventListener('click', function () {
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+
+                this.textContent = type === 'password' ? '👁️' : '🙈';
+            });
+        });
+    </script>
 }
