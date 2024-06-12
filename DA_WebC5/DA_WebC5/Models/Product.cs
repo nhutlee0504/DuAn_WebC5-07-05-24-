@@ -15,8 +15,9 @@ namespace DA_WebC5.Models
         [ForeignKey("Category")]
         public int IDCategory { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập tên sản phẩm")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "Vui lòng nhập giá sản phẩm")]
 
         public decimal Price { get; set; }
 

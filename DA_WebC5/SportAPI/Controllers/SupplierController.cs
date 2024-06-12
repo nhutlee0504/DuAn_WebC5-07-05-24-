@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SportAPI.Model;
 using SportAPI.Services;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace SportAPI.Controllers
 {
@@ -17,6 +18,17 @@ namespace SportAPI.Controllers
         public IEnumerable<Supplier> GetSuppliers()
         {
             return supplier.GetSuppliers();
+        }
+        [HttpPost]
+        public Supplier Add(Supplier sup)
+        {
+            return supplier.Addsuplire(new Supplier
+            {
+               Name = sup.Name,
+               Address = sup.Address,
+               Phone = sup.Phone,
+               Email = sup.Email
+            });
         }
     }
 }

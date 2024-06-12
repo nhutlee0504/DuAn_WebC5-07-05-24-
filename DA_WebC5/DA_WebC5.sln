@@ -5,7 +5,10 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DA_WebC5", "DA_WebC5\DA_WebC5.csproj", "{12E295D3-05B0-4FA7-B057-A4611B693344}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportAPI", "SportAPI\SportAPI.csproj", "{50226729-7CEB-450E-BAA4-1B977EFE129E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportAPI", "SportAPI\SportAPI.csproj", "{50226729-7CEB-450E-BAA4-1B977EFE129E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{12E295D3-05B0-4FA7-B057-A4611B693344} = {12E295D3-05B0-4FA7-B057-A4611B693344}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

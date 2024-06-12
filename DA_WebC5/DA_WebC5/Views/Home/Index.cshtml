@@ -251,25 +251,29 @@
     <section style="background-color: #eee;">
         <div class="container py-3">
             <div class="row">
-                @foreach (var item in Model)
+                @foreach (var item in Model.Take(8))
                 {
-                    <div class="col-sm-3 d-flex justify-content-center flex-column">
-                        <div class="border border-secondary-subtle rounded">
-                            <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@item.IDProduct"><img src="/Image_Product/@item.Image" alt="Alternate Text" class="mw-100" /></a>
+                    @if (item.Status.Equals("Bán"))
+                    {
+                        <div class="col-sm-3 d-flex justify-content-center flex-column">
+                            <div class="border border-secondary-subtle rounded">
+                                <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@item.IDProduct"><img src="~/@item.Image" alt="Alternate Text" class="mw-100" /></a>
+                            </div>
+                            <div class="row container-fluid">
+                                <p class="font-weight-bold col-sm-8 mb-1">@item.Name</p>
+                                <p class="font-weight-bold col-sm-4 mb-1">@item.Price.ToString("N0")</p>
+                                <p style="font-size: small;" class="col-sm-8">@item.CategoryName</p>
+                                <strike style="font-size: small;" class="col-sm-4">@item.Price.ToString("N0")</strike>
+                            </div>
+                            <p><i class="bi bi-star-fill text-warning"></i> 4.9 (100)</p>
                         </div>
-                        <div class="row container-fluid">
-                            <p class="font-weight-bold col-sm-8 mb-1">@item.Name</p>
-                            <p class="font-weight-bold col-sm-4 mb-1">@item.Price.ToString("N0")</p>
-                            <p style="font-size: small;" class="col-sm-8">@item.CategoryName</p>
-                            <strike style="font-size: small;" class="col-sm-4">@item.Price.ToString("N0")</strike>
-                        </div>
-                        <p><i class="bi bi-star-fill text-warning"></i> 4.9 (100)</p>
-                    </div>
+                    }
                 }
             </div>
         </div>
     </section>
 </div>
+
 
 <!-- Product -->
 <div class="container py-5">

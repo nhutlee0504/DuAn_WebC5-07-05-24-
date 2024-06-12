@@ -1,0 +1,107 @@
+﻿@model DA_WebC5.Models.NewViewModel.ProductDetailViewModel
+
+@{
+    ViewData["Title"] = "Chi tiết sản phẩm";
+}
+
+<h1>Chi tiết sản phẩm</h1>
+
+<div class="card">
+    <div class="card-header">
+        <h4>Thông tin sản phẩm</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Product.Name)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Product.Name)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Product.Status)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Product.Status)
+            </dd>
+            <dt class="col-sm-3">
+                Giá
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Product.Price)
+            </dd>
+            <dt class="col-sm-3">
+                Nhà cung cấp
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Product.Supplier.Name)
+            </dd>
+            <dt class="col-sm-3">
+                Loại sản phẩm
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Product.Category.Name)
+            </dd>
+            <dt class="col-sm-3">
+                Mô tả
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Product.Describe)
+            </dd>
+        </dl>
+    </div>
+    <a asp-action="UpdateProduct" asp-controller="Products" asp-area="Admin" asp-route-id="@Model.Product.IDProduct" class="btn btn-primary">Cập nhật sản phẩm</a>
+</div>
+
+<div class="card mt-3">
+    <div class="card-header">
+        <h4>Chi tiết sản phẩm</h4>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Kích cỡ</th>
+                    <th>Màu sắc</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var detail in Model.ProductDetails)
+                {
+                    <tr>
+                        <td>
+                            @detail.IDPDetail
+                        </td>
+                        <td>
+                            @Model.Sizes.FirstOrDefault(s => s.IDSize == detail.Size)?.SizeName
+                        </td>
+                        <td>
+                            @Model.Colors.FirstOrDefault(x => x.IDColor == detail.IDColor)?.Color
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card mt-3">
+    <div class="card-header">
+        <h4>Màu sắc</h4>
+    </div>
+    <div class="card-body">
+    </div>
+</div>
+
+<div class="card mt-3">
+    <div class="card-header">
+        <h4>Kích cỡ</h4>
+    </div>
+    <div class="card-body">
+    </div>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Index">Quay lại danh sách</a>
+</div>
