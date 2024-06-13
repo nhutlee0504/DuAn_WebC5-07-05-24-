@@ -1,34 +1,46 @@
 ﻿@model DA_WebC5.Models.Colors
 
 @{
-    ViewData["Title"] = "Update";
+    ViewData["Title"] = "Cập Nhật";
 }
 
-<h1>Update</h1>
+<h1>Cập Nhật</h1>
 
-<h4>Colors</h4>
+<h4>Màu Sắc</h4>
 <hr />
 <div class="row">
     <div class="col-md-12">
+        <input type="color" id="colorPicker">
+        <script>
+            const colorPicker = document.getElementById('colorPicker');
+            const colorInput = document.getElementById('colorInput');
+
+            colorPicker.addEventListener('input', function () {
+                const selectedColor = this.value;
+                colorInput.value = selectedColor;
+            });
+        </script>
         <form asp-action="Update" asp-area="Admin" asp-controller="Color">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" id="IDColor" name="idcolor" value="@Model.IDColor" asp-for="IDColor" />
             <div class="form-group">
-                <label asp-for="Color" class="control-label"></label>
+                <label asp-for="Color" class="control-label">Màu</label>
                 <input asp-for="Color" class="form-control" />
                 <span asp-validation-for="Color" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Lưu" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Quay lại danh sách</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

@@ -369,61 +369,75 @@ namespace DA_WebC5.Areas.Admin.Controllers
             return View(product);
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [Route("Admin/Products/UpdateProduct")]
-        public async Task<IActionResult> UpdateProduct(Product product, IFormFile Image, int IDProduct)
-        {
-            if (ModelState.IsValid)
+            [HttpPost]
+            [ValidateAntiForgeryToken]
+            [Route("Admin/Products/UpdateProduct")]
+            public async Task<IActionResult> UpdateProduct(Product product, IFormFile Image, int IDProduct)
             {
-                if (Image != null && Image.Length > 0)
+                if (ModelState.IsValid)
                 {
-                    var fileName = Path.GetFileName(Image.FileName);
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/IMG", fileName);
-
-                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    if (Image != null && Image.Length > 0)
                     {
-                        await Image.CopyToAsync(stream);
-                    }
+                        var fileName = Path.GetFileName(Image.FileName);
+                        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/IMG", fileName);
 
-                    product.Image = "IMG/" + fileName;
-                }
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await Image.CopyToAsync(stream);
+                        }
 
-                using (var httpClient = new HttpClient())
-                {
-                    var response = await httpClient.PutAsJsonAsync(_urlP + IDProduct, product);
-
-                    if (response.IsSuccessStatusCode)
-                    {
-                        return RedirectToAction("Index");
+                        product.Image = "IMG/" + fileName;
                     }
                     else
                     {
-                        ModelState.AddModelError(string.Empty, "An error occurred while updating the product.");
+                        // Retrieve the existing product to get the current image path
+                        using (var httpClient = new HttpClient())
+                        {
+                            var existingProductResponse = await httpClient.GetAsync(_urlP + IDProduct);
+                            if (existingProductResponse.IsSuccessStatusCode)
+                            {
+                                string existingProductResponseBody = await existingProductResponse.Content.ReadAsStringAsync();
+                                var existingProduct = JsonConvert.DeserializeObject<Product>(existingProductResponseBody);
+                                product.Image = existingProduct.Image; // Keep the existing image if no new image is uploaded
+                            }
+                        }
+                    }
+
+                using (var httpClient = new HttpClient())
+                    {
+                        var response = await httpClient.PutAsJsonAsync(_urlP + IDProduct, product);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            return RedirectToAction("Index");
+                        }
+                        else
+                        {
+                            ModelState.AddModelError(string.Empty, "An error occurred while updating the product.");
+                        }
                     }
                 }
-            }
 
-            // Repopulate the dropdown lists if validation fails
-            using (var httpClient = new HttpClient())
-            {
-                var categoryResponse = await httpClient.GetAsync(_urlCate);
-                if (categoryResponse.IsSuccessStatusCode)
+                // Repopulate the dropdown lists if validation fails
+                using (var httpClient = new HttpClient())
                 {
-                    string categoryResponseBody = await categoryResponse.Content.ReadAsStringAsync();
-                    ViewBag.Categories = JsonConvert.DeserializeObject<List<Category>>(categoryResponseBody);
+                    var categoryResponse = await httpClient.GetAsync(_urlCate);
+                    if (categoryResponse.IsSuccessStatusCode)
+                    {
+                        string categoryResponseBody = await categoryResponse.Content.ReadAsStringAsync();
+                        ViewBag.Categories = JsonConvert.DeserializeObject<List<Category>>(categoryResponseBody);
+                    }
+
+                    var supplierResponse = await httpClient.GetAsync(_urlSuplier);
+                    if (supplierResponse.IsSuccessStatusCode)
+                    {
+                        string supplierResponseBody = await supplierResponse.Content.ReadAsStringAsync();
+                        ViewBag.Suppliers = JsonConvert.DeserializeObject<List<Supplier>>(supplierResponseBody);
+                    }
                 }
 
-                var supplierResponse = await httpClient.GetAsync(_urlSuplier);
-                if (supplierResponse.IsSuccessStatusCode)
-                {
-                    string supplierResponseBody = await supplierResponse.Content.ReadAsStringAsync();
-                    ViewBag.Suppliers = JsonConvert.DeserializeObject<List<Supplier>>(supplierResponseBody);
-                }
+                return View(product);
             }
-
-            return View(product);
-        }
 
 
 
