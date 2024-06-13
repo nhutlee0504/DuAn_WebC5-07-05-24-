@@ -38,5 +38,19 @@ namespace DA_WebC5.Models
             public List<Bill> Bills { get; set; }
             public List<Category> Categories {get; set;}
         }
+
+        public class BillInfor
+        {
+            public Bill Bills { get; set; }
+            public List<Product> Products { get; set; }
+            public List<ProductDetails> ProductDetails { get; set; }
+            public List<BillDetails> BillDetails { get; set; }
+            public List<Sizes> Sizes { get; set; }
+            public List<Colors> Colors { get; set; }
+            public List<Account> Accounts { get; set; }
+            public List<Category> Categories { get; set; }
+            public List<Supplier> Suppliers { get; set; }
+
+        }
     }
 }

@@ -3,11 +3,92 @@
 *@
 @{
 }
-@model DA_WebC5.Models.BillDetails
+@model DA_WebC5.Models.NewViewModel.BillInfor
 
 <div class="container">
-    @foreach(var item in Model.Bill.BillDetails)
-    {
-        @Model.IDPDetail
-    }
+    <h4 class="mt-4">Chi tiết hóa đơn</h4>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="table-primary">
+                <tr>
+                    <th>ID Sản phẩm</th>
+                    <th>Màu sắc</th>
+                    <th>Kích thước</th>
+                    <th>Số lượng</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.BillDetails)
+                {
+                    <tr>
+                        <td>
+                            @Model.ProductDetails.FirstOrDefault(x => x.IDPDetail == item.IDBDetail).IDPDetail
+                        </td>
+                        <td>
+                            @Model.Colors.FirstOrDefault(x => x.IDColor == Model.ProductDetails.FirstOrDefault(x => x.IDPDetail == item.IDBDetail).IDColor).Color
+                        </td>
+                        <td>
+                            @Model.Sizes.FirstOrDefault(x => x.IDSize == Model.ProductDetails.FirstOrDefault(x => x.IDPDetail == item.IDBDetail).Size).SizeName
+                        </td>
+                        <td>@item.Quantity</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
+
+<style>
+    .container {
+        margin-top: 20px;
+    }
+
+    .table {
+        width: 100%;
+        margin-bottom: 1rem;
+        color: #212529;
+    }
+
+        .table th,
+        .table td {
+            padding: 0.75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .table tbody + tbody {
+            border-top: 2px solid #dee2e6;
+        }
+
+        .table .table {
+            background-color: #f8f9fa;
+        }
+
+    .table-hover tbody tr:hover {
+        color: #495057;
+        background-color: rgba(0, 0, 0, 0.075);
+    }
+
+    .table-bordered {
+        border: 1px solid #dee2e6;
+    }
+
+        .table-bordered th,
+        .table-bordered td {
+            border: 1px solid #dee2e6;
+        }
+
+        .table-bordered thead th,
+        .table-bordered thead td {
+            border-bottom-width: 2px;
+        }
+
+    .table-primary {
+        background-color: #e9ecef;
+    }
+</style>

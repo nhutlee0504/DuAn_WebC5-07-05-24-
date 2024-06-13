@@ -16,13 +16,12 @@ namespace DA_WebC5.Areas.Admin.Controllers
         private string urlBill = "http://localhost:57700/api/Bill/";
         private string urlBillDetailBill = "http://localhost:57700/api/BillDetail?id=";
         private string urlPD = "http://localhost:57700/api/Product/";
-        private string urlImg = "http://localhost:57700/api/ImageDetail?productId=";
-        private string urlPddt = "http://localhost:57700/api/ProductDetail/prodId?prodId=";
+        private string urlPddt = "http://localhost:57700/api/ProductDetail";
         private string urlColor = "http://localhost:57700/api/Color/";
         private string urlSize = "http://localhost:57700/api/Size/";
-        private string urlEvaluate = "http://localhost:57700/api/Evaluate/";
         private string urlCategory = "http://localhost:57700/api/Category";
         private string urlSupplier = "http://localhost:57700/api/Supplier";
+        private string urlAccount = "http://localhost:57700/api/Account";
         private readonly ApplicationDbContext _context;
         public BillsController(ApplicationDbContext context)
         {
@@ -48,89 +47,31 @@ namespace DA_WebC5.Areas.Admin.Controllers
         [Route("Admin/Bills/BillDetail")]
         public async Task<IActionResult> BillDetail(int id)
         {
-            //ProductDetailViewModel viewModel = new ProductDetailViewModel();
-
-            //using (var httpClient = new HttpClient())
-            //{
-            //    var productResponse = await httpClient.GetAsync(urlPD + id);
-            //    if (productResponse.IsSuccessStatusCode)
-            //    {
-            //        string apiResponse1 = await productResponse.Content.ReadAsStringAsync();
-            //        viewModel.Product = JsonConvert.DeserializeObject<Product>(apiResponse1);
-            //    }
-
-            //    var imageResponse = await httpClient.GetAsync(urlImg + id);
-            //    if (imageResponse.IsSuccessStatusCode)
-            //    {
-            //        string apiResponse2 = await imageResponse.Content.ReadAsStringAsync();
-            //        viewModel.Images = JsonConvert.DeserializeObject<List<ImageDetails>>(apiResponse2);
-            //    }
-
-            //    var pddtResponse = await httpClient.GetAsync(urlPddt + id);
-            //    if (pddtResponse.IsSuccessStatusCode)
-            //    {
-            //        string apiResponse3 = await pddtResponse.Content.ReadAsStringAsync();
-            //        viewModel.ProductDetails = JsonConvert.DeserializeObject<List<ProductDetails>>(apiResponse3);
-            //    }
-
-            //    var colorResponse = await httpClient.GetAsync(urlColor);
-            //    if (colorResponse.IsSuccessStatusCode)
-            //    {
-            //        string apiResponse4 = await colorResponse.Content.ReadAsStringAsync();
-            //        viewModel.Colors = JsonConvert.DeserializeObject<List<Colors>>(apiResponse4);
-            //    }
-
-            //    var sizeResponse = await httpClient.GetAsync(urlSize);
-            //    if (sizeResponse.IsSuccessStatusCode)
-            //    {
-            //        string apiResponse5 = await sizeResponse.Content.ReadAsStringAsync();
-            //        viewModel.Sizes = JsonConvert.DeserializeObject<List<Sizes>>(apiResponse5);
-            //    }
-
-            //    var evaResponse = await httpClient.GetAsync(urlEvaluate);
-            //    if (evaResponse.IsSuccessStatusCode)
-            //    {
-            //        string apiResponse6 = await evaResponse.Content.ReadAsStringAsync();
-            //        viewModel.Evaluates = JsonConvert.DeserializeObject<List<Evaluate>>(apiResponse6);
-            //    }
-            //    var cateResponse = await httpClient.GetAsync(urlCategory + viewModel.Product.Category);
-            //    if (cateResponse.IsSuccessStatusCode)
-            //    {
-            //        string apiResponse7 = await cateResponse.Content.ReadAsStringAsync();
-            //        var cate = JsonConvert.DeserializeObject<List<Category>>(apiResponse7);
-            //        viewModel.Product.Category = cate.FirstOrDefault(x => x.IDCategory == viewModel.Product.IDCategory);
-            //    }
-            //    var supResponse = await httpClient.GetAsync(urlSupplier + viewModel.Product.Supplier);
-            //    if (supResponse.IsSuccessStatusCode)
-            //    {
-            //        string apiResponse8 = await supResponse.Content.ReadAsStringAsync();
-            //        var supl = JsonConvert.DeserializeObject<List<Supplier>>(apiResponse8);
-            //        viewModel.Product.Supplier = supl.FirstOrDefault(x => x.IDSupplier == viewModel.Product.IDSupplier);
-            //    }
-            //    var billResponse = await httpClient.GetAsync(urlBill);
-            //    if(billResponse.IsSuccessStatusCode)
-            //    {
-            //        string apiResponse9 = await billResponse.Content.ReadAsStringAsync();
-            //        var bi = JsonConvert.DeserializeObject<Bill>(apiResponse9);
-            //    }
-            //    var billdetailResponse = await httpClient.GetAsync(urlBillDetailBill + id);
-            //    if (billResponse.IsSuccessStatusCode)
-            //    {
-            //        string apiResponse10 = await billResponse.Content.ReadAsStringAsync();
-            //        var bi = JsonConvert.DeserializeObject<BillDetails>(apiResponse10);
-            //    }
-
-            //}
-            List<BillDetails> bills = new List<BillDetails>();
+            var view = new BillInfor();
             using (var httpClient = new HttpClient())
             {
                 using (var Response = await httpClient.GetAsync(urlBillDetailBill + id))
                 {
                     string apiResponse = await Response.Content.ReadAsStringAsync();
-                    bills = JsonConvert.DeserializeObject<List<BillDetails>>(apiResponse);
+                    view.BillDetails = JsonConvert.DeserializeObject<List<BillDetails>>(apiResponse);
+                }
+                using(var Response1 = await httpClient.GetAsync(urlColor))
+                {
+                    string apiResponse1 = await Response1.Content.ReadAsStringAsync();
+                   view.Colors = JsonConvert.DeserializeObject<List<Colors>>(apiResponse1);
+                }
+                using (var Response1 = await httpClient.GetAsync(urlSize))
+                {
+                    string apiResponse1 = await Response1.Content.ReadAsStringAsync();
+                    view.Sizes = JsonConvert.DeserializeObject<List<Sizes>>(apiResponse1);
+                }
+                using (var Response1 = await httpClient.GetAsync(urlPddt))
+                {
+                    string apiResponse1 = await Response1.Content.ReadAsStringAsync();
+                    view.ProductDetails = JsonConvert.DeserializeObject<List<ProductDetails>>(apiResponse1);
                 }
             }
-            return View(bills);
+            return View(view);
         }
     }
 }

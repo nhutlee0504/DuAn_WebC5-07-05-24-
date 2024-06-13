@@ -20,116 +20,130 @@ namespace DA_WebC5.Controllers
         }
         public async Task<IActionResult> Index(List<int> selectedProducts)
         {
-            string username = HttpContext.Session.GetString("LoggedInUser");
-            if (string.IsNullOrEmpty(username))
+            if(selectedProducts !=null && selectedProducts.Count > 0)
             {
-                return RedirectToAction("Login", "Home");
+                string username = HttpContext.Session.GetString("LoggedInUser");
+                if (string.IsNullOrEmpty(username))
+                {
+                    return RedirectToAction("Login", "Home");
+                }
+
+                // Fetch user information
+                var user = await _context.Accounts.FirstOrDefaultAsync(u => u.UserName == username);
+                if (user == null)
+                {
+                    return NotFound("User not found");
+                }
+
+                // Fetch cart items
+                var selectedCartItems = await _context.Carts
+              .Where(x => x.UserName == username && selectedProducts.Contains(x.IDPDetail))
+              .Include(x => x.ProductDetails.Product)
+              .Include(x => x.ProductDetails.Product.Category)
+              .Include(x => x.ProductDetails.Sizes)
+              .Include(x => x.ProductDetails.Colors)
+              .ToListAsync();
+                //var cartItems = await _context.Carts
+                //    .Where(x => x.UserName == username)
+
+                //    .Include(x => x.ProductDetails.Product)
+                //     .Include(x => x.ProductDetails.Product.Category)
+                //    .Include(x => x.ProductDetails.Sizes)
+                //    .Include(x => x.ProductDetails.Colors)
+
+                //    .ToListAsync();
+
+                // Create a ViewModel to pass both user and cart items to the view
+                var viewModel = new BillViewModel
+                {
+                    User = user,
+                    CartItems = selectedCartItems
+                };
+
+                return View(viewModel);
             }
-
-            // Fetch user information
-            var user = await _context.Accounts.FirstOrDefaultAsync(u => u.UserName == username);
-            if (user == null)
+            else
             {
-                return NotFound("User not found");
+                return RedirectToAction("Index", "Cart");
             }
-
-            // Fetch cart items
-            var selectedCartItems = await _context.Carts
-          .Where(x => x.UserName == username && selectedProducts.Contains(x.IDPDetail))
-          .Include(x => x.ProductDetails.Product)
-          .Include(x => x.ProductDetails.Product.Category)
-          .Include(x => x.ProductDetails.Sizes)
-          .Include(x => x.ProductDetails.Colors)
-          .ToListAsync();
-            //var cartItems = await _context.Carts
-            //    .Where(x => x.UserName == username)
-
-            //    .Include(x => x.ProductDetails.Product)
-            //     .Include(x => x.ProductDetails.Product.Category)
-            //    .Include(x => x.ProductDetails.Sizes)
-            //    .Include(x => x.ProductDetails.Colors)
-
-            //    .ToListAsync();
-
-            // Create a ViewModel to pass both user and cart items to the view
-            var viewModel = new BillViewModel
-            {
-                User = user,
-                CartItems = selectedCartItems
-            };
-
-            return View(viewModel);
         }
 
         [Route("Bills/Pay")]
         public IActionResult Pay(List<int> selectedProducts)
         {
-           
-            string username = HttpContext.Session.GetString("LoggedInUser");
-            decimal totalPrice = decimal.Parse(HttpContext.Request.Form["totalPrice"]);
-            var selectedCartItems = _context.Carts
-        .Where(x => x.UserName == username && selectedProducts.Contains(x.IDPDetail))
-        .Include(x => x.ProductDetails.Product)
-        .Include(x => x.ProductDetails.Product.Category)
-        .Include(x => x.ProductDetails.Sizes)
-        .Include(x => x.ProductDetails.Colors)
-        .ToList();
-
-            // Sử dụng biến 'username' ở đây để thực hiện các hành động khác
-            // ...
-
-            var addbill = new Bill
+            if (selectedProducts != null && selectedProducts.Count > 0)
             {
-                UserName = username,
-                OrderDate = DateTime.Now,
-                TotalAmount = totalPrice,
-            };
-            _context.Bills.Add(addbill);
-            _context.SaveChanges();
+                string username = HttpContext.Session.GetString("LoggedInUser");
+                decimal totalPrice = decimal.Parse(HttpContext.Request.Form["totalPrice"]);
+                var selectedCartItems = _context.Carts
+            .Where(x => x.UserName == username && selectedProducts.Contains(x.IDPDetail))
+            .Include(x => x.ProductDetails.Product)
+            .Include(x => x.ProductDetails.Product.Category)
+            .Include(x => x.ProductDetails.Sizes)
+            .Include(x => x.ProductDetails.Colors)
+            .ToList();
 
-            int billId = addbill.IDBill;
-            foreach (var cartItem in selectedCartItems)
-            {
-                var billDetail = new BillDetails
+                // Sử dụng biến 'username' ở đây để thực hiện các hành động khác
+                // ...
+
+                var addbill = new Bill
                 {
-                    IDBill = billId,
-                    IDPDetail = cartItem.IDPDetail,
-                    Quantity = cartItem.Quantity,
-                    Price = cartItem.ProductDetails.Product.Price * cartItem.Quantity
+                    UserName = username,
+                    OrderDate = DateTime.Now,
+                    TotalAmount = totalPrice,
                 };
-                _context.BillDetails.Add(billDetail);
+                _context.Bills.Add(addbill);
+                _context.SaveChanges();
 
-                var pd = _context.ProductDetails.FirstOrDefault(p => p.IDPDetail == cartItem.IDPDetail);
-                if (pd != null)
+                int billId = addbill.IDBill;
+                foreach (var cartItem in selectedCartItems)
                 {
-                    // Cập nhật số lượng sản phẩm trong ProductDetail
-                    pd.Quantity -= cartItem.Quantity;
-
-                    // Đảm bảo số lượng không âm
-                    if (pd.Quantity < 0)
+                    var billDetail = new BillDetails
                     {
-                        pd.Quantity = 0;
+                        IDBill = billId,
+                        IDPDetail = cartItem.IDPDetail,
+                        Quantity = cartItem.Quantity,
+                        Price = cartItem.ProductDetails.Product.Price * cartItem.Quantity
+                    };
+                    _context.BillDetails.Add(billDetail);
+
+                    var pd = _context.ProductDetails.FirstOrDefault(p => p.IDPDetail == cartItem.IDPDetail);
+                    if (pd != null)
+                    {
+                        // Cập nhật số lượng sản phẩm trong ProductDetail
+                        pd.Quantity -= cartItem.Quantity;
+
+                        // Đảm bảo số lượng không âm
+                        if (pd.Quantity < 0)
+                        {
+                            pd.Quantity = 0;
+                        }
+
+                        // Lưu thay đổi vào cơ sở dữ liệu
+                        _context.ProductDetails.Update(pd);
                     }
 
-                    // Lưu thay đổi vào cơ sở dữ liệu
-                    _context.ProductDetails.Update(pd);
+                    _context.Carts.Remove(cartItem);
                 }
+                var hs = new History
+                {
+                    UserName = username,
+                    Describe = "Đơn hàng của " + username + " đã được tạo"
+                };
+                _context.Histories.Add(hs);
 
-                _context.Carts.Remove(cartItem);
+                _context.SaveChanges();
+
+
+
+
+                return RedirectToAction("Index");
             }
-            var hs = new History
+            else
             {
-                UserName = username,
-                Describe = "Đơn hàng của " + username + " đã được tạo"
-            };
-            _context.Histories.Add(hs);
-            
-            _context.SaveChanges();
-
+                return RedirectToAction("Index", "Home");
+            }
            
-
-
-            return RedirectToAction("Index");
         }
     }
 }
