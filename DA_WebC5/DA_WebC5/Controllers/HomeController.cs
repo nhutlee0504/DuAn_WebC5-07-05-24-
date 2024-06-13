@@ -71,7 +71,8 @@ namespace DA_WebC5.Controllers
                                 Name = product.Name,
                                 Price = product.Price,
                                 CategoryName = category.Name,
-                                Image = product.Image
+                                Image = product.Image,
+                                Status = product.Status
                             };
                             productsViewModel.Add(prod);
                         }

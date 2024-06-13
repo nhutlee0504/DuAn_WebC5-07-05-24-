@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Caching.Memory;
 using SportAPI.Model;
 using SportAPI.Services;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace SportAPI.Controllers
 {
@@ -18,6 +20,25 @@ namespace SportAPI.Controllers
         public IEnumerable<Category> GetCategories()
         {
             return category.GetCategories();
+        }
+
+        [HttpPost]
+        public Category PostCategory(Category cacte)
+        {
+            return category.AddCategory(new Category
+            {
+                Name = cacte.Name,
+            });
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, Category cate)
+        {
+            var tim = category.GetCategoryById(id);
+            tim.Name = cate.Name;
+            category.UpdateCategory(id, tim);
+            return Ok(tim);
+            
         }
     }
 }
