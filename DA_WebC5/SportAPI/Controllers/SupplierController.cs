@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using SportAPI.Model;
 using SportAPI.Services;
 using System.Collections.Generic;
-using System.Drawing;
 
 namespace SportAPI.Controllers
 {
@@ -11,24 +10,73 @@ namespace SportAPI.Controllers
     [ApiController]
     public class SupplierController : ControllerBase
     {
-        private ISupplier supplier;
-        public SupplierController(ISupplier supp) => supplier = supp;
+        private readonly ISupplier supplierService;
+
+        public SupplierController(ISupplier supplierService)
+        {
+            this.supplierService = supplierService;
+        }
 
         [HttpGet]
-        public IEnumerable<Supplier> GetSuppliers()
+        public ActionResult<IEnumerable<Supplier>> GetSuppliers()
         {
-            return supplier.GetSuppliers();
+            var suppliers = supplierService.GetSuppliers();
+            return Ok(suppliers);
         }
+
         [HttpPost]
-        public Supplier Add(Supplier sup)
+        public ActionResult<Supplier> AddSupplier(Supplier supplier)
         {
-            return supplier.Addsuplire(new Supplier
+            var addedSupplier = supplierService.Addsuplire(new Supplier
             {
-               Name = sup.Name,
-               Address = sup.Address,
-               Phone = sup.Phone,
-               Email = sup.Email
+                Name = supplier.Name,
+                Address = supplier.Address,
+                Phone = supplier.Phone,
+                Email = supplier.Email
             });
+
+            if (addedSupplier == null)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error adding supplier.");
+            }
+
+            return CreatedAtAction(nameof(GetSupplierByID), new { id = addedSupplier.IDSupplier }, addedSupplier);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateSupplier(int id, Supplier supplier)
+        {
+            var existingSupplier = supplierService.GetSupplierByID(id);
+
+            if (existingSupplier == null)
+            {
+                return NotFound();
+            }
+
+            existingSupplier.Address = supplier.Address;
+            existingSupplier.Email = supplier.Email;
+            existingSupplier.Phone = supplier.Phone;
+            existingSupplier.Name = supplier.Name;
+
+            var updatedSupplier = supplierService.UpdateSuplier(existingSupplier, id);
+
+            if (updatedSupplier == null)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error updating supplier.");
+            }
+
+            return NoContent();
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetSupplierByID(int id)
+        {
+            var supplier = supplierService.GetSupplierByID(id);
+            if (supplier == null)
+            {
+                return NotFound();
+            }
+            return Ok(supplier);
         }
     }
 }
