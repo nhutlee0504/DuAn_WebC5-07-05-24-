@@ -6,46 +6,55 @@
 
 <h1>Danh sách hóa đơn</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.IDBill).Replace("IDBill", "Mã Hóa Đơn")
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TotalAmount).Replace("TotalAmount", "Tổng Tiền")
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OrderDate).Replace("OrderDate", "Ngày Đặt Hàng")
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Account).Replace("Account", "Tài Khoản")
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IDBill)
-                </td>
-                <td>
-                   @item.TotalAmount.ToString("N0") đồng
-                </td>
-                <td>
-                    @item.OrderDate.ToString("dd/MM/yyyy")
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UserName)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.IDBill">Sửa</a> |
-                    <a asp-area="Admin" asp-controller="Bills" asp-action="BillDetail" asp-route-id="@item.IDBill">Chi tiết</a> |
-                    <a asp-action="Delete" asp-route-id="@item.IDBill">Xóa</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="row text-center">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.IDBill).Replace("IDBill", "Mã Hóa Đơn")
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TotalAmount).Replace("TotalAmount", "Tổng Tiền")
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.OrderDate).Replace("OrderDate", "Ngày Đặt Hàng")
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Account).Replace("Account", "Tài Khoản")
+                            </th>
+                            <th>Trạng thái đơn hàng</th>
+                            <th>Hành Động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IDBill)
+                                </td>
+                                <td>
+                                    @item.TotalAmount.ToString("N0") đồng
+                                </td>
+                                <td>
+                                    @item.OrderDate.ToString("dd/MM/yyyy")
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UserName)
+                                </td>
+                                <td><label class="badge badge-danger">Đang chờ</label></td>
+                                <td class="action-links">
+                                    <a asp-action="Edit" asp-route-id="@item.IDBill">Sửa</a> |
+                                    <a asp-area="Admin" asp-controller="Bills" asp-action="BillDetail" asp-route-id="@item.IDBill">Chi tiết</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.IDBill">Xóa</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

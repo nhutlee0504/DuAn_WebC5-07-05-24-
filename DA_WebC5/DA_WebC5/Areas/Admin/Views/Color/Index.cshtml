@@ -1,21 +1,19 @@
 ﻿@model IEnumerable<DA_WebC5.Models.Colors>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách màu sắc";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create" asp-area="Admin" asp-controller="Color">Create New</a>
-</p>
-<table class="table-hover">
+<h1>Danh sách màu sắc</h1>
+<a asp-action="Create" asp-area="Admin" asp-controller="Color" class="btn btn-sm btn-success">Tạo mới</a>
+    
+<table class="table text-center table-hover">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Color)
+           Màu
             </th>
-            <th></th>
+            <th>Hành động</th>
         </tr>
     </thead>
     <tbody>
@@ -26,15 +24,11 @@
                     @Html.DisplayFor(modelItem => item.Color)
                 </td>
                 <td>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <a asp-action="Update" asp-area="Admin" asp-controller="Color" asp-route-id="@item.IDColor" class="btn btn-sm btn-primary">
-                            <i class="fa fa-exchange"></i>
-                            <span class="hover-text">Cập nhật</span>
-                        </a>
-                    </div>
+                    <a asp-action="Update" asp-area="Admin" asp-controller="Color" asp-route-id="@item.IDColor" class="btn btn-sm btn-primary">
+                        <i class="fa fa-exchange"></i> Cập nhật
+                    </a>
                 </td>
             </tr>
         }
-
     </tbody>
 </table>
