@@ -729,3 +729,5 @@ D:\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\refint\DA_WebC5.dll
 D:\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\DA_WebC5.pdb
 D:\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\DA_WebC5.genruntimeconfig.cache
 D:\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\ref\DA_WebC5.dll
+D:\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Views\Home\ForgotPassword.cshtml.g.cs
+D:\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Views\Home\ResetPassword.cshtml.g.cs

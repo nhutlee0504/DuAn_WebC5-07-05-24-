@@ -17,6 +17,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using System.Net.Mail;
+using System.Net;
 namespace DA_WebC5.Controllers
 {
     public class HomeController : Microsoft.AspNetCore.Mvc.Controller
@@ -24,7 +26,6 @@ namespace DA_WebC5.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _context;
         private string url = "http://localhost:57700/api/Account/";
-
         public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
@@ -40,9 +41,107 @@ namespace DA_WebC5.Controllers
         {
             return View();
         }
+        
         public IActionResult Login()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> ForgotPassword(string email)
+        {
+            var account = await _context.Accounts.FirstOrDefaultAsync(u => u.Email == email);
+            if (account != null)
+            {
+                // Generate a random code
+                var resetCode = Guid.NewGuid().ToString("N").Substring(0, 6); // Generate a 6-character random code
+
+                // Save reset code to the database
+                account.ResetPasswordCode = resetCode;
+                _context.Update(account);
+                await _context.SaveChangesAsync();
+
+                // Send email with reset code
+                SendResetPasswordEmail(email, resetCode);
+
+                return Content("Một email chứa mã xác nhận đã được gửi đến địa chỉ email của bạn. Vui lòng kiểm tra hộp thư để đặt lại mật khẩu.");
+            }
+            else
+            {
+                return Content("Email không tồn tại trong hệ thống. Vui lòng thử lại.");
+            }
+        }
+
+        private void SendResetPasswordEmail(string email, string resetCode)
+        {
+            var fromAddress = new MailAddress("your-email@example.com", "Your Name");
+            var toAddress = new MailAddress(email);
+            const string fromPassword = "your-email-password";
+            const string subject = "Đặt lại mật khẩu";
+            string body = $"Mã xác nhận của bạn để đặt lại mật khẩu là: {resetCode}";
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.example.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+            };
+
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = subject,
+                Body = body
+            })
+            {
+                smtp.Send(message);
+            }
+        }
+        [HttpGet]
+        public IActionResult ResetPassword(string resetCode)
+        {
+            var account = _context.Accounts.FirstOrDefault(u => u.ResetPasswordCode == resetCode);
+            if (account != null)
+            {
+                ViewBag.ResetCode = resetCode;
+                return View();
+            }
+            else
+            {
+                return Content("Mã xác nhận không hợp lệ. Vui lòng thử lại.");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ResetPassword(string resetCode, string newPassword)
+        {
+            var account = await _context.Accounts.FirstOrDefaultAsync(u => u.ResetPasswordCode == resetCode);
+            if (account != null)
+            {
+                // Băm mật khẩu mới
+                MD5 md5 = MD5.Create();
+                byte[] passBytes = Encoding.UTF8.GetBytes(newPassword);
+                byte[] hashBytes = md5.ComputeHash(passBytes);
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    builder.Append(hashBytes[i].ToString("x2"));
+                }
+                string hashedPassword = builder.ToString();
+
+                // Cập nhật mật khẩu mới vào cơ sở dữ liệu
+                account.Password = hashedPassword;
+                account.ResetPasswordCode = null; // Xóa mã reset password sau khi đã sử dụng
+                _context.Update(account);
+                await _context.SaveChangesAsync();
+
+                return Content("Mật khẩu của bạn đã được đổi thành công.");
+            }
+            else
+            {
+                return Content("Đổi mật khẩu không thành công. Mã xác nhận không hợp lệ.");
+            }
         }
         public IActionResult Loginktr(string username, string password)
         {

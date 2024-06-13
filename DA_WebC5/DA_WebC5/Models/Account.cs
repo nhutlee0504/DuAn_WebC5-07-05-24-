@@ -31,6 +31,7 @@ namespace DA_WebC5.Models
 
         [Required(ErrorMessage = "Vui lòng nhập địa chỉ"), Column(TypeName = "ntext")]
         public string Address { get; set; }
+        public string ResetPasswordCode { get; set; }
 
         public ICollection<Cart> carts { get; set; }
 

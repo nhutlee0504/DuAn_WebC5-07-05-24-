@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\home\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\home\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\home\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\home\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,7 +82,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -94,33 +102,57 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "ResetPassword.cshtml",
+              "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\ResetPassword.cshtml",
+              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Home\\ResetPassword.cshtml",
+              "ToolTip": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\ResetPassword.cshtml",
+              "RelativeToolTip": "DA_WebC5\\Views\\Home\\ResetPassword.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-13T06:23:24.303Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ForgotPassword.cshtml",
+              "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\ForgotPassword.cshtml",
+              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Home\\ForgotPassword.cshtml",
+              "ToolTip": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\ForgotPassword.cshtml",
+              "RelativeToolTip": "DA_WebC5\\Views\\Home\\ForgotPassword.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-13T06:22:35.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\Login.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Views\\Home\\Login.cshtml",
               "ToolTip": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\Login.cshtml",
               "RelativeToolTip": "DA_WebC5\\Views\\Home\\Login.cshtml",
-              "ViewState": "AQIAAAoAAAAAAAAAAADwvxoAAAAaAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAmwDUAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-07T14:33:10.645Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T14:33:10.645Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\HomeController.cs",
               "ToolTip": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\HomeController.cs",
               "RelativeToolTip": "DA_WebC5\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAFwAAAAAAAAAAAA5wGsAAAAJAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAwEoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-07T09:19:54.804Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "RegisterController.cs",
               "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\RegisterController.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\RegisterController.cs",
@@ -128,25 +160,23 @@
               "RelativeToolTip": "DA_WebC5\\Controllers\\RegisterController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAFQAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T10:13:55.136Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T10:13:55.136Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Account.cs",
               "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\Account.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Models\\Account.cs",
               "ToolTip": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\Account.cs",
               "RelativeToolTip": "DA_WebC5\\Models\\Account.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAABVAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwCAAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T10:12:36.716Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T10:12:36.716Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\appsettings.json",
               "RelativeDocumentMoniker": "DA_WebC5\\appsettings.json",
@@ -154,12 +184,11 @@
               "RelativeToolTip": "DA_WebC5\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-12T08:04:11.629Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T08:04:11.629Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Startup.cs",
               "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Startup.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Startup.cs",
@@ -167,12 +196,11 @@
               "RelativeToolTip": "DA_WebC5\\Startup.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAgwDgAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T08:04:38.786Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-12T08:04:38.786Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "TTKH.cshtml",
               "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\TTKH.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Views\\Home\\TTKH.cshtml",
@@ -180,12 +208,11 @@
               "RelativeToolTip": "DA_WebC5\\Views\\Home\\TTKH.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-08T15:32:18.355Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-08T15:32:18.355Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\appsettings.Development.json",
               "RelativeDocumentMoniker": "SportAPI\\appsettings.Development.json",
@@ -193,12 +220,11 @@
               "RelativeToolTip": "SportAPI\\appsettings.Development.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-07T10:49:45.053Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T10:49:45.053Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "ScaffoldingReadMe.txt",
               "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\ScaffoldingReadMe.txt",
               "RelativeDocumentMoniker": "DA_WebC5\\ScaffoldingReadMe.txt",
@@ -206,12 +232,11 @@
               "RelativeToolTip": "DA_WebC5\\ScaffoldingReadMe.txt",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-06-07T09:50:58.58Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T09:50:58.58Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Cart\\Index.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Views\\Cart\\Index.cshtml",
@@ -219,12 +244,11 @@
               "RelativeToolTip": "DA_WebC5\\Views\\Cart\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-07T08:02:00.187Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T08:02:00.187Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "CartController.cs",
               "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\CartController.cs",
@@ -232,12 +256,11 @@
               "RelativeToolTip": "DA_WebC5\\Controllers\\CartController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T08:01:18.851Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T08:01:18.851Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Sizes.cs",
               "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\Model\\Sizes.cs",
               "RelativeDocumentMoniker": "SportAPI\\Model\\Sizes.cs",
@@ -245,12 +268,11 @@
               "RelativeToolTip": "SportAPI\\Model\\Sizes.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T07:47:41.785Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T07:47:41.785Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "ProductResponse.cs",
               "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\Services\\ProductResponse.cs",
               "RelativeDocumentMoniker": "SportAPI\\Services\\ProductResponse.cs",
@@ -258,12 +280,11 @@
               "RelativeToolTip": "SportAPI\\Services\\ProductResponse.cs",
               "ViewState": "AQIAACQAAAAAAAAAAAAowAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T17:39:42.824Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-06T17:39:42.824Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "ProductDetailController.cs",
               "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\Controllers\\ProductDetailController.cs",
               "RelativeDocumentMoniker": "SportAPI\\Controllers\\ProductDetailController.cs",
@@ -271,12 +292,11 @@
               "RelativeToolTip": "SportAPI\\Controllers\\ProductDetailController.cs",
               "ViewState": "AQIAABcAAAAAAAAAAAAgwCcAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T17:26:14.182Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-06T17:26:14.182Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "ProductDetailResponse.cs",
               "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\Services\\ProductDetailResponse.cs",
               "RelativeDocumentMoniker": "SportAPI\\Services\\ProductDetailResponse.cs",
@@ -284,12 +304,11 @@
               "RelativeToolTip": "SportAPI\\Services\\ProductDetailResponse.cs",
               "ViewState": "AQIAABcAAAAAAAAAAAAwwC4AAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T17:12:55.401Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-06T17:12:55.401Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "SportAPI\\Controllers\\ProductController.cs",
@@ -297,8 +316,7 @@
               "RelativeToolTip": "SportAPI\\Controllers\\ProductController.cs",
               "ViewState": "AQIAACAAAAAAAAAAAAAgwDQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T15:19:00.903Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-06T15:19:00.903Z"
             }
           ]
         }
