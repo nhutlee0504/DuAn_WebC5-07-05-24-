@@ -20,6 +20,7 @@ namespace DA_WebC5.Controllers
         public async Task<IActionResult> Index(string find)
         {
             var productsViewModel = await GetProductsViewModel(find);
+            ViewBag.NotProducts = TempData["NotFind"] as string;
             return View(productsViewModel);
         }
 
@@ -51,6 +52,10 @@ namespace DA_WebC5.Controllers
             {
                 products = products.Where(x => x.Name.ToLower().Contains(find.ToLower())).ToList();
                 ViewBag.Seacrh = find;
+            }
+            else
+            {
+                TempData["NotFind"] = "Không tìm thấy sản phẩm";
             }
 
             if (selectedCategories != null && selectedCategories.Any())

@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.WebSockets;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -47,8 +46,7 @@ namespace SportAPI
             services.AddScoped<IColor, ColorResponse>();
             services.AddScoped<ISupplier, SupplierResponse>();
             services.AddScoped<IEvaluate, EvaluateResponse>();
-            services.AddScoped<IBill, BillResponse>();
-            services.AddScoped<IBillDetail, BillDetailResponse>();
+            services.AddScoped<ICategory, CategoryResponse>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
