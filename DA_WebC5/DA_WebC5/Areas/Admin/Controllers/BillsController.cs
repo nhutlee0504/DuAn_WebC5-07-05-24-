@@ -28,6 +28,7 @@ namespace DA_WebC5.Areas.Admin.Controllers
             _context = context;
         }
         [Route("Admin/Bills/Index")]
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             List<Bill> bills = new List<Bill>();

@@ -20,7 +20,6 @@ namespace DA_WebC5.Controllers
         public async Task<IActionResult> Index(string find)
         {
             var productsViewModel = await GetProductsViewModel(find);
-            ViewBag.NotProducts = TempData["NotFind"] as string;
             return View(productsViewModel);
         }
 

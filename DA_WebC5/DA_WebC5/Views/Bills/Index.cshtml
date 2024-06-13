@@ -122,7 +122,7 @@
                         var itemTotalPrice = item.Quantity * item.ProductDetails.Product.Price;
                         totalPrice += itemTotalPrice;
                         <div class="product-item">
-                                <img src="/Image_Product/@item.ProductDetails.Product.Image" alt="@item.ProductDetails.Product.Name" />
+                                <img src="~/@item.ProductDetails.Product.Image" alt="@item.ProductDetails.Product.Name" />
                             <div class="product-details">
                                 <div class="font-weight-bold">@item.ProductDetails.Product.Name</div>
                                 <span class="badge text-bg-dark" title="Giá: @item.ProductDetails.Product.Price.ToString("N0") đồng"> @item.ProductDetails.Product.Price.ToString("N0") đồng</span>

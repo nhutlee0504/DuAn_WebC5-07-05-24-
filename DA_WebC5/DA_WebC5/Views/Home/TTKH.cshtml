@@ -15,7 +15,6 @@
             margin-bottom: 0;
         }
 </style>
-}
 @{
     string hiddenPhoneNumber = Model.Phone.Substring(0, Model.Phone.Length / 2) + new string('*', Model.Phone.Length / 2);
     string hiddenEmail = Model.Email.Substring(0, Model.Email.IndexOf('@') / 2) + new string('*', Model.Email.Length - Model.Email.IndexOf('@'));

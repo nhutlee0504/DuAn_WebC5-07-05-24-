@@ -1,6 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Sản phẩm";
 }
+ @using Microsoft.AspNetCore.Http;
+    @inject IHttpContextAccessor HttpContextAccessor
+@{
+    string username = "";
+    var loggedInUser = HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser");
+    if (HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser") != null)
+    {
+        username = HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser");
+    }
+}
 @model IEnumerable<DA_WebC5.Models.NewViewModel.ProductViewModel>
 <style>
     .bg-text {
