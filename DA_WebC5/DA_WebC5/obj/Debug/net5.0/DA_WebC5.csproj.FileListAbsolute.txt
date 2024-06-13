@@ -625,3 +625,7 @@ D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net
 D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Products\UpdateProduct.cshtml.g.cs
 D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Suplier\Create.cshtml.g.cs
 D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Suplier\Index.cshtml.g.cs
+D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Size\Index.cshtml.g.cs
+D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Size\CreateSize.cshtml.g.cs
+D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Size\UpdateSize.cshtml.g.cs
+D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Bills\BillDetail.cshtml.g.cs

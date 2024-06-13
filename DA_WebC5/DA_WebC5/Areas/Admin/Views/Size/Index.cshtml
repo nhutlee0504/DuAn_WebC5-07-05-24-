@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DA_WebC5.Models.Sizes>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-controller="Size" asp-action="CreateSize" asp-area="Admin">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SizeName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SizeName)
+            </td>
+            <td>
+                <a asp-area="Admin" asp-controller="Size" asp-action="UpdateSize" asp-route-id="@item.IDSize">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IDSize">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IDSize">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

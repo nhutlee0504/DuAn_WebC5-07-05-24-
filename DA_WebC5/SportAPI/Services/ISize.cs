@@ -8,5 +8,9 @@ namespace SportAPI.Services
     {
         public IEnumerable<Sizes> GetSizes();
 
+        public Sizes AddSize(Sizes sizes);
+        public Sizes GetSizeId(int id);
+        public Sizes UpdateSizes(int id, Sizes upsize);
+
     }
 }

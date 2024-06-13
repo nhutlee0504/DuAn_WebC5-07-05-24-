@@ -253,8 +253,8 @@
             <div class="row">
                 @foreach (var item in Model.Take(8))
                 {
-                    @if (item.Status.Equals("Bán"))
-                    {
+@*                     @if (item.Status.Equals("Bán"))
+                    { *@
                         <div class="col-sm-3 d-flex justify-content-center flex-column">
                             <div class="border border-secondary-subtle rounded">
                                 <a asp-controller="ProductDetail" asp-action="Index" asp-route-id="@item.IDProduct"><img src="~/@item.Image" alt="Alternate Text" class="mw-100" /></a>
@@ -267,7 +267,7 @@
                             </div>
                             <p><i class="bi bi-star-fill text-warning"></i> 4.9 (100)</p>
                         </div>
-                    }
+              @*       } *@
                 }
             </div>
         </div>

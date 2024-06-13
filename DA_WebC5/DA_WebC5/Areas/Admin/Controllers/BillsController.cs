@@ -1,22 +1,136 @@
 ﻿using DA_WebC5.Data;
+using DA_WebC5.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
+using static DA_WebC5.Models.NewViewModel;
 
 namespace DA_WebC5.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class BillsController : Controller
     {
+        private string urlBill = "http://localhost:57700/api/Bill/";
+        private string urlBillDetailBill = "http://localhost:57700/api/BillDetail?id=";
+        private string urlPD = "http://localhost:57700/api/Product/";
+        private string urlImg = "http://localhost:57700/api/ImageDetail?productId=";
+        private string urlPddt = "http://localhost:57700/api/ProductDetail/prodId?prodId=";
+        private string urlColor = "http://localhost:57700/api/Color/";
+        private string urlSize = "http://localhost:57700/api/Size/";
+        private string urlEvaluate = "http://localhost:57700/api/Evaluate/";
+        private string urlCategory = "http://localhost:57700/api/Category";
+        private string urlSupplier = "http://localhost:57700/api/Supplier";
         private readonly ApplicationDbContext _context;
         public BillsController(ApplicationDbContext context)
         {
             _context = context;
         }
         [Route("Admin/Bills/Index")]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var list = _context.Bills.ToList();
-            return View(list);
+            List<Bill> bills = new List<Bill>();
+            using (var httpClient = new HttpClient())
+            {
+                using (var Response = await httpClient.GetAsync(urlBill))
+                {
+                    string apiResponse = await Response.Content.ReadAsStringAsync();
+                    bills = JsonConvert.DeserializeObject<List<Bill>>(apiResponse);
+                }
+            }
+            return View(bills);
+            //    var list = _context.Bills.ToList();
+            //return View(list);
+        }
+
+        [Route("Admin/Bills/BillDetail")]
+        public async Task<IActionResult> BillDetail(int id)
+        {
+            //ProductDetailViewModel viewModel = new ProductDetailViewModel();
+
+            //using (var httpClient = new HttpClient())
+            //{
+            //    var productResponse = await httpClient.GetAsync(urlPD + id);
+            //    if (productResponse.IsSuccessStatusCode)
+            //    {
+            //        string apiResponse1 = await productResponse.Content.ReadAsStringAsync();
+            //        viewModel.Product = JsonConvert.DeserializeObject<Product>(apiResponse1);
+            //    }
+
+            //    var imageResponse = await httpClient.GetAsync(urlImg + id);
+            //    if (imageResponse.IsSuccessStatusCode)
+            //    {
+            //        string apiResponse2 = await imageResponse.Content.ReadAsStringAsync();
+            //        viewModel.Images = JsonConvert.DeserializeObject<List<ImageDetails>>(apiResponse2);
+            //    }
+
+            //    var pddtResponse = await httpClient.GetAsync(urlPddt + id);
+            //    if (pddtResponse.IsSuccessStatusCode)
+            //    {
+            //        string apiResponse3 = await pddtResponse.Content.ReadAsStringAsync();
+            //        viewModel.ProductDetails = JsonConvert.DeserializeObject<List<ProductDetails>>(apiResponse3);
+            //    }
+
+            //    var colorResponse = await httpClient.GetAsync(urlColor);
+            //    if (colorResponse.IsSuccessStatusCode)
+            //    {
+            //        string apiResponse4 = await colorResponse.Content.ReadAsStringAsync();
+            //        viewModel.Colors = JsonConvert.DeserializeObject<List<Colors>>(apiResponse4);
+            //    }
+
+            //    var sizeResponse = await httpClient.GetAsync(urlSize);
+            //    if (sizeResponse.IsSuccessStatusCode)
+            //    {
+            //        string apiResponse5 = await sizeResponse.Content.ReadAsStringAsync();
+            //        viewModel.Sizes = JsonConvert.DeserializeObject<List<Sizes>>(apiResponse5);
+            //    }
+
+            //    var evaResponse = await httpClient.GetAsync(urlEvaluate);
+            //    if (evaResponse.IsSuccessStatusCode)
+            //    {
+            //        string apiResponse6 = await evaResponse.Content.ReadAsStringAsync();
+            //        viewModel.Evaluates = JsonConvert.DeserializeObject<List<Evaluate>>(apiResponse6);
+            //    }
+            //    var cateResponse = await httpClient.GetAsync(urlCategory + viewModel.Product.Category);
+            //    if (cateResponse.IsSuccessStatusCode)
+            //    {
+            //        string apiResponse7 = await cateResponse.Content.ReadAsStringAsync();
+            //        var cate = JsonConvert.DeserializeObject<List<Category>>(apiResponse7);
+            //        viewModel.Product.Category = cate.FirstOrDefault(x => x.IDCategory == viewModel.Product.IDCategory);
+            //    }
+            //    var supResponse = await httpClient.GetAsync(urlSupplier + viewModel.Product.Supplier);
+            //    if (supResponse.IsSuccessStatusCode)
+            //    {
+            //        string apiResponse8 = await supResponse.Content.ReadAsStringAsync();
+            //        var supl = JsonConvert.DeserializeObject<List<Supplier>>(apiResponse8);
+            //        viewModel.Product.Supplier = supl.FirstOrDefault(x => x.IDSupplier == viewModel.Product.IDSupplier);
+            //    }
+            //    var billResponse = await httpClient.GetAsync(urlBill);
+            //    if(billResponse.IsSuccessStatusCode)
+            //    {
+            //        string apiResponse9 = await billResponse.Content.ReadAsStringAsync();
+            //        var bi = JsonConvert.DeserializeObject<Bill>(apiResponse9);
+            //    }
+            //    var billdetailResponse = await httpClient.GetAsync(urlBillDetailBill + id);
+            //    if (billResponse.IsSuccessStatusCode)
+            //    {
+            //        string apiResponse10 = await billResponse.Content.ReadAsStringAsync();
+            //        var bi = JsonConvert.DeserializeObject<BillDetails>(apiResponse10);
+            //    }
+
+            //}
+            List<BillDetails> bills = new List<BillDetails>();
+            using (var httpClient = new HttpClient())
+            {
+                using (var Response = await httpClient.GetAsync(urlBillDetailBill + id))
+                {
+                    string apiResponse = await Response.Content.ReadAsStringAsync();
+                    bills = JsonConvert.DeserializeObject<List<BillDetails>>(apiResponse);
+                }
+            }
+            return View(bills);
         }
     }
 }

@@ -51,7 +51,7 @@ namespace DA_WebC5.Controllers
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     products = JsonConvert.DeserializeObject<List<Product>>(apiResponse);
 
-                    products = products.Where(p => productsDetails.Any(pd => pd.IDProduct == p.IDProduct)).ToList();
+                    products = products.Where(p => productsDetails.Any(pd => pd.IDProduct == p.IDProduct)).Where(p => p.Status == "Bán").ToList();
                     //var p = products.Select(p => p.IDProduct).Distinct().ToDictionary(id => id, id => _context.ProductDetails.Count(pd => pd.IDProduct == id && pd.IDProduct > 0));
                 }
                 using (var response1 = await httpClient.GetAsync(urlCate))
@@ -71,7 +71,8 @@ namespace DA_WebC5.Controllers
                                 Name = product.Name,
                                 Price = product.Price,
                                 CategoryName = category.Name,
-                                Image = product.Image
+                                Image = product.Image,
+                                Status = product.Status
                             };
                             productsViewModel.Add(prod);
                         }

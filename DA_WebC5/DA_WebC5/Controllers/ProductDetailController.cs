@@ -100,7 +100,7 @@ namespace DA_WebC5.Controllers
             ViewBag.Condition = Reviewed && !hasEvaluated;
             return View(viewModel);
         }
-        public IActionResult AddEvaluate(string dsc, int id)
+        public IActionResult AddEvaluate(string dsc, int id, int point)
         {
             var db = Index(id);
             string username = HttpContext.Session.GetString("LoggedInUser");
@@ -108,7 +108,7 @@ namespace DA_WebC5.Controllers
             {
                 UserName = username,
                 IDProduct = id,
-                Point = 5,
+                Point = point,
                 Describe = dsc,
             };
             _context.Evaluates.Add(add);

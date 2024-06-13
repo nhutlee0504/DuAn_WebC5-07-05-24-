@@ -51,6 +51,27 @@
             font-weight: normal;
         }
 
+    .radio-btn-point {
+        display: none;
+    }
+
+    .radio-label {
+        display: inline-block;
+        text-align: center;
+        align-items: center;
+        align-content: center;
+        cursor: pointer;
+        font-size: 20px;
+        margin-right: 5px;
+        color: grey; /* Màu của sao chưa chọn */
+    }
+
+    /* Áp dụng màu vàng cho các sao được chọn và trước đó */
+    .radio-btn-point:checked ~ .radio-label,
+    .radio-btn-point:checked ~ .radio-label ~ .radio-label {
+        color: gold; /* Màu của sao đã chọn */
+    }
+
     .quantity-selector {
         display: flex;
         float: left;
@@ -165,7 +186,8 @@
             </div>
             <hr>
             <h3>THÔNG TIN SẢN PHẨM</h3>
-            <h4>@Model.Product.Category.Name - @Model.Product.Supplier.Name</h4>
+            <h4>@Model.Product.Name</h4>
+            <h5>@Model.Product.Category.Name - @Model.Product.Supplier.Name</h5>
             <p>@Model.Product.Describe</p>
         </div>
         <div class="col-md-5">
@@ -226,9 +248,16 @@
             </div>
             <div class="">
                 <hr></hr>
+
+
                 @if (ViewBag.Condition)
                 {
                     <form asp-controller="ProductDetail" asp-action="AddEvaluate" method="post">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            <input type="radio" id="star-@i" name="point" value="@i" class="radio-btn-point">
+                            <label class="radio-label" for="star-@i"><i class="bi bi-star-fill"></i></label>
+                        }
                         <input type="hidden" name="id" value="@Model.Product.IDProduct" />
                         <textarea name="dsc" rows="5" class="w-100"></textarea>
                         <button class="btn btn-secondary">Gửi đánh giá</button>
@@ -327,6 +356,21 @@
         increaseBtn.addEventListener('click', function () {
             var currentValue = parseInt(quantityInput.value);
             quantityInput.value = currentValue + 1;
+        });
+    });
+
+    document.querySelectorAll('.radio-btn-point').forEach(radio => {
+        radio.addEventListener('change', () => {
+            const value = parseInt(radio.value);
+            document.querySelectorAll('.radio-label').forEach(label => {
+                const labelFor = label.getAttribute('for');
+                const labelValue = parseInt(labelFor.split('-')[1]);
+                if (labelValue <= value) {
+                    label.style.color = 'gold';
+                } else {
+                    label.style.color = 'grey';
+                }
+            });
         });
     });
 </script>

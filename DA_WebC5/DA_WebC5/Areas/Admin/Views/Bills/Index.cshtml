@@ -38,11 +38,11 @@
                     @item.OrderDate.ToString("dd/MM/yyyy")
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Account.UserName)
+                    @Html.DisplayFor(modelItem => item.UserName)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.IDBill">Sửa</a> |
-                    <a asp-action="Details" asp-route-id="@item.IDBill">Chi tiết</a> |
+                    <a asp-area="Admin" asp-controller="Bills" asp-action="BillDetail" asp-route-id="@item.IDBill">Chi tiết</a> |
                     <a asp-action="Delete" asp-route-id="@item.IDBill">Xóa</a>
                 </td>
             </tr>
