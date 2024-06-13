@@ -167,7 +167,7 @@
                 <div class="d-flex">
                     <div class="col-md-9">
                         <div class="justify-content-center" style="margin-right: 15px;">
-                            <img id="main-image" src="/Image_Product/@Model.Product.Image" alt="Alternate Text" class="w-100" style="border-radius: 25px;">
+                            <img id="main-image" src="~/@Model.Product.Image" alt="Alternate Text" class="w-100" style="border-radius: 25px;">
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -177,7 +177,7 @@
                             {
                                 <div>
                                     <input type="radio" id="@img.IDImage" name="options" value="@img.Image" class="radio-btn-image">
-                                    <label for="@img.IDImage"><img src="/Image_Product/@img.Image" alt="Option @img.IDImage" class="w-75"></label>
+                                    <label for="@img.IDImage"><img src="~/@img.Image" alt="Option @img.IDImage" class="w-75"></label>
                                 </div>
                             }
                         }

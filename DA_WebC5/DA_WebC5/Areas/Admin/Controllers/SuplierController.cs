@@ -67,5 +67,46 @@ namespace DA_WebC5.Areas.Admin.Controllers
             }
 
         }
+        [HttpGet("Admin/Suplier/UpdateSuplier")]
+        public async Task<IActionResult> UpdateSuplier(int id)
+        {
+            Supplier supplier;
+            using (var httpClient = new HttpClient())
+            {
+                var response = await httpClient.GetAsync(_urlSuplier + id);
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    supplier = JsonConvert.DeserializeObject<Supplier>(apiResponse);
+                    return View(supplier);
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+        }
+
+        [HttpPost("Admin/Suplier/UpdateSuplier")]
+        public async Task<IActionResult> UpdateSuplier(int ipsuplier, Supplier supplier)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var response = await httpClient.PutAsJsonAsync(_urlSuplier + ipsuplier, supplier);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, "Có lỗi khi cập nhật.");
+                    }
+                }
+            }
+            return View(supplier);
+        }
+
     }
 }

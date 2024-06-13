@@ -1,6 +1,7 @@
 ﻿using SportAPI.Data;
 using SportAPI.Model;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SportAPI.Services
 {
@@ -24,9 +25,35 @@ namespace SportAPI.Services
             }
         }
 
+        public Supplier GetSupplierByID(int id)
+        {
+            return context.Suppliers.FirstOrDefault(c => c.IDSupplier == id);
+        }
+
         public IEnumerable<Supplier> GetSuppliers()
         {
            return context.Suppliers;
+        }
+
+        public Supplier UpdateSuplier(Supplier updateSupplier, int id)
+        {
+            var existingSuplier = GetSupplierByID(id);
+
+            if (existingSuplier != null)
+            {
+                existingSuplier.Address = updateSupplier.Address;
+                existingSuplier.Email = updateSupplier.Email;
+                existingSuplier.Phone = updateSupplier.Phone;
+                existingSuplier.Name = updateSupplier.Name;
+                context.SaveChanges();
+                return existingSuplier;
+            }
+            else
+            {
+                return null;
+            }
+
+         
         }
     }
 }

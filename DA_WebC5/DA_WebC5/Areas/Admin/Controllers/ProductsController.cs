@@ -130,14 +130,14 @@ namespace DA_WebC5.Areas.Admin.Controllers
                 if (Image != null && Image.Length > 0)
                 {
                     var fileName = Path.GetFileName(Image.FileName);
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/IMG", fileName);
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Image_Product", fileName);
 
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
                         await Image.CopyToAsync(stream);
                     }
 
-                    product.Image = "IMG/" + fileName;
+                    product.Image = "Image_Product/" + fileName;
                 }
 
                 using (var httpClient = new HttpClient())

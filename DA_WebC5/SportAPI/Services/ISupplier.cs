@@ -7,5 +7,7 @@ namespace SportAPI.Services
     {
         public IEnumerable<Supplier> GetSuppliers();
         public Supplier Addsuplire (Supplier supplier);
+        public Supplier UpdateSuplier (Supplier supplier, int id);
+        public Supplier GetSupplierByID(int id);
     }
 }

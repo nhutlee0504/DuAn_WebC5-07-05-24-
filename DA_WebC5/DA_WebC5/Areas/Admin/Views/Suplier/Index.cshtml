@@ -43,7 +43,7 @@
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IDSupplier">Edit</a> |
+                <a asp-action="UpdateSuplier" asp-area="Admin" asp-controller="Suplier" asp-route-id="@item.IDSupplier">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.IDSupplier">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.IDSupplier">Delete</a>
             </td>
