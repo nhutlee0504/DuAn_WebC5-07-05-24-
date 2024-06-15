@@ -12,7 +12,6 @@
                     <thead>
                         <tr>
                             <th>Tên tài khoản</th>
-                            <th>Mật khẩu</th>
                             <th>Email</th>
                             <th>Vai trò</th>
                             <th>Tên</th>
@@ -25,45 +24,37 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.UserName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Password)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Email)
-                                </td>
-                                <td>
-                                    @if (item.Role == "Member")
-                                    {
+                            if (item.Role.Equals("Member"))
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UserName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td>
                                         <label>@item.Role <i class="fa fa-user-o"></i></label>
-                                    }
-                                    else
-                                    {
-                                        <label>@item.Role <i class="fa fa-bookmark"></i></label>
-                                    }
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Name)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Gender)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Phone)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Address)
-                                </td>
-                                <td>
-                                    <a asp-action="Edit" asp-route-id="@item.UserName" class="btn btn-sm btn-primary">Sửa</a> |
-                                    <a asp-action="Details" asp-route-id="@item.UserName" class="btn btn-sm btn-info">Chi tiết</a> |
-                                    <a asp-action="Delete" asp-route-id="@item.UserName" class="btn btn-sm btn-danger">Xóa</a>
-                                </td>
-                            </tr>
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Gender)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Phone)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Address)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.UserName" class="btn btn-sm btn-danger">Ban</a>
+                                    </td>
+                                </tr>
+                            }
                         }
+
                     </tbody>
                 </table>
             </div>

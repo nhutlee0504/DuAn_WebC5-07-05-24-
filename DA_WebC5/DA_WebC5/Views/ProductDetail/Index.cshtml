@@ -159,6 +159,12 @@
 @{
     int selectedIdPDetail = 0;
 }
+@if (TempData["error"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["error"]
+    </div>
+}
 <div class="container">
 
     <div class="row">

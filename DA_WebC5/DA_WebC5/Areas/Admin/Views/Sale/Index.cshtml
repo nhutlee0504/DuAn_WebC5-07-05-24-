@@ -1,0 +1,78 @@
+﻿@model IEnumerable<DA_WebC5.Models.Sale>
+
+@{
+    ViewData["Title"] = "Danh sách khuyến mãi";
+}
+
+<h1>Danh sách khuyến mãi</h1>
+
+<p>
+    <a asp-action="Create" asp-area="Admin" asp-controller="Sale">Tạo mới</a>
+</p>
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th>
+               Mã
+            </th>
+            <th>
+                Mô tả
+            </th>
+            <th>
+              Giảm giá
+            </th>
+            <th>
+                Giá trị tối thiểu
+            </th>
+            <th>
+               Giá trị tối đa
+            </th>
+            <th>
+              Ngày bắt đầu
+            </th>
+            <th>
+              Ngày kết thúc
+            </th>
+            <th>
+              Lượt sử dụng
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @item.DiscountValue %
+                </td>
+                <td>
+                    @item.MinAmount.ToString("N0") đồng
+                </td>
+                <td>
+                    @item.MaxAmount.ToString("N0") đồng
+                </td>
+                <td>
+                    @item.StartDate.ToString("dd/MM/yyyy hh:mm:ss")
+                </td>
+                <td>
+                    @item.EndDate.ToString("dd/MM/yyyy hh:mm:ss")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-gradient-dark btn-icon-text">
+                        Cập nhật<i class="mdi mdi-file-check btn-icon-append"></i>
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Http;
 using System.Security.Cryptography;
 using System.Text;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace DA_WebC5.Controllers
 {
@@ -26,6 +27,8 @@ namespace DA_WebC5.Controllers
         private string urlP = "http://localhost:57700/api/Product/";
         private string urlCate = "http://localhost:57700/api/Category/";
         private string urlPdetail = "http://localhost:57700/api/ProductDetail";
+        private string _urlSale = "http://localhost:57700/api/Sale/";
+
         public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
@@ -39,12 +42,18 @@ namespace DA_WebC5.Controllers
             List<Category> categories = new List<Category>();
             List<ProductViewModel> productsViewModel = new List<ProductViewModel>();
             List<ProductDetails> productsDetails = new List<ProductDetails>();
+            List<Sale> sale = new List<Sale>();
             using (var httpClient = new HttpClient())
             {
                 using (var response2 = await httpClient.GetAsync(urlPdetail))
                 {
                     string apiResponse2 = await response2.Content.ReadAsStringAsync();
                     productsDetails = JsonConvert.DeserializeObject<List<ProductDetails>>(apiResponse2);
+                }
+                using (var response3 = await httpClient.GetAsync(_urlSale))
+                {
+                    string apiResponse2 = await response3.Content.ReadAsStringAsync();
+                    sale = JsonConvert.DeserializeObject<List<Sale>>(apiResponse2);
                 }
                 using (var response = await httpClient.GetAsync(urlP))
                 {
@@ -77,6 +86,7 @@ namespace DA_WebC5.Controllers
                             productsViewModel.Add(prod);
                         }
                     }
+            
                 return View(productsViewModel);
             }
         }
