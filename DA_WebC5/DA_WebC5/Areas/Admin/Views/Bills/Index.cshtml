@@ -25,7 +25,7 @@
                             <th>
                                 @Html.DisplayNameFor(model => model.Account).Replace("Account", "Tài Khoản")
                             </th>
-                            <th>Trạng thái đơn hàng</th>
+                            <th>@Html.DisplayNameFor(model => model.Status).Replace("Status", "Trạng thái")</th>
                             <th>Hành Động</th>
                         </tr>
                     </thead>
@@ -45,7 +45,7 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.UserName)
                                 </td>
-                                <td><label class="badge badge-danger">Đang chờ</label></td>
+                                <td><label class="badge badge-danger">@item.Status</label></td>
                                 <td class="action-links">
                                     <a asp-action="Edit" asp-route-id="@item.IDBill">Sửa</a> |
                                     <a asp-area="Admin" asp-controller="Bills" asp-action="BillDetail" asp-route-id="@item.IDBill">Chi tiết</a> |
