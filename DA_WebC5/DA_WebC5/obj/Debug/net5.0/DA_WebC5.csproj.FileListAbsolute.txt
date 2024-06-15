@@ -648,3 +648,6 @@ D:\C#5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin
 D:\C#5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Suplier\Create.cshtml.g.cs
 D:\C#5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Suplier\Index.cshtml.g.cs
 D:\C#5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Suplier\UpdateSuplier.cshtml.g.cs
+D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs
+D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\CreateCategory.cshtml.g.cs
+D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\UpdateCategory.cshtml.g.cs
