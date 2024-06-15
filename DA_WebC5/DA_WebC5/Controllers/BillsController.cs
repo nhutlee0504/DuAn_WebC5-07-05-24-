@@ -18,8 +18,25 @@ namespace DA_WebC5.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index(List<int> selectedProducts)
+        public async Task<IActionResult> Index(List<int> selectedProducts, string SaleInput, decimal totalPrice)
         {
+
+            if(SaleInput != null)
+            {
+                var FindSale = _context.Sales.FirstOrDefault(x => x.Name == SaleInput);
+                if (FindSale != null && FindSale.Quantity > 0 && totalPrice > FindSale.MinAmount && totalPrice < FindSale.MaxAmount)
+                {
+                    ViewBag.MaGiamGia = FindSale.Name;
+                }
+                else
+                {
+                    ViewBag.MaGiamGia = null;
+                }
+            }
+            else
+            {
+                ViewBag.MaGiamGia = null;
+            }
             if(selectedProducts !=null && selectedProducts.Count > 0)
             {
                 string username = HttpContext.Session.GetString("LoggedInUser");
@@ -146,5 +163,16 @@ namespace DA_WebC5.Controllers
             }
            
         }
+
+        //public IActionResult SaleSubmit(string SaleInput, decimal totalPrice)
+        //{
+        //    var FindSale = _context.Sales.FirstOrDefault(x => x.Name == SaleInput);
+        //    if(FindSale != null && FindSale.Quantity > 0 && totalPrice > FindSale.MinAmount && totalPrice < FindSale.MaxAmount)
+        //    {
+        //        ViewBag.MaGiamGia = FindSale.Name;
+        //        return RedirectToAction("Index");
+        //    }
+        //    return RedirectToAction("Index");
+        //}
     }
 }
