@@ -52,10 +52,6 @@ namespace DA_WebC5.Controllers
                 products = products.Where(x => x.Name.ToLower().Contains(find.ToLower())).ToList();
                 ViewBag.Seacrh = find;
             }
-            else
-            {
-                TempData["NotFind"] = "Không tìm thấy sản phẩm";
-            }
 
             if (selectedCategories != null && selectedCategories.Any())
             {
