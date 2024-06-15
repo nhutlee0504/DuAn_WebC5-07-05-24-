@@ -7,6 +7,18 @@
       "RelativeMoniker": "D:0:0:{50226729-7CEB-450E-BAA4-1B977EFE129E}|SportAPI\\SportAPI.csproj|solutionrelative:sportapi\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{50226729-7CEB-450E-BAA4-1B977EFE129E}|SportAPI\\SportAPI.csproj|d:\\mon_dang_hoc\\c_schapes_5\\duan_webc5-07-05-24-\\da_webc5\\sportapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{50226729-7CEB-450E-BAA4-1B977EFE129E}|SportAPI\\SportAPI.csproj|solutionrelative:sportapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50226729-7CEB-450E-BAA4-1B977EFE129E}|SportAPI\\SportAPI.csproj|d:\\mon_dang_hoc\\c_schapes_5\\duan_webc5-07-05-24-\\da_webc5\\sportapi\\model\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50226729-7CEB-450E-BAA4-1B977EFE129E}|SportAPI\\SportAPI.csproj|solutionrelative:sportapi\\model\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\mon_dang_hoc\\c_schapes_5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\models\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\models\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\mon_dang_hoc\\c_schapes_5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\views\\shared\\_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\views\\shared\\_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -30,8 +42,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 10,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "SportAPI\\appsettings.json",
+              "ToolTip": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\appsettings.json",
+              "RelativeToolTip": "SportAPI\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-15T08:56:42.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Bill.cs",
+              "DocumentMoniker": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\Model\\Bill.cs",
+              "RelativeDocumentMoniker": "SportAPI\\Model\\Bill.cs",
+              "ToolTip": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\Model\\Bill.cs",
+              "RelativeToolTip": "SportAPI\\Model\\Bill.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T08:56:38.581Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
@@ -55,6 +93,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Bill.cs",
+              "DocumentMoniker": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\Bill.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Models\\Bill.cs",
+              "ToolTip": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\Bill.cs",
+              "RelativeToolTip": "DA_WebC5\\Models\\Bill.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T08:56:31.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "BillDetail.cshtml",
               "DocumentMoniker": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Bills\\BillDetail.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Views\\Bills\\BillDetail.cshtml",
@@ -62,12 +113,11 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Bills\\BillDetail.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-15T08:41:16.87Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-15T08:41:16.87Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "_partial.cshtml",
               "DocumentMoniker": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Shared\\_partial.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Views\\Shared\\_partial.cshtml",
@@ -75,8 +125,7 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Shared\\_partial.cshtml",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAACAAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-15T08:39:11.973Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-15T08:39:11.973Z"
             },
             {
               "$type": "Document",
@@ -86,14 +135,14 @@
               "RelativeDocumentMoniker": "SportAPI\\Startup.cs",
               "ToolTip": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\Startup.cs",
               "RelativeToolTip": "SportAPI\\Startup.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACYAAABaAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAC8AAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-15T08:36:58.411Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Bills\\Index.cshtml",
               "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Views\\Bills\\Index.cshtml",
@@ -101,12 +150,11 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Bills\\Index.cshtml",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAAC0AAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-15T08:33:58.896Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-15T08:33:58.896Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "BillsController.cs",
               "DocumentMoniker": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Controllers\\BillsController.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Controllers\\BillsController.cs",
@@ -114,8 +162,7 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Controllers\\BillsController.cs",
               "ViewState": "AQIAABQAAAAAAAAAAAAQwDAAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T08:33:54.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-15T08:33:54.477Z"
             }
           ]
         },
