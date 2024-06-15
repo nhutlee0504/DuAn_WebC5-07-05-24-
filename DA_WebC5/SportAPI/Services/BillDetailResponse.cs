@@ -13,7 +13,7 @@ namespace SportAPI.Services
             _context = context;
         }
 
-        IEnumerable<BillDetails> IBillDetail.GetBillDetails(int id)
+        public IEnumerable<BillDetails> GetBillDetails(int id)
         {
             return _context.BillDetails.Where(x => x.IDBill == id);
         }
