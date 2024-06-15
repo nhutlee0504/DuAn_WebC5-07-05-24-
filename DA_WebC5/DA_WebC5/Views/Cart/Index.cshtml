@@ -59,6 +59,28 @@
     .col-sm-3:hover .container-fluid {
         transform: translateY(-5px);
     }
+
+    .alert {
+        padding: 20px;
+        background-color: green;
+        color: white;
+        opacity: 1;
+        transition: opacity 0.6s;
+    }
+
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+        .closebtn:hover {
+            color: black;
 </style>
    @using Microsoft.AspNetCore.Http;
     @inject IHttpContextAccessor HttpContextAccessor
@@ -77,12 +99,16 @@
     <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
 </ol>
 
-@if (TempData["error"] != null)
+
+@if (TempData["SuccessAddCart"] != null)
 {
-    <div class="alert alert-danger" role="alert">
-        @TempData["error"]
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>!</strong> @TempData["SuccessAddCart"]
     </div>
+
 }
+
 <div class="container">
     <div  style="position: relative; overflow: hidden; height:25px;">
         <i class="bi bi-receipt" style="position: absolute; top: 50%; transform: translateY(-50%);"></i>

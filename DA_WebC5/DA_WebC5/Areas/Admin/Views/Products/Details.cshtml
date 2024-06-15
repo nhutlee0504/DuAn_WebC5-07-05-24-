@@ -65,6 +65,7 @@
                     <th>Kích cỡ</th>
                     <th>Màu sắc</th>
                     <th>Số lượng còn lại</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -83,10 +84,12 @@
                         <td>
                             @Model.ProductDetails.FirstOrDefault(x => x.IDPDetail == detail.IDPDetail)?.Quantity
                         </td>
+                        <td>  <a asp-action="CreateDetails" asp-controller="Products" asp-area="Admin" type="button" class="btn btn-sm btn-gradient-primary btn-rounded btn-fw">Sửa</a></td>
                     </tr>
                 }
             </tbody>
         </table>
+            <a asp-action="CreateDetails" asp-controller="Products" asp-area="Admin" type="button" class="btn btn-sm btn-gradient-primary btn-rounded btn-fw">Thêm chi tiết</a>
     </div>
 </div>
 

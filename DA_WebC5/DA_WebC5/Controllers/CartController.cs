@@ -69,6 +69,7 @@ namespace DA_WebC5.Controllers
                     };
                     _context.Histories.Add(hs);
                     _context.SaveChanges();
+                    TempData["SuccessAddCart"] = "Đã thêm sản phẩm vào giỏ hàng thành công";
                     return RedirectToAction(nameof(Index));
                 }
             }
