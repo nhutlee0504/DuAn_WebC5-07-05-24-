@@ -106,8 +106,7 @@
               "RelativeToolTip": "DA_WebC5\\Views\\Cart\\Index.cshtml",
               "ViewState": "AQIAAIcAAAAAAAAAAAAAAJoAAABxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-15T13:46:46.427Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-15T13:46:46.427Z"
             },
             {
               "$type": "Document",
@@ -119,8 +118,7 @@
               "RelativeToolTip": "DA_WebC5\\Views\\Bills\\Index.cshtml",
               "ViewState": "AQIAAG0AAAAAAAAAAAAwwHoAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-15T09:23:59.174Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-15T09:23:59.174Z"
             },
             {
               "$type": "Document",
@@ -130,7 +128,7 @@
               "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\BillsController.cs",
               "ToolTip": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\BillsController.cs",
               "RelativeToolTip": "DA_WebC5\\Controllers\\BillsController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwB4AAAAUAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwCQAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-15T09:22:46.612Z",
               "EditorCaption": ""
@@ -145,8 +143,7 @@
               "RelativeToolTip": "DA_WebC5\\Controllers\\CartController.cs",
               "ViewState": "AQIAAEcAAAAAAAAAAAAwwFoAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T09:22:42.229Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-15T09:22:42.229Z"
             },
             {
               "$type": "Document",
@@ -182,8 +179,7 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Controllers\\HomeController.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAACgAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T09:15:03.038Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-15T09:15:03.038Z"
             },
             {
               "$type": "Document",
