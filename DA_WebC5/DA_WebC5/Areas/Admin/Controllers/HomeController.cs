@@ -30,7 +30,14 @@ namespace DA_WebC5.Areas.Admin.Controllers
         public IActionResult Index()
         {
             var username = HttpContext.Session.GetString("LoggedInUser");
-            if (string.IsNullOrEmpty(username))
+            var role = _context.Accounts.Where(x => x.UserName == username).Select(x => x.Role);
+           
+           if (!role.Contains("Admin"))
+            {
+                Logout();
+                return RedirectToAction("Loginktr");
+            }
+            else if (string.IsNullOrEmpty(username))
             {
                 return View("Loginktr");
             }

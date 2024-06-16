@@ -22,6 +22,12 @@ namespace SportAPI.Controllers
             return category.GetCategories();
         }
 
+        [HttpGet("{id}")]
+        public Category GetCategory(int id)
+        {
+            return category.GetCategoryById(id);
+        }
+
         [HttpPost]
         public Category PostCategory(Category cacte)
         {
@@ -32,12 +38,12 @@ namespace SportAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, Category cate)
+        public Category Update(int id, Category cate)
         {
             var tim = category.GetCategoryById(id);
             tim.Name = cate.Name;
             category.UpdateCategory(id, tim);
-            return Ok(tim);
+            return tim;
             
         }
     }

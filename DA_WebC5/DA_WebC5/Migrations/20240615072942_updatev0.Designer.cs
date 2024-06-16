@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DA_WebC5.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240609093647_updatetable")]
-    partial class updatetable
+    [Migration("20240615072942_updatev0")]
+    partial class updatev0
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -69,6 +69,9 @@ namespace DA_WebC5.Migrations
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("TotalAmount")
                         .HasColumnType("decimal(18,2)");

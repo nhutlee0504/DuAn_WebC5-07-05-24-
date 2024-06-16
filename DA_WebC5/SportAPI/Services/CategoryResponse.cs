@@ -2,6 +2,7 @@
 using SportAPI.Data;
 using SportAPI.Model;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 
 namespace SportAPI.Services
@@ -30,10 +31,15 @@ namespace SportAPI.Services
 
         public Category UpdateCategory(int id, Category category)
         {
-            var tim = context.Categories.FirstOrDefault(x => x.IDCategory == id);
-            tim.Name = category.Name;
-            context.Categories.Update(tim);
-            return tim;
+            var updateCate = GetCategoryById(category.IDCategory);
+
+            if (updateCate != null)
+            {
+                updateCate.Name = category.Name;
+                context.SaveChanges();
+            }
+
+            return updateCate;
         }
     }
 }

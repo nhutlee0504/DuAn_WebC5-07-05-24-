@@ -18,6 +18,8 @@ namespace SportAPI.Model
 
         public DateTime OrderDate { get; set; }
 
+        public string Status { get; set; }
+
         public Account Account { get; set; }
 
         public ICollection<BillDetails> BillDetails { get; set; }

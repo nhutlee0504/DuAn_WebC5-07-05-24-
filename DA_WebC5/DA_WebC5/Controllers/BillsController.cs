@@ -91,6 +91,7 @@ namespace DA_WebC5.Controllers
                     UserName = username,
                     OrderDate = DateTime.Now,
                     TotalAmount = totalPrice,
+                    Status = "Đang chờ"
                 };
                 _context.Bills.Add(addbill);
                 _context.SaveChanges();
