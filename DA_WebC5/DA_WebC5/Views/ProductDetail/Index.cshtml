@@ -34,17 +34,14 @@
             align-items: center;
             align-content: center;
             width: 50px;
+            color:white;
             height: 50px;
             margin-right: 10px;
             border-radius: 20px; /* Loại bỏ border radius */
             cursor: pointer;
         }
 
-        .radio-btn-size:checked + label {
-            /*   background-color: #0EA5E9; /* Màu nền khi chọn */
-            color: black; /* Màu chữ khi chọn */
-            border: 1px solid #0EA5E9;
-        }
+
 
         .radio-btn-size:not(:checked) + label {
             opacity: 0.5;
@@ -74,23 +71,30 @@
 
     .quantity-selector {
         display: flex;
-        float: left;
         justify-content: center;
-        text-align: center;
-        background-color: gray;
+        align-items: center;
+        background-color: #f0f0f0; /* Màu nền */
         border-radius: 25px;
         padding: 5px;
     }
 
         .quantity-selector button {
-            border: 1px solid #000;
-            background: white;
+            border: none;
+            background-color: #007bff; /* Màu nền của nút */
+            color: white; /* Màu chữ trắng */
             width: 30px;
             height: 30px;
             border-radius: 50%;
             font-weight: bold;
             font-size: 20px;
+            cursor: pointer;
+            margin: 0 10px; /* Khoảng cách giữa các nút */
+            transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
         }
+
+            .quantity-selector button:hover {
+                background-color: #0056b3; /* Màu nền khi hover */
+            }
 
     .quantity-input {
         border: none;
@@ -99,14 +103,11 @@
         padding: 5px 10px;
         font-size: 15px;
         font-weight: bold;
-        width: 30px;
+        width: 40px;
     }
-
     .add-cart {
         display: flex;
         float: right;
-        background-color: black;
-        color: white;
         text-align: center;
         align-items: center;
         justify-content: center;
@@ -151,6 +152,58 @@
     .col-sm-3:hover .container-fluid {
         transform: translateY(-5px);
     }
+
+    .card-body {
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+        background-color: #f8f9fa;
+    }
+
+    .evaluate-item {
+        padding: 10px;
+        background-color: #ffffff;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+    }
+
+    .user {
+        font-weight: bold;
+        color: #007bff;
+        margin-bottom: 5px;
+    }
+
+    .describe {
+        color: #6c757d;
+    }
+
+    .product-info h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .product-info h4 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+        color: #888;
+    }
+
+    .product-info p {
+        line-height: 1.5;
+    }
+
+    .product-info img {
+        width: 200px;
+        height: auto;
+        margin-right: 20px;
+        float: left;
+    }
+
+    .product-info .product-description {
+        clear: both;
+    }
+
 </style>
 @{
     ViewData["Title"] = "Chi tiết sản phẩm";
@@ -191,10 +244,13 @@
                 </div>
             </div>
             <hr>
-            <h3>THÔNG TIN SẢN PHẨM</h3>
-            <h4>@Model.Product.Name</h4>
-            <h5>@Model.Product.Category.Name - @Model.Product.Supplier.Name</h5>
-            <p>@Model.Product.Describe</p>
+            <div class="product-info">
+                <h3>THÔNG TIN SẢN PHẨM</h3>
+                <h4>@Model.Product.Name</h4>
+                <h5>@Model.Product.Category.Name - @Model.Product.Supplier.Name</h5>
+                <p>@Model.Product.Describe</p>
+            </div>
+
         </div>
         <div class="col-md-5">
             <div class="card" style="background-color:#D9D9D9">
@@ -203,7 +259,7 @@
                         <div class="row d-flex justify-content-between">
                             <div class="">
                                 <div style="font-size:large">
-                                    <i class="bi bi-star-fill text-warning"></i> <strong>4.9</strong><i class="bi bi-dot"></i><u>149 Views</u>
+                                    <i class="bi bi-star-fill text-warning"></i> <strong>4.9</strong><i class="bi bi-dot"></i>
                                 </div>
                             </div>
                             <div class="text-center">
@@ -240,7 +296,7 @@
                                         </form>
                                     </div>
                                     <div>
-                                        <button type="submit" class="btn add-cart">
+                                        <button type="submit" class=" btn-outline-dark add-cart">
                                             <i class="bi bi-bag-plus"></i>
                                             <div>Thêm vào giỏ hàng</div>
                                         </button>
@@ -270,13 +326,13 @@
                     </form>
                 }
 
-                <div class="card mt-3" style="border 1px solid: black">
+                <div class="card mt-3">
 
                     @foreach (var evaluate in Model.Evaluates.Where(x => x.IDProduct == Model.Product.IDProduct))
                     {
-                        <div class="card-body border-1">
+                        <div class="card-body">
                             <div class="evaluate-item">
-                                <div class="user">@evaluate.UserName - Đánh giá: @evaluate.Point </div>
+                                <div class="user">@evaluate.UserName - Đánh giá: @evaluate.Point</div>
                                 <div class="describe">Mô tả: @evaluate.Describe</div>
                             </div>
                         </div>

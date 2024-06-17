@@ -93,7 +93,7 @@ namespace DA_WebC5.Controllers
             var prod = _context.Carts.FirstOrDefault(x => x.IDCart == id);
             if (prod != null)
             {
-                if (prod.Quantity > 1)
+                if (prod.Quantity > 0)
                 {
                     prod.Quantity--;
                     _context.SaveChanges();
@@ -101,7 +101,7 @@ namespace DA_WebC5.Controllers
                 }
                 else
                 {
-                    return RedirectToAction(nameof(Index));
+                    TempData["errorsub"] = "Xoa deo duoc em nhe";
                 }
               
             }
