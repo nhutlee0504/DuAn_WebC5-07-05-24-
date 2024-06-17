@@ -13,8 +13,8 @@ namespace SportAPI.Services
         {
             _context = context;
         }
-
-        public IEnumerable<BillDetails> GetBillDetails(int id)
+        
+        public List<BillDetails> GetBillDetails(int id)
         {
             return _context.BillDetails
                            .Include(bd => bd.ProductDetails)
@@ -27,5 +27,9 @@ namespace SportAPI.Services
                            .ToList();
         }
 
+        public IEnumerable<BillDetails> GetBillDetailsForAdmin(int id)
+        {
+            return _context.BillDetails.Where(x => x.IDBill == id);
+        }
     }
 }

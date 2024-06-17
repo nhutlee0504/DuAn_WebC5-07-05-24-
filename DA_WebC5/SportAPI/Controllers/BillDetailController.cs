@@ -53,6 +53,11 @@ namespace SportAPI.Controllers
                 return StatusCode(500, $"Internal server error: {ex}");
             }
         }
+        [HttpGet]
+        public IEnumerable<BillDetails> GetBDID(int id)
+        {
+            return bid.GetBillDetailsForAdmin(id);
+        }
 
     }
 }
