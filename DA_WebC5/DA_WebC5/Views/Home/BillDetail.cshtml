@@ -1,0 +1,33 @@
+﻿@model DA_WebC5.Models.NewViewModel.BillInfor
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Mã sản phẩm</th>
+                <th>Tên sản phẩm</th>
+                <th>Hình ảnh</th>
+                <th>Màu sắc</th>
+                <th>Kích thước</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var billDetail in Model.BillDetails)
+            {
+                <tr>
+                    <td>@billDetail.ProductDetails.IDProduct</td>
+                    <td>@billDetail.ProductDetails.Product?.Name</td>
+                    <td>
+                        <img src="~/@billDetail.ProductDetails.Product?.Image" alt="Hình ảnh sản phẩm" style="max-width: 100px;" />
+                    </td>
+                    <td>@billDetail.ProductDetails.IDColor</td>
+                    <td>@Model.Sizes.FirstOrDefault(s => s.IDSize == billDetail.ProductDetails.Size)?.SizeName</td>
+                    <td>@billDetail.Quantity</td>
+                    <td>@billDetail.Price.ToString("N0") đồng</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

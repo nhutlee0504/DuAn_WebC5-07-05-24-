@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj": {}
+    "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj": {}
   },
   "projects": {
-    "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj": {
+    "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj",
+        "projectUniqueName": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj",
         "projectName": "DA_WebC5",
-        "projectPath": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\obj\\",
+        "projectPath": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj",
+        "packagesPath": "C:\\Users\\phamq\\.nuget\\packages\\",
+        "outputPath": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\phamq\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

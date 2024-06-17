@@ -315,6 +315,7 @@ namespace DA_WebC5.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("ntext");
 
                     b.Property<int>("DiscountValue")
@@ -326,7 +327,7 @@ namespace DA_WebC5.Migrations
                     b.Property<int>("MaxAmount")
                         .HasColumnType("int");
 
-                    b.Property<int?>("MinAmount")
+                    b.Property<int>("MinAmount")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")

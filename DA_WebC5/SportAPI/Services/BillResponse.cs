@@ -1,6 +1,7 @@
 ﻿using SportAPI.Data;
 using SportAPI.Model;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SportAPI.Services
 {
@@ -15,6 +16,11 @@ namespace SportAPI.Services
         public IEnumerable<Bill> GetAllBill()
         {
             return _context.Bills;
+        }
+
+        public Bill GetBillByUsername(string username)
+        {
+            return _context.Bills.FirstOrDefault(x => x.UserName == username);
         }
     }
 }
