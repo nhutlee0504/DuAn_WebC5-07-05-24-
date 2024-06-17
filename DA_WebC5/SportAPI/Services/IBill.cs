@@ -7,5 +7,7 @@ namespace SportAPI.Services
     public interface IBill
     {
         public IEnumerable<Bill> GetAllBill();
+        public Bill GetBillId(int id);
+        public Bill UpdateBill(int id,Bill upBill);
     }
 }

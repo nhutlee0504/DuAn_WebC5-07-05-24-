@@ -18,5 +18,11 @@ namespace SportAPI.Controllers
         {
             return bill.GetAllBill();
         }
+
+        [HttpPut]
+        public Bill UpdateBill(int id, Bill upbill)
+        {
+            return bill.UpdateBill(id, upbill);
+        }
     }
 }
