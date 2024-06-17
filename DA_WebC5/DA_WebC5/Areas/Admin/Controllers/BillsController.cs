@@ -74,11 +74,5 @@ namespace DA_WebC5.Areas.Admin.Controllers
             }
             return View(view);
         }
-
-        //[Route("Admin/Bills/ConformBill")]
-        //public IActionResult ConformBill(int id, Bill upbill)
-        //{
-
-        //}
     }
 }

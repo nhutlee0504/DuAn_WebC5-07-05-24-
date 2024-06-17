@@ -45,18 +45,7 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.UserName)
                                 </td>
-                                @if(item.Status.ToString().Equals("Đang chờ"))
-                                {
-                                    <td><label class="badge badge-danger">@item.Status</label></td>
-                                }
-                                else if(item.Status.ToString().Equals("Đang được giao"))
-                                {
-                                    <td><label class="badge badge-warning">@item.Status</label></td>
-                                }
-                                else
-                                {
-                                    <td><label class="badge badge-success">@item.Status</label></td>
-                                }
+                                <td><label class="badge badge-danger">@item.Status</label></td>
                                 <td class="action-links">
                                     <a asp-action="Edit" asp-route-id="@item.IDBill">Sửa</a> |
                                     <a asp-area="Admin" asp-controller="Bills" asp-action="BillDetail" asp-route-id="@item.IDBill">Chi tiết</a> |
