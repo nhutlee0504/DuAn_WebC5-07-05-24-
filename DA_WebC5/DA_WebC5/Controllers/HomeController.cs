@@ -17,6 +17,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Immutable;
 
 namespace DA_WebC5.Controllers
 {
@@ -28,11 +29,100 @@ namespace DA_WebC5.Controllers
         private string urlCate = "http://localhost:57700/api/Category/";
         private string urlPdetail = "http://localhost:57700/api/ProductDetail";
         private string _urlSale = "http://localhost:57700/api/Sale/";
+        private string urlBills = "http://localhost:57700/api/Bill/";
+        private string urlBillDetailBill = "http://localhost:57700/api/BillDetail/";
+        private string urlPddt = "http://localhost:57700/api/ProductDetail/";
+        private string urlColor = "http://localhost:57700/api/Color/";
+        private string urlSize = "http://localhost:57700/api/Size/";
+        private string urlCategory = "http://localhost:57700/api/Category";
+        private string urlSupplier = "http://localhost:57700/api/Supplier";
+        private string urlAccount = "http://localhost:57700/api/Account";
 
         public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
             _context = context;
+        }
+        [HttpGet]
+        public async Task<IActionResult> Bills()
+        {
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("LoggedInUser")))
+            {
+                var loggedInUsername = HttpContext.Session.GetString("LoggedInUser");
+                var userBills = _context.Bills.Where(b => b.UserName == loggedInUsername).ToList();
+
+                // Check if the user has any bills
+                if (userBills != null && userBills.Count > 0)
+                {
+                    return View(userBills);
+                }
+            }
+            return RedirectToAction("Login");
+        }
+        [HttpGet]
+        public async Task<IActionResult> BillDetail(int id)
+        {
+            var view = new BillInfor()
+            {
+                BillDetails = new List<BillDetails>(),
+                Colors = new List<Colors>(),
+                Sizes = new List<Sizes>()
+            };
+
+            using (var httpClient = new HttpClient())
+            {
+
+
+                var response = await httpClient.GetAsync(urlBillDetailBill + id);
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    var billDetails = JsonConvert.DeserializeObject<List<BillDetailViewModel>>(apiResponse);
+
+                    // Duyệt qua từng billDetail để gán thông tin vào view model
+                    foreach (var bd in billDetails)
+                    {
+                        var billDetail = new BillDetails
+                        {
+                            IDBDetail = bd.IDBDetail,
+                            IDBill = bd.IDBill,
+                            IDPDetail = bd.IDPDetail,
+                            Quantity = bd.Quantity,
+                            Price = bd.Price,
+                            ProductDetails = new ProductDetails
+                            {
+                                IDProduct = bd.Product.IDProduct,
+                                Product = new Product
+                                {
+                                    Name = bd.Product.Name,
+                                    Image = bd.Product.Image
+                                },
+                                IDColor = bd.IDColor,
+                                Size = bd.IDSize, 
+                            }
+                        };
+
+                        view.BillDetails.Add(billDetail);
+                    }
+                }
+                // Gọi API để lấy thông tin màu sắc
+                var responseColor = await httpClient.GetAsync(urlColor);
+                if (responseColor.IsSuccessStatusCode)
+                {
+                    string apiResponseColor = await responseColor.Content.ReadAsStringAsync();
+                    view.Colors = JsonConvert.DeserializeObject<List<Colors>>(apiResponseColor);
+                }
+
+                // Gọi API để lấy thông tin kích thước
+                var responseSize = await httpClient.GetAsync(urlSize);
+                if (responseSize.IsSuccessStatusCode)
+                {
+                    string apiResponseSize = await responseSize.Content.ReadAsStringAsync();
+                    view.Sizes = JsonConvert.DeserializeObject<List<Sizes>>(apiResponseSize);
+                }
+
+                return View(view);
+            }
         }
 
         [HttpGet]

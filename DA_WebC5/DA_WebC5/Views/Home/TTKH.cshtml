@@ -14,65 +14,108 @@
         .header-container p {
             margin-bottom: 0;
         }
+
+    #profile-img-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    #profile-img {
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+    }
+
+    #user-info {
+        transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        border-color: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+        margin-top: 20px;
+    }
+
+        #user-info.show {
+            max-height: 1000px; /* Adjust this value based on content height */
+            opacity: 1;
+        }
+
+    #button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .btn-custom {
+        margin: 0 10px;
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(139, 222, 34, 1) 0%, rgba(0, 212, 255, 1) 100%);
+        color: white;
+        font-weight: bolder;
+        border:none;
+        background-size: 200% 200%;
+        transition: background-position 0.5s ease, transform 0.3s ease;
+    }
+
+        .btn-custom:hover {
+            background-position: 100% 0;
+            color: white;
+            transform: scale(1.05);
+        }
+    a {
+        text-decoration:none;
+    }
 </style>
+<div class="container">
+
+    <ol class="breadcrumb bg-transparent">
+        <li class="breadcrumb-item"><a href="Home/Index">Trang chủ</a></li>
+
+        <li class="breadcrumb-item active" aria-current="page">Thông tin cá nhân</li>
+    </ol>
+</div>
+
 @{
     string hiddenPhoneNumber = Model.Phone.Substring(0, Model.Phone.Length / 2) + new string('*', Model.Phone.Length / 2);
     string hiddenEmail = Model.Email.Substring(0, Model.Email.IndexOf('@') / 2) + new string('*', Model.Email.Length - Model.Email.IndexOf('@'));
 }
-@if (Model != null)
-{
-    <div class="container mt-5" style="margin-bottom:200px">
-        <div class="row">
-            <div class="col-md-8 mx-auto">
-                <div class="header-container text-center">
-                    <h5 class="mb-0">Hồ sơ của tôi</h5>
-                    <p class="mb-0">Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
-                </div>
-                <div class="content-body mt-3">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <ul class="list-group">
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <span class="badge bg-primary">Tên đăng nhập:</span>
-                                    <span class="badge bg-secondary">@Model.UserName</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <span class="badge bg-primary">Tên:</span>
-                                    <span class="badge bg-secondary">@Model.Name</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <span class="badge bg-primary">Số Điện Thoại:</span>
-                                    <span class="badge bg-secondary">@hiddenPhoneNumber</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <span class="badge bg-primary">Email:</span>
-                                    <span class="badge bg-secondary">@hiddenEmail</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <span class="badge bg-primary">Giới tính:</span>
-                                    <span class="badge bg-secondary">@Model.Gender</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <span class="badge bg-primary">Địa chỉ:</span>
-                                    <span class="badge bg-secondary">@Model.Address</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <img src="~/IMG/logo.png" class="rounded-circle" style="width: 100px; height: 100px;" />
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-8">
-                            <a href="#" class="btn btn-primary d-block">Chỉnh sửa</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="container" style="margin-bottom:300px">
+    <div id="profile-img-container" class="col-md-12">
+        <img id="profile-img" src="~/IMG/logo.png" class="rounded-circle" />
+        <span class="hover-text">Thông tin cá nhân</span>
     </div>
-}
-else
-{
-    <p>Không tìm thấy thông tin người dùng.</p>
-}
+
+    <div id="user-info" class="row mt-3">
+        <ul class="list-group w-100">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="fw-bolder">Tên:</span>
+                <span>@Model.Name</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="fw-bolder">Số Điện Thoại:</span>
+                <span>@hiddenPhoneNumber</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="fw-bolder">Email:</span>
+                <span>@hiddenEmail</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="fw-bolder">Giới tính:</span>
+                <span>@Model.Gender</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="fw-bolder">Địa chỉ:</span>
+                <span>@Model.Address</span>
+            </li>
+            <div id="button-container" class="col-md-12">
+                <button class="btn btn-primary btn-custom">
+                    Cập nhật thông tin
+                </button>
+                <button class="btn btn-secondary btn-custom">
+                    Đăng xuất
+                </button>
+            </div>
+        </ul>
+        
+    </div>
+</div>

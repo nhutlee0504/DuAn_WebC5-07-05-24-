@@ -81,6 +81,10 @@
 
         .closebtn:hover {
             color: black;
+        }
+        a{
+            text-decoration:none;
+        }
 </style>
    @using Microsoft.AspNetCore.Http;
     @inject IHttpContextAccessor HttpContextAccessor
@@ -93,13 +97,23 @@
     }
 }
 @model IEnumerable<DA_WebC5.Models.Cart>
-<ol class="breadcrumb bg-transparent">
-    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+<div class="container">
+    <ol class="breadcrumb bg-transparent">
+        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
 
-    <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
-</ol>
+        <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
+    </ol>
+</div>
 
 
+@if (TempData["errorsub"] != null)
+{
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>!</strong> @TempData["errorsub"]
+    </div>
+
+}
 @if (TempData["SuccessAddCart"] != null)
 {
     <div class="alert">
@@ -111,12 +125,11 @@
 
 <div class="container">
     <div  style="position: relative; overflow: hidden; height:25px;">
-        <i class="bi bi-receipt" style="position: absolute; top: 50%; transform: translateY(-50%);"></i>
         <span style="color: red; position: absolute; transform: translateY(-50%); animation: slide 2s infinite alternate;">Nhập mã <strong>giảm giá</strong> để nhận thêm nhiều <strong>ưu đãi</strong> hơn</span>
     </div>
     <form asp-controller="Bills" asp-action="Index">
     <div class="table-responsive">
-        <table class="table text-center">
+        <table class="table text-center" style="margin-bottom:100px ">
             <thead>
                 <tr>
                     <th></th>

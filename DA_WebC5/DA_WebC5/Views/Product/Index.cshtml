@@ -49,21 +49,23 @@
                         </label>
                     </div>
                 }
-                <button type="submit" class="btn btn-dark mt-2">Lọc</button>
+                <button type="submit" class="btn btn-dark mt-3">Lọc</button>
             </form>
 
-            <hr class="mt-3 mb-3" />
+            <hr class="mt-3 mb-3">
+
             <h5>Phạm vi giá</h5>
             <form action="/Product/FilterByPrice" method="post">
-                <div class="row container">
-                    <div class="col-sm-6"><input type="number" placeholder="Thấp" class="w-100" name="priceLow" id="priceLow" value="@ViewBag.PriceLow" /></div>
-                    <div class="col-sm-6"><input type="number" placeholder="Cao" class="w-100" name="priceHigh" id="priceHigh" value="@ViewBag.PriceHigh" /></div>
-                </div>
-                <div class="row container mt-2">
-                    <button type="submit" class="btn btn-dark">Lọc</button>
+                <div class="input-group mb-3">
+                    <input type="number" placeholder="Thấp" class="form-control" name="priceLow" id="priceLow" value="@ViewBag.PriceLow">
+                    <input type="number" placeholder="Cao" class="form-control" name="priceHigh" id="priceHigh" value="@ViewBag.PriceHigh">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-dark">Lọc</button>
+                    </div>
                 </div>
             </form>
-            <hr class="mt-3 mb-3" />
+
+            <hr class="mt-3 mb-3">
 
             <h5>Thứ tự sắp xếp</h5>
             <form method="post" asp-action="SortOrder" id="sortOrderForm">
@@ -82,6 +84,7 @@
             </form>
         </div>
 
+
         <div class="col-sm-9">
             @if (ViewBag.NotProducts != null)
             {
@@ -95,11 +98,15 @@
                             <a href="/ProductDetail/Index/@item.IDProduct"> <div><img src="~/@item.Image" alt="Alternate Text" class="mw-100" /></div></a>
                         </div>
                         <div class="row container-fluid">
-                            <p class="font-weight-bold col-sm-8 mb-1">@item.Name</p>
-                            <p class="font-weight-bold col-sm-4 mb-1">@item.Price.ToString("N0")</p>
-                            <p style="font-size: small;" class="col-sm-8">@item.CategoryName</p>
-                            <strike style="font-size: small;" class="col-sm-4">400.000</strike>
+                            <div class="col-sm-8 mb-1">
+                                <p class="font-weight-bold text-truncate">@item.Name</p>
+                                <p style="font-size: small;" class="text-truncate">@item.CategoryName</p>
+                            </div>
+                            <div class="col-sm-4 mb-1">
+                                <p class="font-weight-bold text-truncate">@item.Price.ToString("N0") đồng</p>
+                            </div>
                         </div>
+
                         <p><i class="bi bi-star-fill text-warning"></i> 4.9 (100)</p>
                     </div>
                 }
