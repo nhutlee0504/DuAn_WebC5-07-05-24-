@@ -132,8 +132,7 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Bills\\BillDetail.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-18T10:30:12.968Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T10:30:12.968Z"
             },
             {
               "$type": "Document",
@@ -145,8 +144,7 @@
               "RelativeToolTip": "DA_WebC5\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-18T10:24:37.946Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T10:24:37.946Z"
             },
             {
               "$type": "Document",
@@ -158,8 +156,7 @@
               "RelativeToolTip": "DA_WebC5\\Views\\Cart\\Index.cshtml",
               "ViewState": "AQIAAKoAAAAAAAAAAAAWwMMAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-18T09:47:43.019Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T09:47:43.019Z"
             },
             {
               "$type": "Document",
@@ -180,8 +177,7 @@
               "RelativeToolTip": "DA_WebC5\\Views\\Bills\\Index.cshtml",
               "ViewState": "AQIAAHIAAAAAAAAAAAAAAJMAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-18T09:35:32.553Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T09:35:32.553Z"
             },
             {
               "$type": "Document",
@@ -217,8 +213,7 @@
               "RelativeToolTip": "DA_WebC5\\Views\\Home\\Bills.cshtml",
               "ViewState": "AQIAABUAAAAAAAAAAAAAACgAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-18T08:52:39.602Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T08:52:39.602Z"
             },
             {
               "$type": "Document",
@@ -228,7 +223,7 @@
               "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\HomeController.cs",
               "ToolTip": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\HomeController.cs",
               "RelativeToolTip": "DA_WebC5\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAHgAAAAAAAAAAAAQwJcAAAAAAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAUwDQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-18T08:51:50.79Z",
               "EditorCaption": ""
@@ -255,8 +250,7 @@
               "RelativeToolTip": "DA_WebC5\\Controllers\\BillsController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T08:51:15.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T08:51:15.817Z"
             },
             {
               "$type": "Document",
@@ -268,8 +262,7 @@
               "RelativeToolTip": "DA_WebC5\\Controllers\\CartController.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T08:50:59.789Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T08:50:59.789Z"
             },
             {
               "$type": "Document",
@@ -281,8 +274,7 @@
               "RelativeToolTip": "DA_WebC5\\Controllers\\ProductDetailController.cs",
               "ViewState": "AQIAAEIAAAAAAAAAAAAowF8AAABmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T08:40:13.101Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T08:40:13.101Z"
             },
             {
               "$type": "Document",
@@ -318,8 +310,7 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Bills\\Index.cshtml",
               "ViewState": "AQIAACoAAAAAAAAAAAAAAEYAAABiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-18T07:44:11.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T07:44:11.034Z"
             },
             {
               "$type": "Document",
@@ -343,8 +334,7 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Controllers\\CategoryController.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T06:34:29.694Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T06:34:29.694Z"
             },
             {
               "$type": "Document",
@@ -401,8 +391,7 @@
               "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Controllers\\BillsController.cs",
               "ViewState": "AQIAABwAAAAAAAAAAAAAADAAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T04:29:53.598Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T04:29:53.598Z"
             }
           ]
         },
