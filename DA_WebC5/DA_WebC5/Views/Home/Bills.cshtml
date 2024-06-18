@@ -48,7 +48,7 @@
 					<td>
 						<form asp-controller="Home" asp-action="UpdateBillStatus" asp-route-id="@item.IDBill" method="post">
 							<input type="hidden" name="id" value="@item.IDBill" />
-							<input type="hidden" name="status" value="Xác nhận" />
+							<input type="hidden" name="status" value="Hoàn thành" />
 							@if (item.Status.ToString() == "Đã giao")
 							{
 								<button type="submit" class="btn btn-success">Xác nhận</button>

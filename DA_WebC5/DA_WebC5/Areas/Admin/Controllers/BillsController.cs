@@ -43,41 +43,45 @@ namespace DA_WebC5.Areas.Admin.Controllers
                 }
             }
             return View(bills);
-            //    var list = _context.Bills.ToList();
-            //return View(list);
         }
 
-        [Route("Admin/Bills/BillDetail")]
-        public async Task<IActionResult> BillDetail(int id)
-        {
-            var view = new BillInfor();
-            using (var httpClient = new HttpClient())
-            {
-                using (var Response = await httpClient.GetAsync(urlBillDetailBill + id))
-                {
-                    string apiResponse = await Response.Content.ReadAsStringAsync();
-                    view.BillDetails = JsonConvert.DeserializeObject<List<BillDetails>>(apiResponse);
-                }
-                using (var Response1 = await httpClient.GetAsync(urlColor))
-                {
-                    string apiResponse1 = await Response1.Content.ReadAsStringAsync();
-                    view.Colors = JsonConvert.DeserializeObject<List<Colors>>(apiResponse1);
-                }
-                using (var Response1 = await httpClient.GetAsync(urlSize))
-                {
-                    string apiResponse1 = await Response1.Content.ReadAsStringAsync();
-                    view.Sizes = JsonConvert.DeserializeObject<List<Sizes>>(apiResponse1);
-                }
-                using (var Response1 = await httpClient.GetAsync(urlPddt))
-                {
-                    string apiResponse1 = await Response1.Content.ReadAsStringAsync();
-                    view.ProductDetails = JsonConvert.DeserializeObject<List<ProductDetails>>(apiResponse1);
-                }
-            }
-            return View(view);
-        }
+		[Route("Admin/Bills/BillDetail")]
+		public async Task<IActionResult> BillDetail(int id)
+		{
+			var view = new BillInfor();
+			using (var httpClient = new HttpClient())
+			{
+				using (var Response = await httpClient.GetAsync(urlBillDetailBill + id))
+				{
+					string apiResponse = await Response.Content.ReadAsStringAsync();
+					view.BillDetails = JsonConvert.DeserializeObject<List<BillDetails>>(apiResponse);
+				}
+				using (var Response1 = await httpClient.GetAsync(urlColor))
+				{
+					string apiResponse1 = await Response1.Content.ReadAsStringAsync();
+					view.Colors = JsonConvert.DeserializeObject<List<Colors>>(apiResponse1);
+				}
+				using (var Response1 = await httpClient.GetAsync(urlSize))
+				{
+					string apiResponse1 = await Response1.Content.ReadAsStringAsync();
+					view.Sizes = JsonConvert.DeserializeObject<List<Sizes>>(apiResponse1);
+				}
+				using (var Response1 = await httpClient.GetAsync(urlPddt))
+				{
+					string apiResponse1 = await Response1.Content.ReadAsStringAsync();
+					view.ProductDetails = JsonConvert.DeserializeObject<List<ProductDetails>>(apiResponse1);
+				}
+				using (var Response1 = await httpClient.GetAsync(urlPD))
+				{
+					string apiResponse1 = await Response1.Content.ReadAsStringAsync();
+					view.Products = JsonConvert.DeserializeObject<List<Product>>(apiResponse1);
+				}
 
-        [Route("Admin/Bills/ConformBill")]
+			}
+			return View(view);
+		}
+
+		[Route("Admin/Bills/ConformBill")]
         public IActionResult ConformBill()
         {
             return View();

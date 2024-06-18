@@ -66,11 +66,9 @@
 							<button type="submit" class="btn btn-success">Hủy đơn hàng</button>
 						}
 					</form>
-					@* 	<form asp-area="Admin" asp-controller="Bills" asp-action="UpdateBillStatus" asp-route-id="@item.IDBill" method="post">
-				<input type="hidden" name="id" value="@item.IDBill" />
-				<input type="hidden" name="status" value="Đang chờ" />
-				<button type="submit" class="btn btn-success">Đã giao</button>
-				</form> *@
+				</td>
+				<td>
+					<a asp-area="Admin" asp-controller="Bills" asp-action="BillDetail" asp-route-id="@item.IDBill">Chi tiết</a>
 				</td>
 			</tr>
 		}

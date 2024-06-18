@@ -38,75 +38,83 @@ namespace DA_WebC5.Controllers
             {
                 return NotFound();
             }
+
             var prod = _context.ProductDetails.FirstOrDefault(x => x.IDPDetail == IdPDetail);
-            if (prod != null)
+            if (prod == null)
             {
-                if (prod.Quantity < quantity)
+                return NotFound();
+            }
+            else if (prod.Quantity < quantity)
+            {
+                var IdProd = _context.ProductDetails.Where(x => x.IDPDetail == IdPDetail).Select(x => x.IDProduct).FirstOrDefault();
+                TempData["FailQuantity"] = "Số lượng sản phẩm không đủ";
+                return RedirectToAction("Index", "ProductDetail", new { id = IdProd });
+            }
+
+            var cartItem = _context.Carts.FirstOrDefault(x => x.IDPDetail == prod.IDPDetail && x.UserName == username);
+            if (cartItem != null)
+            {
+                cartItem.Quantity += quantity;
+                if(cartItem.Quantity > _context.ProductDetails.Where(x => x.IDPDetail == IdPDetail).Select(x => x.Quantity).FirstOrDefault())
                 {
+                    TempData["FailQuantity"] = "Số lượng sản phẩm không đủ và sản phẩm đã có trong giỏ hàng";
                     var IdProd = _context.ProductDetails.Where(x => x.IDPDetail == IdPDetail).Select(x => x.IDProduct).FirstOrDefault();
                     return RedirectToAction("Index", "ProductDetail", new { id = IdProd });
                 }
+            }
+            else
+            {
                 var cart = new Cart
                 {
                     IDPDetail = prod.IDPDetail,
                     UserName = username,
                     Quantity = quantity
                 };
-                if(quantity > prod.Quantity)
+                _context.Carts.Add(cart);
+                var productName = _context.Products.Where(x => x.IDProduct == prod.IDProduct).Select(x => x.Name).FirstOrDefault();
+                var history = new History
                 {
-                    TempData["error"] = "Số lượng sản phẩm không đủ";
-                    return RedirectToAction(nameof(Index));
-                }
-                else
-                {
-                    _context.Carts.Add(cart);
-                    _context.SaveChanges();
-                    var pd = _context.Products.Where(x => x.IDProduct == prod.IDProduct).Select(x => x.Name);
-                    var hs = new History()
-                    {
-                        UserName = username,
-                        Describe = "Đã thêm sản phẩm " + pd.ToString() + " vào giỏ hàng vào " + DateTime.Now,
-                    };
-                    _context.Histories.Add(hs);
-                    _context.SaveChanges();
-                    TempData["SuccessAddCart"] = "Đã thêm sản phẩm vào giỏ hàng thành công";
-                    return RedirectToAction(nameof(Index));
-                }
+                    UserName = username,
+                    Describe = $"Đã thêm sản phẩm {productName} vào giỏ hàng vào {DateTime.Now}",
+                };
+                _context.Histories.Add(history);
             }
-            return View();
+            _context.SaveChanges();
+            TempData["SuccessAddCart"] = "Đã thêm sản phẩm vào giỏ hàng thành công";
+            return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult AddOne(int id)
+
+        [HttpPost]
+        public IActionResult Subtract(int id)
         {
             var prod = _context.Carts.FirstOrDefault(x => x.IDCart == id);
-            if (prod != null) 
+            if (prod != null && prod.Quantity > 1)
             {
-                prod.Quantity++;
-                _context.SaveChanges(); 
-                return RedirectToAction(nameof(Index));
+                prod.Quantity--;
+                _context.SaveChanges();
+                return Json(new { success = true, quantity = prod.Quantity });
             }
-            return NotFound();
+            return Json(new { success = false, message = "Sản phẩm có số lượng ở mức thấp nhất" });
         }
 
-        public IActionResult SubtractOne(int id)
+        [HttpPost]
+        public IActionResult Add(int id)
         {
             var prod = _context.Carts.FirstOrDefault(x => x.IDCart == id);
             if (prod != null)
             {
-                if (prod.Quantity > 0)
+                prod.Quantity++;
+                if (prod.Quantity > _context.ProductDetails.Where(x => x.IDPDetail == prod.IDPDetail).Select(x => x.Quantity).FirstOrDefault())
                 {
-                    prod.Quantity--;
-                    _context.SaveChanges();
-                    return RedirectToAction(nameof(Index));
+                    return Json(new { success = false, message = "Số lượng sản phẩm không đủ" });
                 }
-                else
-                {
-                    TempData["errorsub"] = "Xoa deo duoc em nhe";
-                }
-              
+                _context.SaveChanges();
+                return Json(new { success = true, quantity = prod.Quantity });
             }
-            return NotFound();
+            return Json(new { success = false });
         }
+
 
         public IActionResult DeleteAll()
         {

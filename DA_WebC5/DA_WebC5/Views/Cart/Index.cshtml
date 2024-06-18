@@ -12,7 +12,7 @@
     }
 
     td.d-flex {
-        justify-content: center; /* Canh giữa theo chiều ngang */
+        justify-content: center;
     }
 
 
@@ -20,8 +20,8 @@
         padding: 0.25rem 0.5rem;
         width: 150px;
         display: flex;
-        justify-content: center; /* Căn giữa theo chiều ngang */
-        align-items: center; /* Căn giữa theo chiều dọc */
+        justify-content: center;
+        align-items: center;
     }
 
     .table .d-flex .p-2 {
@@ -60,14 +60,6 @@
         transform: translateY(-5px);
     }
 
-    .alert {
-        padding: 20px;
-        background-color: green;
-        color: white;
-        opacity: 1;
-        transition: opacity 0.6s;
-    }
-
     .closebtn {
         margin-left: 15px;
         color: white;
@@ -82,33 +74,40 @@
         .closebtn:hover {
             color: black;
         }
-        a{
-            text-decoration:none;
-        }
+
+    a {
+        text-decoration: none;
+    }
+
+    .alerts {
+        padding: 20px;
+        background-color: green;
+        color: white;
+        opacity: 1;
+        transition: opacity 0.6s;
+    }
 </style>
-   @using Microsoft.AspNetCore.Http;
-    @inject IHttpContextAccessor HttpContextAccessor
+
+@model IEnumerable<DA_WebC5.Models.Cart>
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
 @{
     string username = "";
-    var loggedInUser = HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser");
     if (HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser") != null)
     {
         username = HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser");
     }
 }
-@model IEnumerable<DA_WebC5.Models.Cart>
-<div class="container">
-    <ol class="breadcrumb bg-transparent">
-        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
 
-        <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
-    </ol>
-</div>
+<ol class="breadcrumb bg-transparent">
+    <li class="breadcrumb-item"><a href="/home/index">Trang chủ</a></li>
 
+    <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
+</ol>
 
 @if (TempData["errorsub"] != null)
 {
-    <div class="alert">
+    <div class="alerts">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
         <strong>!</strong> @TempData["errorsub"]
     </div>
@@ -116,7 +115,7 @@
 }
 @if (TempData["SuccessAddCart"] != null)
 {
-    <div class="alert">
+    <div class="alerts">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
         <strong>!</strong> @TempData["SuccessAddCart"]
     </div>
@@ -124,80 +123,78 @@
 }
 
 <div class="container">
-    <div  style="position: relative; overflow: hidden; height:25px;">
+    <div id="failQuantity" class="alert alert-danger px-5" style="display:none;"></div>
+    <div style="position: relative; overflow: hidden; height:25px;">
+        <i class="bi bi-receipt" style="position: absolute; top: 50%; transform: translateY(-50%);"></i>
         <span style="color: red; position: absolute; transform: translateY(-50%); animation: slide 2s infinite alternate;">Nhập mã <strong>giảm giá</strong> để nhận thêm nhiều <strong>ưu đãi</strong> hơn</span>
     </div>
     <form asp-controller="Bills" asp-action="Index">
-    <div class="table-responsive">
-        <table class="table text-center" style="margin-bottom:100px ">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Sản phẩm</th>
-                    <td></td>
-                    <th>Đơn giá</th>
-                    <th>Số lượng</th>
-                    <th>Số tiền</th>
-                    <th>Thao tác</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
+        <div class="table-responsive">
+            <table class="table text-center">
+                <thead>
                     <tr>
-                        <td>
-                                <input type="checkbox" name="selectedProducts" value="@item.IDPDetail">
-                        </td>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <div class="col-12 p-0">
-                                        <img src="~/@item.ProductDetails.Product.Image" style="width:150px; " alt="Alternate Text" class="img-fluid" />
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-12 p-0">
-                                <div>@item.ProductDetails.Product.Name</div>
-                                <div class="text-secondary">@item.ProductDetails.Product.Category.Name</div>
-                                <div class="text-secondary">@item.ProductDetails.Sizes.SizeName - @item.ProductDetails.Colors.Color</div>
-                            </div>
-                        </td>
-                        <td>@item.ProductDetails.Product.Price.ToString("N0")</td>
-                        <td class="text-center">
-                            <div class="input-group">
-                                <form asp-controller="Cart" asp-action="SubtractOne" asp-route-id="@item.IDCart">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit" id="subtractBtn">-</button>
-                                </form>
-                                <input type="text" class="form-control text-center" name="quantity" value="@item.Quantity" id="quantityInput" readonly>
-                                <form asp-controller="Cart" asp-action="AddOne" asp-route-id="@item.IDCart">
-                                    <button class="btn btn-outline-secondary btn-sm" type="submit" id="addBtn">+</button>
-                                </form>
-                            </div>
-                        </td>
-                        <td>@((item.Quantity * item.ProductDetails.Product.Price).ToString("N0")) đồng</td>
-                        <td><a asp-controller="Cart" asp-action="DeleteProd" asp-route-id="@item.IDCart" class="text-center"><i class="fas fa-trash-alt"></i></a></td>
+                        <th></th>
+                        <th>Sản phẩm</th>
+                        <td></td>
+                        <th>Đơn giá</th>
+                        <th>Số lượng</th>
+                        <th>Số tiền</th>
+                        <th>Thao tác</th>
                     </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-
-    <div class="border p-2 mt-3 d-flex align-items-center flex-wrap">
-        <a asp-controller="Cart" asp-action="DeleteAll" class="btn btn-danger mr-2 mb-2 mb-md-0">Xóa tất cả sản phẩm</a>
-        <a asp-controller="Product" asp-action="Index" class="btn btn-dark mr-2 mb-2 mb-md-0">Tiếp tục mua hàng</a>
-
-        <div class="ml-md-auto mr-md-0 mb-2 mb-md-0">Tổng thanh toán(@Model.Where(x => x.UserName == ViewBag.Username).Count() sản phẩm)</div>
-        <div class="px-2 mb-2 mb-md-0"><strong class="text-danger"></strong></div>
-            <input type="text" class="form-control" name="SaleInput" placeholder="Nhập mã khuyến mãi (nếu có)">
-        <button type="submit" class="btn btn-success">Mua hàng</button>
-    </div>
-    </form>
-    <form asp-controller="Bills" asp-action="Index">
-        <div class="form-group mb-3">
-           
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="selectedProducts" value="@item.IDPDetail">
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="col-12 p-0">
+                                        <img src="~/@item.ProductDetails.Product.Image" style="width:150px; " alt="Alternate Text" class="img-fluid" />
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="col-12 p-0">
+                                    <div>@item.ProductDetails.Product.Name</div>
+                                    <div class="text-secondary">@item.ProductDetails.Product.Category.Name</div>
+                                    <div class="text-secondary">@item.ProductDetails.Sizes.SizeName - @item.ProductDetails.Colors.Color</div>
+                                </div>
+                            </td>
+                            <td>@item.ProductDetails.Product.Price.ToString("N0")</td>
+                            <td class="text-center">
+                                <div class="input-group">
+                                    <form>
+                                        <button class="btn btn-outline-secondary btn-sm" type="button" onclick="updateQuantity('@item.IDCart', 'subtract')">-</button>
+                                    </form>
+                                    <input type="number" class="form-control text-center" name="quantity" id="quantity-@item.IDCart" value="@item.Quantity" readonly>
+                                    <form>
+                                        <button class="btn btn-outline-secondary btn-sm" type="button" onclick="updateQuantity('@item.IDCart', 'add')">+</button>
+                                    </form>
+                                </div>
+                            </td>
+                            <td>@((item.Quantity * item.ProductDetails.Product.Price).ToString("N0")) đồng</td>
+                            <td><a asp-controller="Cart" asp-action="DeleteProd" asp-route-id="@item.IDCart" class="text-center"><i class="fas fa-trash-alt"></i></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
-        <button type="submit" class="btn btn-primary">Áp dụng mã</button>
+
+        <div class="border p-2 mt-3 d-flex align-items-center flex-wrap">
+            <a asp-controller="Cart" asp-action="DeleteAll" class="btn btn-danger mr-2 mb-2 mb-md-0">Xóa tất cả sản phẩm</a>
+            <a asp-controller="Product" asp-action="Index" class="btn btn-dark mr-2 mb-2 mb-md-0">Tiếp tục mua hàng</a>
+
+            <div class="ml-md-auto mr-md-0 mb-2 mb-md-0">Tổng thanh toán(@Model.Where(x => x.UserName == ViewBag.Username).Count() sản phẩm)</div>
+            <div class="px-2 mb-2 mb-md-0"><strong class="text-danger"></strong></div>
+            <input type="text" class="form-control" name="SaleInput" placeholder="Nhập mã khuyến mãi (nếu có)">
+
+            <button type="submit" class="btn btn-success">Mua hàng</button>
+        </div>
     </form>
+
     <hr>
     <h4>Có thể bạn sẽ thích</h4>
 
@@ -260,3 +257,25 @@
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function updateQuantity(id, action) {
+        $.ajax({
+            url: `/Cart/${action}`,
+            type: 'POST',
+            data: { id: id },
+            success: function (response) {
+                if (response.success) {
+                    $('#quantity-' + id).val(response.quantity);
+                    $('#failQuantity').hide();
+                } else {
+                    $('#failQuantity').text(response.message).show();
+                }
+            },
+            error: function () {
+                window.location.href = '/cart/index';
+            }
+        });
+    }
+</script>

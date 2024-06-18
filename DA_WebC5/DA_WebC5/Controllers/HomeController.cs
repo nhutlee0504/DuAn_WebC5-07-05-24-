@@ -79,7 +79,6 @@ namespace DA_WebC5.Controllers
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     var billDetails = JsonConvert.DeserializeObject<List<BillDetailViewModel>>(apiResponse);
 
-                    // Duyệt qua từng billDetail để gán thông tin vào view model
                     foreach (var bd in billDetails)
                     {
                         var billDetail = new BillDetails
@@ -105,7 +104,6 @@ namespace DA_WebC5.Controllers
                         view.BillDetails.Add(billDetail);
                     }
                 }
-                // Gọi API để lấy thông tin màu sắc
                 var responseColor = await httpClient.GetAsync(urlColor);
                 if (responseColor.IsSuccessStatusCode)
                 {
@@ -151,7 +149,6 @@ namespace DA_WebC5.Controllers
                     products = JsonConvert.DeserializeObject<List<Product>>(apiResponse);
 
                     products = products.Where(p => productsDetails.Any(pd => pd.IDProduct == p.IDProduct)).Where(p => p.Status == "Bán").ToList();
-                    //var p = products.Select(p => p.IDProduct).Distinct().ToDictionary(id => id, id => _context.ProductDetails.Count(pd => pd.IDProduct == id && pd.IDProduct > 0));
                 }
                 using (var response1 = await httpClient.GetAsync(urlCate))
                 {
