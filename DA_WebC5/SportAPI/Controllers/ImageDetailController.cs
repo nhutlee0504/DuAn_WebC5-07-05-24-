@@ -35,7 +35,18 @@ namespace SportAPI.Controllers
                 Image = imageDetail.Image
             });
         }
-           
+        [HttpDelete("{id}")]
+        public IActionResult DeleteImg(int id)
+        {
+            var result = _imageService.DeleteImage(id);
+
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+            return NoContent(); 
+        }
 
 
     }

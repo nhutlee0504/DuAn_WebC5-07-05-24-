@@ -4,7 +4,7 @@
     ViewData["Title"] = "UpdateCategory";
 }
 
-<h1>UpdateCategory</h1>
+<h1>Cập nhật loại sản phẩm</h1>
 
 <h4>Category</h4>
 <hr />
@@ -14,19 +14,19 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="IDCategory" />
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+                <label asp-for="Name" class="control-label">Tên loại</label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Cập nhật" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-area="Admin" asp-controller="Category" asp-action="Index">Back to List</a>
+    <a asp-area="Admin" asp-controller="Category" asp-action="Index">Quay về danh sách</a>
 </div>
 
 @section Scripts {

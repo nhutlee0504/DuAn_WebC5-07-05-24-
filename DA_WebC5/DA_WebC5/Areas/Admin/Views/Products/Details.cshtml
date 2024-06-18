@@ -13,13 +13,13 @@
     <div class="card-body">
         <dl class="row">
             <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.Product.Name)
+                @Html.DisplayNameFor(model => model.Product.Name).Replace("Name", "Tên sản phẩm")
             </dt>
             <dd class="col-sm-9">
                 @Html.DisplayFor(model => model.Product.Name)
             </dd>
             <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.Product.Status)
+                @Html.DisplayNameFor(model => model.Product.Status).Replace("Status", "Trạng thái")
             </dt>
             <dd class="col-sm-9">
                 @Html.DisplayFor(model => model.Product.Status)
@@ -48,10 +48,13 @@
             <dd class="col-sm-9">
                 @Html.DisplayFor(model => model.Product.Describe)
             </dd>
+            <dd class="col-sm-12">
+                <img src="~/@Model.Product.Image" width="200px" />
+            </dd>
         </dl>
     </div>
     <a asp-action="UpdateProduct" asp-controller="Products" asp-area="Admin" asp-route-id="@Model.Product.IDProduct" class="btn btn-primary">Cập nhật sản phẩm</a>
-        <a asp-action="CreateImageDetails" asp-controller="Products" asp-area="Admin" asp-route-productId="@Model.Product.IDProduct" class="btn btn-sm btn-gradient-primary btn-rounded btn-fw">Thêm ảnh chi tiết</a>
+
 </div>
 
 <div class="card mt-3">
@@ -59,7 +62,7 @@
         <h4>Chi tiết sản phẩm</h4>
     </div>
     <div class="card-body">
-        <table class="table table-bordered">
+        <table class="table table-bordered text-center">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -85,12 +88,50 @@
                         <td>
                             @Model.ProductDetails.FirstOrDefault(x => x.IDPDetail == detail.IDPDetail)?.Quantity
                         </td>
-                        <td>  <a asp-action="CreateDetails" asp-controller="Products" asp-area="Admin" type="button" class="btn btn-sm btn-gradient-primary btn-rounded btn-fw">Sửa</a></td>
+                        <td>     <a asp-action="EditDetails" asp-route-id="@detail.IDPDetail" asp-controller="Products" asp-area="Admin" type="button" class="btn btn-sm btn-gradient-primary mt-3 btn-fw">Sửa</a></td>
                     </tr>
                 }
             </tbody>
         </table>
-            <a asp-action="CreateDetails" asp-controller="Products" asp-area="Admin" type="button" class="btn btn-sm btn-gradient-primary btn-rounded btn-fw">Thêm chi tiết</a>
+        <a asp-action="CreateDetails" asp-controller="Products" asp-area="Admin" asp-route-productId="@Model.Product.IDProduct" type="button" class="btn btn-sm btn-gradient-primary btn-rounded btn-fw">Thêm chi tiết</a>
+    </div>
+</div>
+
+<div class="card mt-3">
+    <div class="card-header">
+        <h4>Chi tiết hình ảnh</h4>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered text-center">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Hình ảnh</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var detail in Model.Images)
+                {
+                    <tr>
+                        <td>
+                            @detail.IDImage
+                        </td>
+                        <td>
+                            <img style="width:100px; height:100px" src="~/@detail.Image" />
+                        </td>
+                        
+                        <td>
+                            <form asp-action="DeleteImg" asp-controller="Products" asp-area="Admin" method="post" style="display:inline;">
+                                <input type="hidden" name="idimg" value="@detail.IDImage" />
+                                <button type="submit" class="btn btn-sm btn-gradient-primary mt-3 btn-fw">Xóa ảnh</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a asp-action="CreateImageDetails" asp-controller="Products" asp-area="Admin" asp-route-productId="@Model.Product.IDProduct" class="btn btn-sm btn-gradient-primary mt-3 btn-fw">Thêm ảnh chi tiết</a>
     </div>
 </div>
 

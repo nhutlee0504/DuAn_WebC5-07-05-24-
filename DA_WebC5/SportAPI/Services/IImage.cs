@@ -7,5 +7,6 @@
         {
             public IEnumerable<ImageDetails> GetImages(int productId);
         public ImageDetails AddImage(ImageDetails image);
+        public ImageDetails DeleteImage(int id);
     }
     }

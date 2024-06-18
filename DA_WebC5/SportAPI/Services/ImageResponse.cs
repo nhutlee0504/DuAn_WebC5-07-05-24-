@@ -23,5 +23,20 @@ namespace SportAPI.Services
             context.SaveChanges();          
             return image;
         }
+
+        public ImageDetails DeleteImage(int id)
+        {
+            var image = context.ImageDetails.FirstOrDefault(img => img.IDImage == id);
+
+            if (image == null)
+            {
+                return null;
+            }
+
+            context.ImageDetails.Remove(image);
+            context.SaveChanges();
+
+            return image;
+        }
     }
 }
