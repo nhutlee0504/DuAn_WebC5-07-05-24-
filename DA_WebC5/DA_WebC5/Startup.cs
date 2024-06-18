@@ -35,6 +35,7 @@ namespace DA_WebC5
                 options.Cookie.IsEssential = true;
             });
             services.AddHttpContextAccessor();
+            services.AddHttpClient();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

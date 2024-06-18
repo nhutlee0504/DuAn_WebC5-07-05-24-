@@ -33,5 +33,10 @@ namespace SportAPI.Services
         {
             return context.Sales.FirstOrDefault(c => c.IDSale == id);
         }
+
+        public Sale GetSaleByName(string name)
+        {
+            return context.Sales.FirstOrDefault(c => c.Name.Equals(name));
+        }
     }
 }

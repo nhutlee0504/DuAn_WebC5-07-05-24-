@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using SportAPI.Model;
 using SportAPI.Services;
 using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace SportAPI.Controllers
 {
@@ -10,13 +12,31 @@ namespace SportAPI.Controllers
     [ApiController]
     public class ImageDetailController : ControllerBase
     {
-        private IImage image;
-        public ImageDetailController(IImage img) => image = img;
+        private readonly IImage _imageService;
 
-        [HttpGet]
-		public IEnumerable<ImageDetails> GetImageDetails(int productId)
-		{
-			return image.GetImages(productId);
-		}
-	}
+        public ImageDetailController(IImage imageService)
+        {
+            _imageService = imageService;
+        }
+
+        [HttpGet("{productId}")]
+        public IEnumerable<ImageDetails> GetImageDetails(int productId)
+        {
+            return _imageService.GetImages(productId);
+        }
+
+        [HttpPost]
+        public ImageDetails AddImage(ImageDetails imageDetail)
+        {
+        
+            return _imageService.AddImage(new ImageDetails
+            {
+                IDProduct = imageDetail.IDProduct,
+                Image = imageDetail.Image
+            });
+        }
+           
+
+
+    }
 }

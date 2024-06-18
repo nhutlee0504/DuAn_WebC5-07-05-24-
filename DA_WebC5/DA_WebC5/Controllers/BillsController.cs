@@ -18,10 +18,10 @@ namespace DA_WebC5.Controllers
         {
             _context = context;
         }
+
         public async Task<IActionResult> Index(List<int> selectedProducts, string SaleInput, decimal totalPrice)
         {
-
-            if(SaleInput != null)
+            if (SaleInput != null)
             {
                 var FindSale = _context.Sales.FirstOrDefault(x => x.Name == SaleInput);
                 if (FindSale != null && FindSale.Quantity > 0 && totalPrice > FindSale.MinAmount && totalPrice < FindSale.MaxAmount)
@@ -37,40 +37,25 @@ namespace DA_WebC5.Controllers
             {
                 ViewBag.MaGiamGia = null;
             }
-            if(selectedProducts !=null && selectedProducts.Count > 0)
+            if (selectedProducts != null && selectedProducts.Count > 0)
             {
                 string username = HttpContext.Session.GetString("LoggedInUser");
                 if (string.IsNullOrEmpty(username))
                 {
                     return RedirectToAction("Login", "Home");
                 }
-
-                // Fetch user information
                 var user = await _context.Accounts.FirstOrDefaultAsync(u => u.UserName == username);
                 if (user == null)
                 {
                     return NotFound("User not found");
                 }
-
-                // Fetch cart items
                 var selectedCartItems = await _context.Carts
-              .Where(x => x.UserName == username && selectedProducts.Contains(x.IDPDetail))
-              .Include(x => x.ProductDetails.Product)
-              .Include(x => x.ProductDetails.Product.Category)
-              .Include(x => x.ProductDetails.Sizes)
-              .Include(x => x.ProductDetails.Colors)
-              .ToListAsync();
-                //var cartItems = await _context.Carts
-                //    .Where(x => x.UserName == username)
-
-                //    .Include(x => x.ProductDetails.Product)
-                //     .Include(x => x.ProductDetails.Product.Category)
-                //    .Include(x => x.ProductDetails.Sizes)
-                //    .Include(x => x.ProductDetails.Colors)
-
-                //    .ToListAsync();
-
-                // Create a ViewModel to pass both user and cart items to the view
+                    .Where(x => x.UserName == username && selectedProducts.Contains(x.IDPDetail))
+                    .Include(x => x.ProductDetails.Product)
+                    .Include(x => x.ProductDetails.Product.Category)
+                    .Include(x => x.ProductDetails.Sizes)
+                    .Include(x => x.ProductDetails.Colors)
+                    .ToListAsync();
                 var viewModel = new BillViewModel
                 {
                     User = user,
@@ -85,6 +70,60 @@ namespace DA_WebC5.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<IActionResult> IndexPost(List<int> selectedProducts, string SaleInput, decimal totalPrice)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(SaleInput))
+                {
+                    return RedirectToAction("Index", "Cart");
+                }
+
+                var findSale = await _context.Sales.FirstOrDefaultAsync(x => x.Name == SaleInput);
+                if (findSale != null && findSale.Quantity > 0 && totalPrice >= findSale.MinAmount)
+                {
+                    ViewBag.MaGiamGia = findSale.Name;
+                    ViewBag.SaleData = findSale;
+                }
+                else
+                {
+                    ViewBag.MaGiamGia = null;
+                    ViewBag.SaleData = null;
+                    ViewBag.ErrorMessage = "Không tìm thấy mã khuyến mãi hoặc mã không hợp lệ";
+                }
+                string username = HttpContext.Session.GetString("LoggedInUser");
+                if (string.IsNullOrEmpty(username))
+                {
+                    return RedirectToAction("Login", "Home");
+                }
+                var user = await _context.Accounts.FirstOrDefaultAsync(u => u.UserName == username);
+                if (user == null)
+                {
+                    return NotFound("User not found");
+                }
+                var selectedCartItems = await _context.Carts
+                    .Where(x => x.UserName == username && selectedProducts.Contains(x.IDPDetail))
+                    .Include(x => x.ProductDetails.Product)
+                    .Include(x => x.ProductDetails.Product.Category)
+                    .Include(x => x.ProductDetails.Sizes)
+                    .Include(x => x.ProductDetails.Colors)
+                    .ToListAsync();
+                var viewModel = new BillViewModel
+                {
+                    User = user,
+                    CartItems = selectedCartItems
+                };
+
+                return View(viewModel);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = "Lỗi xử lý yêu cầu: " + ex.Message;
+                return View(new BillViewModel());
+            }
+        }
+
         [Route("Bills/Pay")]
         public IActionResult Pay(List<int> selectedProducts)
         {
@@ -93,12 +132,12 @@ namespace DA_WebC5.Controllers
                 string username = HttpContext.Session.GetString("LoggedInUser");
                 decimal totalPrice = decimal.Parse(HttpContext.Request.Form["totalPrice"]);
                 var selectedCartItems = _context.Carts
-            .Where(x => x.UserName == username && selectedProducts.Contains(x.IDPDetail))
-            .Include(x => x.ProductDetails.Product)
-            .Include(x => x.ProductDetails.Product.Category)
-            .Include(x => x.ProductDetails.Sizes)
-            .Include(x => x.ProductDetails.Colors)
-            .ToList();
+                    .Where(x => x.UserName == username && selectedProducts.Contains(x.IDPDetail))
+                    .Include(x => x.ProductDetails.Product)
+                    .Include(x => x.ProductDetails.Product.Category)
+                    .Include(x => x.ProductDetails.Sizes)
+                    .Include(x => x.ProductDetails.Colors)
+                    .ToList();
 
                 // Sử dụng biến 'username' ở đây để thực hiện các hành động khác
                 // ...
@@ -152,16 +191,12 @@ namespace DA_WebC5.Controllers
 
                 _context.SaveChanges();
 
-
-
-
                 return RedirectToAction("Index");
             }
             else
             {
                 return RedirectToAction("Index", "Home");
             }
-           
         }
 
         //public IActionResult SaleSubmit(string SaleInput, decimal totalPrice)

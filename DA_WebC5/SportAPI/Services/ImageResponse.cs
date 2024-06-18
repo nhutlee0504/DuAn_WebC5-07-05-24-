@@ -10,11 +10,18 @@ namespace SportAPI.Services
     public class ImageResponse : IImage
     {
        private readonly ApplicationDbContext context;
-		public ImageResponse(ApplicationDbContext ct) => context = ct;
-
+        private readonly IImage _imageService;
+        public ImageResponse(ApplicationDbContext ct) => context = ct;
+        
 		public IEnumerable<ImageDetails> GetImages(int productId)
 		{
 			return context.ImageDetails.Where(x => x.IDProduct == productId);
 		}
-	}
+        public ImageDetails AddImage( ImageDetails image)
+        {
+            context.ImageDetails.Add(image);
+            context.SaveChanges();          
+            return image;
+        }
+    }
 }

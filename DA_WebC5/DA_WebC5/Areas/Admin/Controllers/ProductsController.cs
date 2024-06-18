@@ -4,7 +4,9 @@ using DA_WebC5.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -27,8 +29,13 @@ namespace DA_WebC5.Areas.Admin.Controllers
         private readonly string _urlColors = "http://localhost:57700/api/Color/";
         private readonly string _urlProductDetails = "http://localhost:57700/api/ProductDetail/prodId?prodId=";
         private readonly string _urlProductDetails1 = "http://localhost:57700/api/ProductDetail/";
-        private readonly string _urlImageDetail = "http://localhost:57700/api/ImageDetail/";
-
+    
+        private readonly string _urlImageDetails = "http://localhost:57700/api/ImageDetail/";
+        private readonly ILogger<ProductsController> _logger;
+        public ProductsController(ILogger<ProductsController> logger)
+        {
+            _logger = logger;
+        }
         [Route("Admin/Products/Index")]
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -502,6 +509,75 @@ namespace DA_WebC5.Areas.Admin.Controllers
             return View(viewModel);
         }
 
+
+        [Route("Admin/Products/CreateImageDetails")]
+        [HttpGet]
+        public async Task<IActionResult> CreateImageDetails(int productId)
+        {
+            Product product;
+
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync(_urlP + productId))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    product = JsonConvert.DeserializeObject<Product>(apiResponse);
+                }
+            }
+
+            return View(product);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("Admin/Products/CreateImageDetails")]
+        public async Task<IActionResult> CreateImageDetails(int productId, IFormFile Images)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var httpClient = new HttpClient())
+                {
+
+                        if (Images != null && Images.Length > 0)
+                        {
+                            var fileName = Path.GetFileName(Images.FileName);
+                            var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Image_Product");
+                            var filePath = Path.Combine(folderPath, fileName);
+                            var imagePath = Path.Combine("Image_Product", fileName).Replace("\\", "/");
+                          
+                            if (!System.IO.File.Exists(filePath))
+                            {
+                                Directory.CreateDirectory(folderPath); 
+
+                                using (var stream = new FileStream(filePath, FileMode.Create))
+                                {
+                                    await Images.CopyToAsync(stream);
+                                }
+                            }
+
+                            ImageDetails imageDetail = new ImageDetails
+                            {
+                                IDProduct = productId,
+                                Image = imagePath 
+                            };
+
+                            _logger.LogInformation($"Sending image details to API: {imageDetail}");
+
+                            HttpResponseMessage responseMessage = await httpClient.PostAsJsonAsync(_urlImageDetails, imageDetail);
+                            if (!responseMessage.IsSuccessStatusCode)
+                            {
+                                var responseContent = await responseMessage.Content.ReadAsStringAsync();
+                                ImageDetails img = JsonConvert.DeserializeObject<ImageDetails>(responseContent);
+                                return RedirectToAction("Index");
+                            }
+                        }
+
+
+                    return RedirectToAction("Details", new { id = productId });
+                }
+            }
+
+            return View();
+        }
 
 
 

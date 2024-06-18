@@ -51,6 +51,7 @@
         </dl>
     </div>
     <a asp-action="UpdateProduct" asp-controller="Products" asp-area="Admin" asp-route-id="@Model.Product.IDProduct" class="btn btn-primary">Cập nhật sản phẩm</a>
+        <a asp-action="CreateImageDetails" asp-controller="Products" asp-area="Admin" asp-route-productId="@Model.Product.IDProduct" class="btn btn-sm btn-gradient-primary btn-rounded btn-fw">Thêm ảnh chi tiết</a>
 </div>
 
 <div class="card mt-3">
