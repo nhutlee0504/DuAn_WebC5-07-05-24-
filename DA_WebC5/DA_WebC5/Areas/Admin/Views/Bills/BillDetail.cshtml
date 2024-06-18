@@ -12,6 +12,8 @@
             <thead class="table-primary">
                 <tr>
                     <th>ID Sản phẩm</th>
+                    <th>Hình ảnh</th>
+                    <th>Tên sản phẩm</th>
                     <th>Màu sắc</th>
                     <th>Kích thước</th>
                     <th>Số lượng</th>
@@ -23,6 +25,12 @@
                     <tr>
                         <td>
                             @Model.ProductDetails.FirstOrDefault(x => x.IDPDetail == item.IDBDetail).IDPDetail
+                        </td>
+                        <td>
+                            <img src="~/@Model.Products.FirstOrDefault(x => x.IDProduct == Model.ProductDetails.FirstOrDefault(x => x.IDPDetail == item.IDBDetail).IDProduct).Image" alt="Alternate Text" />
+                        </td>
+                        <td>
+                            @Model.Products.FirstOrDefault(x => x.IDProduct == Model.ProductDetails.FirstOrDefault(x => x.IDPDetail == item.IDBDetail).IDProduct).Name
                         </td>
                         <td>
                             @Model.Colors.FirstOrDefault(x => x.IDColor == Model.ProductDetails.FirstOrDefault(x => x.IDPDetail == item.IDBDetail).IDColor).Color

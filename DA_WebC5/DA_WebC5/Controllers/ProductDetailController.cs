@@ -93,7 +93,7 @@ namespace DA_WebC5.Controllers
 
             }
             string username = HttpContext.Session.GetString("LoggedInUser");
-            var userBills = _context.Bills.Where(x => x.UserName == username).Select(x => x.IDBill).ToList();
+            var userBills = _context.Bills.Where(x => x.UserName == username&& x.Status == "Hoàn thành").Select(x => x.IDBill).ToList();
             bool Reviewed = _context.BillDetails
                 .Any(bd => userBills.Contains(bd.IDBill) && bd.ProductDetails.IDProduct == id);
             bool hasEvaluated = _context.Evaluates.Any(e => e.IDProduct == id && e.UserName == username);
@@ -102,7 +102,6 @@ namespace DA_WebC5.Controllers
         }
         public IActionResult AddEvaluate(string dsc, int id, int point)
         {
-            var db = Index(id);
             string username = HttpContext.Session.GetString("LoggedInUser");
             var add = new Evaluate
             {

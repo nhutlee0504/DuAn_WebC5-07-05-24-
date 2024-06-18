@@ -47,6 +47,7 @@ namespace DA_WebC5.Controllers
             else if (prod.Quantity < quantity)
             {
                 var IdProd = _context.ProductDetails.Where(x => x.IDPDetail == IdPDetail).Select(x => x.IDProduct).FirstOrDefault();
+                TempData["FailQuantity"] = "Số lượng sản phẩm không đủ";
                 return RedirectToAction("Index", "ProductDetail", new { id = IdProd });
             }
 
@@ -54,6 +55,12 @@ namespace DA_WebC5.Controllers
             if (cartItem != null)
             {
                 cartItem.Quantity += quantity;
+                if(cartItem.Quantity > _context.ProductDetails.Where(x => x.IDPDetail == IdPDetail).Select(x => x.Quantity).FirstOrDefault())
+                {
+                    TempData["FailQuantity"] = "Số lượng sản phẩm không đủ và sản phẩm đã có trong giỏ hàng";
+                    var IdProd = _context.ProductDetails.Where(x => x.IDPDetail == IdPDetail).Select(x => x.IDProduct).FirstOrDefault();
+                    return RedirectToAction("Index", "ProductDetail", new { id = IdProd });
+                }
             }
             else
             {
@@ -73,7 +80,7 @@ namespace DA_WebC5.Controllers
                 _context.Histories.Add(history);
             }
             _context.SaveChanges();
-
+            TempData["SuccessAddCart"] = "Đã thêm sản phẩm vào giỏ hàng thành công";
             return RedirectToAction(nameof(Index));
         }
 
@@ -88,7 +95,7 @@ namespace DA_WebC5.Controllers
                 _context.SaveChanges();
                 return Json(new { success = true, quantity = prod.Quantity });
             }
-            return Json(new { success = false });
+            return Json(new { success = false, message = "Sản phẩm có số lượng ở mức thấp nhất" });
         }
 
         [HttpPost]
@@ -98,6 +105,10 @@ namespace DA_WebC5.Controllers
             if (prod != null)
             {
                 prod.Quantity++;
+                if (prod.Quantity > _context.ProductDetails.Where(x => x.IDPDetail == prod.IDPDetail).Select(x => x.Quantity).FirstOrDefault())
+                {
+                    return Json(new { success = false, message = "Số lượng sản phẩm không đủ" });
+                }
                 _context.SaveChanges();
                 return Json(new { success = true, quantity = prod.Quantity });
             }

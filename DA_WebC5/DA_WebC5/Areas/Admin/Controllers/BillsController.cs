@@ -71,6 +71,12 @@ namespace DA_WebC5.Areas.Admin.Controllers
                     string apiResponse1 = await Response1.Content.ReadAsStringAsync();
                     view.ProductDetails = JsonConvert.DeserializeObject<List<ProductDetails>>(apiResponse1);
                 }
+                using (var Response1 = await httpClient.GetAsync(urlPD))
+                {
+                    string apiResponse1 = await Response1.Content.ReadAsStringAsync();
+                    view.Products = JsonConvert.DeserializeObject<List<Product>>(apiResponse1);
+                }
+
             }
             return View(view);
         }

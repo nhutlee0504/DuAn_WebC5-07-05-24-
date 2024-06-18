@@ -12,7 +12,7 @@
     }
 
     td.d-flex {
-        justify-content: center; 
+        justify-content: center;
     }
 
 
@@ -59,6 +59,33 @@
     .col-sm-3:hover .container-fluid {
         transform: translateY(-5px);
     }
+
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+        .closebtn:hover {
+            color: black;
+        }
+
+    a {
+        text-decoration: none;
+    }
+
+    .alerts {
+        padding: 20px;
+        background-color: green;
+        color: white;
+        opacity: 1;
+        transition: opacity 0.6s;
+    }
 </style>
 
 @model IEnumerable<DA_WebC5.Models.Cart>
@@ -78,7 +105,25 @@
     <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
 </ol>
 
+@if (TempData["errorsub"] != null)
+{
+    <div class="alerts">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>!</strong> @TempData["errorsub"]
+    </div>
+
+}
+@if (TempData["SuccessAddCart"] != null)
+{
+    <div class="alerts">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>!</strong> @TempData["SuccessAddCart"]
+    </div>
+
+}
+
 <div class="container">
+    <div id="failQuantity" class="alert alert-danger px-5" style="display:none;"></div>
     <div style="position: relative; overflow: hidden; height:25px;">
         <i class="bi bi-receipt" style="position: absolute; top: 50%; transform: translateY(-50%);"></i>
         <span style="color: red; position: absolute; transform: translateY(-50%); animation: slide 2s infinite alternate;">Nhập mã <strong>giảm giá</strong> để nhận thêm nhiều <strong>ưu đãi</strong> hơn</span>
@@ -222,8 +267,9 @@
             success: function (response) {
                 if (response.success) {
                     $('#quantity-' + id).val(response.quantity);
+                    $('#failQuantity').hide();
                 } else {
-                    window.location.href = '/cart/index';
+                    $('#failQuantity').text(response.message).show();
                 }
             },
             error: function () {
