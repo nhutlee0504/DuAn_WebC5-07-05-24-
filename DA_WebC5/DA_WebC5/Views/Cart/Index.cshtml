@@ -188,11 +188,16 @@
 
         <div class="ml-md-auto mr-md-0 mb-2 mb-md-0">Tổng thanh toán(@Model.Where(x => x.UserName == ViewBag.Username).Count() sản phẩm)</div>
         <div class="px-2 mb-2 mb-md-0"><strong class="text-danger"></strong></div>
-
+            <input type="text" class="form-control" name="SaleInput" placeholder="Nhập mã khuyến mãi (nếu có)">
         <button type="submit" class="btn btn-success">Mua hàng</button>
     </div>
     </form>
-
+    <form asp-controller="Bills" asp-action="Index">
+        <div class="form-group mb-3">
+           
+        </div>
+        <button type="submit" class="btn btn-primary">Áp dụng mã</button>
+    </form>
     <hr>
     <h4>Có thể bạn sẽ thích</h4>
 

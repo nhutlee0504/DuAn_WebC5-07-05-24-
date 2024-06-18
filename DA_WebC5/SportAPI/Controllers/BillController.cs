@@ -18,5 +18,11 @@ namespace SportAPI.Controllers
         {
             return bill.GetAllBill();
         }
+
+        [HttpGet("{id}")]
+        public Bill GetBillId(int id)
+        {
+            return bill.GetBillId(id);
+        }
     }
 }

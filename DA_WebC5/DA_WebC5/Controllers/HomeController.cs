@@ -272,5 +272,41 @@ namespace DA_WebC5.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-    }
+
+		[HttpPost]
+		public async Task<IActionResult> UpdateBillStatus(int id, string status)
+		{
+			Bill bill = new Bill();
+			using (HttpClient httpClient = new HttpClient())
+			{
+				using (var response = await httpClient.GetAsync(urlBills + id))
+				{
+					if (!response.IsSuccessStatusCode)
+					{
+						return NotFound();
+					}
+
+					var apiRes = await response.Content.ReadAsStringAsync();
+					bill = JsonConvert.DeserializeObject<Bill>(apiRes);
+				}
+
+				bill.Status = status;
+
+				var jsonContent = new StringContent(JsonConvert.SerializeObject(bill), Encoding.UTF8, "application/json");
+
+				using (var request = new HttpRequestMessage(HttpMethod.Put, urlBills + id))
+				{
+					request.Content = jsonContent;
+					using (var responseUpdate = await httpClient.SendAsync(request))
+					{
+						//string apiRestUpdateBill = await responseUpdate.Content.ReadAsStringAsync();
+						//bill = JsonConvert.DeserializeObject<Bill>(apiRestUpdateBill);
+						_context.Bills.Update(bill);
+						await _context.SaveChangesAsync();
+					}
+				}
+			}
+			return RedirectToAction(nameof(Bills));
+		}
+	}
 }

@@ -1,58 +1,66 @@
 ﻿@model IEnumerable<DA_WebC5.Models.Bill>
 
 @{
-    ViewData["Title"] = "Danh sách hóa đơn";
+	ViewData["Title"] = "Danh sách hóa đơn";
 }
 
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style>
-    a {
-        text-decoration: none
-    }
+	a {
+		text-decoration: none
+	}
 </style>
 
 <div class="container">
-    <ol class="breadcrumb bg-transparent">
-        <li class="breadcrumb-item"><a href="~/Home/Index">Trang chủ</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Hóa đơn</li>
-    </ol>
+	<ol class="breadcrumb bg-transparent">
+		<li class="breadcrumb-item"><a href="~/Home/Index">Trang chủ</a></li>
+		<li class="breadcrumb-item active" aria-current="page">Hóa đơn</li>
+	</ol>
 </div>
 
 <div class="container" style="margin-bottom: 200px">
-    <table class="table text-center">
-        <thead class="bg-dark text-light">
-            <tr>
-                <th>Mã đơn hàng</th>
-                <th>Số tiền</th>
-                <th>Ngày đặt hàng</th>
-                <th>Trạng thái</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => item.IDBill)</td>
-                    <td>@item.TotalAmount.ToString("N0") đồng</td>
-                    <td>@item.OrderDate.ToString("dd/MM/yyyy hh:mm:ss")</td>
-                    <td>
-                        @if (item.Status.Equals("Đang chờ"))
-                        {
-                            <span class="badge rounded-pill text-light bg-danger"> @Html.DisplayFor(modelItem => item.Status)</span>
-                        }
-                    </td>
-                    <td>
-                        <a asp-action="BillDetail" asp-route-id="@item.IDBill">Chi tiết</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+	<table class="table text-center">
+		<thead class="bg-dark text-light">
+			<tr>
+				<th>Mã đơn hàng</th>
+				<th>Số tiền</th>
+				<th>Ngày đặt hàng</th>
+				<th>Trạng thái</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td>@Html.DisplayFor(modelItem => item.IDBill)</td>
+					<td>@item.TotalAmount.ToString("N0") đồng</td>
+					<td>@item.OrderDate.ToString("dd/MM/yyyy hh:mm:ss")</td>
+					<td>
+						<span class="badge rounded-pill text-light bg-danger">@item.Status.ToString()</span>
+					</td>
+					<td>
+						<a asp-action="BillDetail" asp-route-id="@item.IDBill">Chi tiết</a>
+					</td>
+					<td>
+						<form asp-controller="Home" asp-action="UpdateBillStatus" asp-route-id="@item.IDBill" method="post">
+							<input type="hidden" name="id" value="@item.IDBill" />
+							<input type="hidden" name="status" value="Xác nhận" />
+							@if (item.Status.ToString() == "Đã giao")
+							{
+								<button type="submit" class="btn btn-success">Xác nhận</button>
+							}
+						</form>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
 </div>
 
 @section Scripts {
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 }
