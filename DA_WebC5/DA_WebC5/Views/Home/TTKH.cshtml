@@ -108,12 +108,8 @@
                 <span>@Model.Address</span>
             </li>
             <div id="button-container" class="col-md-12">
-                <button class="btn btn-primary btn-custom">
-                    Cập nhật thông tin
-                </button>
-                <button class="btn btn-secondary btn-custom">
-                    Đăng xuất
-                </button>
+                <a asp-controller="Home" asp-action="EditProfile" class="btn btn-primary">Cập nhật thông tin</a>
+                <a asp-controller="Home" asp-action="Logout" class="btn btn-primary">Đăng xuất</a>
             </div>
         </ul>
         

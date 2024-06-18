@@ -333,14 +333,82 @@ namespace DA_WebC5.Controllers
 
             if (user == null)
             {
+                var songuoidung = _context.Accounts.Count();
                 // Xử lý trường hợp không tìm thấy người dùng
-                return RedirectToAction(nameof(Login));
+                var addnew = new Account()
+                {
+                    UserName = "NguoiDung"+songuoidung++,
+                    Password = "12345678",
+                    Email = email,
+                    Role = "Member",
+                    Name = "NguoiDung"+songuoidung++,
+                    Phone = "0123456789",
+                    Gender = "Nam",
+                    Address = "Không"
+                };
+                _context.Accounts.Add(addnew);
+                _context.SaveChanges();
+                HttpContext.Session.SetString("LoggedInUser", addnew.UserName);
+
+                return RedirectToAction(nameof(Index));
+                //return RedirectToAction(nameof(Login));
             }
 
             // Lưu thông tin người dùng vào Session (tùy chọn)
             HttpContext.Session.SetString("LoggedInUser", user.UserName);
 
             return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
+        public IActionResult EditProfile()
+        {
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("LoggedInUser")))
+            {
+                // Lấy tên người dùng đã đăng nhập từ Session
+                var loggedInUsername = HttpContext.Session.GetString("LoggedInUser");
+                // Lấy thông tin người dùng từ cơ sở dữ liệu
+                var user = _context.Accounts.FirstOrDefault(u => u.UserName == loggedInUsername);
+
+                if (user != null)
+                {
+                    return View(user);
+                }
+            }
+            // Nếu người dùng chưa đăng nhập, chuyển hướng về trang đăng nhập
+            return RedirectToAction("Login");
+        }
+
+        [HttpPost]
+        public IActionResult EditProfile(Account model)
+        {
+            if (ModelState.IsValid)
+            {
+                var loggedInUsername = HttpContext.Session.GetString("LoggedInUser");
+                var user = _context.Accounts.FirstOrDefault(u => u.UserName == loggedInUsername);
+
+                if (user != null)
+                {
+                    // Cập nhật chỉ các thuộc tính cần thiết
+                    user.Name = model.Name;
+                    user.Email = model.Email;
+                    user.Gender = model.Gender;
+                    user.Phone = model.Phone;
+                    user.Address = model.Address;
+
+                    _context.SaveChanges();
+
+                    // Sau khi cập nhật thành công, chuyển hướng đến action khác (ví dụ: trang thông tin khách hàng)
+                    return RedirectToAction("TTKH");
+                }
+                else
+                {
+                    ViewBag.ErrorMessage = "User not found.";
+                    return View(model);
+                }
+            }
+
+            return View(model);
         }
     }
 }
