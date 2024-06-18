@@ -16,7 +16,7 @@ namespace DA_WebC5.Areas.Admin.Controllers
         private string urlBill = "http://localhost:57700/api/Bill/";
         private string urlBillDetailBill = "http://localhost:57700/api/BillDetail?id=";
         private string urlPD = "http://localhost:57700/api/Product/";
-        private string urlPddt = "http://localhost:57700/api/ProductDetail";
+        private string urlPddt = "http://localhost:57700/api/ProductDetail/";
         private string urlColor = "http://localhost:57700/api/Color/";
         private string urlSize = "http://localhost:57700/api/Size/";
         private string urlCategory = "http://localhost:57700/api/Category";
@@ -41,8 +41,6 @@ namespace DA_WebC5.Areas.Admin.Controllers
                 }
             }
             return View(bills);
-            //    var list = _context.Bills.ToList();
-            //return View(list);
         }
 
         [Route("Admin/Bills/BillDetail")]

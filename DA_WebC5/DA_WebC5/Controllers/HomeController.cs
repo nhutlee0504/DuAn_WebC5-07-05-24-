@@ -52,7 +52,6 @@ namespace DA_WebC5.Controllers
                     products = JsonConvert.DeserializeObject<List<Product>>(apiResponse);
 
                     products = products.Where(p => productsDetails.Any(pd => pd.IDProduct == p.IDProduct)).Where(p => p.Status == "Bán").ToList();
-                    //var p = products.Select(p => p.IDProduct).Distinct().ToDictionary(id => id, id => _context.ProductDetails.Count(pd => pd.IDProduct == id && pd.IDProduct > 0));
                 }
                 using (var response1 = await httpClient.GetAsync(urlCate))
                 {
@@ -60,23 +59,23 @@ namespace DA_WebC5.Controllers
                     categories = JsonConvert.DeserializeObject<List<Category>>(apiResponse1);
                 }
 
-                    foreach (var product in products)
+                foreach (var product in products)
+                {
+                    var category = categories.FirstOrDefault(x => x.IDCategory == product.IDCategory);
+                    if (category != null)
                     {
-                        var category = categories.FirstOrDefault(x => x.IDCategory == product.IDCategory);
-                        if (category != null)
+                        var prod = new ProductViewModel
                         {
-                            var prod = new ProductViewModel
-                            {
-                                IDProduct = product.IDProduct,
-                                Name = product.Name,
-                                Price = product.Price,
-                                CategoryName = category.Name,
-                                Image = product.Image,
-                                Status = product.Status
-                            };
-                            productsViewModel.Add(prod);
-                        }
+                            IDProduct = product.IDProduct,
+                            Name = product.Name,
+                            Price = product.Price,
+                            CategoryName = category.Name,
+                            Image = product.Image,
+                            Status = product.Status
+                        };
+                        productsViewModel.Add(prod);
                     }
+                }
                 return View(productsViewModel);
             }
         }
@@ -167,7 +166,84 @@ namespace DA_WebC5.Controllers
             return RedirectToAction("Login");
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult PassChange(string usn)
+        {
+            var user = _context.Accounts.FirstOrDefault(x => x.UserName == usn);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return View(user);
+        }
+
+        [HttpPost]
+        public IActionResult PassChange(string userName, string oldPass, string newPass, string newPass1)
+        {
+            var user = _context.Accounts.FirstOrDefault(x => x.UserName == userName);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            string hashedOldPass = "";
+            if (oldPass != null)
+            {
+                MD5 md5 = MD5.Create();
+                byte[] passBytes = Encoding.UTF8.GetBytes(oldPass);
+                byte[] hashBytes = md5.ComputeHash(passBytes);
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    builder.Append(hashBytes[i].ToString("x2"));
+                }
+                hashedOldPass = builder.ToString();
+            }
+
+            if (string.IsNullOrEmpty(oldPass))
+            {
+                ModelState.AddModelError("Password", "Vui lòng nhập mật khẩu cũ");
+            }
+            else if (string.IsNullOrEmpty(newPass))
+            {
+                TempData["newPassFail"] = "Vui lòng nhập mật khẩu mới";
+            }
+            else if (newPass.Length < 6)
+            {
+                TempData["newPassFail"] = "Vui lòng nhập mật khẩu mới từ 6 kí tự";
+            }
+            else if (string.IsNullOrEmpty(newPass1))
+            {
+                TempData["newPass1Fail"] = "Vui lòng nhập lại mật khẩu mới";
+            }
+            else if (user.Password != hashedOldPass)
+            {
+                ModelState.AddModelError("Password", "Mật khẩu cũ không đúng");
+            }
+            else if (newPass != newPass1)
+            {
+                TempData["newPass1Fail"] = "Mật khẩu nhập lại không trùng khớp";
+            }
+            else
+            {
+                MD5 md5 = MD5.Create();
+                byte[] passBytes = Encoding.UTF8.GetBytes(newPass);
+                byte[] hashBytes = md5.ComputeHash(passBytes);
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    builder.Append(hashBytes[i].ToString("x2"));
+                }
+                user.Password = builder.ToString();
+                _context.SaveChanges();
+                Logout();
+                return View(nameof(Login));
+            }
+
+            return View(user);
+        }
+
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
