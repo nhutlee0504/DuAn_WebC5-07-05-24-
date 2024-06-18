@@ -46,10 +46,12 @@ namespace DA_WebC5.Models
             public int Quantity { get; set; }
             public int IDColor { get; set; }
             public int IDSize { get; set; }
+            public string UserName { get; set; }
 
             public string SizeName { get; set; }
             public string Color { get; set; }
             public decimal Price { get; set; }
+            public string Description { get; set; }
             public List<Product> Products { get; set; }
             public List<ProductDetails> ProductDetails { get; set; }
             public List<BillDetails> BillDetails { get; set; }

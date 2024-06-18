@@ -49,81 +49,78 @@ namespace DA_WebC5.Controllers
         [HttpGet]
         public async Task<IActionResult> Bills()
         {
-            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("LoggedInUser")))
-            {
-                var loggedInUsername = HttpContext.Session.GetString("LoggedInUser");
-                var userBills = _context.Bills.Where(b => b.UserName == loggedInUsername).ToList();
+            var loggedInUsername = HttpContext.Session.GetString("LoggedInUser");
 
-                // Check if the user has any bills
-                if (userBills != null && userBills.Count > 0)
-                {
-                    return View(userBills);
-                }
+            if (string.IsNullOrEmpty(loggedInUsername))
+            {
+                return RedirectToAction("Login");
             }
-            return RedirectToAction("Login");
+
+            var userBills = _context.Bills.Where(b => b.UserName == loggedInUsername).ToList();
+
+            // Always return the view, even if userBills is empty
+            return View(userBills);
         }
+
         [HttpGet]
         public async Task<IActionResult> BillDetail(int id)
         {
-            var view = new BillInfor()
+            var viewModel = new BillDetailViewModel();
+
+            try
             {
-                BillDetails = new List<BillDetails>(),
-                Colors = new List<Colors>(),
-                Sizes = new List<Sizes>()
-            };
-
-            using (var httpClient = new HttpClient())
-            {
-
-
-                var response = await httpClient.GetAsync(urlBillDetailBill + id);
-                if (response.IsSuccessStatusCode)
+                using (var httpClient = new HttpClient())
                 {
+                    // Lấy chi tiết hóa đơn từ API
+                    var response = await httpClient.GetAsync(urlBillDetailBill + id);
+                    response.EnsureSuccessStatusCode();
                     string apiResponse = await response.Content.ReadAsStringAsync();
-                    var billDetails = JsonConvert.DeserializeObject<List<BillDetailViewModel>>(apiResponse);
+                    viewModel.BillDetails = JsonConvert.DeserializeObject<List<BillDetails>>(apiResponse);
 
-                    foreach (var bd in billDetails)
+                    // Lấy danh sách màu sắc từ API
+                    var responseColors = await httpClient.GetAsync(urlColor);
+                    responseColors.EnsureSuccessStatusCode();
+                    string apiResponseColors = await responseColors.Content.ReadAsStringAsync();
+                    viewModel.Colors = JsonConvert.DeserializeObject<List<Colors>>(apiResponseColors);
+
+                    // Lấy danh sách kích thước từ API
+                    var responseSizes = await httpClient.GetAsync(urlSize);
+                    responseSizes.EnsureSuccessStatusCode();
+                    string apiResponseSizes = await responseSizes.Content.ReadAsStringAsync();
+                    viewModel.Sizes = JsonConvert.DeserializeObject<List<Sizes>>(apiResponseSizes);
+
+                    // Lấy chi tiết sản phẩm từ API
+                    var responseProductDetails = await httpClient.GetAsync(urlPddt);
+                    responseProductDetails.EnsureSuccessStatusCode();
+                    string apiResponseProductDetails = await responseProductDetails.Content.ReadAsStringAsync();
+                    viewModel.ProductDetails = JsonConvert.DeserializeObject<List<ProductDetails>>(apiResponseProductDetails);
+
+                    // Lấy danh sách sản phẩm từ API
+                    var responseProducts = await httpClient.GetAsync(urlP);
+                    responseProducts.EnsureSuccessStatusCode();
+                    string apiResponseProducts = await responseProducts.Content.ReadAsStringAsync();
+                    viewModel.Products = JsonConvert.DeserializeObject<List<Product>>(apiResponseProducts);
+
+                    // Đảm bảo rằng mỗi BillDetails có thông tin ProductDetails và Product tương ứng
+                    foreach (var billDetail in viewModel.BillDetails)
                     {
-                        var billDetail = new BillDetails
-                        {
-                            IDBDetail = bd.IDBDetail,
-                            IDBill = bd.IDBill,
-                            IDPDetail = bd.IDPDetail,
-                            Quantity = bd.Quantity,
-                            Price = bd.Price,
-                            ProductDetails = new ProductDetails
-                            {
-                                IDProduct = bd.Product.IDProduct,
-                                Product = new Product
-                                {
-                                    Name = bd.Product.Name,
-                                    Image = bd.Product.Image
-                                },
-                                IDColor = bd.IDColor,
-                                Size = bd.IDSize, 
-                            }
-                        };
+                        // Tìm ProductDetail từ danh sách ProductDetails
+                        billDetail.ProductDetails = viewModel.ProductDetails.FirstOrDefault(pd => pd.IDPDetail == billDetail.IDPDetail);
 
-                        view.BillDetails.Add(billDetail);
+                        // Nếu tìm thấy ProductDetail, tiếp tục tìm Product từ danh sách Products
+                        if (billDetail.ProductDetails != null)
+                        {
+                            billDetail.ProductDetails.Product = viewModel.Products.FirstOrDefault(p => p.IDProduct == billDetail.ProductDetails.IDProduct);
+                        }
                     }
                 }
-                var responseColor = await httpClient.GetAsync(urlColor);
-                if (responseColor.IsSuccessStatusCode)
-                {
-                    string apiResponseColor = await responseColor.Content.ReadAsStringAsync();
-                    view.Colors = JsonConvert.DeserializeObject<List<Colors>>(apiResponseColor);
-                }
-
-                // Gọi API để lấy thông tin kích thước
-                var responseSize = await httpClient.GetAsync(urlSize);
-                if (responseSize.IsSuccessStatusCode)
-                {
-                    string apiResponseSize = await responseSize.Content.ReadAsStringAsync();
-                    view.Sizes = JsonConvert.DeserializeObject<List<Sizes>>(apiResponseSize);
-                }
-
-                return View(view);
             }
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = $"Đã xảy ra lỗi khi lấy dữ liệu: {ex.Message}";
+            }
+
+            return View(viewModel); // Trả về view với đối tượng viewModel của lớp BillDetailViewModel
         }
 
         [HttpGet]
@@ -191,7 +188,6 @@ namespace DA_WebC5.Controllers
         }
         public IActionResult Loginktr(string username, string password)
         {
-            // Băm mật khẩu người dùng nhập vào
             MD5 md5 = MD5.Create();
             byte[] passBytes = Encoding.UTF8.GetBytes(password);
             byte[] hashBytes = md5.ComputeHash(passBytes);
@@ -201,8 +197,6 @@ namespace DA_WebC5.Controllers
                 builder.Append(hashBytes[i].ToString("x2"));
             }
             string hashedPassword = builder.ToString();
-
-            // So sánh với mật khẩu đã băm trong cơ sở dữ liệu
             var user = _context.Accounts.FirstOrDefault(u => u.UserName == username && u.Password == hashedPassword);
 
             if (user != null)
@@ -324,20 +318,14 @@ namespace DA_WebC5.Controllers
             {
                 return RedirectToAction(nameof(Login));
             }
-
-            // Lấy thông tin người dùng từ principal
             var email = authenticateResult.Principal.FindFirst(ClaimTypes.Email)?.Value;
 
-            // Gọi API hoặc truy xuất dữ liệu từ cơ sở dữ liệu để lấy thông tin tài khoản người dùng
             var user = _context.Accounts.FirstOrDefault(u => u.Email == email);
 
             if (user == null)
             {
-                // Xử lý trường hợp không tìm thấy người dùng
                 return RedirectToAction(nameof(Login));
             }
-
-            // Lưu thông tin người dùng vào Session (tùy chọn)
             HttpContext.Session.SetString("LoggedInUser", user.UserName);
 
             return RedirectToAction(nameof(Index));

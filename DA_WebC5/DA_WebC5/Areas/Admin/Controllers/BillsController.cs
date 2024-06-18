@@ -2,6 +2,7 @@
 using DA_WebC5.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -16,7 +17,7 @@ namespace DA_WebC5.Areas.Admin.Controllers
     public class BillsController : Controller
     {
         private string urlBill = "http://localhost:57700/api/Bill/";
-        private string urlBillDetailBill = "http://localhost:57700/api/BillDetail?id=";
+        private string urlBillDetailBill = "http://localhost:57700/api/BillDetail/";
         private string urlPD = "http://localhost:57700/api/Product/";
         private string urlPddt = "http://localhost:57700/api/ProductDetail";
         private string urlColor = "http://localhost:57700/api/Color/";
@@ -44,42 +45,70 @@ namespace DA_WebC5.Areas.Admin.Controllers
             }
             return View(bills);
         }
-
-        [Route("Admin/Bills/BillDetail")]
+        [Route("Admin/Bills/BillDetail/{id}")]
+        [HttpGet]
         public async Task<IActionResult> BillDetail(int id)
         {
-            var view = new BillInfor();
-            using (var httpClient = new HttpClient())
-            {
-                using (var Response = await httpClient.GetAsync(urlBillDetailBill + id))
-                {
-                    string apiResponse = await Response.Content.ReadAsStringAsync();
-                    view.BillDetails = JsonConvert.DeserializeObject<List<BillDetails>>(apiResponse);
-                }
-                using (var Response1 = await httpClient.GetAsync(urlColor))
-                {
-                    string apiResponse1 = await Response1.Content.ReadAsStringAsync();
-                    view.Colors = JsonConvert.DeserializeObject<List<Colors>>(apiResponse1);
-                }
-                using (var Response1 = await httpClient.GetAsync(urlSize))
-                {
-                    string apiResponse1 = await Response1.Content.ReadAsStringAsync();
-                    view.Sizes = JsonConvert.DeserializeObject<List<Sizes>>(apiResponse1);
-                }
-                using (var Response1 = await httpClient.GetAsync(urlPddt))
-                {
-                    string apiResponse1 = await Response1.Content.ReadAsStringAsync();
-                    view.ProductDetails = JsonConvert.DeserializeObject<List<ProductDetails>>(apiResponse1);
-                }
-                using (var Response1 = await httpClient.GetAsync(urlPD))
-                {
-                    string apiResponse1 = await Response1.Content.ReadAsStringAsync();
-                    view.Products = JsonConvert.DeserializeObject<List<Product>>(apiResponse1);
-                }
+            var viewModel = new BillDetailViewModel();
 
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    // Lấy chi tiết hóa đơn từ API
+                    var response = await httpClient.GetAsync(urlBillDetailBill + id);
+                    response.EnsureSuccessStatusCode();
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    viewModel.BillDetails = JsonConvert.DeserializeObject<List<BillDetails>>(apiResponse);
+
+                    // Lấy danh sách màu sắc từ API
+                    var responseColors = await httpClient.GetAsync(urlColor);
+                    responseColors.EnsureSuccessStatusCode();
+                    string apiResponseColors = await responseColors.Content.ReadAsStringAsync();
+                    viewModel.Colors = JsonConvert.DeserializeObject<List<Colors>>(apiResponseColors);
+
+                    // Lấy danh sách kích thước từ API
+                    var responseSizes = await httpClient.GetAsync(urlSize);
+                    responseSizes.EnsureSuccessStatusCode();
+                    string apiResponseSizes = await responseSizes.Content.ReadAsStringAsync();
+                    viewModel.Sizes = JsonConvert.DeserializeObject<List<Sizes>>(apiResponseSizes);
+
+                    // Lấy chi tiết sản phẩm từ API
+                    var responseProductDetails = await httpClient.GetAsync(urlPddt);
+                    responseProductDetails.EnsureSuccessStatusCode();
+                    string apiResponseProductDetails = await responseProductDetails.Content.ReadAsStringAsync();
+                    viewModel.ProductDetails = JsonConvert.DeserializeObject<List<ProductDetails>>(apiResponseProductDetails);
+
+                    // Lấy danh sách sản phẩm từ API
+                    var responseProducts = await httpClient.GetAsync(urlPD);
+                    responseProducts.EnsureSuccessStatusCode();
+                    string apiResponseProducts = await responseProducts.Content.ReadAsStringAsync();
+                    viewModel.Products = JsonConvert.DeserializeObject<List<Product>>(apiResponseProducts);
+
+                    // Đảm bảo rằng mỗi BillDetails có thông tin ProductDetails và Product tương ứng
+                    foreach (var billDetail in viewModel.BillDetails)
+                    {
+                        // Tìm ProductDetail từ danh sách ProductDetails
+                        billDetail.ProductDetails = viewModel.ProductDetails.FirstOrDefault(pd => pd.IDPDetail == billDetail.IDPDetail);
+
+                        // Nếu tìm thấy ProductDetail, tiếp tục tìm Product từ danh sách Products
+                        if (billDetail.ProductDetails != null)
+                        {
+                            billDetail.ProductDetails.Product = viewModel.Products.FirstOrDefault(p => p.IDProduct == billDetail.ProductDetails.IDProduct);
+                        }
+                    }
+                }
             }
-            return View(view);
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = $"Đã xảy ra lỗi khi lấy dữ liệu: {ex.Message}";
+            }
+
+            return View(viewModel); // Trả về view với đối tượng viewModel của lớp BillDetailViewModel
         }
+
+
+
 
         [Route("Admin/Bills/ConformBill")]
         public IActionResult ConformBill()

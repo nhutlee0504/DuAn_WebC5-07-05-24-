@@ -1,13 +1,77 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\",
+  "WorkspaceRootPath": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\mon_dang_hoc\\c_schapes_5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\productdetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\productdetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\home\\billdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\home\\billdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\controllers\\billscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\controllers\\billscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\views\\bills\\billdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\views\\bills\\billdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\billscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\billscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\models\\newviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\models\\newviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\models\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\models\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\home\\bills.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\home\\bills.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\views\\bills\\billall.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\views\\bills\\billall.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\models\\billdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\models\\billdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\views\\bills\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\views\\bills\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\mon_dang_hoc\\c_schapes_5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\da_webc5.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\views\\shared\\_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\views\\shared\\_partial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50226729-7CEB-450E-BAA4-1B977EFE129E}|SportAPI\\SportAPI.csproj|d:\\c#5\\duan_webc5-07-05-24-\\da_webc5\\sportapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{50226729-7CEB-450E-BAA4-1B977EFE129E}|SportAPI\\SportAPI.csproj|solutionrelative:sportapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\da_webc5\\da_webc5.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\da_webc5.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
@@ -18,8 +82,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 11,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
@@ -30,40 +98,247 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BillsController.cs",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Controllers\\BillsController.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Controllers\\BillsController.cs",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Controllers\\BillsController.cs",
+              "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Controllers\\BillsController.cs",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAmwGMAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T15:53:11.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BillDetail.cshtml",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Bills\\BillDetail.cshtml",
+              "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Views\\Bills\\BillDetail.cshtml",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Bills\\BillDetail.cshtml",
+              "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Bills\\BillDetail.cshtml",
+              "ViewState": "AQIAABMAAAAAAAAAAAAmwCQAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-18T15:56:52.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BillsController.cs",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\BillsController.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\BillsController.cs",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\BillsController.cs",
+              "RelativeToolTip": "DA_WebC5\\Controllers\\BillsController.cs",
+              "ViewState": "AQIAALkAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T16:16:43.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "DA_WebC5\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAcwD8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T16:46:21.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BillDetail.cshtml",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\BillDetail.cshtml",
+              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Home\\BillDetail.cshtml",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\BillDetail.cshtml",
+              "RelativeToolTip": "DA_WebC5\\Views\\Home\\BillDetail.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-18T16:46:50.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T17:08:31.223Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\ProductDetail\\Index.cshtml",
+              "RelativeDocumentMoniker": "DA_WebC5\\Views\\ProductDetail\\Index.cshtml",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\ProductDetail\\Index.cshtml",
+              "RelativeToolTip": "DA_WebC5\\Views\\ProductDetail\\Index.cshtml",
+              "ViewState": "AQIAALwAAAAAAAAAAAAmwNQAAADeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-18T17:14:28.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NewViewModel.cs",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\NewViewModel.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Models\\NewViewModel.cs",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\NewViewModel.cs",
+              "RelativeToolTip": "DA_WebC5\\Models\\NewViewModel.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAiwDAAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T16:08:08.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Bill.cs",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\Bill.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Models\\Bill.cs",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\Bill.cs",
+              "RelativeToolTip": "DA_WebC5\\Models\\Bill.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAowBsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T17:00:19.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Bills.cshtml",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\Bills.cshtml",
+              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Home\\Bills.cshtml",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\Bills.cshtml",
+              "RelativeToolTip": "DA_WebC5\\Views\\Home\\Bills.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAC8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-18T16:48:12.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BillAll.cshtml",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Bills\\BillAll.cshtml",
+              "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Views\\Bills\\BillAll.cshtml",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Bills\\BillAll.cshtml",
+              "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Bills\\BillAll.cshtml",
+              "ViewState": "AQIAADUAAAAAAAAAAAAmwEMAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-18T15:36:17.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BillDetails.cs",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\BillDetails.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Models\\BillDetails.cs",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\BillDetails.cs",
+              "RelativeToolTip": "DA_WebC5\\Models\\BillDetails.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T16:31:59.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Bills\\Index.cshtml",
+              "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Views\\Bills\\Index.cshtml",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Bills\\Index.cshtml",
+              "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Bills\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-18T15:49:44.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\appsettings.json",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\appsettings.json",
               "RelativeDocumentMoniker": "DA_WebC5\\appsettings.json",
-              "ToolTip": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\appsettings.json",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\appsettings.json",
               "RelativeToolTip": "DA_WebC5\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-06-18T15:08:16.998Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 14,
+              "Title": "_partial.cshtml",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Shared\\_partial.cshtml",
+              "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Views\\Shared\\_partial.cshtml",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Shared\\_partial.cshtml",
+              "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Shared\\_partial.cshtml",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAEAAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-18T15:39:06.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Cart\\Index.cshtml",
+              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Cart\\Index.cshtml",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Cart\\Index.cshtml",
+              "RelativeToolTip": "DA_WebC5\\Views\\Cart\\Index.cshtml",
+              "ViewState": "AQIAAKsAAAAAAAAAAAAAAMAAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-18T15:28:08.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "SportAPI\\appsettings.json",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\appsettings.json",
+              "RelativeToolTip": "SportAPI\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-18T15:25:45.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "DA_WebC5",
-              "DocumentMoniker": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj",
+              "DocumentMoniker": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj",
               "RelativeDocumentMoniker": "DA_WebC5\\DA_WebC5.csproj",
-              "ToolTip": "D:\\Mon_Dang_Hoc\\C_Schapes_5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj",
+              "ToolTip": "D:\\C#5\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj",
               "RelativeToolTip": "DA_WebC5\\DA_WebC5.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-06-18T14:57:48.255Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T14:57:48.255Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             }
           ]
         },

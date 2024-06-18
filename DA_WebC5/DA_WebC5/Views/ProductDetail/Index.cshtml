@@ -25,6 +25,7 @@
 
     .radio-btn-size {
         display: none;
+
     }
 
         .radio-btn-size + label {
@@ -209,7 +210,7 @@
                                 {
                                     <div class="col-sm-2">
                                         <input class="radio-btn-size" type="radio" name="IdPDetail" id="@detail.IDPDetail + 1" value="@detail.IDPDetail" checked='@(detail.IDPDetail == selectedIdPDetail ? "checked" : "")'>
-                                        <label class="font-weight-bold radio-btn-size" for="@detail.IDPDetail + 1" style="background-color: @Model.Colors.FirstOrDefault(x => x.IDColor == detail.IDColor)?.Color" checked='@(detail.IDPDetail == selectedIdPDetail ? "checked" : "")'>
+                                        <label class="font-weight-bold radio-btn-size" for="@detail.IDPDetail + 1" style="background-color: @Model.Colors.FirstOrDefault(x => x.IDColor == detail.IDColor)?.Color; color:white" checked='@(detail.IDPDetail == selectedIdPDetail ? "checked" : "")'>
                                             @Model.Sizes.FirstOrDefault(s => s.IDSize == detail.Size)?.SizeName
                                         </label>
                                     </div>
