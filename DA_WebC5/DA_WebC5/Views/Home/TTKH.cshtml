@@ -108,6 +108,7 @@
                 <span>@Model.Address</span>
             </li>
             <div id="button-container" class="col-md-12">
+                    <a asp-action="PassChange" asp-route-usn="@Model.UserName">Đổi mật khẩu</a>
                 <a asp-controller="Home" asp-action="EditProfile" class="btn btn-primary">Cập nhật thông tin</a>
                 <a asp-controller="Home" asp-action="Logout" class="btn btn-primary">Đăng xuất</a>
             </div>

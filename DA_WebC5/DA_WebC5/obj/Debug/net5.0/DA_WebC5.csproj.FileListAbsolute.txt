@@ -668,3 +668,4 @@ D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net
 D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Bills\BillDetail.cshtml.g.cs
 D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.Google.dll
 D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Views\Home\EditProfile.cshtml.g.cs
+D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Views\Home\PassChange.cshtml.g.cs

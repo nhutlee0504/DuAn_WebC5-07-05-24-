@@ -354,6 +354,81 @@ namespace DA_WebC5.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public IActionResult PassChange(string usn)
+        {
+            var user = _context.Accounts.FirstOrDefault(x => x.UserName == usn);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return View(user);
+        }
+
+        [HttpPost]
+        public IActionResult PassChange(string userName, string oldPass, string newPass, string newPass1)
+        {
+            var user = _context.Accounts.FirstOrDefault(x => x.UserName == userName);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            string hashedOldPass = "";
+            if (oldPass != null)
+            {
+                MD5 md5 = MD5.Create();
+                byte[] passBytes = Encoding.UTF8.GetBytes(oldPass);
+                byte[] hashBytes = md5.ComputeHash(passBytes);
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    builder.Append(hashBytes[i].ToString("x2"));
+                }
+                hashedOldPass = builder.ToString();
+            }
+
+            if (string.IsNullOrEmpty(oldPass))
+            {
+                ModelState.AddModelError("Password", "Vui lòng nhập mật khẩu cũ");
+            }
+            else if (string.IsNullOrEmpty(newPass))
+            {
+                TempData["newPassFail"] = "Vui lòng nhập mật khẩu mới";
+            }
+            else if (newPass.Length < 6)
+            {
+                TempData["newPassFail"] = "Vui lòng nhập mật khẩu mới từ 6 kí tự";
+            }
+            else if (string.IsNullOrEmpty(newPass1))
+            {
+                TempData["newPass1Fail"] = "Vui lòng nhập lại mật khẩu mới";
+            }
+            else if (user.Password != hashedOldPass)
+            {
+                ModelState.AddModelError("Password", "Mật khẩu cũ không đúng");
+            }
+            else if (newPass != newPass1)
+            {
+                TempData["newPass1Fail"] = "Mật khẩu nhập lại không trùng khớp";
+            }
+            else
+            {
+                MD5 md5 = MD5.Create();
+                byte[] passBytes = Encoding.UTF8.GetBytes(newPass);
+                byte[] hashBytes = md5.ComputeHash(passBytes);
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    builder.Append(hashBytes[i].ToString("x2"));
+                }
+                user.Password = builder.ToString();
+                _context.SaveChanges();
+                Logout();
+                return View(nameof(Login));
+            }
+
+            return View(user);
+        }
 
     }
 }
