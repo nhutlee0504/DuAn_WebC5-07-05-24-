@@ -1,9 +1,8 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model DA_WebC5.Models.NewViewModel.BillDetailViewModel
+
 @{
+    ViewData["Title"] = "Chi tiết hóa đơn";
 }
-@model DA_WebC5.Models.NewViewModel.BillInfor
 
 <div class="container">
     <h4 class="mt-4">Chi tiết hóa đơn</h4>
@@ -24,19 +23,19 @@
                 {
                     <tr>
                         <td>
-                            @Model.ProductDetails.FirstOrDefault(x => x.IDPDetail == item.IDBDetail).IDPDetail
+                            @item.IDPDetail
                         </td>
                         <td>
-                            <img src="~/@Model.Products.FirstOrDefault(x => x.IDProduct == Model.ProductDetails.FirstOrDefault(x => x.IDPDetail == item.IDBDetail).IDProduct).Image" alt="Alternate Text" />
+                            <img src="~/@Model.Products.FirstOrDefault(p => p.IDProduct == item.ProductDetails.Product.IDProduct)?.Image" alt="Hình ảnh sản phẩm" />
                         </td>
                         <td>
-                            @Model.Products.FirstOrDefault(x => x.IDProduct == Model.ProductDetails.FirstOrDefault(x => x.IDPDetail == item.IDBDetail).IDProduct).Name
+                            @Model.Products.FirstOrDefault(p => p.IDProduct == item.ProductDetails.Product.IDProduct)?.Name
                         </td>
                         <td>
-                            @Model.Colors.FirstOrDefault(x => x.IDColor == Model.ProductDetails.FirstOrDefault(x => x.IDPDetail == item.IDBDetail).IDColor).Color
+                            @Model.Colors.FirstOrDefault(c => c.IDColor == item.ProductDetails.IDColor)?.Color
                         </td>
                         <td>
-                            @Model.Sizes.FirstOrDefault(x => x.IDSize == Model.ProductDetails.FirstOrDefault(x => x.IDPDetail == item.IDBDetail).Size).SizeName
+                            @Model.Sizes.FirstOrDefault(s => s.IDSize == item.ProductDetails.Size)?.SizeName
                         </td>
                         <td>@item.Quantity</td>
                     </tr>
@@ -45,57 +44,3 @@
         </table>
     </div>
 </div>
-
-<style>
-    .container {
-        margin-top: 20px;
-    }
-
-    .table {
-        width: 100%;
-        margin-bottom: 1rem;
-        color: #212529;
-    }
-
-        .table th,
-        .table td {
-            padding: 0.75rem;
-            vertical-align: top;
-            border-top: 1px solid #dee2e6;
-        }
-
-        .table thead th {
-            vertical-align: bottom;
-            border-bottom: 2px solid #dee2e6;
-        }
-
-        .table tbody + tbody {
-            border-top: 2px solid #dee2e6;
-        }
-
-        .table .table {
-            background-color: #f8f9fa;
-        }
-
-    .table-hover tbody tr:hover {
-        color: #495057;
-        background-color: rgba(0, 0, 0, 0.075);
-    }
-
-    .table-bordered {
-        border: 1px solid #dee2e6;
-    }
-
-        .table-bordered th,
-        .table-bordered td {
-            border: 1px solid #dee2e6;
-        }
-
-        .table-bordered thead th, Part 3, add a view to an ASP.NET Core MVC appPart 3 of tutorial series on ASP.NET Core MVC.go.microsoft.com/-strong/-heart: > :o:-((:-h.table-bordered thead td {
-                border-bottom-width: 2px;
-            }
-
-        .table-primary {
-            background-color: #e9ecef;
-        }
-</style>
