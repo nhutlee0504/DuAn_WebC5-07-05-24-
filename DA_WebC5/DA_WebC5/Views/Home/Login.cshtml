@@ -1,9 +1,9 @@
 ﻿@model DA_WebC5.Models.Account
-<div class="container">
+<div class="container" style="margin-bottom:200px">
     <div class="row">
         <div class="col-md-6 mx-auto">
             <div class="form-container">
-                <h2 class="text-center mb-4">Đăng nhập</h2>
+                <h2 class="text-center mb-8">Đăng nhập</h2>
                 @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
                 {
                     <div class="text-danger mt-2 text-center ">
@@ -13,12 +13,12 @@
                 <form asp-controller="Home" asp-action="Loginktr" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
-                        <label for="UserName">Tên tài khoản</label>
+                        <label for="UserName" class="font-weight-bolder">Tên tài khoản</label>
                         <input asp-for=UserName type="text" class="form-control" style="border-radius: 10px" id="UserName" placeholder="Nhập tên tài khoản">
                         <span asp-validation-for="UserName" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label for="password">Mật khẩu</label>
+                        <label for="password" class="font-weight-bolder">Mật khẩu</label>
                         <div class="input-group">
                             <input asp-for="Password" type="password" class="form-control" style="border-radius: 10px 0 0 10px" id="password" placeholder="Nhập mật khẩu">
                             <span class="input-group-text bg-white" style="border-radius: 0 10px 10px 0; cursor: pointer;" id="togglePassword">👁️</span>
@@ -32,15 +32,9 @@
                         </div>
                         <hr class="w-100">
                     </div>
-                    @*                     <div class="text-center">
-                    <a href="~/signin-google" class="btn btn-light btn-block" style="border-radius: 20px">Đăng nhập bằng Google</a>
+                    <div class="text-center">
+                        <a asp-action="SigninGoogle" asp-controller="Home" class="btn btn-light btn-block" style="border-radius: 20px">Đăng nhập bằng Google</a>
                     </div>
-
-                    *@
-@*                     <div class="text-center mt-3">
-                        <a asp-controller="Home" asp-action="ForgotPassword" class="text-primary">Quên mật khẩu?</a>
-                    </div>
- *@
                     <div class="text-center">Bạn mới biết đến NEXTON? <a class="text text-primary" asp-action="Register" asp-controller="Register">Đăng ký tài khoản</a></div>
                 </form>
             </div>

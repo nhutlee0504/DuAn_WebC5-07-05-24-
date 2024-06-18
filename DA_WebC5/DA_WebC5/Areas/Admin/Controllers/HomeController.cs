@@ -31,8 +31,7 @@ namespace DA_WebC5.Areas.Admin.Controllers
         {
             var username = HttpContext.Session.GetString("LoggedInUser");
             var role = _context.Accounts.Where(x => x.UserName == username).Select(x => x.Role);
-           
-           if (!role.Contains("Admin"))
+            if (!role.Contains("Admin"))
             {
                 Logout();
                 return RedirectToAction("Loginktr");

@@ -13,9 +13,7 @@
         <div class="col-md-3">
             <a asp-action="Create" asp-controller="Products" asp-area="Admin" type="button" class="btn btn-sm btn-gradient-primary btn-rounded btn-fw">Thêm sản phẩm</a>
         </div>
-        <div class="col-md-3">
-            <a asp-action="CreateDetails" asp-controller="Products" asp-area="Admin" type="button" class="btn btn-sm btn-gradient-primary btn-rounded btn-fw">Thêm chi tiết</a>
-        </div>
+       
     </div>
     <div class="row">
         <div class="table-responesive">
@@ -26,7 +24,6 @@
                     <th>Tên</th>
                     <th>Loại</th>
                     <th>Giá</th>
-                    <th>Mô tả</th>
                     <th>Nhà cung ứng</th>
                     <th>Trạng thái</th>
                     <th>Hành động</th>
@@ -47,9 +44,6 @@
                         </td>
                         <td>
                             @item.Price.ToString("N0") đồng
-                        </td>
-                        <td>
-                            @item.Description
                         </td>
                         <td>
                             @item.NameSuplier

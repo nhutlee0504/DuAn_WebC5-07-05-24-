@@ -6,6 +6,7 @@ namespace SportAPI.Services
 {
     public interface IBillDetail
     {
-        public IEnumerable<BillDetails> GetBillDetails(int id);
+        public List<BillDetails> GetBillDetails(int id);
+        public IEnumerable<BillDetails> GetBillDetailsForAdmin(int id);
     }
 }

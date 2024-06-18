@@ -13,7 +13,7 @@ namespace DA_WebC5.Models
 
         [ForeignKey("ProductDetails")]
         public int IDPDetail { get; set; }
-
+        
         public int Quantity { get; set; }
 
         public decimal Price { get; set; }

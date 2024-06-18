@@ -16,6 +16,11 @@ using Microsoft.AspNetCore.Http;
 using System.Security.Cryptography;
 using System.Text;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Immutable;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Google;
 
 namespace DA_WebC5.Controllers
 {
@@ -26,10 +31,96 @@ namespace DA_WebC5.Controllers
         private string urlP = "http://localhost:57700/api/Product/";
         private string urlCate = "http://localhost:57700/api/Category/";
         private string urlPdetail = "http://localhost:57700/api/ProductDetail";
+        private string _urlSale = "http://localhost:57700/api/Sale/";
+        private string urlBills = "http://localhost:57700/api/Bill/";
+        private string urlBillDetailBill = "http://localhost:57700/api/BillDetail/";
+        private string urlPddt = "http://localhost:57700/api/ProductDetail/";
+        private string urlColor = "http://localhost:57700/api/Color/";
+        private string urlSize = "http://localhost:57700/api/Size/";
+        private string urlCategory = "http://localhost:57700/api/Category";
+        private string urlSupplier = "http://localhost:57700/api/Supplier";
+        private string urlAccount = "http://localhost:57700/api/Account";
+
         public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
             _context = context;
+        }
+        [HttpGet]
+        public async Task<IActionResult> Bills()
+        {
+            var loggedInUsername = HttpContext.Session.GetString("LoggedInUser");
+
+            if (string.IsNullOrEmpty(loggedInUsername))
+            {
+                return RedirectToAction("Login");
+            }
+
+            var userBills = _context.Bills.Where(b => b.UserName == loggedInUsername).ToList();
+
+            // Always return the view, even if userBills is empty
+            return View(userBills);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> BillDetail(int id)
+        {
+            var viewModel = new BillDetailViewModel();
+
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    // Lấy chi tiết hóa đơn từ API
+                    var response = await httpClient.GetAsync(urlBillDetailBill + id);
+                    response.EnsureSuccessStatusCode();
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    viewModel.BillDetails = JsonConvert.DeserializeObject<List<BillDetails>>(apiResponse);
+
+                    // Lấy danh sách màu sắc từ API
+                    var responseColors = await httpClient.GetAsync(urlColor);
+                    responseColors.EnsureSuccessStatusCode();
+                    string apiResponseColors = await responseColors.Content.ReadAsStringAsync();
+                    viewModel.Colors = JsonConvert.DeserializeObject<List<Colors>>(apiResponseColors);
+
+                    // Lấy danh sách kích thước từ API
+                    var responseSizes = await httpClient.GetAsync(urlSize);
+                    responseSizes.EnsureSuccessStatusCode();
+                    string apiResponseSizes = await responseSizes.Content.ReadAsStringAsync();
+                    viewModel.Sizes = JsonConvert.DeserializeObject<List<Sizes>>(apiResponseSizes);
+
+                    // Lấy chi tiết sản phẩm từ API
+                    var responseProductDetails = await httpClient.GetAsync(urlPddt);
+                    responseProductDetails.EnsureSuccessStatusCode();
+                    string apiResponseProductDetails = await responseProductDetails.Content.ReadAsStringAsync();
+                    viewModel.ProductDetails = JsonConvert.DeserializeObject<List<ProductDetails>>(apiResponseProductDetails);
+
+                    // Lấy danh sách sản phẩm từ API
+                    var responseProducts = await httpClient.GetAsync(urlP);
+                    responseProducts.EnsureSuccessStatusCode();
+                    string apiResponseProducts = await responseProducts.Content.ReadAsStringAsync();
+                    viewModel.Products = JsonConvert.DeserializeObject<List<Product>>(apiResponseProducts);
+
+                    // Đảm bảo rằng mỗi BillDetails có thông tin ProductDetails và Product tương ứng
+                    foreach (var billDetail in viewModel.BillDetails)
+                    {
+                        // Tìm ProductDetail từ danh sách ProductDetails
+                        billDetail.ProductDetails = viewModel.ProductDetails.FirstOrDefault(pd => pd.IDPDetail == billDetail.IDPDetail);
+
+                        // Nếu tìm thấy ProductDetail, tiếp tục tìm Product từ danh sách Products
+                        if (billDetail.ProductDetails != null)
+                        {
+                            billDetail.ProductDetails.Product = viewModel.Products.FirstOrDefault(p => p.IDProduct == billDetail.ProductDetails.IDProduct);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = $"Đã xảy ra lỗi khi lấy dữ liệu: {ex.Message}";
+            }
+
+            return View(viewModel); // Trả về view với đối tượng viewModel của lớp BillDetailViewModel
         }
 
         [HttpGet]
@@ -39,12 +130,18 @@ namespace DA_WebC5.Controllers
             List<Category> categories = new List<Category>();
             List<ProductViewModel> productsViewModel = new List<ProductViewModel>();
             List<ProductDetails> productsDetails = new List<ProductDetails>();
+            List<Sale> sale = new List<Sale>();
             using (var httpClient = new HttpClient())
             {
                 using (var response2 = await httpClient.GetAsync(urlPdetail))
                 {
                     string apiResponse2 = await response2.Content.ReadAsStringAsync();
                     productsDetails = JsonConvert.DeserializeObject<List<ProductDetails>>(apiResponse2);
+                }
+                using (var response3 = await httpClient.GetAsync(_urlSale))
+                {
+                    string apiResponse2 = await response3.Content.ReadAsStringAsync();
+                    sale = JsonConvert.DeserializeObject<List<Sale>>(apiResponse2);
                 }
                 using (var response = await httpClient.GetAsync(urlP))
                 {
@@ -59,23 +156,24 @@ namespace DA_WebC5.Controllers
                     categories = JsonConvert.DeserializeObject<List<Category>>(apiResponse1);
                 }
 
-                foreach (var product in products)
-                {
-                    var category = categories.FirstOrDefault(x => x.IDCategory == product.IDCategory);
-                    if (category != null)
+                    foreach (var product in products)
                     {
-                        var prod = new ProductViewModel
+                        var category = categories.FirstOrDefault(x => x.IDCategory == product.IDCategory);
+                        if (category != null)
                         {
-                            IDProduct = product.IDProduct,
-                            Name = product.Name,
-                            Price = product.Price,
-                            CategoryName = category.Name,
-                            Image = product.Image,
-                            Status = product.Status
-                        };
-                        productsViewModel.Add(prod);
+                            var prod = new ProductViewModel
+                            {
+                                IDProduct = product.IDProduct,
+                                Name = product.Name,
+                                Price = product.Price,
+                                CategoryName = category.Name,
+                                Image = product.Image,
+                                Status = product.Status
+                            };
+                            productsViewModel.Add(prod);
+                        }
                     }
-                }
+            
                 return View(productsViewModel);
             }
         }
@@ -90,7 +188,6 @@ namespace DA_WebC5.Controllers
         }
         public IActionResult Loginktr(string username, string password)
         {
-            // Băm mật khẩu người dùng nhập vào
             MD5 md5 = MD5.Create();
             byte[] passBytes = Encoding.UTF8.GetBytes(password);
             byte[] hashBytes = md5.ComputeHash(passBytes);
@@ -100,8 +197,6 @@ namespace DA_WebC5.Controllers
                 builder.Append(hashBytes[i].ToString("x2"));
             }
             string hashedPassword = builder.ToString();
-
-            // So sánh với mật khẩu đã băm trong cơ sở dữ liệu
             var user = _context.Accounts.FirstOrDefault(u => u.UserName == username && u.Password == hashedPassword);
 
             if (user != null)
@@ -164,6 +259,99 @@ namespace DA_WebC5.Controllers
             }
             // Nếu người dùng chưa đăng nhập, chuyển hướng về trang đăng nhập
             return RedirectToAction("Login");
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+		[HttpPost]
+		public async Task<IActionResult> UpdateBillStatus(int id, string status)
+		{
+			Bill bill = new Bill();
+			using (HttpClient httpClient = new HttpClient())
+			{
+				using (var response = await httpClient.GetAsync(urlBills + id))
+				{
+					if (!response.IsSuccessStatusCode)
+					{
+						return NotFound();
+					}
+
+					var apiRes = await response.Content.ReadAsStringAsync();
+					bill = JsonConvert.DeserializeObject<Bill>(apiRes);
+				}
+
+				bill.Status = status;
+
+				var jsonContent = new StringContent(JsonConvert.SerializeObject(bill), Encoding.UTF8, "application/json");
+
+				using (var request = new HttpRequestMessage(HttpMethod.Put, urlBills + id))
+				{
+					request.Content = jsonContent;
+					using (var responseUpdate = await httpClient.SendAsync(request))
+					{
+						//string apiRestUpdateBill = await responseUpdate.Content.ReadAsStringAsync();
+						//bill = JsonConvert.DeserializeObject<Bill>(apiRestUpdateBill);
+						_context.Bills.Update(bill);
+						await _context.SaveChangesAsync();
+					}
+				}
+			}
+			return RedirectToAction(nameof(Bills));
+		}
+
+        public async Task SigninGoogle()
+        {
+            await HttpContext.ChallengeAsync(GoogleDefaults.AuthenticationScheme, new AuthenticationProperties
+            {
+                RedirectUri = Url.Action("GoogleResponse")
+            });
+        }
+        public async Task<IActionResult> GoogleResponse()
+        {
+            var authenticateResult = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            if (!authenticateResult.Succeeded)
+            {
+                return RedirectToAction(nameof(Login));
+            }
+
+            // Lấy thông tin người dùng từ principal
+            var email = authenticateResult.Principal.FindFirst(ClaimTypes.Email)?.Value;
+
+            // Gọi API hoặc truy xuất dữ liệu từ cơ sở dữ liệu để lấy thông tin tài khoản người dùng
+            var user = _context.Accounts.FirstOrDefault(u => u.Email == email);
+
+            if (user == null)
+            {
+                var songuoidung = _context.Accounts.Count();
+                // Xử lý trường hợp không tìm thấy người dùng
+                var addnew = new Account()
+                {
+                    UserName = "NguoiDung" + songuoidung++,
+                    Password = "12345678",
+                    Email = email,
+                    Role = "Member",
+                    Name = "NguoiDung" + songuoidung++,
+                    Phone = "0123456789",
+                    Gender = "Nam",
+                    Address = "Không"
+                };
+                _context.Accounts.Add(addnew);
+                _context.SaveChanges();
+                HttpContext.Session.SetString("LoggedInUser", addnew.UserName);
+
+                return RedirectToAction(nameof(Index));
+                //return RedirectToAction(nameof(Login));
+            }
+
+            // Lưu thông tin người dùng vào Session (tùy chọn)
+            HttpContext.Session.SetString("LoggedInUser", user.UserName);
+
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult PassChange(string usn)
@@ -242,11 +430,56 @@ namespace DA_WebC5.Controllers
             return View(user);
         }
 
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [HttpGet]
+        public IActionResult EditProfile()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("LoggedInUser")))
+            {
+                // Lấy tên người dùng đã đăng nhập từ Session
+                var loggedInUsername = HttpContext.Session.GetString("LoggedInUser");
+                // Lấy thông tin người dùng từ cơ sở dữ liệu
+                var user = _context.Accounts.FirstOrDefault(u => u.UserName == loggedInUsername);
+
+                if (user != null)
+                {
+                    return View(user);
+                }
+            }
+            // Nếu người dùng chưa đăng nhập, chuyển hướng về trang đăng nhập
+            return RedirectToAction("Login");
         }
+
+        [HttpPost]
+        public IActionResult EditProfile(Account model)
+        {
+            if (ModelState.IsValid)
+            {
+                var loggedInUsername = HttpContext.Session.GetString("LoggedInUser");
+                var user = _context.Accounts.FirstOrDefault(u => u.UserName == loggedInUsername);
+
+                if (user != null)
+                {
+                    // Cập nhật chỉ các thuộc tính cần thiết
+                    user.Name = model.Name;
+                    user.Email = model.Email;
+                    user.Gender = model.Gender;
+                    user.Phone = model.Phone;
+                    user.Address = model.Address;
+
+                    _context.SaveChanges();
+
+                    // Sau khi cập nhật thành công, chuyển hướng đến action khác (ví dụ: trang thông tin khách hàng)
+                    return RedirectToAction("TTKH");
+                }
+                else
+                {
+                    ViewBag.ErrorMessage = "User not found.";
+                    return View(model);
+                }
+            }
+
+            return View(model);
+        }
+
     }
 }

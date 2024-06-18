@@ -1,0 +1,19 @@
+﻿@model DA_WebC5.Models.Product
+
+@{
+    ViewData["Title"] = "Create Image Details";
+}
+
+<h1>Thêm ảnh cho sản phẩm</h1>
+
+<form asp-action="CreateImageDetails" asp-controller="Products" asp-area="Admin" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="productId" value="@Model.IDProduct" />
+
+    <div class="form-group">
+        <label for="Images">Upload Images</label>
+        <input type="file" name="Images" multiple class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Thêm</button>
+    <a asp-action="Details" asp-route-id="@Model.IDProduct" class="btn btn-secondary">Hủy</a>
+</form>

@@ -1,0 +1,46 @@
+﻿@model DA_WebC5.Models.NewViewModel.BillDetailViewModel
+
+@{
+    ViewData["Title"] = "Chi tiết hóa đơn";
+}
+
+<div class="container">
+    <h4 class="mt-4">Chi tiết hóa đơn</h4>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="table-primary">
+                <tr>
+                    <th>ID Sản phẩm</th>
+                    <th>Hình ảnh</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Màu sắc</th>
+                    <th>Kích thước</th>
+                    <th>Số lượng</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.BillDetails)
+                {
+                    <tr>
+                        <td>
+                            @item.IDPDetail
+                        </td>
+                        <td>
+                            <img style="max-width: 100px; max-height: 100px;" src="~/@Model.Products.FirstOrDefault(p => p.IDProduct == item.ProductDetails.Product.IDProduct)?.Image" alt="Hình ảnh sản phẩm" />
+                        </td>
+                        <td>
+                            @Model.Products.FirstOrDefault(p => p.IDProduct == item.ProductDetails.Product.IDProduct)?.Name
+                        </td>
+                        <td>
+                            @Model.Colors.FirstOrDefault(c => c.IDColor == item.ProductDetails.IDColor)?.Color
+                        </td>
+                        <td>
+                            @Model.Sizes.FirstOrDefault(s => s.IDSize == item.ProductDetails.Size)?.SizeName
+                        </td>
+                        <td>@item.Quantity</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

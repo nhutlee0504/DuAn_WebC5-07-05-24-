@@ -49,6 +49,7 @@ namespace SportAPI
             services.AddScoped<ICategory, CategoryResponse>();
             services.AddScoped<IBill, BillResponse>();
             services.AddScoped<IBillDetail, BillDetailResponse>();
+            services.AddScoped<ISale, SaleResponse>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<DA_WebC5.Models.Bill>
+
+@{
+    ViewData["Title"] = "Danh sách hóa đơn";
+}
+
+<h1>Danh sách hóa đơn giao</h1>
+
+<table class="table table-hover text-center">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Mã hóa đơn")
+            </th>
+            <th>
+                @Html.DisplayName("Tên người dùng")
+            </th>
+            <th>
+                @Html.DisplayName("Tổng số tiền")
+            </th>
+            <th>
+                @Html.DisplayName("Ngày đặt hàng")
+            </th>
+            <th>
+                @Html.DisplayName("Trạng thái")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDBill)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @item.TotalAmount.ToString("N0") đồng 
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderDate)
+                </td>
+                <td>
+                    @{
+                        if(item.Status.Equals("Đang giao"))
+                        {
+                            <span class="badge badge-danger">Đang giao</span>
+                        }
+                        else if (item.Status.Equals("Đang chờ"))
+                        {
+                            <span class="badge badge-warning">Đang chờ</span>
+                        }
+                        else{
+
+                            <span class="badge badge-success">Đã giao</span>
+                        }
+                        }
+                </td>
+                <td>
+                    <form asp-area="Admin" asp-controller="Bills" asp-action="UpdateBillStatus" asp-route-id="@item.IDBill" method="post">
+                        <input type="hidden" name="id" value="@item.IDBill" />
+                        <input type="hidden" name="status" value="Đã giao" />
+                        @if (item.Status.ToString() == "Đang giao")
+                        {
+                            <button type="submit" class="btn btn-sm btn-success">Đã giao</button>
+                        }
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

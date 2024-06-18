@@ -1,4 +1,5 @@
-﻿using SportAPI.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SportAPI.Data;
 using SportAPI.Model;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,21 @@ namespace SportAPI.Services
         {
             _context = context;
         }
+        
+        public List<BillDetails> GetBillDetails(int id)
+        {
+            return _context.BillDetails
+                           .Include(bd => bd.ProductDetails)
+                               .ThenInclude(pd => pd.Product)
+                           .Include(bd => bd.ProductDetails)
+                               .ThenInclude(pd => pd.Colors)
+                           .Include(bd => bd.ProductDetails)
+                               .ThenInclude(pd => pd.Sizes)
+                           .Where(x => x.IDBill == id)
+                           .ToList();
+        }
 
-        public IEnumerable<BillDetails> GetBillDetails(int id)
+        public IEnumerable<BillDetails> GetBillDetailsForAdmin(int id)
         {
             return _context.BillDetails.Where(x => x.IDBill == id);
         }

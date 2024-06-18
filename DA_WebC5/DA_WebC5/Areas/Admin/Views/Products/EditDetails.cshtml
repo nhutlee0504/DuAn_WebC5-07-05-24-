@@ -1,0 +1,31 @@
+﻿@model DA_WebC5.Models.ProductDetails
+
+@{
+    ViewBag.Title = "Edit Product Details";
+}
+
+<h2>Cập nhật chi tiết sản phẩm cho @ViewBag.Product.Name</h2>
+
+<form asp-action="EditDetails" method="post">
+    <div class="form-group">
+        <label asp-for="IDProduct" class="control-label">Tên sản phẩm</label>
+        <input type="text" class="form-control" value="@ViewBag.Product.Name" readonly />
+        <input type="hidden" asp-for="IDProduct" value="@ViewBag.Product.IDProduct" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Size" class="control-label">Kích cỡ</label>
+        <select asp-for="Size" class="form-select" asp-items="ViewBag.Sizes"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="IDColor" class="control-label">Màu</label>
+        <select asp-for="IDColor" class="form-select" asp-items="ViewBag.Colors"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Quantity" class="control-label">Số lượng</label>
+        <input asp-for="Quantity" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="hidden" asp-for="IDPDetail" />
+        <input type="submit" value="Lưu" class="btn btn-primary" />
+    </div>
+</form>

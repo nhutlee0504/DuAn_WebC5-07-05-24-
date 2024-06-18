@@ -40,7 +40,7 @@
                             <a class="nav-link" asp-controller="Bills" asp-action="index" asp-area="Admin">Quản lý hóa đơn</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/ui-features/typography.html">Quản lý loại sản phẩm</a>
+                            <a class="nav-link" asp-controller="Category" asp-action="index" asp-area="Admin">Quản lý loại sản phẩm</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-action="index" asp-controller="Size" asp-area="Admin">Quản lý kích cỡ </a>
@@ -55,21 +55,14 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-                    <span class="menu-title">Tài khoản</span>
-                    <i class="mdi mdi-contacts menu-icon"></i>
+                <a class="nav-link" href="/Admin/Sale/Index">
+                    <span class="menu-title">Mã khuyến mãi</span>
+                    <i class="mdi mdi-bullhorn"></i>
                 </a>
-                <div class="collapse" id="icons">
-                    <ul class="nav flex-column sub-menu">
-                        <li class="nav-item">
-                            <a class="nav-link" href="pages/icons/font-awesome.html">Font Awesome</a>
-                        </li>
-                    </ul>
-                </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#forms" aria-expanded="false" aria-controls="forms">
-                    <span class="menu-title">Mãu nhập</span>
+                <a class="nav-link" href="/Admin/Bills/BillAll">
+                    <span class="menu-title">Xác nhận của Shipper</span>
                     <i class="mdi mdi-format-list-bulleted menu-icon"></i>
                 </a>
                 <div class="collapse" id="forms">
