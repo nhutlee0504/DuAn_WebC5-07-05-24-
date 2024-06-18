@@ -153,16 +153,21 @@
                         </div>
                     </div>
                     <div class="col-md-3">
-                        @if (Model.Images != null)
+                        @if (Model.Images != null && Model.Images.Any())
                         {
-                            foreach (var img in Model.Images)
-                            {
-                                <div>
-                                    <input type="radio" id="@img.IDImage" name="options" value="@img.Image" class="radio-btn-image">
-                                    <label for="@img.IDImage"><img src="~/@img.Image" alt="Option @img.IDImage" class="w-75"></label>
-                                </div>
-                            }
+                            <div class="image-selection">
+                                @foreach (var img in Model.Images)
+                                {
+                                    <div class="image-option">
+                                        <input type="radio" id="image-@img.IDImage" name="options" value="@img.Image" class="radio-btn-image">
+                                        <label for="image-@img.IDImage">
+                                            <img src="@Url.Content("~/")@img.Image" alt="Option @img.IDImage" class="w-75 img-thumbnail">
+                                        </label>
+                                    </div>
+                                }
+                            </div>
                         }
+
                     </div>
                 </div>
             </div>

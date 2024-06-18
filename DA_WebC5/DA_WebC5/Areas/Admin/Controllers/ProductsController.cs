@@ -4,7 +4,10 @@ using DA_WebC5.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -27,8 +30,15 @@ namespace DA_WebC5.Areas.Admin.Controllers
         private readonly string _urlColors = "http://localhost:57700/api/Color/";
         private readonly string _urlProductDetails = "http://localhost:57700/api/ProductDetail/prodId?prodId=";
         private readonly string _urlProductDetails1 = "http://localhost:57700/api/ProductDetail/";
-        private readonly string _urlImageDetail = "http://localhost:57700/api/ImageDetail/";
-
+    
+        private readonly string _urlImageDetails = "http://localhost:57700/api/ImageDetail/";
+        private readonly ILogger<ProductsController> _logger;
+        private readonly ApplicationDbContext _context;
+        public ProductsController(ILogger<ProductsController> logger, ApplicationDbContext context)
+        {
+            _logger = logger;
+            _context = context;
+        }
         [Route("Admin/Products/Index")]
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -203,8 +213,68 @@ namespace DA_WebC5.Areas.Admin.Controllers
         {
             List<Sizes> sizes;
             List<Colors> colors;
-            List<Product> products;
-           
+            Product product = null;
+
+            using (var httpClient = new HttpClient())
+            {
+                // Lấy danh sách kích thước
+                using (var response = await httpClient.GetAsync(_urlSizes))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    sizes = JsonConvert.DeserializeObject<List<Sizes>>(apiResponse);
+                }
+
+                // Lấy thông tin sản phẩm cụ thể theo ID
+                using (var response = await httpClient.GetAsync(_urlP +productId))
+                {
+                    string apiResponse1 = await response.Content.ReadAsStringAsync();
+                    product = JsonConvert.DeserializeObject<Product>(apiResponse1);
+                }
+
+                // Lấy danh sách màu sắc
+                using (var response = await httpClient.GetAsync(_urlColors))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    colors = JsonConvert.DeserializeObject<List<Colors>>(apiResponse);
+                }
+            }
+
+            // Kiểm tra sản phẩm tồn tại
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            // Chuẩn bị dữ liệu cho view
+            ViewBag.Product = product;
+            ViewBag.Sizes = new SelectList(sizes, "IDSize", "SizeName");
+            ViewBag.Colors = new SelectList(colors, "IDColor", "Color");
+            return View();
+        }
+        [HttpGet]
+        [Route("Admin/Products/EditDetails/{id}")]
+        public async Task<IActionResult> EditDetails(int id)
+        {
+            var productDetail = await _context.ProductDetails
+                .Include(pd => pd.Product)
+                .FirstOrDefaultAsync(pd => pd.IDPDetail == id);
+
+            if (productDetail == null)
+            {
+                return NotFound();
+            }
+
+            var model = new ProductDetails
+            {
+                IDPDetail = productDetail.IDPDetail,
+                IDProduct = productDetail.IDProduct,
+                Size = productDetail.Size,
+                IDColor = productDetail.IDColor,
+                Quantity = productDetail.Quantity
+            };
+
+            List<Sizes> sizes;
+            List<Colors> colors;
             using (var httpClient = new HttpClient())
             {
                 using (var response = await httpClient.GetAsync(_urlSizes))
@@ -212,22 +282,69 @@ namespace DA_WebC5.Areas.Admin.Controllers
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     sizes = JsonConvert.DeserializeObject<List<Sizes>>(apiResponse);
                 }
-                using (var response = await httpClient.GetAsync(_urlP))
-                {
-                    string apiResponse1 = await response.Content.ReadAsStringAsync();
-                    products = JsonConvert.DeserializeObject<List<Product>>(apiResponse1);
-                }              
-                    using (var response = await httpClient.GetAsync(_urlColors))
+                using (var response = await httpClient.GetAsync(_urlColors))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     colors = JsonConvert.DeserializeObject<List<Colors>>(apiResponse);
                 }
             }
-            ViewBag.Products = new SelectList(products, "IDProduct", "Name");
+
+            ViewBag.Product = productDetail.Product;
             ViewBag.Sizes = new SelectList(sizes, "IDSize", "SizeName");
             ViewBag.Colors = new SelectList(colors, "IDColor", "Color");
-            return View();
+
+            return View(model);
         }
+        [HttpPost]
+        [Route("Admin/Products/EditDetails/{id}")]
+        public async Task<IActionResult> EditDetails(int id, ProductDetails model)
+        {
+            if (id != model.IDPDetail)
+            {
+                return BadRequest();
+            }
+
+            if (ModelState.IsValid)
+            {
+                var productDetail = await _context.ProductDetails.FindAsync(id);
+                if (productDetail == null)
+                {
+                    return NotFound();
+                }
+
+                productDetail.Size = model.Size;
+                productDetail.IDColor = model.IDColor;
+                productDetail.Quantity = model.Quantity;
+
+                _context.ProductDetails.Update(productDetail);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("Index");
+            }
+
+            List<Sizes> sizes;
+            List<Colors> colors;
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync(_urlSizes))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    sizes = JsonConvert.DeserializeObject<List<Sizes>>(apiResponse);
+                }
+                using (var response = await httpClient.GetAsync(_urlColors))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    colors = JsonConvert.DeserializeObject<List<Colors>>(apiResponse);
+                }
+            }
+
+            ViewBag.Product = await _context.Products.FindAsync(model.IDProduct);
+            ViewBag.Sizes = new SelectList(sizes, "IDSize", "SizeName");
+            ViewBag.Colors = new SelectList(colors, "IDColor", "Color");
+
+            return View(model);
+        }
+
         //[HttpGet]
         //[Route("Admin/Products/CreateDetails")]
         //public async Task<IActionResult> CreateDetails(int productId, List<int> SelectedSizes, List<int> SelectedColors, int Quantity)
@@ -455,8 +572,6 @@ namespace DA_WebC5.Areas.Admin.Controllers
                     string apiResponse1 = await productResponse.Content.ReadAsStringAsync();
                     viewModel.Product = JsonConvert.DeserializeObject<Product>(apiResponse1);
                 }
-
-                // Fetch the category only if the product is not null
                 if (viewModel.Product != null)
                 {
                     var categoryResponse = await httpClient.GetAsync(_urlCate + viewModel.Product.Category);
@@ -474,7 +589,12 @@ namespace DA_WebC5.Areas.Admin.Controllers
                     var supliers = JsonConvert.DeserializeObject<List<Supplier>>(apiResponse4);
                     viewModel.Product.Supplier = supliers.FirstOrDefault(c => c.IDSupplier == viewModel.Product.IDSupplier);
                 }
-                // Fetch the product details
+                var imagteDetailsRespone = await httpClient.GetAsync(_urlImageDetails + id);
+                if (imagteDetailsRespone.IsSuccessStatusCode)
+                {
+                    string apiResponse2 = await imagteDetailsRespone.Content.ReadAsStringAsync();
+                    viewModel.Images = JsonConvert.DeserializeObject<List<ImageDetails>>(apiResponse2);
+                }
                 var productDetailsResponse = await httpClient.GetAsync(_urlProductDetails + id);
                 if (productDetailsResponse.IsSuccessStatusCode)
                 {
@@ -501,6 +621,99 @@ namespace DA_WebC5.Areas.Admin.Controllers
 
             return View(viewModel);
         }
+
+
+        [Route("Admin/Products/CreateImageDetails")]
+        [HttpGet]
+        public async Task<IActionResult> CreateImageDetails(int productId)
+        {
+            Product product;
+
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync(_urlP + productId))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    product = JsonConvert.DeserializeObject<Product>(apiResponse);
+                }
+            }
+
+            return View(product);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("Admin/Products/CreateImageDetails")]
+        public async Task<IActionResult> CreateImageDetails(int productId, IFormFile Images)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var httpClient = new HttpClient())
+                {
+
+                        if (Images != null && Images.Length > 0)
+                        {
+                            var fileName = Path.GetFileName(Images.FileName);
+                            var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Image_Product");
+                            var filePath = Path.Combine(folderPath, fileName);
+                            var imagePath = Path.Combine("Image_Product", fileName).Replace("\\", "/");
+                          
+                            if (!System.IO.File.Exists(filePath))
+                            {
+                                Directory.CreateDirectory(folderPath); 
+
+                                using (var stream = new FileStream(filePath, FileMode.Create))
+                                {
+                                    await Images.CopyToAsync(stream);
+                                }
+                            }
+
+                            ImageDetails imageDetail = new ImageDetails
+                            {
+                                IDProduct = productId,
+                                Image = imagePath 
+                            };
+
+                            _logger.LogInformation($"Sending image details to API: {imageDetail}");
+
+                            HttpResponseMessage responseMessage = await httpClient.PostAsJsonAsync(_urlImageDetails, imageDetail);
+                            if (!responseMessage.IsSuccessStatusCode)
+                            {
+                                var responseContent = await responseMessage.Content.ReadAsStringAsync();
+                                ImageDetails img = JsonConvert.DeserializeObject<ImageDetails>(responseContent);
+                                return RedirectToAction("Index");
+                            }
+                        }
+
+
+                    return RedirectToAction("Details", new { id = productId });
+                }
+            }
+
+            return View();
+        }
+        [HttpPost("Admin/Products/DeleteImg")]
+        public async Task<IActionResult> DeleteImg(int idimg)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.DeleteAsync(_urlImageDetails + idimg))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                       
+                        string errorResponse = await response.Content.ReadAsStringAsync();
+                        ModelState.AddModelError(string.Empty, "Error deleting image: " + errorResponse);
+                    }
+                }
+            }
+            return RedirectToAction("Index", new { error = "Failed to delete image" });
+        }
+
 
 
 

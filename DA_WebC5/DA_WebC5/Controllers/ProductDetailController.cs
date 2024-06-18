@@ -16,7 +16,7 @@ namespace DA_WebC5.Controllers
     public class ProductDetailController : Controller
     {
         private string urlPD = "http://localhost:57700/api/Product/";
-        private string urlImg = "http://localhost:57700/api/ImageDetail?productId=";
+        private string urlImg = "http://localhost:57700/api/ImageDetail/";
         private string urlPddt = "http://localhost:57700/api/ProductDetail/prodId?prodId=";
         private string urlColor = "http://localhost:57700/api/Color/";
         private string urlSize = "http://localhost:57700/api/Size/";

@@ -18,6 +18,9 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Immutable;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Google;
 
 namespace DA_WebC5.Controllers
 {
@@ -305,5 +308,39 @@ namespace DA_WebC5.Controllers
 			}
 			return RedirectToAction(nameof(Bills));
 		}
-	}
+
+        public async Task SigninGoogle()
+        {
+            await HttpContext.ChallengeAsync(GoogleDefaults.AuthenticationScheme, new AuthenticationProperties
+            {
+                RedirectUri = Url.Action("GoogleResponse")
+            });
+        }
+        public async Task<IActionResult> GoogleResponse()
+        {
+            var authenticateResult = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            if (!authenticateResult.Succeeded)
+            {
+                return RedirectToAction(nameof(Login));
+            }
+
+            // Lấy thông tin người dùng từ principal
+            var email = authenticateResult.Principal.FindFirst(ClaimTypes.Email)?.Value;
+
+            // Gọi API hoặc truy xuất dữ liệu từ cơ sở dữ liệu để lấy thông tin tài khoản người dùng
+            var user = _context.Accounts.FirstOrDefault(u => u.Email == email);
+
+            if (user == null)
+            {
+                // Xử lý trường hợp không tìm thấy người dùng
+                return RedirectToAction(nameof(Login));
+            }
+
+            // Lưu thông tin người dùng vào Session (tùy chọn)
+            HttpContext.Session.SetString("LoggedInUser", user.UserName);
+
+            return RedirectToAction(nameof(Index));
+        }
+    }
 }

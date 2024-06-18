@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SportAPI.Data;
 using SportAPI.Model;
 using SportAPI.Services;
 using System.Collections.Generic;
@@ -12,43 +12,39 @@ namespace SportAPI.Controllers
     [ApiController]
     public class SaleController : ControllerBase
     {
-        private ISale sale;
-        public SaleController(ISale s) => sale = s;
+        private readonly ISale _saleService;
+        private readonly ApplicationDbContext _context;
+
+        public SaleController(ISale saleService, ApplicationDbContext context)
+        {
+            _saleService = saleService;
+            _context = context;
+        }
+
         [HttpGet]
         public IEnumerable<Sale> GetSales()
         {
-            return sale.GetSale();
+            return _saleService.GetSale();
         }
+
         [HttpPost]
-        public Sale AddSale(Sale sal)
+        public ActionResult<Sale> AddSale(Sale sale)
         {
-          
-
-            return sale.AddSale(new Sale
-            {
-                Name = sal.Name,
-                Description = sal.Description,
-                DiscountValue = sal.DiscountValue,
-                MinAmount = sal.MinAmount,
-                MaxAmount = sal.MaxAmount,
-                StartDate = sal.StartDate,
-                EndDate = sal.EndDate,
-                Quantity = sal.Quantity
-            });
+            var addedSale = _saleService.AddSale(sale);
+            return CreatedAtAction(nameof(GetSaleName), new { name = addedSale.Name }, addedSale);
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Sale>> GetSaleById(int id)
+        [HttpGet("{name}")]
+        public async Task<ActionResult<Sale>> GetSaleName(string name)
         {
-            var sale1 = sale.GetSaleByID(id);
+            var sale1 = await _context.Sales.FirstOrDefaultAsync(x => x.Name == name);
 
-            if (sale == null)
+            if (sale1 == null)
             {
                 return NotFound();
             }
 
             return sale1;
         }
-
     }
 }

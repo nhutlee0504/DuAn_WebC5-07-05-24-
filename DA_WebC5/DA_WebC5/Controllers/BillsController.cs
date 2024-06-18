@@ -18,105 +18,106 @@ namespace DA_WebC5.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index(List<int> selectedProducts, string SaleInput)
+        public async Task<IActionResult> Index(List<int> selectedProducts)
         {
-            if(SaleInput == null)
+            if (selectedProducts != null && selectedProducts.Count > 0)
             {
-                if (selectedProducts != null && selectedProducts.Count > 0)
+                string username = HttpContext.Session.GetString("LoggedInUser");
+                if (string.IsNullOrEmpty(username))
                 {
-                    string username = HttpContext.Session.GetString("LoggedInUser");
-                    if (string.IsNullOrEmpty(username))
-                    {
-                        return RedirectToAction("Login", "Home");
-                    }
-
-                    // Fetch user information
-                    var user = await _context.Accounts.FirstOrDefaultAsync(u => u.UserName == username);
-                    if (user == null)
-                    {
-                        return NotFound("User not found");
-                    }
-
-                    // Fetch cart items
-                    var selectedCartItems = await _context.Carts
-                  .Where(x => x.UserName == username && selectedProducts.Contains(x.IDPDetail))
-                  .Include(x => x.ProductDetails.Product)
-                  .Include(x => x.ProductDetails.Product.Category)
-                  .Include(x => x.ProductDetails.Sizes)
-                  .Include(x => x.ProductDetails.Colors)
-                  .ToListAsync();
-
-                    decimal price = 0;
-                    foreach (var item in selectedCartItems)
-                    {
-                        price += item.ProductDetails.Product.Price;
-                    }
-                    decimal totalPriceInput = price;
-   
-                    var viewModel = new BillViewModel
-                    {
-                        User = user,
-                        CartItems = selectedCartItems,
-                        TotalPriceInput = totalPriceInput
-                    };
-
-                    return View(viewModel);
+                    return RedirectToAction("Login", "Home");
                 }
-                else
+
+                // Fetch user information
+                var user = await _context.Accounts.FirstOrDefaultAsync(u => u.UserName == username);
+                if (user == null)
                 {
-                    return RedirectToAction("Index", "Cart");
+                    return NotFound("User not found");
                 }
+
+                // Fetch cart items
+                var selectedCartItems = await _context.Carts
+              .Where(x => x.UserName == username && selectedProducts.Contains(x.IDPDetail))
+              .Include(x => x.ProductDetails.Product)
+              .Include(x => x.ProductDetails.Product.Category)
+              .Include(x => x.ProductDetails.Sizes)
+              .Include(x => x.ProductDetails.Colors)
+              .ToListAsync();
+
+                decimal price = 0;
+                foreach (var item in selectedCartItems)
+                {
+                    price += item.ProductDetails.Product.Price;
+                }
+                decimal totalPriceInput = price;
+
+                var viewModel = new BillViewModel
+                {
+                    User = user,
+                    CartItems = selectedCartItems,
+                    TotalPriceInput = totalPriceInput
+                };
+
+                return View(viewModel);
             }
             else
             {
-                if (selectedProducts != null && selectedProducts.Count > 0)
-                {
-                    string username = HttpContext.Session.GetString("LoggedInUser");
-                    if (string.IsNullOrEmpty(username))
-                    {
-                        return RedirectToAction("Login", "Home");
-                    }
-
-                    // Fetch user information
-                    var user = await _context.Accounts.FirstOrDefaultAsync(u => u.UserName == username);
-                    if (user == null)
-                    {
-                        return NotFound("User not found");
-                    }
-
-                    // Fetch cart items
-                    var selectedCartItems = await _context.Carts
-                  .Where(x => x.UserName == username && selectedProducts.Contains(x.IDPDetail))
-                  .Include(x => x.ProductDetails.Product)
-                  .Include(x => x.ProductDetails.Product.Category)
-                  .Include(x => x.ProductDetails.Sizes)
-                  .Include(x => x.ProductDetails.Colors)
-                  .ToListAsync();
-
-                    var timgiamgia = _context.Sales.FirstOrDefault(x => x.Name.Equals(SaleInput.ToString()));
-
-                    decimal price = 0;
-                    foreach (var item in selectedCartItems)
-                    {
-                        price += item.ProductDetails.Product.Price * item.Quantity;
-                    }
-                    decimal discount = timgiamgia.DiscountValue;
-                    decimal totalPriceInput = price - (price * (discount / 100));
-                    var viewModel = new BillViewModel
-                    {
-                        User = user,
-                        CartItems = selectedCartItems,
-                        TotalPriceInput = totalPriceInput
-                    };
-
-                    return View(viewModel);
-                }
-                else
-                {
-                    return RedirectToAction("Index", "Cart");
-                }
+                return RedirectToAction("Index", "Cart");
             }
-           
+            //if(SaleInput == null)
+            //{
+
+            //}
+            //else
+            //{
+            //    if (selectedProducts != null && selectedProducts.Count > 0)
+            //    {
+            //        string username = HttpContext.Session.GetString("LoggedInUser");
+            //        if (string.IsNullOrEmpty(username))
+            //        {
+            //            return RedirectToAction("Login", "Home");
+            //        }
+
+            //        // Fetch user information
+            //        var user = await _context.Accounts.FirstOrDefaultAsync(u => u.UserName == username);
+            //        if (user == null)
+            //        {
+            //            return NotFound("User not found");
+            //        }
+
+            //        // Fetch cart items
+            //        var selectedCartItems = await _context.Carts
+            //      .Where(x => x.UserName == username && selectedProducts.Contains(x.IDPDetail))
+            //      .Include(x => x.ProductDetails.Product)
+            //      .Include(x => x.ProductDetails.Product.Category)
+            //      .Include(x => x.ProductDetails.Sizes)
+            //      .Include(x => x.ProductDetails.Colors)
+            //      .ToListAsync();
+
+            //        var timgiamgia = _context.Sales.FirstOrDefault(x => x.Name.Equals(SaleInput.ToString()));
+
+            //        decimal price = 0;
+            //        foreach (var item in selectedCartItems)
+            //        {
+            //            price += item.ProductDetails.Product.Price * item.Quantity;
+            //        }
+            //        decimal discount = timgiamgia.DiscountValue;
+            //        decimal totalPriceInput = price - (price * (discount / 100));
+            //        var viewModel = new BillViewModel
+            //        {
+            //            User = user,
+            //            CartItems = selectedCartItems,
+            //            TotalPriceInput = totalPriceInput
+            //        };
+
+            //        return View(viewModel);
+            //    }
+            //    else
+            //    {
+            //        return RedirectToAction("Index", "Cart");
+            //    }
+            //}
+
         }
 
         [Route("Bills/Pay")]

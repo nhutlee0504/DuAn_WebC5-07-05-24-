@@ -9,5 +9,6 @@ namespace SportAPI.Services
 
         public Sale AddSale(Sale sale);
         public Sale GetSaleByID(int id);
+        public Sale GetSaleByName (string name);
     }
 }

@@ -18,6 +18,7 @@ namespace DA_WebC5.Models
         [Column(TypeName = "ntext")]
         public string Description { get; set; }
         [Required(ErrorMessage = "Vui lòng nhập tỉ lệ giảm giá")]
+        [Range(0, 100, ErrorMessage = "Giá trị phần trăm giảm giá phải từ 0 đến 100")]
 
         public int DiscountValue { get; set; }
         [Required(ErrorMessage = "Vui lòng nhập giá trị tối thiểu")]

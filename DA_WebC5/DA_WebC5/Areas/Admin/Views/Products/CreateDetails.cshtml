@@ -13,7 +13,8 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="IDProduct" class="control-label">Tên sản phẩm</label>
-                <select asp-for="IDProduct" class ="form-select" asp-items="ViewBag.Products"></select>
+                <input type="text" class="form-control" value="@ViewBag.Product.Name" readonly />
+                <input type="hidden" asp-for="IDProduct" value="@ViewBag.Product.IDProduct" />
             </div>
             <div class="form-group">
                 <label>Màu sản phẩm</label>
