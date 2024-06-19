@@ -49,7 +49,8 @@
                                         @Html.DisplayFor(modelItem => item.Address)
                                     </td>
                                     <td>
-                                        <a asp-action="Edit" asp-route-id="@item.UserName" class="btn btn-sm btn-danger">Ban</a>
+                                        <a asp-action="BanAccount" asp-route-id="@item.UserName" class="btn btn-sm btn-danger">Ban</a>
+                                        <a asp-action="History" asp-route-id="@item.UserName" class="btn btn-sm btn-primary">Lịch sử</a>
                                     </td>
                                 </tr>
                             }
