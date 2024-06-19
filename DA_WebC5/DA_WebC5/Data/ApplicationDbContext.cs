@@ -24,5 +24,13 @@ namespace DA_WebC5.Data
         public DbSet<SaleDetails> SaleDetails { get; set; }
         public DbSet<Sizes> Sizes { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Account>()
+            .HasIndex(e => e.Email)
+            .IsUnique();
+        }
     }
 }

@@ -332,13 +332,13 @@ namespace DA_WebC5.Controllers
                 var addnew = new Account()
                 {
                     UserName = "NguoiDung" + songuoidung++,
-                    Password = "12345678",
+                    Password = "25d55ad283aa400af464c76d713c07ad",
                     Email = email,
                     Role = "Member",
-                    Name = "NguoiDung" + songuoidung++,
-                    Phone = "0123456789",
+                    Name = " ",
+                    Phone = " ",
                     Gender = "Nam",
-                    Address = "Không"
+                    Address = " "
                 };
                 _context.Accounts.Add(addnew);
                 _context.SaveChanges();
@@ -479,6 +479,12 @@ namespace DA_WebC5.Controllers
             }
 
             return View(user);
+        }
+
+        public IActionResult SaleInfo()
+        {
+            var db = _context.Sales;
+            return View(db);
         }
 
     }

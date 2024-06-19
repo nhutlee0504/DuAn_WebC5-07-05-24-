@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DA_WebC5.Models.Sale>
+
+@{
+    ViewData["Title"] = "SaleInfo";
+}
+
+<h1>SaleInfo</h1>
+
+@foreach(var item in Model)
+{
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </div>
+                <div class="card-body">
+                    <div>
+                        Mã: @Html.DisplayFor(modelItem => item.Name)
+                    </div>
+                    <div>
+                        Giá trị giảm: @Html.DisplayFor(modelItem => item.DiscountValue) %
+                    </div>
+                    <div>
+                        Ngày bắt đầu: @item.StartDate.ToString("dd/mm/yyyy hh:mm:ss")
+                    </div>
+                    <div>
+                        Ngày kết thúc: @item.EndDate.ToString("dd/mm/yyyy hh:mm:ss")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

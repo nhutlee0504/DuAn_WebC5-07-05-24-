@@ -109,7 +109,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-danger btn-rounded btn-block">Cập nhật thông tin</button>
+            <a asp-controller="Home" asp-action="EditProfile" type="submit" class="btn btn-danger btn-rounded btn-block">Cập nhật thông tin</a>
         </div>
         <div class="col-md-7">
             <div class="card">
@@ -139,9 +139,9 @@
                     }
 
                     <div class="total-price">
-                        <div><strong>Tổng giá:</strong> @totalPrice.ToString("N0") đồng</div>
-                        <input type="hidden" name="totalPrice" value="@totalPrice" />
-                            <div>Total Price: @Model.TotalPriceInput</div>
+                            <div><strong>Tổng giá: </strong>@Model.TotalPriceInput.ToString("N0") đồng</div>
+                        <input type="hidden" name="totalPrice" value="@Model.TotalPriceInput" />
+                          @*   <div>Total Price: @Model.TotalPriceInput</div> *@
                     </div>
                
                   

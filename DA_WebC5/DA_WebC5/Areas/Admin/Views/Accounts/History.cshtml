@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DA_WebC5.Models.History>
+
+@{
+    ViewData["Title"] = "History";
+}
+
+<div class="container">
+    <h1>Lịch sử</h1>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr class="table-dark">
+                <th>
+                    STT
+                </th>
+                <th>
+                    Mô tả
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IDHistory)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Describe)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

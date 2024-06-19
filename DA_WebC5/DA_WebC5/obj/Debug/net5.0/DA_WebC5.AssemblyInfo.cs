@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DA_WebC5")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be77a764255c7be46d26702a978569655eaa8f71")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0f2de293e6700944a769060091ce41a1f3f254e")]
 [assembly: System.Reflection.AssemblyProductAttribute("DA_WebC5")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DA_WebC5")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

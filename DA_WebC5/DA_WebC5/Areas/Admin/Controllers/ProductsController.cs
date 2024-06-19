@@ -165,32 +165,52 @@ namespace DA_WebC5.Areas.Admin.Controllers
                     }
                 }
             }
-
-            // Nếu có lỗi xảy ra hoặc dữ liệu không hợp lệ, hiển thị lại form tạo sản phẩm
+            List<Category> categories;
+            List<Supplier> suppliers;
             List<Sizes> sizes;
             List<Colors> colors;
 
             using (var httpClient = new HttpClient())
             {
+                using (var response = await httpClient.GetAsync(_urlCate))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    categories = JsonConvert.DeserializeObject<List<Category>>(apiResponse);
+                }
+                using (var response = await httpClient.GetAsync(_urlSuplier))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    suppliers = JsonConvert.DeserializeObject<List<Supplier>>(apiResponse);
+                }
                 using (var response = await httpClient.GetAsync(_urlSizes))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     sizes = JsonConvert.DeserializeObject<List<Sizes>>(apiResponse);
                 }
-
                 using (var response = await httpClient.GetAsync(_urlColors))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     colors = JsonConvert.DeserializeObject<List<Colors>>(apiResponse);
                 }
             }
+            ViewBag.Categories = _context.Categories.Select(c => new SelectListItem
+            {
+                Value = c.IDCategory.ToString(),
+                Text = c.Name
+            }).ToList();
+
+            ViewBag.Suppliers = _context.Suppliers.Select(s => new SelectListItem
+            {
+                Value = s.IDSupplier.ToString(),
+                Text = s.Name
+            }).ToList();
 
             ViewBag.Sizes = new SelectList(sizes, "IDSize", "SizeName");
             ViewBag.Colors = new SelectList(colors, "IDColor", "Color");
 
+
             return View(product);
         }
-
         private async Task<Product> GetProductById(int productId)
         {
             Product product = null;

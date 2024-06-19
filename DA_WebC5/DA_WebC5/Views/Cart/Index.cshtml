@@ -98,12 +98,19 @@
         username = HttpContextAccessor.HttpContext.Session.GetString("LoggedInUser");
     }
 }
+<style>
+    a{
+        text-decoration:none;
+    }
+</style>
+<div class="container">
+    <ol class="breadcrumb bg-transparent">
+        <li class="breadcrumb-item"><a href="/home/index">Trang chủ</a></li>
 
-<ol class="breadcrumb bg-transparent">
-    <li class="breadcrumb-item"><a href="/home/index">Trang chủ</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
+    </ol>
+</div>
 
-    <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
-</ol>
 
 @if (TempData["errorsub"] != null)
 {
@@ -182,6 +189,7 @@
                 </tbody>
             </table>
         </div>
+        <input type="text" class="form-control" name="SaleInput" value="" placeholder="Nhập mã khuyến mãi (nếu có)">
 
         <div class="border p-2 mt-3 d-flex align-items-center flex-wrap">
             <a asp-controller="Cart" asp-action="DeleteAll" class="btn btn-danger mr-2 mb-2 mb-md-0">Xóa tất cả sản phẩm</a>
@@ -189,8 +197,8 @@
 
             <div class="ml-md-auto mr-md-0 mb-2 mb-md-0">Tổng thanh toán(@Model.Where(x => x.UserName == ViewBag.Username).Count() sản phẩm)</div>
             <div class="px-2 mb-2 mb-md-0"><strong class="text-danger"></strong></div>
-@*             <input type="text" class="form-control" name="SaleInput" value="" placeholder="Nhập mã khuyến mãi (nếu có)">
- *@
+            
+
             <button type="submit" class="btn btn-success">Mua hàng</button>
         </div>
     </form>
