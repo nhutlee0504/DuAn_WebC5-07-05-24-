@@ -55,6 +55,9 @@ namespace DA_WebC5.Migrations
 
                     b.HasKey("UserName");
 
+                    b.HasIndex("Email")
+                        .IsUnique();
+
                     b.ToTable("Accounts");
                 });
 

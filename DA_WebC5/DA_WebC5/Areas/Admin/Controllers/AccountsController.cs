@@ -19,21 +19,23 @@ namespace DA_WebC5.wwwroot.Areas.Admin.Controllers
             return View(list);
         }
 
-        [Route("Admin/Accounts/History")]
-        public IActionResult History(string id)
-        {
-            var list = _context.Histories.Where(x => x.UserName == id).ToList();
-            return View(list);
-        }
+		[Route("Admin/Accounts/History")]
+		public IActionResult History(string id)
+		{
+			var list = _context.Histories.Where(x => x.UserName == id).ToList();
+			return View(list);
+		}
         [Route("Admin/Accounts/BanAccount")]
         public IActionResult BanAccount(string id)
         {
             var user = _context.Accounts.Where(x => x.UserName == id).FirstOrDefault();
-            if(user != null) {
+            if (user != null)
+            {
                 user.Role = "Blocked";
                 _context.SaveChanges();
             }
             return RedirectToAction(nameof(Index));
         }
+
     }
 }

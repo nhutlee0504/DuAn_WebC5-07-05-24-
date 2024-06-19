@@ -40,7 +40,22 @@
 					<td>@item.TotalAmount.ToString("N0") đồng</td>
 					<td>@item.OrderDate.ToString("dd/MM/yyyy hh:mm:ss")</td>
 					<td>
-						<span class="badge rounded-pill text-light bg-danger">@item.Status.ToString()</span>
+						@if (item.Status == "Đang chờ")
+						{
+							<span class="badge rounded-pill bg-warning text-dark">@item.Status</span>
+						}
+						else if (item.Status == "Đang giao")
+						{
+							<span class="badge rounded-pill bg-primary text-light">@item.Status</span>
+						}
+						else if (item.Status == "Hoàn thành")
+						{
+							<span class="badge rounded-pill bg-success text-light">@item.Status</span>
+						}
+						else
+						{
+							<span class="badge rounded-pill bg-secondary text-light">@item.Status</span>
+						}
 					</td>
 					<td>
 						<a asp-action="BillDetail" asp-route-id="@item.IDBill">Chi tiết</a>

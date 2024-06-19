@@ -24,7 +24,7 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            if (item.Role.Equals("Member"))
+                            if (!item.Role.Equals("Admin"))
                             {
                                 <tr>
                                     <td>

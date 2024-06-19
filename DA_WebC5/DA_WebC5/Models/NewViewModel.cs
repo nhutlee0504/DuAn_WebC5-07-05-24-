@@ -47,7 +47,6 @@ namespace DA_WebC5.Models
             public int IDColor { get; set; }
             public int IDSize { get; set; }
             public string UserName { get; set; }
-
             public string SizeName { get; set; }
             public string Color { get; set; }
             public decimal Price { get; set; }
