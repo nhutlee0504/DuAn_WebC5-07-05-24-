@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AXo7R382KJ2WzOJci9ef0VLiE7X/x3Qt/ddTpBcCaoQtGexh7FeXeaX+UGHLTDbVMGW8maRuUkQtD+Rv1mjDqA==",
+  "dgSpecHash": "InR8RbmMKzbhuV+zPLebpkqpXIzMZowLzQc14i5CVLshpvQJsnOoA0h27XUGBaFhJq8k6pytf8s/OC5du9HN2w==",
   "success": true,
-  "projectFilePath": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\SportAPI.csproj",
+  "projectFilePath": "D:\\FPOLY\\z. Finished\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\SportAPI\\SportAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Quang Minh\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Quang Minh\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

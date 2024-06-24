@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "itloaagAcxBsRDPbZ9sy6Qmo94Ay2gRyXG5VKMlacwymqqauR6twCgBTE+RzINaGQ3nnJ+xFKPpVZ1SuwuhPSg==",
+  "dgSpecHash": "K9KpjissrxsOPNEYqzvXghA0r5S0NShCTSzdy1roq31/2u98bLfnnNl/a12zK+hQXNX8aQOGWzVUN5nNwRuDew==",
   "success": true,
-  "projectFilePath": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj",
+  "projectFilePath": "D:\\FPOLY\\z. Finished\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Quang Minh\\.nuget\\packages\\bootstrap\\5.3.3\\bootstrap.5.3.3.nupkg.sha512",
     "C:\\Users\\Quang Minh\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
