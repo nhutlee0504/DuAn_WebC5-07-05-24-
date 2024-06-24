@@ -669,7 +669,10 @@ D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net
 D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.Google.dll
 D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Views\Home\EditProfile.cshtml.g.cs
 D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Views\Home\PassChange.cshtml.g.cs
+D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Views\Home\SaleInfo.cshtml.g.cs
+D:\Mon_Dang_Hoc\C_Schapes_5\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Accounts\History.cshtml.g.cs
 D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.Google.dll
+D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Accounts\History.cshtml.g.cs
 D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Bills\BillAll.cshtml.g.cs
 D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Bills\BillDetail.cshtml.g.cs
 D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\CreateCategory.cshtml.g.cs
@@ -696,4 +699,14 @@ D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5
 D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Views\Home\Bills.cshtml.g.cs
 D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Views\Home\EditProfile.cshtml.g.cs
 D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Views\Home\PassChange.cshtml.g.cs
-D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Areas\Admin\Views\Accounts\History.cshtml.g.cs
+D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Views\Home\SaleInfo.cshtml.g.cs
+D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\obj\Debug\net5.0\Razor\Views\Forgot\Index.cshtml.g.cs
+D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\bin\Debug\net5.0\BouncyCastle.Cryptography.dll
+D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\bin\Debug\net5.0\MailKit.dll
+D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\bin\Debug\net5.0\MimeKit.dll
+D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\bin\Debug\net5.0\NETCore.MailKit.dll
+D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\bin\Debug\net5.0\System.Formats.Asn1.dll
+D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\bin\Debug\net5.0\System.Security.Cryptography.Pkcs.dll
+D:\FPOLY\1.CSharp5_SD18031\DuAn_WebC5-07-05-24-\DA_WebC5\DA_WebC5\bin\Debug\net5.0\System.Text.Encoding.CodePages.dll

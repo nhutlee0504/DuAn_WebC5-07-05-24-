@@ -93,7 +93,7 @@ namespace DA_WebC5.Controllers
             {
                 prod.Quantity--;
                 _context.SaveChanges();
-                return Json(new { success = true, quantity = prod.Quantity });
+                return Json(new { success = true, quantity = prod.Quantity});
             }
             return Json(new { success = false, message = "Sản phẩm có số lượng ở mức thấp nhất" });
         }

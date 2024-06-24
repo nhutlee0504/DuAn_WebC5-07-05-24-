@@ -72,13 +72,17 @@ namespace DA_WebC5.Controllers
         {
             if (ModelState.IsValid)
             {
+                var emailExist = _context.Accounts.FirstOrDefault(x => x.Email == account.Email);
+                if (emailExist != null)
+                {
+                    ModelState.AddModelError("Email", "Email đã tồn tại");
+                    return View(account);
+                }
                 _context.Accounts.Add(account);
                 _context.SaveChanges();
                 HttpContext.Session.SetString("LoggedInUser", account.UserName);
                 return RedirectToAction(nameof(Index), "Home");
             }
-            ViewBag.username = account.UserName;
-            ViewBag.password = account.Password;
             return View(account);
         }
     }

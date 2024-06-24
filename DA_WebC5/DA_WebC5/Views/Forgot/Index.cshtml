@@ -1,0 +1,26 @@
+﻿@model DA_WebC5.Models.Account
+
+@{
+    ViewData["Title"] = "Quên mật khẩu";
+}
+
+<div class="container">
+    <div class="col-md-4 offset-4">
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert alert-success mt-3">
+                @ViewBag.Message
+            </div>
+        }
+        <form asp-action="Index" method="post">
+            <div class="form-group m-3">
+                <label>Nhập Email của bạn</label>
+                <input type="email" name="Email" class="form-control" value="@ViewBag.Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group m-3">
+                <button type="submit" class="btn btn-dark btn-block">Gửi</button>
+            </div>
+        </form>
+    </div>
+</div>

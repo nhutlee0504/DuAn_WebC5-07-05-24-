@@ -3,56 +3,20 @@
   "WorkspaceRootPath": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\forgotcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\forgotcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\views\\accounts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\views\\accounts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\areas\\admin\\views\\accounts\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\areas\\admin\\views\\accounts\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\home\\ttkh.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\home\\ttkh.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\forgot\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\forgot\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\controllers\\billscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\controllers\\billscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\home\\editprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\home\\editprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\home\\passchange.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\home\\passchange.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\models\\billviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\models\\billviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\da_webc5.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\da_webc5.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|d:\\fpoly\\1.csharp5_sd18031\\duan_webc5-07-05-24-\\da_webc5\\da_webc5\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{12E295D3-05B0-4FA7-B057-A4611B693344}|DA_WebC5\\DA_WebC5.csproj|solutionrelative:da_webc5\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,163 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "History.cshtml",
-              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Accounts\\History.cshtml",
-              "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Views\\Accounts\\History.cshtml",
-              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Accounts\\History.cshtml",
-              "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Accounts\\History.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB0AAAAUAAAA",
+              "DocumentIndex": 3,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\Login.cshtml",
+              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Home\\Login.cshtml",
+              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\Login.cshtml",
+              "RelativeToolTip": "DA_WebC5\\Views\\Home\\Login.cshtml",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T06:03:55.684Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Accounts\\Index.cshtml",
-              "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Views\\Accounts\\Index.cshtml",
-              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Views\\Accounts\\Index.cshtml",
-              "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Views\\Accounts\\Index.cshtml",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAIwC4AAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T05:58:38.941Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AccountsController.cs",
-              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Controllers\\AccountsController.cs",
-              "RelativeDocumentMoniker": "DA_WebC5\\Areas\\Admin\\Controllers\\AccountsController.cs",
-              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Areas\\Admin\\Controllers\\AccountsController.cs",
-              "RelativeToolTip": "DA_WebC5\\Areas\\Admin\\Controllers\\AccountsController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwCQAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T05:58:28.36Z",
+              "WhenOpened": "2024-06-24T03:52:57.354Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TTKH.cshtml",
-              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\TTKH.cshtml",
-              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Home\\TTKH.cshtml",
-              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\TTKH.cshtml",
-              "RelativeToolTip": "DA_WebC5\\Views\\Home\\TTKH.cshtml",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAAAGoAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-18T15:40:27.338Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EditProfile.cshtml",
-              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\EditProfile.cshtml",
-              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Home\\EditProfile.cshtml",
-              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\EditProfile.cshtml",
-              "RelativeToolTip": "DA_WebC5\\Views\\Home\\EditProfile.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-18T15:39:46.847Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BillsController.cs",
-              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\BillsController.cs",
-              "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\BillsController.cs",
-              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\BillsController.cs",
-              "RelativeToolTip": "DA_WebC5\\Controllers\\BillsController.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAowCQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T15:29:33.942Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Cart.cs",
-              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\Cart.cs",
-              "RelativeDocumentMoniker": "DA_WebC5\\Models\\Cart.cs",
-              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\Cart.cs",
-              "RelativeToolTip": "DA_WebC5\\Models\\Cart.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T15:28:10.669Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\HomeController.cs",
               "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\HomeController.cs",
               "RelativeToolTip": "DA_WebC5\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAANMBAAAAAAAAAAAUwOEBAAAJAAAA",
+              "ViewState": "AQIAANABAAAAAAAAAAAAwLgAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T15:27:46.605Z"
+              "WhenOpened": "2024-06-24T03:36:18.577Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PassChange.cshtml",
-              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\PassChange.cshtml",
-              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Home\\PassChange.cshtml",
-              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Home\\PassChange.cshtml",
-              "RelativeToolTip": "DA_WebC5\\Views\\Home\\PassChange.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABRAAAA",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Forgot\\Index.cshtml",
+              "RelativeDocumentMoniker": "DA_WebC5\\Views\\Forgot\\Index.cshtml",
+              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Views\\Forgot\\Index.cshtml",
+              "RelativeToolTip": "DA_WebC5\\Views\\Forgot\\Index.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-18T18:32:55.655Z"
+              "WhenOpened": "2024-06-24T01:38:41.359Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "BillViewModel.cs",
-              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\BillViewModel.cs",
-              "RelativeDocumentMoniker": "DA_WebC5\\Models\\BillViewModel.cs",
-              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Models\\BillViewModel.cs",
-              "RelativeToolTip": "DA_WebC5\\Models\\BillViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "ForgotController.cs",
+              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\ForgotController.cs",
+              "RelativeDocumentMoniker": "DA_WebC5\\Controllers\\ForgotController.cs",
+              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Controllers\\ForgotController.cs",
+              "RelativeToolTip": "DA_WebC5\\Controllers\\ForgotController.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAywCsAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T15:27:57.95Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Startup.cs",
-              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Startup.cs",
-              "RelativeDocumentMoniker": "DA_WebC5\\Startup.cs",
-              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\Startup.cs",
-              "RelativeToolTip": "DA_WebC5\\Startup.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwEUAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T15:26:11.862Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\appsettings.json",
-              "RelativeDocumentMoniker": "DA_WebC5\\appsettings.json",
-              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\appsettings.json",
-              "RelativeToolTip": "DA_WebC5\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-18T15:08:16.998Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "DA_WebC5",
-              "DocumentMoniker": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj",
-              "RelativeDocumentMoniker": "DA_WebC5\\DA_WebC5.csproj",
-              "ToolTip": "D:\\FPOLY\\1.CSharp5_SD18031\\DuAn_WebC5-07-05-24-\\DA_WebC5\\DA_WebC5\\DA_WebC5.csproj",
-              "RelativeToolTip": "DA_WebC5\\DA_WebC5.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-06-18T14:57:48.255Z"
+              "WhenOpened": "2024-06-24T01:27:34.53Z",
+              "EditorCaption": ""
             }
           ]
         }

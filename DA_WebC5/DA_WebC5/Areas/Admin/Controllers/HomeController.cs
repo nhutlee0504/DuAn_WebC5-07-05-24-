@@ -89,7 +89,7 @@ namespace DA_WebC5.Areas.Admin.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
-            HttpContext.SignOutAsync();
+            //HttpContext.SignOutAsync();
             return RedirectToAction("Loginktr", "Home", new {area = "Admin"});
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

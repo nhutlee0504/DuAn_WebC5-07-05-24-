@@ -8,13 +8,18 @@
                 <h4 class="card-title">Thêm sản phẩm</h4>
                 <p class="card-description">Thêm sản phẩm mới</p>
                 <form asp-action="Create" method="post" enctype="multipart/form-data">
+                    @* Hiển thị tổng quan các lỗi *@
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
                     <div class="form-group">
                         <label for="Name">Tên sản phẩm</label>
                         <input type="text" class="form-control" id="Name" name="Name" placeholder="Tên sản phẩm">
+                        <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label for="Price">Giá</label>
                         <input type="number" class="form-control" id="Price" name="Price" placeholder="Giá sản phẩm">
+                        <span asp-validation-for="Price" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label for="Category">Loại sản phẩm</label>
@@ -25,6 +30,7 @@
                                 <option value="@category.Value">@category.Text</option>
                             }
                         </select>
+                        <span asp-validation-for="IDCategory" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
@@ -36,11 +42,13 @@
                                 <option value="@supplier.Value">@supplier.Text</option>
                             }
                         </select>
-                    </div>                 
+                        <span asp-validation-for="IDSupplier" class="text-danger"></span>
+                    </div>
 
                     <div class="form-group">
                         <label for="Image">Hình ảnh</label>
                         <input type="file" class="form-control-file" id="Image" name="Image">
+                        <span asp-validation-for="Image" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
@@ -49,11 +57,13 @@
                             <option value="Bán">Bán</option>
                             <option value="Tạm khóa">Tạm khóa</option>
                         </select>
+                        <span asp-validation-for="Status" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="Describe">Mô tả</label>
                         <textarea class="form-control" id="Describe" name="Describe" rows="4"></textarea>
+                        <span asp-validation-for="Describe" class="text-danger"></span>
                     </div>
 
                     <button type="submit" class="btn btn-gradient-primary me-2">Thêm sản phẩm</button>

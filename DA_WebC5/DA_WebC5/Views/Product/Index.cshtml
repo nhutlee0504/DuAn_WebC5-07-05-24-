@@ -91,14 +91,15 @@
 
 
         <div class="col-sm-9">
+            <input type="text" name="name" id="Search" placeholder="Search.." />
             @if (ViewBag.NotProducts != null)
             {
-            <h5 class="font-weight-bold">@ViewBag.NotProducts</h5>
+                <h5 class="font-weight-bold">@ViewBag.NotProducts</h5>
             }
             <div class="row">
                 @foreach (var item in Model)
                 {
-                    <div class="col-sm-3 d-flex justify-content-center flex-column">
+                    <div class="col-sm-3 d-flex justify-content-center flex-column prod">
                         <div class="border border-secondary-subtle rounded">
                             <a href="/ProductDetail/Index/@item.IDProduct"> <div><img src="~/@item.Image" alt="Alternate Text" class="mw-100" /></div></a>
                         </div>
@@ -121,6 +122,12 @@
 </div>
 
 <script>
+    $("#Search").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $(".prod").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
     document.querySelectorAll('input[name="sortOrder"]').forEach(radio => {
         radio.addEventListener('change', function () {
             document.getElementById('sortOrderForm').submit();

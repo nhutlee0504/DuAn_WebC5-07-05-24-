@@ -52,7 +52,7 @@
         background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(139, 222, 34, 1) 0%, rgba(0, 212, 255, 1) 100%);
         color: white;
         font-weight: bolder;
-        border:none;
+        border: none;
         background-size: 200% 200%;
         transition: background-position 0.5s ease, transform 0.3s ease;
     }
@@ -62,8 +62,9 @@
             color: white;
             transform: scale(1.05);
         }
+
     a {
-        text-decoration:none;
+        text-decoration: none;
     }
 </style>
 <div class="container">
@@ -108,9 +109,9 @@
                 <span>@Model.Address</span>
             </li>
             <div id="button-container" class="col-md-12">
-                    <a asp-action="PassChange" asp-route-usn="@Model.UserName">Đổi mật khẩu</a>
-                <a asp-controller="Home" asp-action="EditProfile" class="btn btn-primary">Cập nhật thông tin</a>
-                <a asp-controller="Home" asp-action="Logout" class="btn btn-primary">Đăng xuất</a>
+                <a asp-action="PassChange" class="btn btn-custom" asp-route-usn="@Model.UserName">Đổi mật khẩu</a>
+                <a asp-controller="Home" asp-action="EditProfile" class="btn btn-custom">Cập nhật thông tin</a>
+                <a asp-controller="Home" asp-action="Logout" class="btn btn-custom">Đăng xuất</a>
             </div>
         </ul>
         
